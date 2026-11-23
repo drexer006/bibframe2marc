@@ -7,7 +7,7 @@
 	    <rdfs:label>new</rdfs:label>
 	  </bf:Status>
 	</bf:status>
-	<bf:date rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2020-12-22</bf:date>
+	<bf:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2020-12-22T00:00:00</bf:date>
 	<bf:agent>
 	  <bf:Agent>
 	    <bf:code>OHX</bf:code>
@@ -22,7 +22,7 @@
 	    <rdfs:label>changed</rdfs:label>
 	  </bf:Status>
 	</bf:status>
-	<bf:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-05-03T10:49:44</bf:date>
+	<bf:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2025-06-07T06:42:11</bf:date>
 	<bf:descriptionModifier>
 	  <bf:Agent rdf:about="http://id.loc.gov/vocabulary/organizations/dlc">
 	    <bf:code>DLC</bf:code>
@@ -38,13 +38,13 @@
 	  </bf:Status>
 	</bf:status>
 	<bf:agent rdf:resource="http://id.loc.gov/vocabulary/organizations/dlcmrc"/>
-	<bf:generationProcess rdf:resource="https://github.com/lcnetdev/marc2bibframe2/releases/tag/v2.8.0"/>
-	<bf:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-11-20T16:32:55.636892-05:00</bf:date>
+	<bf:generationProcess rdf:resource="https://github.com/lcnetdev/marc2bibframe2/tree/v3.2-dev"/>
+	<bf:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2026-11-16T14:47:34.739897-05:00</bf:date>
       </bf:AdminMetadata>
     </bf:adminMetadata>
     <bf:adminMetadata>
       <bf:AdminMetadata>
-	<bf:descriptionLevel rdf:resource="http://id.loc.gov/ontologies/bibframe-2-4-0/"/>
+	<bf:descriptionLevel rdf:resource="http://id.loc.gov/ontologies/bibframe-3-0-1/"/>
 	<bflc:encodingLevel>
 	  <bflc:EncodingLevel rdf:about="http://id.loc.gov/vocabulary/menclvl/f">
 	    <rdfs:label>full</rdfs:label>
@@ -65,10 +65,6 @@
 	    </bf:assigner>
 	  </bf:Local>
 	</bf:identifiedBy>
-	<lclocal:d906>=906     $a 7 $b cbc $c copycat $d 2 $e ncip $f 20 $g y-genmusic</lclocal:d906>
-	<lclocal:d925>=925  0  $a acquire $b 1 shelf copy $x policy default</lclocal:d925>
-	<lclocal:d955>=955     $a vk39 2022-04-19 z-client $i vk39 2022-04-19 $e vk39 2022-05-03 c.1 to BCCD</lclocal:d955>
-	<lclocal:d955>=955     $b fd11 2020-12-22 to MBAS</lclocal:d955>
 	<bf:descriptionLanguage>
 	  <bf:Language rdf:about="http://id.loc.gov/vocabulary/languages/eng"/>
 	</bf:descriptionLanguage>
@@ -89,7 +85,13 @@
 	  </bf:DescriptionAuthentication>
 	</bf:descriptionAuthentication>
 	<lclocal:batch>BibframePilot2</lclocal:batch>
-	<lclocal:d985>=985     $e BibframePilot2 $d 2022-04-19 $f vk39 2022-04-19</lclocal:d985>
+	<bflc:marcKey>906  $a7$bcbc$ccopycat$d2$encip$f20$gy-genmusic</bflc:marcKey>
+	<bflc:marcKey>9250 $aacquire$b1 shelf copy$xpolicy default</bflc:marcKey>
+	<bflc:marcKey>955  $avk39 2022-04-19 z-client$ivk39 2022-04-19$evk39 2022-05-03 c.1 to BCCD</bflc:marcKey>
+	<bflc:marcKey>955  $bfd11 2020-12-22 to MBAS</bflc:marcKey>
+	<bflc:marcKey>923  $d20201009$n0236649$s93001286</bflc:marcKey>
+	<bflc:marcKey>985  $eBibframePilot2$d2022-04-19$fvk39 2022-04-19</bflc:marcKey>
+	<bflc:marcKey>999ff$id6a26120-effa-5bd1-8dec-3d99188ecd15$s0b43180f-7d97-4369-a4af-fbc064c40339</bflc:marcKey>
       </bf:AdminMetadata>
     </bf:adminMetadata>
     <rdf:type rdf:resource="http://id.loc.gov/ontologies/bibframe/NotatedMusic"/>
@@ -105,11 +107,6 @@
 	<rdfs:label>historical information</rdfs:label>
       </bf:SupplementaryContent>
     </bf:supplementaryContent>
-    <bf:note>
-      <bf:Note>
-	<rdfs:label>Includes translation or is translation</rdfs:label>
-      </bf:Note>
-    </bf:note>
     <bf:language rdf:resource="http://id.loc.gov/vocabulary/languages/ger"/>
     <bf:note>
       <bf:Note>
@@ -171,9 +168,19 @@
       </bf:Contribution>
     </bf:contribution>
     <bf:title>
-      <bf:Title>
-	<bf:mainTitle>Sosarme, re di Media</bf:mainTitle>
-      </bf:Title>
+      <bf:ParallelTitle>
+	<bf:mainTitle>Sosarme, re di Media : opera in tre atti : HWV 30 ; Fernando, re di Castiglia : (fragment)</bf:mainTitle>
+      </bf:ParallelTitle>
+    </bf:title>
+    <bf:title>
+      <bf:ParallelTitle>
+	<bf:mainTitle>Sosarme, re di Media : opera in tre atti : HWV 30 ; Fernando, re di Castiglia : libretto by Giacomo Rossi (?) after Antonio Salvi ; Deutsche Übersetzung von Peter Brenner</bf:mainTitle>
+      </bf:ParallelTitle>
+    </bf:title>
+    <bf:title>
+      <bf:ParallelTitle>
+	<bf:mainTitle>German translation by Peter Brenner</bf:mainTitle>
+      </bf:ParallelTitle>
     </bf:title>
     <bf:content>
       <bf:Content rdf:about="http://id.loc.gov/vocabulary/contentTypes/ntm">
@@ -193,12 +200,100 @@
 	</bf:source>
       </bf:MusicFormat>
     </bf:musicFormat>
-    <bf:musicMedium>
-      <bf:MusicMedium>
-	<bflc:readMarc382>38201$asoprano voice$n1$aalto voice$n4$atenor voice$n1$abass voice$n1$apiano$n1$s8$2lcmpt</bflc:readMarc382>
-      </bf:MusicMedium>
-    </bf:musicMedium>
-    <bf:musicThematicNumber>HWV 30 HWV</bf:musicThematicNumber>
+    <bf:ensemble>
+      <bf:Ensemble>
+	<bf:mediumComponent>
+	  <bf:MediumComponent>
+	    <bf:mediumOfPerformance>
+	      <bf:MediumOfPerformance>
+		<rdfs:label>soprano voice</rdfs:label>
+		<bf:source>
+		  <bf:Source rdf:about="http://id.loc.gov/authorities/performanceMediums">
+		    <bf:code>lcmpt</bf:code>
+		  </bf:Source>
+		</bf:source>
+	      </bf:MediumOfPerformance>
+	    </bf:mediumOfPerformance>
+	    <bf:count>1</bf:count>
+	  </bf:MediumComponent>
+	</bf:mediumComponent>
+	<bf:mediumComponent>
+	  <bf:MediumComponent>
+	    <bf:mediumOfPerformance>
+	      <bf:MediumOfPerformance>
+		<rdfs:label>alto voice</rdfs:label>
+		<bf:source>
+		  <bf:Source rdf:about="http://id.loc.gov/authorities/performanceMediums">
+		    <bf:code>lcmpt</bf:code>
+		  </bf:Source>
+		</bf:source>
+	      </bf:MediumOfPerformance>
+	    </bf:mediumOfPerformance>
+	    <bf:count>4</bf:count>
+	  </bf:MediumComponent>
+	</bf:mediumComponent>
+	<bf:mediumComponent>
+	  <bf:MediumComponent>
+	    <bf:mediumOfPerformance>
+	      <bf:MediumOfPerformance>
+		<rdfs:label>tenor voice</rdfs:label>
+		<bf:source>
+		  <bf:Source rdf:about="http://id.loc.gov/authorities/performanceMediums">
+		    <bf:code>lcmpt</bf:code>
+		  </bf:Source>
+		</bf:source>
+	      </bf:MediumOfPerformance>
+	    </bf:mediumOfPerformance>
+	    <bf:count>1</bf:count>
+	  </bf:MediumComponent>
+	</bf:mediumComponent>
+	<bf:mediumComponent>
+	  <bf:MediumComponent>
+	    <bf:mediumOfPerformance>
+	      <bf:MediumOfPerformance>
+		<rdfs:label>bass voice</rdfs:label>
+		<bf:source>
+		  <bf:Source rdf:about="http://id.loc.gov/authorities/performanceMediums">
+		    <bf:code>lcmpt</bf:code>
+		  </bf:Source>
+		</bf:source>
+	      </bf:MediumOfPerformance>
+	    </bf:mediumOfPerformance>
+	    <bf:count>1</bf:count>
+	  </bf:MediumComponent>
+	</bf:mediumComponent>
+	<bf:mediumComponent>
+	  <bf:MediumComponent>
+	    <bf:mediumOfPerformance>
+	      <bf:MediumOfPerformance>
+		<rdfs:label>piano</rdfs:label>
+		<bf:source>
+		  <bf:Source rdf:about="http://id.loc.gov/authorities/performanceMediums">
+		    <bf:code>lcmpt</bf:code>
+		  </bf:Source>
+		</bf:source>
+	      </bf:MediumOfPerformance>
+	    </bf:mediumOfPerformance>
+	    <bf:count>1</bf:count>
+	  </bf:MediumComponent>
+	</bf:mediumComponent>
+	<bf:ensembleSize>
+	  <bf:EnsembleSize rdf:about="http://id.loc.gov/vocabulary/ensemblesize/octet">
+	    <rdfs:label>octet</rdfs:label>
+	  </bf:EnsembleSize>
+	</bf:ensembleSize>
+      </bf:Ensemble>
+    </bf:ensemble>
+    <bf:identifiedBy>
+      <bf:ThematicCatalogNumber>
+	<rdf:value>HWV 30</rdf:value>
+	<bf:source>
+	  <bf:Source>
+	    <bf:code>HWV</bf:code>
+	  </bf:Source>
+	</bf:source>
+      </bf:ThematicCatalogNumber>
+    </bf:identifiedBy>
     <bf:note>
       <bf:Note>
 	<rdf:type rdf:resource="http://id.loc.gov/vocabulary/mnotetype/lang"/>
@@ -528,7 +623,7 @@
   </bf:Work>
   <bf:Instance rdf:about="http://id.loc.gov/resources/REPLACE/21851594#Instance">
     <bf:issuance rdf:resource="http://id.loc.gov/vocabulary/issuance/mono"/>
-    <bf:provisionActivity xmlns:exsl="http://exslt.org/common">
+    <bf:provisionActivity>
       <bf:ProvisionActivity>
 	<rdf:type rdf:resource="http://id.loc.gov/ontologies/bibframe/Publication"/>
 	<bf:date rdf:datatype="http://id.loc.gov/datatypes/edtf">2020</bf:date>
@@ -538,8 +633,13 @@
 	<bflc:simpleDate>[2020]</bflc:simpleDate>
       </bf:ProvisionActivity>
     </bf:provisionActivity>
-    <bf:publicationStatement xmlns:exsl="http://exslt.org/common">Kassel: Bärenreiter, [2020]</bf:publicationStatement>
+    <bf:publicationStatement>Kassel: Bärenreiter, [2020]</bf:publicationStatement>
     <bf:copyrightDate rdf:datatype="http://id.loc.gov/datatypes/edtf">2020</bf:copyrightDate>
+    <bf:identifiedBy>
+      <bf:Local>
+	<rdf:value>21851594</rdf:value>
+      </bf:Local>
+    </bf:identifiedBy>
     <bf:identifiedBy>
       <bf:Lccn>
 	<rdf:value>  2020431451</rdf:value>
@@ -561,9 +661,9 @@
       <bf:MusicPlate>
 	<rdf:value>BA 10713-90</rdf:value>
 	<bf:assigner>
-	  <bf:Agent>
+	  <bf:Organization>
 	    <rdfs:label>Bärenreiter</rdfs:label>
-	  </bf:Agent>
+	  </bf:Organization>
 	</bf:assigner>
       </bf:MusicPlate>
     </bf:identifiedBy>
@@ -571,16 +671,11 @@
       <bf:MusicPlate>
 	<rdf:value>10713-90</rdf:value>
 	<bf:assigner>
-	  <bf:Agent>
+	  <bf:Organization>
 	    <rdfs:label>Bärenreiter</rdfs:label>
-	  </bf:Agent>
+	  </bf:Organization>
 	</bf:assigner>
       </bf:MusicPlate>
-    </bf:identifiedBy>
-    <bf:identifiedBy>
-      <bf:OclcNumber>
-	<rdf:value>on1197943499</rdf:value>
-      </bf:OclcNumber>
     </bf:identifiedBy>
     <bf:identifiedBy>
       <bf:OclcNumber>

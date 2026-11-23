@@ -1,7 +1,5 @@
 <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:madsrdf="http://www.loc.gov/mads/rdf/v1#" xmlns:lcc="http://id.loc.gov/ontologies/lcc#" xmlns:bf="http://id.loc.gov/ontologies/bibframe/" xmlns:bflc="http://id.loc.gov/ontologies/bflc/" xmlns:ri="http://id.loc.gov/ontologies/RecordInfo#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:pmo="http://performedmusicontology.org/ontology/" xmlns:lclocal="http://id.loc.gov/ontologies/lclocal/">
   <bf:Work rdf:about="http://id.loc.gov/resources/works/21851594">
-    <bflc:aap>Handel, George Frideric, 1685-1759 Sosarme, re di Media</bflc:aap>
-    <bflc:aap-normalized>handelgeorgefrideric16851759sosarmeredimedia</bflc:aap-normalized>
     <rdf:type rdf:resource="http://id.loc.gov/ontologies/bibframe/NotatedMusic"/>
     <rdf:type rdf:resource="http://id.loc.gov/ontologies/bibframe/Monograph"/>
     <bf:language>
@@ -22,11 +20,6 @@
 	<bf:code>historicalinfo</bf:code>
       </bf:SupplementaryContent>
     </bf:supplementaryContent>
-    <bf:note>
-      <bf:Note>
-	<rdfs:label>Includes translation or is translation</rdfs:label>
-      </bf:Note>
-    </bf:note>
     <bf:language>
       <bf:Language rdf:about="http://id.loc.gov/vocabulary/languages/ger">
 	<rdfs:label xml:lang="en">German</rdfs:label>
@@ -97,16 +90,6 @@
 	</bf:status>
       </bf:ClassificationLcc>
     </bf:classification>
-    <bf:subject>
-      <bf:Topic>
-	<bf:code>M</bf:code>
-	<bf:source>
-	  <bf:Source>
-	    <bf:code>lcco</bf:code>
-	  </bf:Source>
-	</bf:source>
-      </bf:Topic>
-    </bf:subject>
     <bf:contribution>
       <bf:Contribution>
 	<rdf:type rdf:resource="http://id.loc.gov/ontologies/bibframe/PrimaryContribution"/>
@@ -126,9 +109,19 @@
       </bf:Contribution>
     </bf:contribution>
     <bf:title>
-      <bf:Title>
-	<bf:mainTitle>Sosarme, re di Media</bf:mainTitle>
-      </bf:Title>
+      <bf:ParallelTitle>
+	<bf:mainTitle>Sosarme, re di Media : opera in tre atti : HWV 30 ; Fernando, re di Castiglia : (fragment)</bf:mainTitle>
+      </bf:ParallelTitle>
+    </bf:title>
+    <bf:title>
+      <bf:ParallelTitle>
+	<bf:mainTitle>Sosarme, re di Media : opera in tre atti : HWV 30 ; Fernando, re di Castiglia : libretto by Giacomo Rossi (?) after Antonio Salvi ; Deutsche Übersetzung von Peter Brenner</bf:mainTitle>
+      </bf:ParallelTitle>
+    </bf:title>
+    <bf:title>
+      <bf:ParallelTitle>
+	<bf:mainTitle>German translation by Peter Brenner</bf:mainTitle>
+      </bf:ParallelTitle>
     </bf:title>
     <bf:content>
       <bf:Content rdf:about="http://id.loc.gov/vocabulary/contentTypes/ntm">
@@ -142,12 +135,106 @@
 	<bf:code>vocalscore</bf:code>
       </bf:MusicFormat>
     </bf:musicFormat>
-    <bf:musicMedium>
-      <bf:MusicMedium>
-	<bflc:readMarc382>38201$asoprano voice$n1$aalto voice$n4$atenor voice$n1$abass voice$n1$apiano$n1$s8$2lcmpt</bflc:readMarc382>
-      </bf:MusicMedium>
-    </bf:musicMedium>
-    <bf:musicThematicNumber>HWV 30 HWV</bf:musicThematicNumber>
+    <bf:ensemble>
+      <bf:Ensemble>
+	<bf:mediumComponent>
+	  <bf:MediumComponent>
+	    <bf:mediumOfPerformance>
+	      <madsrdf:Medium rdf:about="http://id.loc.gov/authorities/performanceMediums/mp2013015666">
+		<rdfs:label xml:lang="en">soprano voice</rdfs:label>
+		<bflc:marcKey>162  $asoprano voice</bflc:marcKey>
+		<bf:source>
+		  <bf:Source rdf:about="http://id.loc.gov/authorities/performanceMediums">
+		    <rdfs:label>LC Performance Mediums</rdfs:label>
+		  </bf:Source>
+		</bf:source>
+	      </madsrdf:Medium>
+	    </bf:mediumOfPerformance>
+	    <bf:count>1</bf:count>
+	  </bf:MediumComponent>
+	</bf:mediumComponent>
+	<bf:mediumComponent>
+	  <bf:MediumComponent>
+	    <bf:mediumOfPerformance>
+	      <madsrdf:Medium rdf:about="http://id.loc.gov/authorities/performanceMediums/mp2013015017">
+		<rdfs:label xml:lang="en">alto voice</rdfs:label>
+		<bflc:marcKey>162  $aalto voice</bflc:marcKey>
+		<bf:source>
+		  <bf:Source rdf:about="http://id.loc.gov/authorities/performanceMediums">
+		    <rdfs:label>LC Performance Mediums</rdfs:label>
+		  </bf:Source>
+		</bf:source>
+	      </madsrdf:Medium>
+	    </bf:mediumOfPerformance>
+	    <bf:count>4</bf:count>
+	  </bf:MediumComponent>
+	</bf:mediumComponent>
+	<bf:mediumComponent>
+	  <bf:MediumComponent>
+	    <bf:mediumOfPerformance>
+	      <madsrdf:Medium rdf:about="http://id.loc.gov/authorities/performanceMediums/mp2013015725">
+		<rdfs:label xml:lang="en">tenor voice</rdfs:label>
+		<bflc:marcKey>162  $atenor voice</bflc:marcKey>
+		<bf:source>
+		  <bf:Source rdf:about="http://id.loc.gov/authorities/performanceMediums">
+		    <rdfs:label>LC Performance Mediums</rdfs:label>
+		  </bf:Source>
+		</bf:source>
+	      </madsrdf:Medium>
+	    </bf:mediumOfPerformance>
+	    <bf:count>1</bf:count>
+	  </bf:MediumComponent>
+	</bf:mediumComponent>
+	<bf:mediumComponent>
+	  <bf:MediumComponent>
+	    <bf:mediumOfPerformance>
+	      <madsrdf:Medium rdf:about="http://id.loc.gov/authorities/performanceMediums/mp2013015071">
+		<rdfs:label xml:lang="en">bass voice</rdfs:label>
+		<bflc:marcKey>162  $abass voice</bflc:marcKey>
+		<bf:source>
+		  <bf:Source rdf:about="http://id.loc.gov/authorities/performanceMediums">
+		    <rdfs:label>LC Performance Mediums</rdfs:label>
+		  </bf:Source>
+		</bf:source>
+	      </madsrdf:Medium>
+	    </bf:mediumOfPerformance>
+	    <bf:count>1</bf:count>
+	  </bf:MediumComponent>
+	</bf:mediumComponent>
+	<bf:mediumComponent>
+	  <bf:MediumComponent>
+	    <bf:mediumOfPerformance>
+	      <madsrdf:Medium rdf:about="http://id.loc.gov/authorities/performanceMediums/mp2013015550">
+		<rdfs:label xml:lang="en">piano</rdfs:label>
+		<bflc:marcKey>162  $apiano</bflc:marcKey>
+		<bf:source>
+		  <bf:Source rdf:about="http://id.loc.gov/authorities/performanceMediums">
+		    <rdfs:label>LC Performance Mediums</rdfs:label>
+		  </bf:Source>
+		</bf:source>
+	      </madsrdf:Medium>
+	    </bf:mediumOfPerformance>
+	    <bf:count>1</bf:count>
+	  </bf:MediumComponent>
+	</bf:mediumComponent>
+	<bf:ensembleSize>
+	  <bf:EnsembleSize rdf:about="http://id.loc.gov/vocabulary/ensemblesize/octet">
+	    <rdfs:label>octet</rdfs:label>
+	    <bf:code>octet</bf:code>
+	  </bf:EnsembleSize>
+	</bf:ensembleSize>
+      </bf:Ensemble>
+    </bf:ensemble>
+    <bf:identifiedBy>
+      <bf:ThematicCatalogNumber>
+	<rdf:value>HWV 30</rdf:value>
+	<bf:source>
+	  <bf:Source>
+	    <bf:code>HWV</bf:code>
+	  </bf:Source>
+	</bf:source>
+      </bf:ThematicCatalogNumber>
+    </bf:identifiedBy>
     <bf:note>
       <bf:Note>
 	<rdf:type rdf:resource="http://id.loc.gov/vocabulary/mnotetype/lang"/>
@@ -155,126 +242,11 @@
       </bf:Note>
     </bf:note>
     <bf:notation>
-      <bf:Notation>
-	<rdfs:label>Staff notation</rdfs:label>
-      </bf:Notation>
+      <bf:MusicNotation rdf:about="http://id.loc.gov/vocabulary/mmusnotation/staff">
+	<rdfs:label>staff notation</rdfs:label>
+	<bf:code>staff</bf:code>
+      </bf:MusicNotation>
     </bf:notation>
-    <bf:subject>
-      <bf:Topic rdf:about="http://id.loc.gov/authorities/subjects/sh85094962">
-	<rdfs:label xml:lang="en">Operas--Vocal scores with piano</rdfs:label>
-	<bflc:marcKey>150 0$aOperas$vVocal scores with piano</bflc:marcKey>
-	<madsrdf:componentList rdf:parseType="Collection">
-	  <madsrdf:Topic>
-	    <rdf:type rdf:resource="http://www.loc.gov/mads/rdf/v1#Authority"/>
-	    <madsrdf:authoritativeLabel xml:lang="en">Operas</madsrdf:authoritativeLabel>
-	    <madsrdf:elementList rdf:parseType="Collection">
-	      <madsrdf:TopicElement>
-		<madsrdf:elementValue xml:lang="en">Operas</madsrdf:elementValue>
-	      </madsrdf:TopicElement>
-	    </madsrdf:elementList>
-	  </madsrdf:Topic>
-	  <madsrdf:GenreForm>
-	    <rdf:type rdf:resource="http://www.loc.gov/mads/rdf/v1#Authority"/>
-	    <madsrdf:authoritativeLabel xml:lang="en">Vocal scores with piano</madsrdf:authoritativeLabel>
-	    <madsrdf:elementList rdf:parseType="Collection">
-	      <madsrdf:GenreFormElement>
-		<madsrdf:elementValue xml:lang="en">Vocal scores with piano</madsrdf:elementValue>
-	      </madsrdf:GenreFormElement>
-	    </madsrdf:elementList>
-	  </madsrdf:GenreForm>
-	</madsrdf:componentList>
-      </bf:Topic>
-    </bf:subject>
-    <bf:subject>
-      <bf:Topic>
-	<rdf:type rdf:resource="http://www.loc.gov/mads/rdf/v1#ComplexSubject"/>
-	<rdfs:label>Opéras--Partitions chant et piano</rdfs:label>
-	<madsrdf:authoritativeLabel>Opéras--Partitions chant et piano</madsrdf:authoritativeLabel>
-	<madsrdf:componentList rdf:parseType="Collection">
-	  <madsrdf:Topic>
-	    <madsrdf:authoritativeLabel>Opéras</madsrdf:authoritativeLabel>
-	  </madsrdf:Topic>
-	  <madsrdf:GenreForm>
-	    <madsrdf:authoritativeLabel>Partitions chant et piano</madsrdf:authoritativeLabel>
-	  </madsrdf:GenreForm>
-	</madsrdf:componentList>
-	<bflc:aap-normalized>opéraspartitionschantetpiano</bflc:aap-normalized>
-	<bf:source>
-	  <bf:Source rdf:about="http://id.loc.gov/vocabulary/subjectSchemes/rvm">
-	    <rdfs:label>Répertoire de vedettes-matière</rdfs:label>
-	    <bf:code>rvm</bf:code>
-	  </bf:Source>
-	</bf:source>
-      </bf:Topic>
-    </bf:subject>
-    <bf:subject>
-      <bf:Topic rdf:about="http://id.worldcat.org/fast/1046236">
-	<bflc:marcKey>150  $aOperas$xVocal scores with piano</bflc:marcKey>
-	<madsrdf:authoritativeLabel>Operas--Vocal scores with piano</madsrdf:authoritativeLabel>
-      </bf:Topic>
-    </bf:subject>
-    <bf:genreForm>
-      <bf:Topic rdf:about="http://id.worldcat.org/fast/1920007">
-	<bflc:marcKey>155  $aArt music</bflc:marcKey>
-	<madsrdf:authoritativeLabel>Art music</madsrdf:authoritativeLabel>
-      </bf:Topic>
-    </bf:genreForm>
-    <bf:genreForm>
-      <bf:Topic rdf:about="http://id.worldcat.org/fast/1726688">
-	<bflc:marcKey>155  $aOperas</bflc:marcKey>
-	<madsrdf:authoritativeLabel>Operas</madsrdf:authoritativeLabel>
-      </bf:Topic>
-    </bf:genreForm>
-    <bf:genreForm>
-      <bf:Topic rdf:about="http://id.worldcat.org/fast/1692914">
-	<bflc:marcKey>155  $aVocal scores</bflc:marcKey>
-	<madsrdf:authoritativeLabel>Vocal scores</madsrdf:authoritativeLabel>
-      </bf:Topic>
-    </bf:genreForm>
-    <bf:genreForm>
-      <bf:GenreForm rdf:about="http://id.loc.gov/authorities/genreForms/gf2014026639">
-	<rdfs:label xml:lang="en">Art music</rdfs:label>
-	<bflc:marcKey>155  $aArt music</bflc:marcKey>
-      </bf:GenreForm>
-    </bf:genreForm>
-    <bf:genreForm>
-      <bf:GenreForm rdf:about="http://id.loc.gov/authorities/genreForms/gf2014026976">
-	<rdfs:label xml:lang="en">Operas</rdfs:label>
-	<bflc:marcKey>155  $aOperas</bflc:marcKey>
-      </bf:GenreForm>
-    </bf:genreForm>
-    <bf:genreForm>
-      <bf:GenreForm rdf:about="http://id.loc.gov/authorities/genreForms/gf2014027206">
-	<rdfs:label xml:lang="en">Vocal scores</rdfs:label>
-	<bflc:marcKey>155  $aVocal scores</bflc:marcKey>
-      </bf:GenreForm>
-    </bf:genreForm>
-    <bf:genreForm>
-      <bf:GenreForm>
-	<rdf:type rdf:resource="http://www.loc.gov/mads/rdf/v1#GenreForm"/>
-	<madsrdf:authoritativeLabel>Musique savante</madsrdf:authoritativeLabel>
-	<bf:source>
-	  <madsrdf:Authority rdf:about="http://id.loc.gov/vocabulary/genreFormSchemes/rvmgf">
-	    <rdfs:label>Thésaurus des descripteurs de genre/forme de l'Université Laval</rdfs:label>
-	    <bf:code>rvmgf</bf:code>
-	  </madsrdf:Authority>
-	</bf:source>
-	<rdfs:label>Musique savante</rdfs:label>
-      </bf:GenreForm>
-    </bf:genreForm>
-    <bf:genreForm>
-      <bf:GenreForm>
-	<rdf:type rdf:resource="http://www.loc.gov/mads/rdf/v1#GenreForm"/>
-	<madsrdf:authoritativeLabel>Partitions de chant</madsrdf:authoritativeLabel>
-	<bf:source>
-	  <madsrdf:Authority rdf:about="http://id.loc.gov/vocabulary/genreFormSchemes/rvmgf">
-	    <rdfs:label>Thésaurus des descripteurs de genre/forme de l'Université Laval</rdfs:label>
-	    <bf:code>rvmgf</bf:code>
-	  </madsrdf:Authority>
-	</bf:source>
-	<rdfs:label>Partitions de chant</rdfs:label>
-      </bf:GenreForm>
-    </bf:genreForm>
     <bf:contribution>
       <bf:Contribution>
 	<bf:agent>
@@ -309,7 +281,6 @@
 	</bf:role>
       </bf:Contribution>
     </bf:contribution>
-    <dcterms:isPartOf rdf:resource="http://id.loc.gov/resources/works"/>
     <bf:relation>
       <bf:Relation>
 	<bf:relationship>
@@ -319,13 +290,15 @@
 	  </bf:Relationship>
 	</bf:relationship>
 	<bf:relationship>
-	  <bf:Relationship rdf:about="http://id.loc.gov/entities/relationships/libretto">
-	    <rdfs:label>Libretto</rdfs:label>
+	  <bf:Relationship rdf:about="http://id.loc.gov/vocabulary/relationship/libretto">
+	    <rdfs:label>libretto</rdfs:label>
+	    <bf:code>libretto</bf:code>
 	  </bf:Relationship>
 	</bf:relationship>
 	<bf:associatedResource>
 	  <bf:Hub rdf:about="http://id.loc.gov/resources/hubs/60631470-9e0f-51ad-b1e0-addc31e82b3b">
-	    <rdfs:label>Rossi, Giacomo, active 1710-1731 Sosarme, re di Media</rdfs:label>
+	    <rdfs:label>Rossi, Giacomo, active 1710-1731. Sosarme, re di Media</rdfs:label>
+	    <bflc:marcKey>1001 $aRossi, Giacomo,$dactive 1710-1731.$tSosarme, re di Media</bflc:marcKey>
 	    <bf:contribution>
 	      <bf:Contribution>
 		<rdf:type rdf:resource="http://id.loc.gov/ontologies/bibframe/PrimaryContribution"/>
@@ -362,13 +335,15 @@
 	  </bf:Relationship>
 	</bf:relationship>
 	<bf:relationship>
-	  <bf:Relationship rdf:about="http://id.loc.gov/entities/relationships/operaadaptationof">
-	    <rdfs:label>Opera adaptation of</rdfs:label>
+	  <bf:Relationship rdf:about="http://id.loc.gov/vocabulary/relationship/adaptationof">
+	    <rdfs:label>adaptation of</rdfs:label>
+	    <bf:code>adaptationof</bf:code>
 	  </bf:Relationship>
 	</bf:relationship>
 	<bf:associatedResource>
 	  <bf:Hub rdf:about="http://id.loc.gov/resources/hubs/afda6b32-851b-2ffb-3d53-a91df0362531">
-	    <rdfs:label>Salvi, Antonio, 1664-1724 Dionisio, rè di Portogallo</rdfs:label>
+	    <rdfs:label>Salvi, Antonio, 1664-1724. Dionisio, rè di Portogallo</rdfs:label>
+	    <bflc:marcKey>1001 $aSalvi, Antonio,$d1664-1724.$tDionisio, rè di Portogallo</bflc:marcKey>
 	    <bf:contribution>
 	      <bf:Contribution>
 		<rdf:type rdf:resource="http://id.loc.gov/ontologies/bibframe/PrimaryContribution"/>
@@ -400,14 +375,14 @@
       <bf:Relation>
 	<bf:relationship>
 	  <bf:Relationship rdf:about="http://id.loc.gov/vocabulary/relationship/part">
-	    <rdfs:label>part</rdfs:label>
+	    <rdfs:label>contains</rdfs:label>
 	    <bf:code>part</bf:code>
 	  </bf:Relationship>
 	</bf:relationship>
 	<bf:associatedResource>
-	  <bf:Hub rdf:about="http://id.loc.gov/resources/hubs/e3191810-ffa2-1037-1e92-cdc4eecef223">
-	    <rdf:type rdf:resource="http://id.loc.gov/ontologies/bibframe/NotatedMusic"/>
-	    <rdfs:label>Handel, George Frideric, 1685-1759 Sosarme. Vocal score</rdfs:label>
+	  <bf:Hub rdf:about="http://id.loc.gov/resources/hubs/084bf4f7-f57f-29c3-f17b-4f1e8a2e87dd">
+	    <rdfs:label>Handel, George Frideric, 1685-1759. Sosarme</rdfs:label>
+	    <bflc:marcKey>1001 $aHandel, George Frideric,$d1685-1759.$tSosarme</bflc:marcKey>
 	    <bf:contribution>
 	      <bf:Contribution>
 		<rdf:type rdf:resource="http://id.loc.gov/ontologies/bibframe/PrimaryContribution"/>
@@ -428,8 +403,28 @@
 	    </bf:contribution>
 	    <bf:title>
 	      <bf:Title>
-		<bf:mainTitle>Sosarme. Vocal score.</bf:mainTitle>
+		<bf:mainTitle>Sosarme</bf:mainTitle>
 	      </bf:Title>
+	    </bf:title>
+	    <bf:title>
+	      <bf:VariantTitle>
+		<bf:mainTitle xml:lang="zxx-latn">Sosarme, re di Media</bf:mainTitle>
+	      </bf:VariantTitle>
+	    </bf:title>
+	    <bf:title>
+	      <bf:VariantTitle>
+		<bf:mainTitle xml:lang="zxx-latn">Sosarmes, King of Media</bf:mainTitle>
+	      </bf:VariantTitle>
+	    </bf:title>
+	    <bf:title>
+	      <bf:VariantTitle>
+		<bf:mainTitle xml:lang="zxx-latn">Fernando</bf:mainTitle>
+	      </bf:VariantTitle>
+	    </bf:title>
+	    <bf:title>
+	      <bf:VariantTitle>
+		<bf:mainTitle xml:lang="zxx-latn">Fernando, re di Castiglia</bf:mainTitle>
+	      </bf:VariantTitle>
 	    </bf:title>
 	  </bf:Hub>
 	</bf:associatedResource>
@@ -439,14 +434,14 @@
       <bf:Relation>
 	<bf:relationship>
 	  <bf:Relationship rdf:about="http://id.loc.gov/vocabulary/relationship/part">
-	    <rdfs:label>part</rdfs:label>
+	    <rdfs:label>contains</rdfs:label>
 	    <bf:code>part</bf:code>
 	  </bf:Relationship>
 	</bf:relationship>
 	<bf:associatedResource>
-	  <bf:Hub rdf:about="http://id.loc.gov/resources/hubs/a24ddc26-7010-1626-32f2-42c300a8015c">
-	    <rdf:type rdf:resource="http://id.loc.gov/ontologies/bibframe/NotatedMusic"/>
-	    <rdfs:label>Handel, George Frideric, 1685-1759 Sosarme. Vocal score. German</rdfs:label>
+	  <bf:Hub rdf:about="http://id.loc.gov/resources/hubs/3f49236e-4cc8-1c53-9c61-03654d9d830c">
+	    <rdfs:label>Handel, George Frideric, 1685-1759. Sosarme. German</rdfs:label>
+	    <bflc:marcKey>1001 $aHandel, George Frideric,$d1685-1759.$tSosarme.$lGerman.</bflc:marcKey>
 	    <bf:contribution>
 	      <bf:Contribution>
 		<rdf:type rdf:resource="http://id.loc.gov/ontologies/bibframe/PrimaryContribution"/>
@@ -467,9 +462,10 @@
 	    </bf:contribution>
 	    <bf:title>
 	      <bf:Title>
-		<bf:mainTitle>Sosarme. Vocal score. German.</bf:mainTitle>
+		<bf:mainTitle>Sosarme. German.</bf:mainTitle>
 	      </bf:Title>
 	    </bf:title>
+	    <bf:language rdf:resource="http://id.loc.gov/vocabulary/languages/ger"/>
 	  </bf:Hub>
 	</bf:associatedResource>
       </bf:Relation>
@@ -478,7 +474,7 @@
       <bf:Relation>
 	<bf:relationship>
 	  <bf:Relationship rdf:about="http://id.loc.gov/vocabulary/relationship/part">
-	    <rdfs:label>part</rdfs:label>
+	    <rdfs:label>contains</rdfs:label>
 	    <bf:code>part</bf:code>
 	  </bf:Relationship>
 	</bf:relationship>
@@ -497,6 +493,8 @@
 	</bf:associatedResource>
       </bf:Relation>
     </bf:relation>
+    <dcterms:isPartOf rdf:resource="http://id.loc.gov/resources/works"/>
+    <dcterms:isPartOf rdf:resource="http://id.loc.gov/resources/works/collection_music"/>
     <bf:hasInstance>
       <bf:Instance rdf:about="http://id.loc.gov/resources/instances/21851594">
 	<bf:title>
@@ -505,8 +503,164 @@
 	    <bf:subtitle>opera in tre atti : HWV 30 ; Fernando, re di Castiglia : (fragment)</bf:subtitle>
 	  </bf:Title>
 	</bf:title>
+	<bf:publicationStatement>Kassel: Bärenreiter, [2020]</bf:publicationStatement>
       </bf:Instance>
     </bf:hasInstance>
+    <bf:genreForm>
+      <bf:GenreForm rdf:about="http://id.worldcat.org/fast/1920007">
+	<bflc:marcKey>155  $aArt music</bflc:marcKey>
+	<madsrdf:authoritativeLabel>Art music</madsrdf:authoritativeLabel>
+	<bf:source>
+	  <bf:Source rdf:about="http://id.loc.gov/vocabulary/subjectSchemes/fast">
+	    <rdfs:label>Faceted application of subject terminology</rdfs:label>
+	    <bf:code>fast</bf:code>
+	  </bf:Source>
+	</bf:source>
+      </bf:GenreForm>
+    </bf:genreForm>
+    <bf:genreForm>
+      <bf:GenreForm rdf:about="http://id.worldcat.org/fast/1726688">
+	<bflc:marcKey>155  $aOperas</bflc:marcKey>
+	<madsrdf:authoritativeLabel>Operas</madsrdf:authoritativeLabel>
+	<bf:source>
+	  <bf:Source rdf:about="http://id.loc.gov/vocabulary/subjectSchemes/fast">
+	    <rdfs:label>Faceted application of subject terminology</rdfs:label>
+	    <bf:code>fast</bf:code>
+	  </bf:Source>
+	</bf:source>
+      </bf:GenreForm>
+    </bf:genreForm>
+    <bf:genreForm>
+      <bf:GenreForm rdf:about="http://id.worldcat.org/fast/1692914">
+	<bflc:marcKey>155  $aVocal scores</bflc:marcKey>
+	<madsrdf:authoritativeLabel>Vocal scores</madsrdf:authoritativeLabel>
+	<bf:source>
+	  <bf:Source rdf:about="http://id.loc.gov/vocabulary/subjectSchemes/fast">
+	    <rdfs:label>Faceted application of subject terminology</rdfs:label>
+	    <bf:code>fast</bf:code>
+	  </bf:Source>
+	</bf:source>
+      </bf:GenreForm>
+    </bf:genreForm>
+    <bf:genreForm>
+      <bf:GenreForm rdf:about="http://id.loc.gov/authorities/genreForms/gf2014026639">
+	<rdfs:label xml:lang="en">Art music</rdfs:label>
+	<bflc:marcKey>155  $aArt music</bflc:marcKey>
+	<bf:source>
+	  <bf:Source rdf:about="http://id.loc.gov/authorities/genreForms">
+	    <rdfs:label>LC Genre/Forms</rdfs:label>
+	  </bf:Source>
+	</bf:source>
+      </bf:GenreForm>
+    </bf:genreForm>
+    <bf:genreForm>
+      <bf:GenreForm rdf:about="http://id.loc.gov/authorities/genreForms/gf2014026976">
+	<rdfs:label xml:lang="en">Operas</rdfs:label>
+	<bflc:marcKey>155  $aOperas</bflc:marcKey>
+	<bf:source>
+	  <bf:Source rdf:about="http://id.loc.gov/authorities/genreForms">
+	    <rdfs:label>LC Genre/Forms</rdfs:label>
+	  </bf:Source>
+	</bf:source>
+      </bf:GenreForm>
+    </bf:genreForm>
+    <bf:genreForm>
+      <bf:GenreForm rdf:about="http://id.loc.gov/authorities/genreForms/gf2014027206">
+	<rdfs:label xml:lang="en">Vocal scores</rdfs:label>
+	<bflc:marcKey>155  $aVocal scores</bflc:marcKey>
+	<bf:source>
+	  <bf:Source rdf:about="http://id.loc.gov/authorities/genreForms">
+	    <rdfs:label>LC Genre/Forms</rdfs:label>
+	  </bf:Source>
+	</bf:source>
+      </bf:GenreForm>
+    </bf:genreForm>
+    <bf:genreForm>
+      <bf:GenreForm>
+	<rdf:type rdf:resource="http://www.loc.gov/mads/rdf/v1#GenreForm"/>
+	<madsrdf:authoritativeLabel>Musique savante</madsrdf:authoritativeLabel>
+	<bf:source>
+	  <madsrdf:Authority rdf:about="http://id.loc.gov/vocabulary/genreFormSchemes/rvmgf">
+	    <rdfs:label>Thésaurus des descripteurs de genre/forme de l'Université Laval</rdfs:label>
+	    <bf:code>rvmgf</bf:code>
+	  </madsrdf:Authority>
+	</bf:source>
+	<rdfs:label>Musique savante</rdfs:label>
+      </bf:GenreForm>
+    </bf:genreForm>
+    <bf:genreForm>
+      <bf:GenreForm>
+	<rdf:type rdf:resource="http://www.loc.gov/mads/rdf/v1#GenreForm"/>
+	<madsrdf:authoritativeLabel>Partitions de chant</madsrdf:authoritativeLabel>
+	<bf:source>
+	  <madsrdf:Authority rdf:about="http://id.loc.gov/vocabulary/genreFormSchemes/rvmgf">
+	    <rdfs:label>Thésaurus des descripteurs de genre/forme de l'Université Laval</rdfs:label>
+	    <bf:code>rvmgf</bf:code>
+	  </madsrdf:Authority>
+	</bf:source>
+	<rdfs:label>Partitions de chant</rdfs:label>
+      </bf:GenreForm>
+    </bf:genreForm>
+    <bf:genreForm>
+      <bf:GenreForm>
+	<rdfs:label>Vocal scores with piano</rdfs:label>
+      </bf:GenreForm>
+    </bf:genreForm>
+    <bf:subject>
+      <bf:Topic>
+	<bf:code>M</bf:code>
+	<bf:source>
+	  <bf:Source>
+	    <bf:code>lcco</bf:code>
+	  </bf:Source>
+	</bf:source>
+      </bf:Topic>
+    </bf:subject>
+    <bf:subject>
+      <bf:Topic rdf:about="http://id.loc.gov/authorities/subjects/sh85094914">
+	<rdfs:label xml:lang="en">Operas</rdfs:label>
+	<bflc:marcKey>150  $aOperas</bflc:marcKey>
+	<bf:source>
+	  <bf:Source rdf:about="http://id.loc.gov/authorities/subjects">
+	    <rdfs:label>LC Subject Headings</rdfs:label>
+	  </bf:Source>
+	</bf:source>
+      </bf:Topic>
+    </bf:subject>
+    <bf:subject>
+      <bf:Topic>
+	<rdf:type rdf:resource="http://www.loc.gov/mads/rdf/v1#ComplexSubject"/>
+	<rdfs:label>Opéras--Partitions chant et piano</rdfs:label>
+	<madsrdf:authoritativeLabel>Opéras--Partitions chant et piano</madsrdf:authoritativeLabel>
+	<madsrdf:componentList rdf:parseType="Collection">
+	  <madsrdf:Topic>
+	    <madsrdf:authoritativeLabel>Opéras</madsrdf:authoritativeLabel>
+	  </madsrdf:Topic>
+	  <madsrdf:GenreForm>
+	    <madsrdf:authoritativeLabel>Partitions chant et piano</madsrdf:authoritativeLabel>
+	  </madsrdf:GenreForm>
+	</madsrdf:componentList>
+	<bflc:aap-normalized>opéraspartitionschantetpiano</bflc:aap-normalized>
+	<bf:source>
+	  <bf:Source rdf:about="http://id.loc.gov/vocabulary/subjectSchemes/rvm">
+	    <rdfs:label>Répertoire de vedettes-matière</rdfs:label>
+	    <bf:code>rvm</bf:code>
+	  </bf:Source>
+	</bf:source>
+      </bf:Topic>
+    </bf:subject>
+    <bf:subject>
+      <bf:Topic rdf:about="http://id.worldcat.org/fast/1046236">
+	<bflc:marcKey>150  $aOperas$xVocal scores with piano</bflc:marcKey>
+	<madsrdf:authoritativeLabel>Operas--Vocal scores with piano</madsrdf:authoritativeLabel>
+	<bf:source>
+	  <bf:Source rdf:about="http://id.loc.gov/vocabulary/subjectSchemes/fast">
+	    <rdfs:label>Faceted application of subject terminology</rdfs:label>
+	    <bf:code>fast</bf:code>
+	  </bf:Source>
+	</bf:source>
+      </bf:Topic>
+    </bf:subject>
     <bf:adminMetadata>
       <bf:AdminMetadata>
 	<bf:status>
@@ -515,7 +669,7 @@
 	    <bf:code>n</bf:code>
 	  </bf:Status>
 	</bf:status>
-	<bf:date rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2020-12-22</bf:date>
+	<bf:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2020-12-22T00:00:00</bf:date>
 	<bf:agent>
 	  <bf:Agent>
 	    <bf:code>OHX</bf:code>
@@ -531,7 +685,7 @@
 	    <bf:code>c</bf:code>
 	  </bf:Status>
 	</bf:status>
-	<bf:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-05-03T10:49:44</bf:date>
+	<bf:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2025-06-07T06:42:11</bf:date>
 	<bf:descriptionModifier>
 	  <bf:Organization rdf:about="http://id.loc.gov/vocabulary/organizations/dlc">
 	    <rdfs:label>United States, Library of Congress</rdfs:label>
@@ -559,13 +713,13 @@
 	    <bf:code rdf:datatype="http://id.loc.gov/datatypes/orgs/iso15511">US-dlcmrc</bf:code>
 	  </bf:Agent>
 	</bf:agent>
-	<bf:generationProcess rdf:resource="https://github.com/lcnetdev/marc2bibframe2/releases/tag/v2.8.0"/>
-	<bf:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-11-20T16:32:56.02101-05:00</bf:date>
+	<bf:generationProcess rdf:resource="https://github.com/lcnetdev/marc2bibframe2/tree/v3.2-dev"/>
+	<bf:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2026-11-16T14:47:39.592427-05:00</bf:date>
       </bf:AdminMetadata>
     </bf:adminMetadata>
     <bf:adminMetadata>
       <bf:AdminMetadata>
-	<bf:descriptionLevel rdf:resource="http://id.loc.gov/ontologies/bibframe-2-4-0/"/>
+	<bf:descriptionLevel rdf:resource="http://id.loc.gov/ontologies/bibframe-3-0-1/"/>
 	<bflc:encodingLevel>
 	  <bflc:EncodingLevel rdf:about="http://id.loc.gov/vocabulary/menclvl/f">
 	    <rdfs:label>full</rdfs:label>
@@ -591,10 +745,6 @@
 	    </bf:assigner>
 	  </bf:Local>
 	</bf:identifiedBy>
-	<lclocal:d906>=906     $a 7 $b cbc $c copycat $d 2 $e ncip $f 20 $g y-genmusic</lclocal:d906>
-	<lclocal:d925>=925  0  $a acquire $b 1 shelf copy $x policy default</lclocal:d925>
-	<lclocal:d955>=955     $a vk39 2022-04-19 z-client $i vk39 2022-04-19 $e vk39 2022-05-03 c.1 to BCCD</lclocal:d955>
-	<lclocal:d955>=955     $b fd11 2020-12-22 to MBAS</lclocal:d955>
 	<bf:descriptionLanguage>
 	  <bf:Language rdf:about="http://id.loc.gov/vocabulary/languages/eng">
 	    <rdfs:label xml:lang="en">English</rdfs:label>
@@ -620,7 +770,13 @@
 	  </bf:DescriptionAuthentication>
 	</bf:descriptionAuthentication>
 	<lclocal:batch>BibframePilot2</lclocal:batch>
-	<lclocal:d985>=985     $e BibframePilot2 $d 2022-04-19 $f vk39 2022-04-19</lclocal:d985>
+	<bflc:marcKey>906  $a7$bcbc$ccopycat$d2$encip$f20$gy-genmusic</bflc:marcKey>
+	<bflc:marcKey>9250 $aacquire$b1 shelf copy$xpolicy default</bflc:marcKey>
+	<bflc:marcKey>955  $avk39 2022-04-19 z-client$ivk39 2022-04-19$evk39 2022-05-03 c.1 to BCCD</bflc:marcKey>
+	<bflc:marcKey>955  $bfd11 2020-12-22 to MBAS</bflc:marcKey>
+	<bflc:marcKey>923  $d20201009$n0236649$s93001286</bflc:marcKey>
+	<bflc:marcKey>985  $eBibframePilot2$d2022-04-19$fvk39 2022-04-19</bflc:marcKey>
+	<bflc:marcKey>999ff$id6a26120-effa-5bd1-8dec-3d99188ecd15$s0b43180f-7d97-4369-a4af-fbc064c40339</bflc:marcKey>
       </bf:AdminMetadata>
     </bf:adminMetadata>
   </bf:Work>
@@ -649,6 +805,11 @@
     <bf:publicationStatement>Kassel: Bärenreiter, [2020]</bf:publicationStatement>
     <bf:copyrightDate rdf:datatype="http://id.loc.gov/datatypes/edtf">2020</bf:copyrightDate>
     <bf:identifiedBy>
+      <bf:Local>
+	<rdf:value>21851594</rdf:value>
+      </bf:Local>
+    </bf:identifiedBy>
+    <bf:identifiedBy>
       <bf:Lccn>
 	<rdf:value>  2020431451</rdf:value>
       </bf:Lccn>
@@ -669,9 +830,9 @@
       <bf:MusicPlate>
 	<rdf:value>BA 10713-90</rdf:value>
 	<bf:assigner>
-	  <bf:Agent>
+	  <bf:Organization>
 	    <rdfs:label>Bärenreiter</rdfs:label>
-	  </bf:Agent>
+	  </bf:Organization>
 	</bf:assigner>
       </bf:MusicPlate>
     </bf:identifiedBy>
@@ -679,16 +840,11 @@
       <bf:MusicPlate>
 	<rdf:value>10713-90</rdf:value>
 	<bf:assigner>
-	  <bf:Agent>
+	  <bf:Organization>
 	    <rdfs:label>Bärenreiter</rdfs:label>
-	  </bf:Agent>
+	  </bf:Organization>
 	</bf:assigner>
       </bf:MusicPlate>
-    </bf:identifiedBy>
-    <bf:identifiedBy>
-      <bf:OclcNumber>
-	<rdf:value>on1197943499</rdf:value>
-      </bf:OclcNumber>
     </bf:identifiedBy>
     <bf:identifiedBy>
       <bf:OclcNumber>
@@ -766,60 +922,146 @@
     <dcterms:isPartOf rdf:resource="http://id.loc.gov/resources/instances"/>
     <bf:instanceOf>
       <bf:Work rdf:about="http://id.loc.gov/resources/works/21851594">
-	<rdfs:label>Handel, George Frideric, 1685-1759 Sosarme, re di Media</rdfs:label>
+	<rdfs:label>Handel, George Frideric, 1685-1759. Sosarme, re di Media : opera in tre atti : HWV 30 ; Fernando, re di Castiglia : (fragment)</rdfs:label>
 	<bf:contribution>
-	  <bflc:PrimaryContribution>
+	  <bf:Contribution>
+	    <rdf:type rdf:resource="http://id.loc.gov/ontologies/bibframe/PrimaryContribution"/>
 	    <bf:agent>
-	      <bf:Agent>
+	      <bf:Agent rdf:about="http://id.loc.gov/rwo/agents/n79129204">
 		<rdf:type rdf:resource="http://id.loc.gov/ontologies/bibframe/Person"/>
 		<rdfs:label>Handel, George Frideric, 1685-1759</rdfs:label>
+		<bflc:marcKey>1001 $aHandel, George Frideric,$d1685-1759</bflc:marcKey>
 	      </bf:Agent>
 	    </bf:agent>
 	    <bf:role>
-	      <madsrdf:Authority rdf:about="http://id.loc.gov/vocabulary/relators/cmp">
+	      <bf:Role rdf:about="http://id.loc.gov/vocabulary/relators/cmp">
 		<rdfs:label>composer</rdfs:label>
 		<bf:code>cmp</bf:code>
-	      </madsrdf:Authority>
+	      </bf:Role>
 	    </bf:role>
-	  </bflc:PrimaryContribution>
+	  </bf:Contribution>
 	</bf:contribution>
 	<bf:contribution>
 	  <bf:Contribution>
 	    <bf:agent>
-	      <bf:Agent>
+	      <bf:Agent rdf:about="http://id.loc.gov/rwo/agents/no2014045942">
 		<rdf:type rdf:resource="http://id.loc.gov/ontologies/bibframe/Person"/>
 		<rdfs:label>Brenner, Peter, 1930-</rdfs:label>
+		<bflc:marcKey>1001 $aBrenner, Peter,$d1930-</bflc:marcKey>
 	      </bf:Agent>
 	    </bf:agent>
 	    <bf:role>
-	      <madsrdf:Authority rdf:about="http://id.loc.gov/vocabulary/relators/trl">
+	      <bf:Role rdf:about="http://id.loc.gov/vocabulary/relators/trl">
 		<rdfs:label>translator</rdfs:label>
 		<bf:code>trl</bf:code>
-	      </madsrdf:Authority>
+	      </bf:Role>
 	    </bf:role>
 	  </bf:Contribution>
 	</bf:contribution>
 	<bf:contribution>
 	  <bf:Contribution>
 	    <bf:agent>
-	      <bf:Agent>
+	      <bf:Agent rdf:about="http://id.loc.gov/rwo/agents/no99061886">
 		<rdf:type rdf:resource="http://id.loc.gov/ontologies/bibframe/Person"/>
 		<rdfs:label>Köhs, Andreas</rdfs:label>
+		<bflc:marcKey>1001 $aKöhs, Andreas</bflc:marcKey>
 	      </bf:Agent>
 	    </bf:agent>
 	    <bf:role>
-	      <madsrdf:Authority rdf:about="http://id.loc.gov/vocabulary/relators/arr">
+	      <bf:Role rdf:about="http://id.loc.gov/vocabulary/relators/arr">
 		<rdfs:label>arranger</rdfs:label>
 		<bf:code>arr</bf:code>
-	      </madsrdf:Authority>
+	      </bf:Role>
 	    </bf:role>
 	  </bf:Contribution>
 	</bf:contribution>
+	<bf:classification>
+	  <bf:ClassificationLcc>
+	    <bf:classificationPortion>M1503.H135</bf:classificationPortion>
+	    <bf:itemPortion>S65 2020</bf:itemPortion>
+	    <bf:assigner>
+	      <bf:Organization rdf:about="http://id.loc.gov/vocabulary/organizations/dlc">
+		<rdfs:label>United States, Library of Congress</rdfs:label>
+		<bf:code rdf:datatype="http://id.loc.gov/datatypes/orgs/code">DLC</bf:code>
+		<bf:code rdf:datatype="http://id.loc.gov/datatypes/orgs/normalized">dlc</bf:code>
+		<bf:code rdf:datatype="http://id.loc.gov/datatypes/orgs/iso15511">US-dlc</bf:code>
+	      </bf:Organization>
+	    </bf:assigner>
+	    <bf:status>
+	      <bf:Status rdf:about="http://id.loc.gov/vocabulary/mstatus/uba">
+		<rdfs:label>used by assigner</rdfs:label>
+		<bf:code>uba</bf:code>
+	      </bf:Status>
+	    </bf:status>
+	  </bf:ClassificationLcc>
+	</bf:classification>
 	<bf:title>
 	  <bf:Title>
-	    <bf:mainTitle>Sosarme, re di Media</bf:mainTitle>
+	    <bf:mainTitle>Sosarme, re di Media : opera in tre atti : HWV 30 ; Fernando, re di Castiglia : (fragment)</bf:mainTitle>
 	  </bf:Title>
 	</bf:title>
+	<bf:language rdf:resource="http://id.loc.gov/vocabulary/languages/ita"/>
+	<bf:language rdf:resource="http://id.loc.gov/vocabulary/languages/ger"/>
+	<bf:hasInstance>
+	  <bf:Instance rdf:about="http://id.loc.gov/resources/instances/21851594">
+	    <bf:title>
+	      <bf:Title>
+		<bf:mainTitle>Sosarme, re di Media</bf:mainTitle>
+		<bf:subtitle>opera in tre atti : HWV 30 ; Fernando, re di Castiglia : (fragment)</bf:subtitle>
+	      </bf:Title>
+	    </bf:title>
+	    <bf:identifiedBy>
+	      <bf:Lccn>
+		<rdf:value>  2020431451</rdf:value>
+	      </bf:Lccn>
+	    </bf:identifiedBy>
+	    <bf:identifiedBy>
+	      <bf:Ismn>
+		<rdf:value>9790006558407</rdf:value>
+		<bf:qualifier>paperback</bf:qualifier>
+	      </bf:Ismn>
+	    </bf:identifiedBy>
+	    <bf:identifiedBy>
+	      <bf:Ismn>
+		<rdf:value>M006558407</rdf:value>
+		<bf:qualifier>paperback</bf:qualifier>
+	      </bf:Ismn>
+	    </bf:identifiedBy>
+	    <bf:identifiedBy>
+	      <bf:MusicPlate>
+		<rdf:value>BA 10713-90</rdf:value>
+		<bf:assigner>
+		  <bf:Organization>
+		    <rdfs:label>Bärenreiter</rdfs:label>
+		  </bf:Organization>
+		</bf:assigner>
+	      </bf:MusicPlate>
+	    </bf:identifiedBy>
+	    <bf:identifiedBy>
+	      <bf:MusicPlate>
+		<rdf:value>10713-90</rdf:value>
+		<bf:assigner>
+		  <bf:Organization>
+		    <rdfs:label>Bärenreiter</rdfs:label>
+		  </bf:Organization>
+		</bf:assigner>
+	      </bf:MusicPlate>
+	    </bf:identifiedBy>
+	    <bf:identifiedBy>
+	      <bf:OclcNumber>
+		<rdf:value>1197943499</rdf:value>
+	      </bf:OclcNumber>
+	    </bf:identifiedBy>
+	    <bf:publicationStatement>Kassel: Bärenreiter, [2020]</bf:publicationStatement>
+	    <bf:editionStatement>Londoner Fassung = London version : 1732</bf:editionStatement>
+	    <bf:editionStatement>Klavierauszug nach dem Urtext der Hallischen Händel-Ausgabe / von Andreas Köhs = Piano reduction based on the Urtext of the Halle Handel Edition / by Andreas Köhs</bf:editionStatement>
+	    <bf:extent>
+	      <bf:Extent>
+		<rdfs:label>1 vocal score (xvi, 286 pages)</rdfs:label>
+	      </bf:Extent>
+	    </bf:extent>
+	  </bf:Instance>
+	</bf:hasInstance>
       </bf:Work>
     </bf:instanceOf>
     <bf:adminMetadata>
@@ -830,7 +1072,7 @@
 	    <bf:code>n</bf:code>
 	  </bf:Status>
 	</bf:status>
-	<bf:date rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2020-12-22</bf:date>
+	<bf:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2020-12-22T00:00:00</bf:date>
 	<bf:agent>
 	  <bf:Agent>
 	    <bf:code>OHX</bf:code>
@@ -846,7 +1088,7 @@
 	    <bf:code>c</bf:code>
 	  </bf:Status>
 	</bf:status>
-	<bf:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-05-03T10:49:44</bf:date>
+	<bf:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2025-06-07T06:42:11</bf:date>
 	<bf:descriptionModifier>
 	  <bf:Organization rdf:about="http://id.loc.gov/vocabulary/organizations/dlc">
 	    <rdfs:label>United States, Library of Congress</rdfs:label>
@@ -874,13 +1116,13 @@
 	    <bf:code rdf:datatype="http://id.loc.gov/datatypes/orgs/iso15511">US-dlcmrc</bf:code>
 	  </bf:Agent>
 	</bf:agent>
-	<bf:generationProcess rdf:resource="https://github.com/lcnetdev/marc2bibframe2/releases/tag/v2.8.0"/>
-	<bf:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-11-20T16:32:56.02101-05:00</bf:date>
+	<bf:generationProcess rdf:resource="https://github.com/lcnetdev/marc2bibframe2/tree/v3.2-dev"/>
+	<bf:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2026-11-16T14:47:39.592427-05:00</bf:date>
       </bf:AdminMetadata>
     </bf:adminMetadata>
     <bf:adminMetadata>
       <bf:AdminMetadata>
-	<bf:descriptionLevel rdf:resource="http://id.loc.gov/ontologies/bibframe-2-4-0/"/>
+	<bf:descriptionLevel rdf:resource="http://id.loc.gov/ontologies/bibframe-3-0-1/"/>
 	<bflc:encodingLevel>
 	  <bflc:EncodingLevel rdf:about="http://id.loc.gov/vocabulary/menclvl/f">
 	    <rdfs:label>full</rdfs:label>
@@ -906,10 +1148,6 @@
 	    </bf:assigner>
 	  </bf:Local>
 	</bf:identifiedBy>
-	<lclocal:d906>=906     $a 7 $b cbc $c copycat $d 2 $e ncip $f 20 $g y-genmusic</lclocal:d906>
-	<lclocal:d925>=925  0  $a acquire $b 1 shelf copy $x policy default</lclocal:d925>
-	<lclocal:d955>=955     $a vk39 2022-04-19 z-client $i vk39 2022-04-19 $e vk39 2022-05-03 c.1 to BCCD</lclocal:d955>
-	<lclocal:d955>=955     $b fd11 2020-12-22 to MBAS</lclocal:d955>
 	<bf:descriptionLanguage>
 	  <bf:Language rdf:about="http://id.loc.gov/vocabulary/languages/eng">
 	    <rdfs:label xml:lang="en">English</rdfs:label>
@@ -935,7 +1173,13 @@
 	  </bf:DescriptionAuthentication>
 	</bf:descriptionAuthentication>
 	<lclocal:batch>BibframePilot2</lclocal:batch>
-	<lclocal:d985>=985     $e BibframePilot2 $d 2022-04-19 $f vk39 2022-04-19</lclocal:d985>
+	<bflc:marcKey>906  $a7$bcbc$ccopycat$d2$encip$f20$gy-genmusic</bflc:marcKey>
+	<bflc:marcKey>9250 $aacquire$b1 shelf copy$xpolicy default</bflc:marcKey>
+	<bflc:marcKey>955  $avk39 2022-04-19 z-client$ivk39 2022-04-19$evk39 2022-05-03 c.1 to BCCD</bflc:marcKey>
+	<bflc:marcKey>955  $bfd11 2020-12-22 to MBAS</bflc:marcKey>
+	<bflc:marcKey>923  $d20201009$n0236649$s93001286</bflc:marcKey>
+	<bflc:marcKey>985  $eBibframePilot2$d2022-04-19$fvk39 2022-04-19</bflc:marcKey>
+	<bflc:marcKey>999ff$id6a26120-effa-5bd1-8dec-3d99188ecd15$s0b43180f-7d97-4369-a4af-fbc064c40339</bflc:marcKey>
       </bf:AdminMetadata>
     </bf:adminMetadata>
   </bf:Instance>

@@ -126,6 +126,16 @@
     </case>
   </switch>
 
+  <switch>
+    <case test="$pConversionAgency = 'DLC' and
+                /rdf:RDF/bf:Instance/bf:carrier//@rdf:*[1] = 'http://id.loc.gov/vocabulary/carriers/cr' and 
+                contains(/rdf:RDF/bf:Instance/bf:note/bf:Note[rdf:type/@rdf:resource='http://id.loc.gov/vocabulary/mnotetype/descsource']/rdfs:label, 'Description based on print version record')
+      ">
+      <cf tag="006">
+        <transform><xsl:value-of select="'m    |o  d |      '"/></transform>
+      </cf>
+    </case>
+  </switch>
   
   <cf tag="007" repeatable="true">
     <context xpath="/rdf:RDF/bf:Instance">
@@ -596,10 +606,19 @@
               </transform>
             </case>
             
+            <!-- Production - i, k, s -->
             <case test="
               bf:Instance/bf:provisionActivity/bf:ProvisionActivity[rdf:type/@rdf:resource = 'http://id.loc.gov/ontologies/bibframe/Production']/bf:date/@rdf:datatype = 'http://id.loc.gov/datatypes/edtf' 
               or 
               bf:Instance/bf:provisionActivity/bf:Production/bf:date/@rdf:datatype = 'http://id.loc.gov/datatypes/edtf'
+              or 
+              bf:Instance/bf:provisionActivity/bf:ProvisionActivity[rdf:type/@rdf:resource = 'http://id.loc.gov/ontologies/bibframe/Manufacture']/bf:date/@rdf:datatype = 'http://id.loc.gov/datatypes/edtf' 
+              or 
+              bf:Instance/bf:provisionActivity/bf:Manufacture/bf:date/@rdf:datatype = 'http://id.loc.gov/datatypes/edtf'
+              or 
+              bf:Instance/bf:provisionActivity/bf:ProvisionActivity[rdf:type/@rdf:resource = 'http://id.loc.gov/ontologies/bibframe/Distribution']/bf:date/@rdf:datatype = 'http://id.loc.gov/datatypes/edtf' 
+              or 
+              bf:Instance/bf:provisionActivity/bf:Distribution/bf:date/@rdf:datatype = 'http://id.loc.gov/datatypes/edtf'
               ">
               <transform>
                 <xsl:variable name="vPAprenodeset">
@@ -607,9 +626,21 @@
                     <xsl:when test="bf:Instance/bf:provisionActivity/bf:Production/bf:date/@rdf:datatype = 'http://id.loc.gov/datatypes/edtf'">
                       <xsl:copy-of select="bf:Instance/bf:provisionActivity/bf:Production[bf:date/@rdf:datatype = 'http://id.loc.gov/datatypes/edtf']" />
                     </xsl:when>
-                    <xsl:otherwise>
-                      <xsl:copy-of select="bf:Instance/bf:provisionActivity/bf:ProvisionActivity[rdf:type/@rdf:resource = 'http://id.loc.gov/ontologies/bibframe/Production' and bf:date/@rdf:datatype = 'http://id.loc.gov/datatypes/edtf']" />    
-                    </xsl:otherwise>
+                    <xsl:when test="bf:Instance/bf:provisionActivity/bf:ProvisionActivity[rdf:type/@rdf:resource = 'http://id.loc.gov/ontologies/bibframe/Production' and bf:date/@rdf:datatype = 'http://id.loc.gov/datatypes/edtf']">
+                      <xsl:copy-of select="bf:Instance/bf:provisionActivity/bf:ProvisionActivity[rdf:type/@rdf:resource = 'http://id.loc.gov/ontologies/bibframe/Production' and bf:date/@rdf:datatype = 'http://id.loc.gov/datatypes/edtf']" />
+                    </xsl:when>
+                    <xsl:when test="bf:Instance/bf:provisionActivity/bf:Manufacture/bf:date/@rdf:datatype = 'http://id.loc.gov/datatypes/edtf'">
+                      <xsl:copy-of select="bf:Instance/bf:provisionActivity/bf:Manufacture[bf:date/@rdf:datatype = 'http://id.loc.gov/datatypes/edtf']" />
+                    </xsl:when>
+                    <xsl:when test="bf:Instance/bf:provisionActivity/bf:ProvisionActivity[rdf:type/@rdf:resource = 'http://id.loc.gov/ontologies/bibframe/Manufacture' and bf:date/@rdf:datatype = 'http://id.loc.gov/datatypes/edtf']">
+                      <xsl:copy-of select="bf:Instance/bf:provisionActivity/bf:ProvisionActivity[rdf:type/@rdf:resource = 'http://id.loc.gov/ontologies/bibframe/Manufacture' and bf:date/@rdf:datatype = 'http://id.loc.gov/datatypes/edtf']" />
+                    </xsl:when>
+                    <xsl:when test="bf:Instance/bf:provisionActivity/bf:Distribution/bf:date/@rdf:datatype = 'http://id.loc.gov/datatypes/edtf'">
+                      <xsl:copy-of select="bf:Instance/bf:provisionActivity/bf:Distribution[bf:date/@rdf:datatype = 'http://id.loc.gov/datatypes/edtf']" />
+                    </xsl:when>
+                    <xsl:when test="bf:Instance/bf:provisionActivity/bf:ProvisionActivity[rdf:type/@rdf:resource = 'http://id.loc.gov/ontologies/bibframe/Distribution' and bf:date/@rdf:datatype = 'http://id.loc.gov/datatypes/edtf']">
+                      <xsl:copy-of select="bf:Instance/bf:provisionActivity/bf:ProvisionActivity[rdf:type/@rdf:resource = 'http://id.loc.gov/ontologies/bibframe/Distribution' and bf:date/@rdf:datatype = 'http://id.loc.gov/datatypes/edtf']" />
+                    </xsl:when>
                   </xsl:choose>                  
                 </xsl:variable>
                 <xsl:variable name="vPA" select="exsl:node-set($vPAprenodeset)" />
@@ -670,10 +701,19 @@
                     <xsl:otherwise>0</xsl:otherwise>
                   </xsl:choose>
                 </xsl:variable>
+                <xsl:variable name="cOriginDateExists">
+                  <xsl:choose>
+                    <xsl:when test="bf:Work/bf:originDate[@rdf:datatype = 'http://id.loc.gov/datatypes/edtf']">1</xsl:when>
+                    <xsl:otherwise>0</xsl:otherwise>
+                  </xsl:choose>
+                </xsl:variable>
                 <xsl:variable name="date2">
                   <xsl:choose>
                     <xsl:when test="$cDateExists = 1">
                       <xsl:value-of select="translate(bf:Instance/bf:copyrightDate[@rdf:datatype = 'http://id.loc.gov/datatypes/edtf'], '©', '')" />
+                    </xsl:when>
+                    <xsl:when test="$cOriginDateExists = 1">
+                      <xsl:value-of select="bf:Work/bf:originDate[@rdf:datatype = 'http://id.loc.gov/datatypes/edtf']" />
                     </xsl:when>
                     <xsl:when test="contains($theDate, '/..')">9999</xsl:when>
                     <xsl:when test="contains($theDate, '/')">
@@ -712,18 +752,23 @@
                     (contains($date2, '~') or contains($date2, '?') or contains($date2, '%'))">
                     <xsl:value-of select="translate(concat('q', $date1, substring($date2, 1, 4)), 'X', 'u')" />
                   </xsl:when>
-                  <xsl:when test="string-length($date1)=4 and string-length($date2)=4">
+                  <xsl:when test="string-length($date1)=4 and string-length($date2)=4 and $cOriginDateExists = 0">
                     <xsl:value-of select="translate(concat('m', $date1, $date2), 'X', 'u')" />
                   </xsl:when>
-                  <xsl:when test="$date2 != ''">
-                    <xsl:choose>
-                      <xsl:when test="contains($date2, '-')">
-                        <xsl:value-of select="translate(concat('e', $date1, translate($date2, '-', '')), 'X', 'u')" />
-                      </xsl:when>
-                      <xsl:otherwise>
-                        <xsl:value-of select="translate(concat('e', $date1, $date2, '  '), 'X', 'u')" />
-                      </xsl:otherwise>
-                    </xsl:choose>
+                  <xsl:when test="contains($date2, '-')">
+                    <xsl:value-of select="translate(concat('e', $date1, translate($date2, '-', '')), 'X', 'u')" />
+                  </xsl:when>
+                  <xsl:when test="$date1='XXXX' and $date2='XXXX'">
+                    <xsl:value-of select="concat('n', '    ', '    ')" />
+                  </xsl:when>
+                  <xsl:when test="string-length($date1) = 4 and $date1='XXXX'">
+                    <xsl:value-of select="concat('n', '    ', '    ')" />
+                  </xsl:when>
+                  <xsl:when test="string-length($date1) = 4 and $cOriginDateExists = 1 and $date1 != $date2">
+                    <xsl:value-of select="translate(concat('r', $date1, $date2), 'X', 'u')" />
+                  </xsl:when>
+                  <xsl:when test="$date2 != '' and $date1 != $date2">
+                    <xsl:value-of select="translate(concat('e', $date1, $date2, '  '), 'X', 'u')" />
                   </xsl:when>
                   <xsl:when test="string-length($date1) = 4">
                     <xsl:value-of select="translate(concat('s', $date1, '    '), 'X', 'u')" />
@@ -1122,6 +1167,27 @@
                     <xsl:when test="bf:Work/bf:intendedAudience[@rdf:resource='http://id.loc.gov/vocabulary/maudience/juv'
                                     or */@rdf:about='http://id.loc.gov/vocabulary/maudience/juv'
                                     or */*[local-name='code']='juv']">j</xsl:when>
+                    
+                    <xsl:when test="bf:Work/bf:intendedAudience[
+                                      @rdf:resource='authorities/demographicTerms/dg2015060008' or 
+                                      */@rdf:about='authorities/demographicTerms/dg2015060008' or 
+                                      @rdf:resource='authorities/demographicTerms/dg2015060009' or 
+                                      */@rdf:about='authorities/demographicTerms/dg2015060009' or 
+                                      @rdf:resource='authorities/demographicTerms/dg2015060032' or 
+                                      */@rdf:about='authorities/demographicTerms/dg2015060032'
+                                    ]">a</xsl:when>
+                    <xsl:when test="bf:Work/bf:intendedAudience[
+                                      @rdf:resource='authorities/demographicTerms/dg2015060023' or 
+                                      */@rdf:about='authorities/demographicTerms/dg2015060023'
+                                    ]">b</xsl:when>
+                    <xsl:when test="bf:Work/bf:intendedAudience[
+                                      @rdf:resource='authorities/demographicTerms/dg2015060394' or 
+                                      */@rdf:about='authorities/demographicTerms/dg2015060394'
+                                    ]">c</xsl:when>
+                    <xsl:when test="bf:Work/bf:intendedAudience[
+                                      @rdf:resource='authorities/demographicTerms/dg2015060011' or 
+                                      */@rdf:about='authorities/demographicTerms/dg2015060011'
+                                    ]">d</xsl:when>
                     <xsl:otherwise><xsl:value-of select="' '"/></xsl:otherwise>
                   </xsl:choose>
                 <!--</xsl:variable>-->
@@ -1237,8 +1303,35 @@
                       -->
                       <xsl:when test="@rdf:resource='http://id.loc.gov/authorities/genreForms/gf2014026048' or
                                       */@rdf:about='http://id.loc.gov/authorities/genreForms/gf2014026048'">b</xsl:when>
-                      <xsl:when test="@rdf:resource='http://id.loc.gov/authorities/genreForms/gf2014026057' or
-                                      */@rdf:about='http://id.loc.gov/authorities/genreForms/gf2014026057'">c</xsl:when>
+                      
+                      <!-- Catalogs -->
+                      <xsl:when test="(
+                                        @rdf:resource='http://id.loc.gov/authorities/genreForms/gf2014026057' or
+                                        */@rdf:about='http://id.loc.gov/authorities/genreForms/gf2014026057' or 
+                                        */madsrdf:authoritativeLabel[contains(., 'catalogs')] or 
+                                        */rdfs:label[contains(., 'catalogs')] or 
+                                        @rdf:resource='http://id.loc.gov/authorities/genreForms/gf2014026058' or
+                                        */@rdf:about='http://id.loc.gov/authorities/genreForms/gf2014026058' or 
+                                        @rdf:resource='http://id.loc.gov/authorities/genreForms/gf2014026088' or
+                                        */@rdf:about='http://id.loc.gov/authorities/genreForms/gf2014026088' or
+                                        @rdf:resource='http://id.loc.gov/authorities/genreForms/gf2015026050' or
+                                        */@rdf:about='http://id.loc.gov/authorities/genreForms/gf2015026050'
+                                      ) 
+                                    and
+                                      not(
+                                          preceding-sibling::bf:genreForm/@rdf:resource='http://id.loc.gov/authorities/genreForms/gf2014026057' or
+                                          preceding-sibling::bf:genreForm/*/@rdf:about='http://id.loc.gov/authorities/genreForms/gf2014026057' or 
+                                          preceding-sibling::bf:genreForm/*/madsrdf:authoritativeLabel[contains(., 'catalogs')] or 
+                                          preceding-sibling::bf:genreForm/*/rdfs:label[contains(., 'catalogs')] or 
+                                          preceding-sibling::bf:genreForm/@rdf:resource='http://id.loc.gov/authorities/genreForms/gf2014026058' or
+                                          preceding-sibling::bf:genreForm/*/@rdf:about='http://id.loc.gov/authorities/genreForms/gf2014026058' or 
+                                          preceding-sibling::bf:genreForm/@rdf:resource='http://id.loc.gov/authorities/genreForms/gf2014026088' or
+                                          preceding-sibling::bf:genreForm/*/@rdf:about='http://id.loc.gov/authorities/genreForms/gf2014026088' or
+                                          preceding-sibling::bf:genreForm/@rdf:resource='http://id.loc.gov/authorities/genreForms/gf2015026050' or
+                                          preceding-sibling::bf:genreForm/*/@rdf:about='http://id.loc.gov/authorities/genreForms/gf2015026050'
+                                      )
+                                ">c</xsl:when>
+                      
                       <xsl:when test="@rdf:resource='http://id.loc.gov/authorities/genreForms/gf2014026086' or
                                       */@rdf:about='http://id.loc.gov/authorities/genreForms/gf2014026086'">d</xsl:when>
                       <xsl:when test="@rdf:resource='http://id.loc.gov/authorities/genreForms/gf2014026092' or
@@ -1273,8 +1366,61 @@
                                       */@rdf:about='http://id.loc.gov/authorities/genreForms/gf2011026707'">z</xsl:when>
                       <xsl:when test="@rdf:resource='http://id.loc.gov/authorities/genreForms/gf2014026055' or
                                       */@rdf:about='http://id.loc.gov/authorities/genreForms/gf2014026055'">5</xsl:when>
-                      <xsl:when test="@rdf:resource='http://id.loc.gov/authorities/genreForms/gf2014026266' or
-                                      */@rdf:about='http://id.loc.gov/authorities/genreForms/gf2014026266'">6</xsl:when>
+                      
+                      <!-- Comics (graphic novels) -->
+                      <!-- Manga -->
+                      <!-- Graphic Novels -->
+                      <xsl:when test="(
+                                        @rdf:resource='http://id.loc.gov/authorities/genreForms/gf2014026266' or
+                                        */@rdf:about='http://id.loc.gov/authorities/genreForms/gf2014026266' or 
+                                        */madsrdf:authoritativeLabel[contains(., 'comics')] or 
+                                        */rdfs:label[contains(., 'comics')] or 
+                                        */madsrdf:authoritativeLabel[contains(., '(Comics)')] or 
+                                        */rdfs:label[contains(., '(Comics)')] or 
+                                        @rdf:resource='http://id.loc.gov/authorities/genreForms/gf2014026572' or
+                                        */@rdf:about='http://id.loc.gov/authorities/genreForms/gf2014026572' or 
+                                        
+                                        @rdf:resource='http://id.loc.gov/authorities/genreForms/gf2022026036' or
+                                        */@rdf:about='http://id.loc.gov/authorities/genreForms/gf2022026036' or
+                                        */madsrdf:authoritativeLabel[contains(., ' manga')] or 
+                                        */rdfs:label[contains(., ' manga')] or 
+                                        @rdf:resource='http://id.loc.gov/authorities/genreForms/gf2023026096' or
+                                        */@rdf:about='http://id.loc.gov/authorities/genreForms/gf2023026096' or 
+                                        
+                                        @rdf:resource='http://id.loc.gov/authorities/genreForms/gf2014026362' or
+                                        */@rdf:about='http://id.loc.gov/authorities/genreForms/gf2014026362' or 
+                                        @rdf:resource='http://id.loc.gov/authorities/genreForms/gf2016026005' or
+                                        */@rdf:about='http://id.loc.gov/authorities/genreForms/gf2016026005' or 
+                                        @rdf:resource='http://id.loc.gov/authorities/genreForms/gf2017026130' or
+                                        */@rdf:about='http://id.loc.gov/authorities/genreForms/gf2017026130'
+                                      ) 
+                                      and
+                                      not(
+                                        preceding-sibling::bf:genreForm/@rdf:resource='http://id.loc.gov/authorities/genreForms/gf2014026266' or
+                                        preceding-sibling::bf:genreForm/*/@rdf:about='http://id.loc.gov/authorities/genreForms/gf2014026266' or 
+                                        preceding-sibling::bf:genreForm/*/madsrdf:authoritativeLabel[contains(., 'comics')] or 
+                                        preceding-sibling::bf:genreForm/*/rdfs:label[contains(., 'comics')] or 
+                                        preceding-sibling::bf:genreForm/*/madsrdf:authoritativeLabel[contains(., '(Comics)')] or 
+                                        preceding-sibling::bf:genreForm/*/rdfs:label[contains(., '(Comics)')] or 
+                                        preceding-sibling::bf:genreForm/@rdf:resource='http://id.loc.gov/authorities/genreForms/gf2014026572' or
+                                        preceding-sibling::bf:genreForm/*/@rdf:about='http://id.loc.gov/authorities/genreForms/gf2014026572' or 
+                                        
+                                        preceding-sibling::bf:genreForm/@rdf:resource='http://id.loc.gov/authorities/genreForms/gf2022026036' or
+                                        preceding-sibling::bf:genreForm/*/@rdf:about='http://id.loc.gov/authorities/genreForms/gf2022026036' or
+                                        preceding-sibling::bf:genreForm/*/madsrdf:authoritativeLabel[contains(., ' manga')] or 
+                                        preceding-sibling::bf:genreForm/*/rdfs:label[contains(., ' manga')] or 
+                                        preceding-sibling::bf:genreForm/@rdf:resource='http://id.loc.gov/authorities/genreForms/gf2023026096' or
+                                        preceding-sibling::bf:genreForm/*/@rdf:about='http://id.loc.gov/authorities/genreForms/gf2023026096' or 
+                                        
+                                        preceding-sibling::bf:genreForm/@rdf:resource='http://id.loc.gov/authorities/genreForms/gf2014026362' or
+                                        preceding-sibling::bf:genreForm/*/@rdf:about='http://id.loc.gov/authorities/genreForms/gf2014026362' or 
+                                        preceding-sibling::bf:genreForm/@rdf:resource='http://id.loc.gov/authorities/genreForms/gf2016026005' or
+                                        preceding-sibling::bf:genreForm/*/@rdf:about='http://id.loc.gov/authorities/genreForms/gf2016026005' or 
+                                        preceding-sibling::bf:genreForm/@rdf:resource='http://id.loc.gov/authorities/genreForms/gf2017026130' or
+                                        preceding-sibling::bf:genreForm/*/@rdf:about='http://id.loc.gov/authorities/genreForms/gf2017026130'
+                                      )
+                                      ">6</xsl:when>
+                      
                     </xsl:choose>
                   </xsl:for-each>
                 </xsl:variable>
@@ -1505,25 +1651,36 @@
                     <xsl:when test="$v008Format='BK'">
                       <xsl:choose>
                         <xsl:when test="bf:Work/bf:genreForm[@rdf:resource='http://id.loc.gov/authorities/genreForms/gf2014026339' or */@rdf:about='http://id.loc.gov/authorities/genreForms/gf2014026339']">1</xsl:when>
-                        <xsl:when test="bf:Work/bf:genreForm/madsrdf:authoritativeLabel[contains(., 'fiction')]">1</xsl:when>
-                        <xsl:when test="bf:Work/bf:genreForm/rdfs:label[contains(., 'fiction')]">1</xsl:when>
+                        <xsl:when test="bf:Work/bf:genreForm/*/madsrdf:authoritativeLabel[contains(., 'fiction') and not(contains(., 'onfiction'))]">1</xsl:when>
+                        <xsl:when test="bf:Work/bf:genreForm/*/rdfs:label[contains(., 'fiction') and not(contains(., 'onfiction'))]">1</xsl:when>
+                        <xsl:when test="bf:Work/bf:genreForm/*/madsrdf:authoritativeLabel[contains(., '(Fiction)')]">1</xsl:when>                        
+                        <xsl:when test="bf:Work/bf:genreForm//@rdf:*[1]='http://id.loc.gov/authorities/genreForms/gf2014026243'">1</xsl:when>
+                        <xsl:when test="bf:Work/bf:genreForm//@rdf:*[1]='http://id.loc.gov/authorities/genreForms/gf2014026259'">1</xsl:when>
+                        <xsl:when test="bf:Work/bf:genreForm//@rdf:*[1]='http://id.loc.gov/authorities/genreForms/gf2018026099'">1</xsl:when>
+                        <xsl:when test="bf:Work/bf:genreForm//@rdf:*[1]='http://id.loc.gov/authorities/genreForms/gf2015026019'">1</xsl:when>
+                        <xsl:when test="bf:Work/bf:genreForm//@rdf:*[1]='http://id.loc.gov/authorities/genreForms/gf2014026456'">1</xsl:when>
+                        <xsl:when test="bf:Work/bf:genreForm//@rdf:*[1]='http://id.loc.gov/authorities/genreForms/gf2015026020'">1</xsl:when>
+                        <xsl:when test="bf:Work/bf:genreForm//@rdf:*[1]='http://id.loc.gov/authorities/genreForms/gf2014026518'">1</xsl:when>
+                        <xsl:when test="bf:Work/bf:genreForm//@rdf:*[1]='http://id.loc.gov/authorities/genreForms/gf2014026542'">1</xsl:when>
+                        <xsl:when test="bf:Work/bf:genreForm//@rdf:*[1]='http://id.loc.gov/authorities/genreForms/gf2014026559'">1</xsl:when>
+                        
                         <xsl:when test="bf:Work/bf:genreForm[@rdf:resource='http://id.loc.gov/authorities/genreForms/gf2014026297' or */@rdf:about='http://id.loc.gov/authorities/genreForms/gf2014026297']">d</xsl:when>
                         <xsl:when test="bf:Work/bf:genreForm[@rdf:resource='http://id.loc.gov/authorities/genreForms/gf2014026094' or */@rdf:about='http://id.loc.gov/authorities/genreForms/gf2014026094']">e</xsl:when>
                         <xsl:when test="bf:Work/bf:genreForm[@rdf:resource='http://id.loc.gov/authorities/genreForms/gf2015026020' or */@rdf:about='http://id.loc.gov/authorities/genreForms/gf2015026020']">f</xsl:when>
                         <xsl:when test="bf:Work/bf:genreForm[@rdf:resource='http://id.loc.gov/authorities/genreForms/gf2014026110' or */@rdf:about='http://id.loc.gov/authorities/genreForms/gf2014026110']">h</xsl:when>
-                        <xsl:when test="bf:Work/bf:genreForm/madsrdf:authoritativeLabel[contains(., 'Humor')]">h</xsl:when>
-                        <xsl:when test="bf:Work/bf:genreForm/rdfs:label[contains(., 'Humor')]">h</xsl:when>
+                        <xsl:when test="bf:Work/bf:genreForm/*/madsrdf:authoritativeLabel[contains(., 'Humor')]">h</xsl:when>
+                        <xsl:when test="bf:Work/bf:genreForm/*/rdfs:label[contains(., 'Humor')]">h</xsl:when>
                         <xsl:when test="bf:Work/bf:genreForm[@rdf:resource='http://id.loc.gov/authorities/genreForms/gf2014026141' or */@rdf:about='http://id.loc.gov/authorities/genreForms/gf2014026141']">i</xsl:when>
                         <xsl:when test="bf:Work/bf:genreForm[@rdf:resource='http://id.loc.gov/authorities/genreForms/gf2014026054' or */@rdf:about='http://id.loc.gov/authorities/genreForms/gf2014026054']">i</xsl:when>
                         <xsl:when test="bf:Work/bf:genreForm[@rdf:resource='http://id.loc.gov/authorities/genreForms/gf2014026542' or */@rdf:about='http://id.loc.gov/authorities/genreForms/gf2014026542']">j</xsl:when>
                         <!-- <xsl:when test="bf:Work/bf:genreForm[@rdf:resource='http://id.loc.gov/authorities/genreForms/gf2014026339' or */@rdf:about='http://id.loc.gov/authorities/genreForms/gf2014026339']">m</xsl:when> -->
                         <xsl:when test="bf:Work/bf:genreForm[@rdf:resource='http://id.loc.gov/authorities/genreForms/gf2014026488' or */@rdf:about='http://id.loc.gov/authorities/genreForms/gf2014026488']">p</xsl:when> <!-- Prose peoms. -->
                         <xsl:when test="bf:Work/bf:genreForm[@rdf:resource='http://id.loc.gov/authorities/genreForms/gf2014026481' or */@rdf:about='http://id.loc.gov/authorities/genreForms/gf2014026481']">p</xsl:when>
-                        <xsl:when test="bf:Work/bf:genreForm/madsrdf:authoritativeLabel[contains(., 'poetry')]">p</xsl:when>
-                        <xsl:when test="bf:Work/bf:genreForm/rdfs:label[contains(., 'poetry')]">p</xsl:when>
+                        <xsl:when test="bf:Work/bf:genreForm/*/madsrdf:authoritativeLabel[contains(., 'poetry')]">p</xsl:when>
+                        <xsl:when test="bf:Work/bf:genreForm/*/rdfs:label[contains(., 'poetry')]">p</xsl:when>
                         <xsl:when test="bf:Work/bf:genreForm[@rdf:resource='http://id.loc.gov/authorities/genreForms/gf2011026363' or */@rdf:about='http://id.loc.gov/authorities/genreForms/gf2011026363']">s</xsl:when>
-                        <xsl:when test="bf:Work/bf:genreForm/madsrdf:authoritativeLabel[contains(., 'speeches')]">s</xsl:when>
-                        <xsl:when test="bf:Work/bf:genreForm/rdfs:label[contains(., 'speeches')]">s</xsl:when>
+                        <xsl:when test="bf:Work/bf:genreForm/*/madsrdf:authoritativeLabel[contains(., 'speeches')]">s</xsl:when>
+                        <xsl:when test="bf:Work/bf:genreForm/*/rdfs:label[contains(., 'speeches')]">s</xsl:when>
                         <xsl:otherwise>0</xsl:otherwise>
                       </xsl:choose>
                     </xsl:when>
@@ -1579,6 +1736,18 @@
                         <xsl:when test="bf:Work/bf:genreForm[@rdf:resource='http://id.loc.gov/authorities/genreForms/gf2014026085' or */@rdf:about='http://id.loc.gov/authorities/genreForms/gf2014026085']">a</xsl:when>
                         <xsl:when test="bf:Work/bf:note/bf:Note/rdfs:label[contains(., 'Contains biographical information')]">d</xsl:when>
                         <xsl:when test="bf:Work/bf:genreForm[@rdf:resource='http://id.loc.gov/authorities/genreForms/gf2014026049' or */@rdf:about='http://id.loc.gov/authorities/genreForms/gf2014026049']">b</xsl:when>
+                        
+                        <!-- Autobiographical comics, and other narrowers of autobiographies -->
+                        <xsl:when test="bf:Work/bf:genreForm[@rdf:resource='http://id.loc.gov/authorities/genreForms/gf2014026229' or */@rdf:about='http://id.loc.gov/authorities/genreForms/gf2014026229']">a</xsl:when>
+                        <xsl:when test="bf:Work/bf:genreForm[@rdf:resource='http://id.loc.gov/authorities/genreForms/gf2014026230' or */@rdf:about='http://id.loc.gov/authorities/genreForms/gf2014026230']">a</xsl:when>
+                        <xsl:when test="bf:Work/bf:genreForm[@rdf:resource='http://id.loc.gov/authorities/genreForms/gf2014026232' or */@rdf:about='http://id.loc.gov/authorities/genreForms/gf2014026232']">a</xsl:when>
+                        <xsl:when test="bf:Work/bf:genreForm[@rdf:resource='http://id.loc.gov/authorities/genreForms/gf2014026056' or */@rdf:about='http://id.loc.gov/authorities/genreForms/gf2014026056']">a</xsl:when>
+                        <xsl:when test="bf:Work/bf:genreForm[@rdf:resource='http://id.loc.gov/authorities/genreForms/gf2025026019' or */@rdf:about='http://id.loc.gov/authorities/genreForms/gf2025026019']">a</xsl:when>
+                        <xsl:when test="bf:Work/bf:genreForm[@rdf:resource='http://id.loc.gov/authorities/genreForms/gf2015026011' or */@rdf:about='http://id.loc.gov/authorities/genreForms/gf2015026011']">a</xsl:when>
+                        <xsl:when test="bf:Work/bf:genreForm[@rdf:resource='http://id.loc.gov/authorities/genreForms/gf2014026176' or */@rdf:about='http://id.loc.gov/authorities/genreForms/gf2014026176']">a</xsl:when>
+                        <xsl:when test="bf:Work/bf:genreForm[@rdf:resource='http://id.loc.gov/authorities/genreForms/gf2014026142' or */@rdf:about='http://id.loc.gov/authorities/genreForms/gf2014026142']">a</xsl:when>
+                        <!-- Biographical comics -->
+                        <xsl:when test="bf:Work/bf:genreForm[@rdf:resource='http://id.loc.gov/authorities/genreForms/gf2014026244' or */@rdf:about='http://id.loc.gov/authorities/genreForms/gf2014026244']">b</xsl:when>
                         <xsl:otherwise><xsl:value-of select="' '"/></xsl:otherwise>
                       </xsl:choose>
                     </xsl:when>

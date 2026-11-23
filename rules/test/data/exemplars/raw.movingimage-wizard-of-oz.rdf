@@ -7,7 +7,7 @@
 	    <rdfs:label>new</rdfs:label>
 	  </bf:Status>
 	</bf:status>
-	<bf:date rdf:datatype="http://www.w3.org/2001/XMLSchema#date">1987-04-02</bf:date>
+	<bf:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">1987-04-02T00:00:00</bf:date>
 	<bf:agent>
 	  <bf:Agent rdf:about="http://id.loc.gov/vocabulary/organizations/dlc">
 	    <bf:code>DLC</bf:code>
@@ -22,7 +22,7 @@
 	    <rdfs:label>changed</rdfs:label>
 	  </bf:Status>
 	</bf:status>
-	<bf:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2021-01-15T15:24:46</bf:date>
+	<bf:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2025-06-06T13:36:24</bf:date>
 	<bf:descriptionModifier>
 	  <bf:Agent rdf:about="http://id.loc.gov/vocabulary/organizations/dlc">
 	    <bf:code>DLC</bf:code>
@@ -38,13 +38,13 @@
 	  </bf:Status>
 	</bf:status>
 	<bf:agent rdf:resource="http://id.loc.gov/vocabulary/organizations/dlcmrc"/>
-	<bf:generationProcess rdf:resource="https://github.com/lcnetdev/marc2bibframe2/releases/tag/v2.8.0"/>
-	<bf:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-11-20T16:32:42.360766-05:00</bf:date>
+	<bf:generationProcess rdf:resource="https://github.com/lcnetdev/marc2bibframe2/tree/v3.2-dev"/>
+	<bf:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2026-11-16T14:46:16.29064-05:00</bf:date>
       </bf:AdminMetadata>
     </bf:adminMetadata>
     <bf:adminMetadata>
       <bf:AdminMetadata>
-	<bf:descriptionLevel rdf:resource="http://id.loc.gov/ontologies/bibframe-2-4-0/"/>
+	<bf:descriptionLevel rdf:resource="http://id.loc.gov/ontologies/bibframe-3-0-1/"/>
 	<bflc:encodingLevel>
 	  <bflc:EncodingLevel rdf:about="http://id.loc.gov/vocabulary/menclvl/f">
 	    <rdfs:label>full</rdfs:label>
@@ -76,17 +76,30 @@
 	    <rdfs:label>040  $aDLC$cDLC$eamim$dDLC</rdfs:label>
 	  </bf:Note>
 	</bf:note>
-	<lclocal:d906>=906     $a 7 $b cbc $c orignew $d u $e ncip $f 19 $g y-movingim</lclocal:d906>
+	<bflc:marcKey>906  $a7$bcbc$corignew$du$encip$f19$gy-movingim</bflc:marcKey>
+	<bflc:marcKey>955  $aLCAP batch update 2025-06-01-04:00: LCAPM-1033, LCAPM-1036</bflc:marcKey>
+	<bflc:marcKey>952  $a35mm masterpos renumbered: CPA 0189-0191 to FPG 1593-1595.</bflc:marcKey>
+	<bflc:marcKey>952  $a35mm yellow renumbered: CPA 0192-0199 to FPG 1596-1603.</bflc:marcKey>
+	<bflc:marcKey>952  $a35mm cyan renumbered: CPA 0200-0207 to FPG 1604-1611.</bflc:marcKey>
+	<bflc:marcKey>952  $a35mm magenta renumbered: CPA 0208-0215 to FPG 1612-1619.</bflc:marcKey>
+	<bflc:marcKey>952  $a35mm dbl edge pos trk renumbered: CPA 0216-0221 to FPG 1620-1625.</bflc:marcKey>
+	<bflc:marcKey>952  $aArchival pos partially viewed for credits; updated by qu22.</bflc:marcKey>
+	<bflc:marcKey>953  $aTE01</bflc:marcKey>
+	<bflc:marcKey>991  $bc-MP&amp;TV$hDAA 1538 (viewing copy)$wMUMS VM File</bflc:marcKey>
+	<bflc:marcKey>991  $bc-MP&amp;TV$hDAA 1180 (viewing copy)$wMUMS VM File</bflc:marcKey>
+	<bflc:marcKey>991  $bc-MP&amp;TV$hCPA 0189-0191 (masterpos)$wMUMS VM File</bflc:marcKey>
+	<bflc:marcKey>991  $bc-MP&amp;TV$hCPA 0192-0199 (yellow)$wMUMS VM File</bflc:marcKey>
+	<bflc:marcKey>991  $bc-MP&amp;TV$hCPA 0200-0207 (cyan)$wMUMS VM File</bflc:marcKey>
+	<bflc:marcKey>991  $bc-MP&amp;TV$hCPA 0208-0215 (magenta)$wMUMS VM File</bflc:marcKey>
+	<bflc:marcKey>991  $bc-MP&amp;TV$hCPA 0216-0221 (dbl edge pos trk)$wMUMS VM File</bflc:marcKey>
+	<bflc:marcKey>991  $bc-MP&amp;TV$hFQA 5750-5754 (arch pos)$wMUMS VM File</bflc:marcKey>
+	<bflc:marcKey>999ff$ib15d59f2-e31d-5b06-b388-b014632fc5be$s3615eea9-91f1-47c1-aeec-3e4bb93aa3cd</bflc:marcKey>
       </bf:AdminMetadata>
     </bf:adminMetadata>
     <rdf:type rdf:resource="http://id.loc.gov/ontologies/bibframe/MovingImage"/>
-    <bf:content>
-      <bf:Content rdf:about="http://id.loc.gov/vocabulary/contentTypes/tdi">
-	<rdfs:label>two-dimensional moving image</rdfs:label>
-      </bf:Content>
-    </bf:content>
     <rdf:type rdf:resource="http://id.loc.gov/ontologies/bibframe/Monograph"/>
     <bf:language rdf:resource="http://id.loc.gov/vocabulary/languages/eng"/>
+    <bf:originDate rdf:datatype="http://id.loc.gov/datatypes/edtf">1939</bf:originDate>
     <bf:genreForm>
       <bf:GenreForm rdf:about="http://id.loc.gov/authorities/genreForms/gf2011026406">
 	<rdfs:label>Motion pictures</rdfs:label>
@@ -155,7 +168,7 @@
       </bf:ClassificationLcc>
     </bf:classification>
     <bf:expressionOf>
-      <bf:Hub rdf:about="http://id.loc.gov/resources/REPLACE/11511184#Hub130-18">
+      <bf:Hub rdf:about="http://id.loc.gov/resources/REPLACE/11511184#Hub130-19">
 	<bf:title>
 	  <bf:Title>
 	    <bf:mainTitle>Wizard of Oz (Motion picture : 1939)</bf:mainTitle>
@@ -170,6 +183,26 @@
 	<bf:mainTitle>The Wizard of Oz</bf:mainTitle>
       </bf:Title>
     </bf:title>
+    <bf:content>
+      <bf:Content rdf:about="http://id.loc.gov/vocabulary/contentTypes/tdi">
+	<rdfs:label>two-dimensional moving image</rdfs:label>
+	<bf:source>
+	  <bf:Source rdf:about="http://id.loc.gov/vocabulary/genreFormSchemes/rdacontent"/>
+	</bf:source>
+      </bf:Content>
+    </bf:content>
+    <bf:note>
+      <bf:Note>
+	<rdf:type rdf:resource="http://id.loc.gov/vocabulary/mnotetype/credits"/>
+	<rdfs:label>Adaptation, Noel Langley ; musical adaptation, Herbert Stothart ; music, Harold Arlen ; lyrics, E.Y. Harburg ; photographed by Harold Rosson.</rdfs:label>
+      </bf:Note>
+    </bf:note>
+    <bf:note>
+      <bf:Note>
+	<rdf:type rdf:resource="http://id.loc.gov/vocabulary/mnotetype/participants"/>
+	<rdfs:label>Cast: Judy Garland, Frank Morgan, Ray Bolger, Bert Lahr, Jack Haley, Billie Burke, Margaret Hamilton, Charley Grapewin, Toto (dog).</rdfs:label>
+      </bf:Note>
+    </bf:note>
     <bf:summary>
       <bf:Summary>
 	<rdfs:label>Delightful musical fantasy tale about a little Kansas girlnamed Dorothy who dreams of the magical land of Oz.</rdfs:label>
@@ -182,7 +215,7 @@
       </bf:Note>
     </bf:note>
     <bf:subject>
-      <bf:Topic rdf:about="http://id.loc.gov/resources/REPLACE/11511184#Topic650-38">
+      <bf:Topic rdf:about="http://id.loc.gov/resources/REPLACE/11511184#Topic650-41">
 	<rdf:type rdf:resource="http://www.loc.gov/mads/rdf/v1#ComplexSubject"/>
 	<rdfs:label>Friendship--Drama</rdfs:label>
 	<madsrdf:authoritativeLabel>Friendship--Drama</madsrdf:authoritativeLabel>
@@ -199,7 +232,7 @@
       </bf:Topic>
     </bf:subject>
     <bf:subject>
-      <bf:Topic rdf:about="http://id.loc.gov/resources/REPLACE/11511184#Topic650-39">
+      <bf:Topic rdf:about="http://id.loc.gov/resources/REPLACE/11511184#Topic650-42">
 	<rdf:type rdf:resource="http://www.loc.gov/mads/rdf/v1#ComplexSubject"/>
 	<rdfs:label>Good and evil--Drama</rdfs:label>
 	<madsrdf:authoritativeLabel>Good and evil--Drama</madsrdf:authoritativeLabel>
@@ -216,7 +249,7 @@
       </bf:Topic>
     </bf:subject>
     <bf:subject>
-      <bf:Topic rdf:about="http://id.loc.gov/resources/REPLACE/11511184#Topic650-40">
+      <bf:Topic rdf:about="http://id.loc.gov/resources/REPLACE/11511184#Topic650-43">
 	<rdf:type rdf:resource="http://www.loc.gov/mads/rdf/v1#ComplexSubject"/>
 	<rdfs:label>Oz (Imaginary place)--Drama</rdfs:label>
 	<madsrdf:authoritativeLabel>Oz (Imaginary place)--Drama</madsrdf:authoritativeLabel>
@@ -233,7 +266,7 @@
       </bf:Topic>
     </bf:subject>
     <bf:genreForm>
-      <bf:GenreForm rdf:about="http://id.loc.gov/resources/REPLACE/11511184#GenreForm655-41">
+      <bf:GenreForm rdf:about="http://id.loc.gov/resources/REPLACE/11511184#GenreForm655-44">
 	<rdf:type rdf:resource="http://www.loc.gov/mads/rdf/v1#GenreForm"/>
 	<rdfs:label>Fantasy films</rdfs:label>
 	<madsrdf:authoritativeLabel>Fantasy films</madsrdf:authoritativeLabel>
@@ -245,7 +278,7 @@
       </bf:GenreForm>
     </bf:genreForm>
     <bf:genreForm>
-      <bf:GenreForm rdf:about="http://id.loc.gov/resources/REPLACE/11511184#GenreForm655-42">
+      <bf:GenreForm rdf:about="http://id.loc.gov/resources/REPLACE/11511184#GenreForm655-45">
 	<rdf:type rdf:resource="http://www.loc.gov/mads/rdf/v1#GenreForm"/>
 	<rdfs:label>Musical films</rdfs:label>
 	<madsrdf:authoritativeLabel>Musical films</madsrdf:authoritativeLabel>
@@ -257,7 +290,7 @@
       </bf:GenreForm>
     </bf:genreForm>
     <bf:genreForm>
-      <bf:GenreForm rdf:about="http://id.loc.gov/resources/REPLACE/11511184#GenreForm655-43">
+      <bf:GenreForm rdf:about="http://id.loc.gov/resources/REPLACE/11511184#GenreForm655-46">
 	<rdf:type rdf:resource="http://www.loc.gov/mads/rdf/v1#GenreForm"/>
 	<rdfs:label>Fiction films</rdfs:label>
 	<madsrdf:authoritativeLabel>Fiction films</madsrdf:authoritativeLabel>
@@ -269,7 +302,7 @@
       </bf:GenreForm>
     </bf:genreForm>
     <bf:genreForm>
-      <bf:GenreForm rdf:about="http://id.loc.gov/resources/REPLACE/11511184#GenreForm655-44">
+      <bf:GenreForm rdf:about="http://id.loc.gov/resources/REPLACE/11511184#GenreForm655-47">
 	<rdf:type rdf:resource="http://www.loc.gov/mads/rdf/v1#GenreForm"/>
 	<rdfs:label>Feature films</rdfs:label>
 	<madsrdf:authoritativeLabel>Feature films</madsrdf:authoritativeLabel>
@@ -281,7 +314,7 @@
       </bf:GenreForm>
     </bf:genreForm>
     <bf:genreForm>
-      <bf:GenreForm rdf:about="http://id.loc.gov/resources/REPLACE/11511184#GenreForm655-45">
+      <bf:GenreForm rdf:about="http://id.loc.gov/resources/REPLACE/11511184#GenreForm655-48">
 	<rdf:type rdf:resource="http://www.loc.gov/mads/rdf/v1#GenreForm"/>
 	<rdfs:label>Videodiscs</rdfs:label>
 	<madsrdf:authoritativeLabel>Videodiscs</madsrdf:authoritativeLabel>
@@ -295,7 +328,7 @@
     <bf:contribution>
       <bf:Contribution>
 	<bf:agent>
-	  <bf:Agent rdf:about="http://id.loc.gov/resources/REPLACE/11511184#Agent700-46">
+	  <bf:Agent rdf:about="http://id.loc.gov/resources/REPLACE/11511184#Agent700-49">
 	    <rdf:type rdf:resource="http://id.loc.gov/ontologies/bibframe/Person"/>
 	    <rdfs:label>Fleming, Victor, 1889-1949</rdfs:label>
 	    <bflc:marcKey>7001 $aFleming, Victor,$d1889-1949,$edirection.</bflc:marcKey>
@@ -311,7 +344,7 @@
     <bf:contribution>
       <bf:Contribution>
 	<bf:agent>
-	  <bf:Agent rdf:about="http://id.loc.gov/resources/REPLACE/11511184#Agent700-47">
+	  <bf:Agent rdf:about="http://id.loc.gov/resources/REPLACE/11511184#Agent700-50">
 	    <rdf:type rdf:resource="http://id.loc.gov/ontologies/bibframe/Person"/>
 	    <rdfs:label>LeRoy, Mervyn, 1900-1987</rdfs:label>
 	    <bflc:marcKey>7001 $aLeRoy, Mervyn,$d1900-1987,$eproduction.</bflc:marcKey>
@@ -327,7 +360,7 @@
     <bf:contribution>
       <bf:Contribution>
 	<bf:agent>
-	  <bf:Agent rdf:about="http://id.loc.gov/resources/REPLACE/11511184#Agent700-48">
+	  <bf:Agent rdf:about="http://id.loc.gov/resources/REPLACE/11511184#Agent700-51">
 	    <rdf:type rdf:resource="http://id.loc.gov/ontologies/bibframe/Person"/>
 	    <rdfs:label>Langley, Noel, 1911-1980</rdfs:label>
 	    <bflc:marcKey>7001 $aLangley, Noel,$d1911-1980,$ewriting.</bflc:marcKey>
@@ -343,7 +376,7 @@
     <bf:contribution>
       <bf:Contribution>
 	<bf:agent>
-	  <bf:Agent rdf:about="http://id.loc.gov/resources/REPLACE/11511184#Agent700-49">
+	  <bf:Agent rdf:about="http://id.loc.gov/resources/REPLACE/11511184#Agent700-52">
 	    <rdf:type rdf:resource="http://id.loc.gov/ontologies/bibframe/Person"/>
 	    <rdfs:label>Ryerson, Florence</rdfs:label>
 	    <bflc:marcKey>7001 $aRyerson, Florence,$ewriting.</bflc:marcKey>
@@ -359,7 +392,7 @@
     <bf:contribution>
       <bf:Contribution>
 	<bf:agent>
-	  <bf:Agent rdf:about="http://id.loc.gov/resources/REPLACE/11511184#Agent700-50">
+	  <bf:Agent rdf:about="http://id.loc.gov/resources/REPLACE/11511184#Agent700-53">
 	    <rdf:type rdf:resource="http://id.loc.gov/ontologies/bibframe/Person"/>
 	    <rdfs:label>Woolf, Edgar Allan</rdfs:label>
 	    <bflc:marcKey>7001 $aWoolf, Edgar Allan,$ewriting.</bflc:marcKey>
@@ -375,7 +408,7 @@
     <bf:contribution>
       <bf:Contribution>
 	<bf:agent>
-	  <bf:Agent rdf:about="http://id.loc.gov/resources/REPLACE/11511184#Agent700-51">
+	  <bf:Agent rdf:about="http://id.loc.gov/resources/REPLACE/11511184#Agent700-54">
 	    <rdf:type rdf:resource="http://id.loc.gov/ontologies/bibframe/Person"/>
 	    <rdfs:label>Stothart, Herbert, 1885-1949</rdfs:label>
 	    <bflc:marcKey>7001 $aStothart, Herbert,$d1885-1949,$emusic.</bflc:marcKey>
@@ -391,7 +424,7 @@
     <bf:contribution>
       <bf:Contribution>
 	<bf:agent>
-	  <bf:Agent rdf:about="http://id.loc.gov/resources/REPLACE/11511184#Agent700-52">
+	  <bf:Agent rdf:about="http://id.loc.gov/resources/REPLACE/11511184#Agent700-55">
 	    <rdf:type rdf:resource="http://id.loc.gov/ontologies/bibframe/Person"/>
 	    <rdfs:label>Arlen, Harold, 1905-1986</rdfs:label>
 	    <bflc:marcKey>7001 $aArlen, Harold,$d1905-1986,$emusic.</bflc:marcKey>
@@ -407,7 +440,7 @@
     <bf:contribution>
       <bf:Contribution>
 	<bf:agent>
-	  <bf:Agent rdf:about="http://id.loc.gov/resources/REPLACE/11511184#Agent700-53">
+	  <bf:Agent rdf:about="http://id.loc.gov/resources/REPLACE/11511184#Agent700-56">
 	    <rdf:type rdf:resource="http://id.loc.gov/ontologies/bibframe/Person"/>
 	    <rdfs:label>Harburg, E. Y. (Edgar Yipsel), 1896-1981</rdfs:label>
 	    <bflc:marcKey>7001 $aHarburg, E. Y.$q(Edgar Yipsel),$d1896-1981,$emusic.</bflc:marcKey>
@@ -423,7 +456,7 @@
     <bf:contribution>
       <bf:Contribution>
 	<bf:agent>
-	  <bf:Agent rdf:about="http://id.loc.gov/resources/REPLACE/11511184#Agent700-54">
+	  <bf:Agent rdf:about="http://id.loc.gov/resources/REPLACE/11511184#Agent700-57">
 	    <rdf:type rdf:resource="http://id.loc.gov/ontologies/bibframe/Person"/>
 	    <rdfs:label>Rosson, Harold, 1895-1988</rdfs:label>
 	    <bflc:marcKey>7001 $aRosson, Harold,$d1895-1988,$ecamera.</bflc:marcKey>
@@ -439,7 +472,7 @@
     <bf:contribution>
       <bf:Contribution>
 	<bf:agent>
-	  <bf:Agent rdf:about="http://id.loc.gov/resources/REPLACE/11511184#Agent700-55">
+	  <bf:Agent rdf:about="http://id.loc.gov/resources/REPLACE/11511184#Agent700-58">
 	    <rdf:type rdf:resource="http://id.loc.gov/ontologies/bibframe/Person"/>
 	    <rdfs:label>Garland, Judy</rdfs:label>
 	    <bflc:marcKey>7001 $aGarland, Judy,$ecast.</bflc:marcKey>
@@ -455,7 +488,7 @@
     <bf:contribution>
       <bf:Contribution>
 	<bf:agent>
-	  <bf:Agent rdf:about="http://id.loc.gov/resources/REPLACE/11511184#Agent700-56">
+	  <bf:Agent rdf:about="http://id.loc.gov/resources/REPLACE/11511184#Agent700-59">
 	    <rdf:type rdf:resource="http://id.loc.gov/ontologies/bibframe/Person"/>
 	    <rdfs:label>Morgan, Frank, 1890-1949</rdfs:label>
 	    <bflc:marcKey>7001 $aMorgan, Frank,$d1890-1949,$ecast.</bflc:marcKey>
@@ -471,7 +504,7 @@
     <bf:contribution>
       <bf:Contribution>
 	<bf:agent>
-	  <bf:Agent rdf:about="http://id.loc.gov/resources/REPLACE/11511184#Agent700-57">
+	  <bf:Agent rdf:about="http://id.loc.gov/resources/REPLACE/11511184#Agent700-60">
 	    <rdf:type rdf:resource="http://id.loc.gov/ontologies/bibframe/Person"/>
 	    <rdfs:label>Bolger, Ray</rdfs:label>
 	    <bflc:marcKey>7001 $aBolger, Ray,$ecast.</bflc:marcKey>
@@ -487,7 +520,7 @@
     <bf:contribution>
       <bf:Contribution>
 	<bf:agent>
-	  <bf:Agent rdf:about="http://id.loc.gov/resources/REPLACE/11511184#Agent700-58">
+	  <bf:Agent rdf:about="http://id.loc.gov/resources/REPLACE/11511184#Agent700-61">
 	    <rdf:type rdf:resource="http://id.loc.gov/ontologies/bibframe/Person"/>
 	    <rdfs:label>Lahr, Bert, 1895-1967</rdfs:label>
 	    <bflc:marcKey>7001 $aLahr, Bert,$d1895-1967,$ecast.</bflc:marcKey>
@@ -503,7 +536,7 @@
     <bf:contribution>
       <bf:Contribution>
 	<bf:agent>
-	  <bf:Agent rdf:about="http://id.loc.gov/resources/REPLACE/11511184#Agent700-59">
+	  <bf:Agent rdf:about="http://id.loc.gov/resources/REPLACE/11511184#Agent700-62">
 	    <rdf:type rdf:resource="http://id.loc.gov/ontologies/bibframe/Person"/>
 	    <rdfs:label>Haley, Jack, 1897-1979</rdfs:label>
 	    <bflc:marcKey>7001 $aHaley, Jack,$d1897-1979,$ecast.</bflc:marcKey>
@@ -519,7 +552,7 @@
     <bf:contribution>
       <bf:Contribution>
 	<bf:agent>
-	  <bf:Agent rdf:about="http://id.loc.gov/resources/REPLACE/11511184#Agent700-60">
+	  <bf:Agent rdf:about="http://id.loc.gov/resources/REPLACE/11511184#Agent700-63">
 	    <rdf:type rdf:resource="http://id.loc.gov/ontologies/bibframe/Person"/>
 	    <rdfs:label>Burke, Billie, 1885-1970</rdfs:label>
 	    <bflc:marcKey>7001 $aBurke, Billie,$d1885-1970,$ecast.</bflc:marcKey>
@@ -535,7 +568,7 @@
     <bf:contribution>
       <bf:Contribution>
 	<bf:agent>
-	  <bf:Agent rdf:about="http://id.loc.gov/resources/REPLACE/11511184#Agent700-61">
+	  <bf:Agent rdf:about="http://id.loc.gov/resources/REPLACE/11511184#Agent700-64">
 	    <rdf:type rdf:resource="http://id.loc.gov/ontologies/bibframe/Person"/>
 	    <rdfs:label>Hamilton, Margaret, 1902-1985</rdfs:label>
 	    <bflc:marcKey>7001 $aHamilton, Margaret,$d1902-1985,$ecast.</bflc:marcKey>
@@ -552,11 +585,11 @@
       <bf:Relation>
 	<bf:relationship rdf:resource="http://id.loc.gov/vocabulary/relationship/relatedwork"/>
 	<bf:associatedResource>
-	  <bf:Hub rdf:about="http://id.loc.gov/resources/REPLACE/11511184#Hub700-62">
+	  <bf:Hub rdf:about="http://id.loc.gov/resources/REPLACE/11511184#Hub700-65">
 	    <bf:contribution>
 	      <bf:Contribution>
 		<bf:agent>
-		  <bf:Agent rdf:about="http://id.loc.gov/resources/REPLACE/11511184#Agent700-62">
+		  <bf:Agent rdf:about="http://id.loc.gov/resources/REPLACE/11511184#Agent700-65">
 		    <rdf:type rdf:resource="http://id.loc.gov/ontologies/bibframe/Person"/>
 		    <rdfs:label>Baum, L. Frank (Lyman Frank), 1856-1919</rdfs:label>
 		    <bflc:marcKey>7001 $aBaum, L. Frank$q(Lyman Frank),$d1856-1919.$tWizard of Oz.</bflc:marcKey>
@@ -580,7 +613,7 @@
     <bf:contribution>
       <bf:Contribution>
 	<bf:agent>
-	  <bf:Agent rdf:about="http://id.loc.gov/resources/REPLACE/11511184#Agent710-63">
+	  <bf:Agent rdf:about="http://id.loc.gov/resources/REPLACE/11511184#Agent710-66">
 	    <rdf:type rdf:resource="http://id.loc.gov/ontologies/bibframe/Organization"/>
 	    <rdfs:label>Loew's Incorporated</rdfs:label>
 	    <bflc:marcKey>7102 $aLoew's Incorporated.</bflc:marcKey>
@@ -594,7 +627,7 @@
     <bf:contribution>
       <bf:Contribution>
 	<bf:agent>
-	  <bf:Agent rdf:about="http://id.loc.gov/resources/REPLACE/11511184#Agent710-64">
+	  <bf:Agent rdf:about="http://id.loc.gov/resources/REPLACE/11511184#Agent710-67">
 	    <rdf:type rdf:resource="http://id.loc.gov/ontologies/bibframe/Organization"/>
 	    <rdfs:label>Metro-Goldwyn-Mayer</rdfs:label>
 	    <bflc:marcKey>7102 $aMetro-Goldwyn-Mayer.</bflc:marcKey>
@@ -609,14 +642,14 @@
       <bf:Relation>
 	<bf:relationship rdf:resource="http://id.loc.gov/vocabulary/relationship/datasource"/>
 	<bf:associatedResource>
-	  <bf:Work rdf:about="http://id.loc.gov/resources/REPLACE/11511184#Work786-67">
+	  <bf:Work rdf:about="http://id.loc.gov/resources/REPLACE/11511184#Work786-70">
 	    <bf:title>
 	      <bf:Title>
 		<bf:mainTitle>The wizard of Oz</bf:mainTitle>
 	      </bf:Title>
 	    </bf:title>
 	    <bf:hasInstance>
-	      <bf:Instance rdf:about="http://id.loc.gov/resources/REPLACE/11511184#Instance786-67">
+	      <bf:Instance rdf:about="http://id.loc.gov/resources/REPLACE/11511184#Instance786-70">
 		<bf:title>
 		  <bf:Title>
 		    <bf:mainTitle>The wizard of Oz</bf:mainTitle>
@@ -624,7 +657,7 @@
 		</bf:title>
 		<bf:note>
 		  <bf:Note>
-		    <rdfs:label>MAVIS</rdfs:label>
+		    <rdfs:label>AVCMS</rdfs:label>
 		  </bf:Note>
 		</bf:note>
 		<bf:identifiedBy>
@@ -637,7 +670,7 @@
 		    </bf:assigner>
 		  </bf:Lccn>
 		</bf:identifiedBy>
-		<bf:instanceOf rdf:resource="http://id.loc.gov/resources/REPLACE/11511184#Work786-67"/>
+		<bf:instanceOf rdf:resource="http://id.loc.gov/resources/REPLACE/11511184#Work786-70"/>
 	      </bf:Instance>
 	    </bf:hasInstance>
 	  </bf:Work>
@@ -663,11 +696,6 @@
 	<rdfs:label>mixed color</rdfs:label>
       </bf:ColorContent>
     </bf:colorContent>
-    <bf:videoCharacteristic>
-      <bf:VideoFormat rdf:about="http://id.loc.gov/vocabulary/mvidformat/laser">
-	<rdfs:label>laser optical</rdfs:label>
-      </bf:VideoFormat>
-    </bf:videoCharacteristic>
     <bf:soundContent>
       <bf:SoundContent rdf:about="http://id.loc.gov/vocabulary/msoundcontent/sound">
 	<rdfs:label>sound</rdfs:label>
@@ -678,7 +706,7 @@
 	<rdfs:label>optical</rdfs:label>
       </bf:RecordingMedium>
     </bf:soundCharacteristic>
-    <bf:provisionActivity xmlns:exsl="http://exslt.org/common">
+    <bf:provisionActivity>
       <bf:ProvisionActivity>
 	<rdf:type rdf:resource="http://id.loc.gov/ontologies/bibframe/Publication"/>
 	<bflc:simplePlace>United States</bflc:simplePlace>
@@ -686,8 +714,8 @@
 	<bflc:simpleDate>1939</bflc:simpleDate>
       </bf:ProvisionActivity>
     </bf:provisionActivity>
-    <bf:publicationStatement xmlns:exsl="http://exslt.org/common">United States: Metro-Goldwyn-Mayer, 1939</bf:publicationStatement>
-    <bf:provisionActivity xmlns:exsl="http://exslt.org/common">
+    <bf:publicationStatement>United States: Metro-Goldwyn-Mayer, 1939</bf:publicationStatement>
+    <bf:provisionActivity>
       <bf:ProvisionActivity>
 	<rdf:type rdf:resource="http://id.loc.gov/ontologies/bibframe/Publication"/>
 	<bflc:simplePlace>United States</bflc:simplePlace>
@@ -695,8 +723,8 @@
 	<bflc:simpleDate>[1981]</bflc:simpleDate>
       </bf:ProvisionActivity>
     </bf:provisionActivity>
-    <bf:publicationStatement xmlns:exsl="http://exslt.org/common">United States: MGM/CBS Home Video, [1981]</bf:publicationStatement>
-    <bf:provisionActivity xmlns:exsl="http://exslt.org/common">
+    <bf:publicationStatement>United States: MGM/CBS Home Video, [1981]</bf:publicationStatement>
+    <bf:provisionActivity>
       <bf:ProvisionActivity>
 	<rdf:type rdf:resource="http://id.loc.gov/ontologies/bibframe/Publication"/>
 	<bf:date rdf:datatype="http://id.loc.gov/datatypes/edtf">1983</bf:date>
@@ -706,7 +734,7 @@
 	<bflc:simpleDate>[1983]</bflc:simpleDate>
       </bf:ProvisionActivity>
     </bf:provisionActivity>
-    <bf:publicationStatement xmlns:exsl="http://exslt.org/common">United States: MGM/UA Home Video, [1983]</bf:publicationStatement>
+    <bf:publicationStatement>United States: MGM/UA Home Video, [1983]</bf:publicationStatement>
     <bf:identifiedBy>
       <bf:Lccn>
 	<rdf:value>   87706120 </rdf:value>
@@ -716,11 +744,16 @@
       <bf:CopyrightNumber>
 	<rdf:value>LP9039</rdf:value>
 	<bf:assigner>
-	  <bf:Agent>
+	  <bf:Organization>
 	    <rdfs:label>U.S. Copyright Office</rdfs:label>
-	  </bf:Agent>
+	  </bf:Organization>
 	</bf:assigner>
       </bf:CopyrightNumber>
+    </bf:identifiedBy>
+    <bf:identifiedBy>
+      <bf:Local>
+	<rdf:value>11511184</rdf:value>
+      </bf:Local>
     </bf:identifiedBy>
     <bf:responsibilityStatement>Loew's Incorporated ; directed by Victor Fleming ; produced by Mervyn LeRoy ; screen play by Noel Langley, Florence Ryerson, Edgar Allan Woolf</bf:responsibilityStatement>
     <bf:title>
@@ -772,50 +805,30 @@
 	    <rdfs:label>two-dimensional moving image</rdfs:label>
 	  </bflc:AppliesTo>
 	</bflc:appliesTo>
+	<bflc:appliesTo>
+	  <bflc:AppliesTo>
+	    <rdfs:label>laser optical</rdfs:label>
+	  </bflc:AppliesTo>
+	</bflc:appliesTo>
+	<bf:note>
+	  <bf:Note>
+	    <rdf:type rdf:resource="http://id.loc.gov/vocabulary/mnotetype/physical"/>
+	    <rdfs:label>sd., b&amp;w and col.</rdfs:label>
+	  </bf:Note>
+	</bf:note>
       </bf:Extent>
     </bf:extent>
-    <bf:note>
-      <bf:Note>
-	<rdf:type rdf:resource="http://id.loc.gov/vocabulary/mnotetype/physical"/>
-	<rdfs:label>sd., b&amp;w and col.</rdfs:label>
-	<bflc:appliesTo>
-	  <bflc:AppliesTo>
-	    <rdfs:label>videodisc</rdfs:label>
-	  </bflc:AppliesTo>
-	</bflc:appliesTo>
-	<bflc:appliesTo>
-	  <bflc:AppliesTo>
-	    <rdfs:label>DVD</rdfs:label>
-	  </bflc:AppliesTo>
-	</bflc:appliesTo>
-	<bflc:appliesTo>
-	  <bflc:AppliesTo>
-	    <rdfs:label>BluRay</rdfs:label>
-	  </bflc:AppliesTo>
-	</bflc:appliesTo>
-	<bflc:appliesTo>
-	  <bflc:AppliesTo>
-	    <rdfs:label>Blu-ray disc</rdfs:label>
-	  </bflc:AppliesTo>
-	</bflc:appliesTo>
-	<bflc:appliesTo>
-	  <bflc:AppliesTo>
-	    <rdfs:label>moving image</rdfs:label>
-	  </bflc:AppliesTo>
-	</bflc:appliesTo>
-	<bflc:appliesTo>
-	  <bflc:AppliesTo>
-	    <rdfs:label>video</rdfs:label>
-	  </bflc:AppliesTo>
-	</bflc:appliesTo>
-	<bflc:appliesTo>
-	  <bflc:AppliesTo>
-	    <rdfs:label>two-dimensional moving image</rdfs:label>
-	  </bflc:AppliesTo>
-	</bflc:appliesTo>
-      </bf:Note>
-    </bf:note>
     <bf:dimensions>12 in. viewing copy.</bf:dimensions>
+    <bf:videoCharacteristic>
+      <bf:VideoFormat rdf:about="http://id.loc.gov/vocabulary/mvidformat/laser">
+	<rdfs:label>laser optical</rdfs:label>
+	<bf:source>
+	  <bf:Source>
+	    <bf:code>rdavf</bf:code>
+	  </bf:Source>
+	</bf:source>
+      </bf:VideoFormat>
+    </bf:videoCharacteristic>
     <bf:note>
       <bf:Note>
 	<rdfs:label>Copyright: Loew's Inc.; 7Aug39; LP9039.</rdfs:label>
@@ -846,8 +859,6 @@
 	<rdfs:label>Sources used: Monthly film bulletin, v. 7, no. 73, p. 8; videodisc jackets.</rdfs:label>
       </bf:Note>
     </bf:note>
-    <bf:credits>Adaptation, Noel Langley ; musical adaptation, Herbert Stothart ; music, Harold Arlen ; lyrics, E.Y. Harburg ; photographed by Harold Rosson.</bf:credits>
-    <bf:credits>Cast: Judy Garland, Frank Morgan, Ray Bolger, Bert Lahr, Jack Haley, Billie Burke, Margaret Hamilton, Charley Grapewin, Toto (dog).</bf:credits>
     <bf:instanceOf rdf:resource="http://id.loc.gov/resources/REPLACE/11511184#Work"/>
     <bf:hasItem>
       <bf:Item rdf:about="http://id.loc.gov/resources/REPLACE/11511184#Item">
@@ -864,11 +875,6 @@
 	    <bf:role>
 	      <bf:Role rdf:about="http://id.loc.gov/vocabulary/relators/ctb"/>
 	    </bf:role>
-	    <bflc:applicableInstitution>
-	      <bf:Agent rdf:about="http://id.loc.gov/vocabulary/organizations/dlc">
-		<bf:code>DLC</bf:code>
-	      </bf:Agent>
-	    </bflc:applicableInstitution>
 	  </bf:Contribution>
 	</bf:contribution>
 	<bf:contribution>
@@ -883,31 +889,16 @@
 	    <bf:role>
 	      <bf:Role rdf:about="http://id.loc.gov/vocabulary/relators/ctb"/>
 	    </bf:role>
-	    <bflc:applicableInstitution>
-	      <bf:Agent rdf:about="http://id.loc.gov/vocabulary/organizations/dlc">
-		<bf:code>DLC</bf:code>
-	      </bf:Agent>
-	    </bflc:applicableInstitution>
 	  </bf:Contribution>
 	</bf:contribution>
 	<bf:note>
 	  <bf:Note>
 	    <rdfs:label>Reels 1, 2 and 10b of the masterpos are b&amp;w sequences. Together with the yellow, cyan and magenta reels, they make up one complete masterpos. Reel 10b of the track seems to match reel 10b of the masterpos.</rdfs:label>
-	    <bflc:applicableInstitution>
-	      <bf:Agent rdf:about="http://id.loc.gov/vocabulary/organizations/dlc">
-		<bf:code>DLC</bf:code>
-	      </bf:Agent>
-	    </bflc:applicableInstitution>
 	  </bf:Note>
 	</bf:note>
 	<bf:note>
 	  <bf:Note>
 	    <rdfs:label>LC also holds two other versions of this title: a Criterion collection "Special 50th anniversary edition" and The ultimate Oz. Both have added material.</rdfs:label>
-	    <bflc:applicableInstitution>
-	      <bf:Agent rdf:about="http://id.loc.gov/vocabulary/organizations/dlc">
-		<bf:code>DLC</bf:code>
-	      </bf:Agent>
-	    </bflc:applicableInstitution>
 	  </bf:Note>
 	</bf:note>
 	<bf:immediateAcquisition>
@@ -979,36 +970,36 @@
     </bf:soundCharacteristic>
     <bf:title>
       <bf:Title>
-	<bf:mainTitle>[videodisc]</bf:mainTitle>
+	<bf:mainTitle>[1 videodisc of 1 (CED) (ca. 102 min.)]</bf:mainTitle>
       </bf:Title>
     </bf:title>
     <bf:extent>
       <bf:Extent>
 	<rdfs:label>1 videodisc of 1 (CED) (ca. 102 min.)</rdfs:label>
+	<bf:note>
+	  <bf:Note>
+	    <rdf:type rdf:resource="http://id.loc.gov/vocabulary/mnotetype/physical"/>
+	    <rdfs:label>sd., b&amp;w and col.</rdfs:label>
+	  </bf:Note>
+	</bf:note>
       </bf:Extent>
     </bf:extent>
-    <bf:note>
-      <bf:Note>
-	<rdf:type rdf:resource="http://id.loc.gov/vocabulary/mnotetype/physical"/>
-	<rdfs:label>sd., b&amp;w and col.</rdfs:label>
-      </bf:Note>
-    </bf:note>
     <bf:dimensions>12 in. viewing copy.</bf:dimensions>
+    <bf:videoCharacteristic>
+      <bf:VideoFormat rdf:about="http://id.loc.gov/vocabulary/mvidformat/laser">
+	<rdfs:label>laser optical</rdfs:label>
+	<bf:source>
+	  <bf:Source>
+	    <bf:code>rdavf</bf:code>
+	  </bf:Source>
+	</bf:source>
+      </bf:VideoFormat>
+    </bf:videoCharacteristic>
     <bf:instanceOf rdf:resource="http://id.loc.gov/resources/REPLACE/11511184#Work"/>
   </bf:Instance>
   <bf:Instance rdf:about="http://id.loc.gov/resources/REPLACE/11511184-03#Instance">
     <rdf:type rdf:resource="http://id.loc.gov/ontologies/bflc/SecondaryInstance"/>
     <bf:issuance rdf:resource="http://id.loc.gov/vocabulary/issuance/mono"/>
-    <bf:media>
-      <bf:Media rdf:about="http://id.loc.gov/vocabulary/mediaTypes/g">
-	<rdfs:label>projected</rdfs:label>
-      </bf:Media>
-    </bf:media>
-    <bf:carrier>
-      <bf:Carrier rdf:about="http://id.loc.gov/vocabulary/carriers/mr">
-	<rdfs:label>film reel</rdfs:label>
-      </bf:Carrier>
-    </bf:carrier>
     <bf:colorContent>
       <bf:ColorContent rdf:about="http://id.loc.gov/vocabulary/mcolor/blw">
 	<rdfs:label>black and white</rdfs:label>
@@ -1031,36 +1022,42 @@
     </bf:baseMaterial>
     <bf:title>
       <bf:Title>
-	<bf:mainTitle>[3 reels of 10 (r1-2, 10b) (ca. 2100 ft.) :]</bf:mainTitle>
+	<bf:mainTitle>[3 reels of 10 (r1-2, 10b) (ca. 2100 ft.)]</bf:mainTitle>
       </bf:Title>
     </bf:title>
     <bf:extent>
       <bf:Extent>
 	<rdfs:label>3 reels of 10 (r1-2, 10b) (ca. 2100 ft.)</rdfs:label>
+	<bf:note>
+	  <bf:Note>
+	    <rdf:type rdf:resource="http://id.loc.gov/vocabulary/mnotetype/physical"/>
+	    <rdfs:label>si., b&amp;w</rdfs:label>
+	  </bf:Note>
+	</bf:note>
       </bf:Extent>
     </bf:extent>
-    <bf:note>
-      <bf:Note>
-	<rdf:type rdf:resource="http://id.loc.gov/vocabulary/mnotetype/physical"/>
-	<rdfs:label>si., b&amp;w</rdfs:label>
-      </bf:Note>
-    </bf:note>
     <bf:dimensions>35 mm. masterpos.</bf:dimensions>
+    <bf:carrier>
+      <bf:Carrier rdf:about="http://id.loc.gov/vocabulary/carriers/mr">
+	<rdfs:label>film reel</rdfs:label>
+	<bf:source>
+	  <bf:Source rdf:about="http://id.loc.gov/vocabulary/genreFormSchemes/rdacarrier"/>
+	</bf:source>
+      </bf:Carrier>
+    </bf:carrier>
+    <bf:media>
+      <bf:Media rdf:about="http://id.loc.gov/vocabulary/mediaTypes/g">
+	<rdfs:label>projected</rdfs:label>
+	<bf:source>
+	  <bf:Source rdf:about="http://id.loc.gov/vocabulary/genreFormSchemes/rdamedia"/>
+	</bf:source>
+      </bf:Media>
+    </bf:media>
     <bf:instanceOf rdf:resource="http://id.loc.gov/resources/REPLACE/11511184#Work"/>
   </bf:Instance>
   <bf:Instance rdf:about="http://id.loc.gov/resources/REPLACE/11511184-04#Instance">
     <rdf:type rdf:resource="http://id.loc.gov/ontologies/bflc/SecondaryInstance"/>
     <bf:issuance rdf:resource="http://id.loc.gov/vocabulary/issuance/mono"/>
-    <bf:media>
-      <bf:Media rdf:about="http://id.loc.gov/vocabulary/mediaTypes/g">
-	<rdfs:label>projected</rdfs:label>
-      </bf:Media>
-    </bf:media>
-    <bf:carrier>
-      <bf:Carrier rdf:about="http://id.loc.gov/vocabulary/carriers/mr">
-	<rdfs:label>film reel</rdfs:label>
-      </bf:Carrier>
-    </bf:carrier>
     <bf:colorContent>
       <bf:ColorContent rdf:about="http://id.loc.gov/vocabulary/mcolor/mul">
 	<rdfs:label>color</rdfs:label>
@@ -1083,31 +1080,42 @@
     </bf:baseMaterial>
     <bf:title>
       <bf:Title>
-	<bf:mainTitle>[8 reels of 10 (r3-10) (ca. 7040 ft.) :]</bf:mainTitle>
+	<bf:mainTitle>[8 reels of 10 (r3-10) (ca. 7040 ft.)]</bf:mainTitle>
       </bf:Title>
     </bf:title>
     <bf:extent>
       <bf:Extent>
 	<rdfs:label>8 reels of 10 (r3-10) (ca. 7040 ft.)</rdfs:label>
+	<bf:note>
+	  <bf:Note>
+	    <rdf:type rdf:resource="http://id.loc.gov/vocabulary/mnotetype/physical"/>
+	    <rdfs:label>si., yellow</rdfs:label>
+	  </bf:Note>
+	</bf:note>
       </bf:Extent>
     </bf:extent>
-    <bf:note>
-      <bf:Note>
-	<rdf:type rdf:resource="http://id.loc.gov/vocabulary/mnotetype/physical"/>
-	<rdfs:label>si., yellow</rdfs:label>
-      </bf:Note>
-    </bf:note>
     <bf:dimensions>35 mm. masterpos.</bf:dimensions>
+    <bf:carrier>
+      <bf:Carrier rdf:about="http://id.loc.gov/vocabulary/carriers/mr">
+	<rdfs:label>film reel</rdfs:label>
+	<bf:source>
+	  <bf:Source rdf:about="http://id.loc.gov/vocabulary/genreFormSchemes/rdacarrier"/>
+	</bf:source>
+      </bf:Carrier>
+    </bf:carrier>
+    <bf:media>
+      <bf:Media rdf:about="http://id.loc.gov/vocabulary/mediaTypes/g">
+	<rdfs:label>projected</rdfs:label>
+	<bf:source>
+	  <bf:Source rdf:about="http://id.loc.gov/vocabulary/genreFormSchemes/rdamedia"/>
+	</bf:source>
+      </bf:Media>
+    </bf:media>
     <bf:instanceOf rdf:resource="http://id.loc.gov/resources/REPLACE/11511184#Work"/>
   </bf:Instance>
   <bf:Instance rdf:about="http://id.loc.gov/resources/REPLACE/11511184-05#Instance">
     <rdf:type rdf:resource="http://id.loc.gov/ontologies/bflc/SecondaryInstance"/>
     <bf:issuance rdf:resource="http://id.loc.gov/vocabulary/issuance/mono"/>
-    <bf:media>
-      <bf:Media rdf:about="http://id.loc.gov/vocabulary/mediaTypes/g">
-	<rdfs:label>projected</rdfs:label>
-      </bf:Media>
-    </bf:media>
     <bf:colorContent>
       <bf:ColorContent rdf:about="http://id.loc.gov/vocabulary/mcolor/mul">
 	<rdfs:label>color</rdfs:label>
@@ -1130,36 +1138,42 @@
     </bf:baseMaterial>
     <bf:title>
       <bf:Title>
-	<bf:mainTitle>[8 reels of 10 (r3-10) (ca. 7040 ft.) :]</bf:mainTitle>
+	<bf:mainTitle>[8 reels of 10 (r3-10) (ca. 7040 ft.)]</bf:mainTitle>
       </bf:Title>
     </bf:title>
     <bf:extent>
       <bf:Extent>
 	<rdfs:label>8 reels of 10 (r3-10) (ca. 7040 ft.)</rdfs:label>
+	<bf:note>
+	  <bf:Note>
+	    <rdf:type rdf:resource="http://id.loc.gov/vocabulary/mnotetype/physical"/>
+	    <rdfs:label>si., cyan</rdfs:label>
+	  </bf:Note>
+	</bf:note>
       </bf:Extent>
     </bf:extent>
-    <bf:note>
-      <bf:Note>
-	<rdf:type rdf:resource="http://id.loc.gov/vocabulary/mnotetype/physical"/>
-	<rdfs:label>si., cyan</rdfs:label>
-      </bf:Note>
-    </bf:note>
     <bf:dimensions>35 mm. masterpos.</bf:dimensions>
+    <bf:carrier>
+      <bf:Carrier rdf:about="http://id.loc.gov/vocabulary/carriers/mr">
+	<rdfs:label>film reel</rdfs:label>
+	<bf:source>
+	  <bf:Source rdf:about="http://id.loc.gov/vocabulary/genreFormSchemes/rdacarrier"/>
+	</bf:source>
+      </bf:Carrier>
+    </bf:carrier>
+    <bf:media>
+      <bf:Media rdf:about="http://id.loc.gov/vocabulary/mediaTypes/g">
+	<rdfs:label>projected</rdfs:label>
+	<bf:source>
+	  <bf:Source rdf:about="http://id.loc.gov/vocabulary/genreFormSchemes/rdamedia"/>
+	</bf:source>
+      </bf:Media>
+    </bf:media>
     <bf:instanceOf rdf:resource="http://id.loc.gov/resources/REPLACE/11511184#Work"/>
   </bf:Instance>
   <bf:Instance rdf:about="http://id.loc.gov/resources/REPLACE/11511184-06#Instance">
     <rdf:type rdf:resource="http://id.loc.gov/ontologies/bflc/SecondaryInstance"/>
     <bf:issuance rdf:resource="http://id.loc.gov/vocabulary/issuance/mono"/>
-    <bf:media>
-      <bf:Media rdf:about="http://id.loc.gov/vocabulary/mediaTypes/g">
-	<rdfs:label>projected</rdfs:label>
-      </bf:Media>
-    </bf:media>
-    <bf:carrier>
-      <bf:Carrier rdf:about="http://id.loc.gov/vocabulary/carriers/mr">
-	<rdfs:label>film reel</rdfs:label>
-      </bf:Carrier>
-    </bf:carrier>
     <bf:colorContent>
       <bf:ColorContent rdf:about="http://id.loc.gov/vocabulary/mcolor/mul">
 	<rdfs:label>color</rdfs:label>
@@ -1182,36 +1196,42 @@
     </bf:baseMaterial>
     <bf:title>
       <bf:Title>
-	<bf:mainTitle>[8 reels of 10 (r3-10) (ca. 7040 ft.) :]</bf:mainTitle>
+	<bf:mainTitle>[8 reels of 10 (r3-10) (ca. 7040 ft.)]</bf:mainTitle>
       </bf:Title>
     </bf:title>
     <bf:extent>
       <bf:Extent>
 	<rdfs:label>8 reels of 10 (r3-10) (ca. 7040 ft.)</rdfs:label>
+	<bf:note>
+	  <bf:Note>
+	    <rdf:type rdf:resource="http://id.loc.gov/vocabulary/mnotetype/physical"/>
+	    <rdfs:label>si., magenta</rdfs:label>
+	  </bf:Note>
+	</bf:note>
       </bf:Extent>
     </bf:extent>
-    <bf:note>
-      <bf:Note>
-	<rdf:type rdf:resource="http://id.loc.gov/vocabulary/mnotetype/physical"/>
-	<rdfs:label>si., magenta</rdfs:label>
-      </bf:Note>
-    </bf:note>
     <bf:dimensions>35 mm. masterpos.</bf:dimensions>
+    <bf:carrier>
+      <bf:Carrier rdf:about="http://id.loc.gov/vocabulary/carriers/mr">
+	<rdfs:label>film reel</rdfs:label>
+	<bf:source>
+	  <bf:Source rdf:about="http://id.loc.gov/vocabulary/genreFormSchemes/rdacarrier"/>
+	</bf:source>
+      </bf:Carrier>
+    </bf:carrier>
+    <bf:media>
+      <bf:Media rdf:about="http://id.loc.gov/vocabulary/mediaTypes/g">
+	<rdfs:label>projected</rdfs:label>
+	<bf:source>
+	  <bf:Source rdf:about="http://id.loc.gov/vocabulary/genreFormSchemes/rdamedia"/>
+	</bf:source>
+      </bf:Media>
+    </bf:media>
     <bf:instanceOf rdf:resource="http://id.loc.gov/resources/REPLACE/11511184#Work"/>
   </bf:Instance>
   <bf:Instance rdf:about="http://id.loc.gov/resources/REPLACE/11511184-07#Instance">
     <rdf:type rdf:resource="http://id.loc.gov/ontologies/bflc/SecondaryInstance"/>
     <bf:issuance rdf:resource="http://id.loc.gov/vocabulary/issuance/mono"/>
-    <bf:media>
-      <bf:Media rdf:about="http://id.loc.gov/vocabulary/mediaTypes/g">
-	<rdfs:label>projected</rdfs:label>
-      </bf:Media>
-    </bf:media>
-    <bf:carrier>
-      <bf:Carrier rdf:about="http://id.loc.gov/vocabulary/carriers/mr">
-	<rdfs:label>film reel</rdfs:label>
-      </bf:Carrier>
-    </bf:carrier>
     <bf:soundContent>
       <bf:SoundContent rdf:about="http://id.loc.gov/vocabulary/msoundcontent/sound">
 	<rdfs:label>sound</rdfs:label>
@@ -1234,36 +1254,42 @@
     </bf:baseMaterial>
     <bf:title>
       <bf:Title>
-	<bf:mainTitle>[10 reels of 10 on 6 (r1-10, 10b) (ca. 9140 ft.) :]</bf:mainTitle>
+	<bf:mainTitle>[10 reels of 10 on 6 (r1-10, 10b) (ca. 9140 ft.)]</bf:mainTitle>
       </bf:Title>
     </bf:title>
     <bf:extent>
       <bf:Extent>
 	<rdfs:label>10 reels of 10 on 6 (r1-10, 10b) (ca. 9140 ft.)</rdfs:label>
+	<bf:note>
+	  <bf:Note>
+	    <rdf:type rdf:resource="http://id.loc.gov/vocabulary/mnotetype/physical"/>
+	    <rdfs:label>sd.</rdfs:label>
+	  </bf:Note>
+	</bf:note>
       </bf:Extent>
     </bf:extent>
-    <bf:note>
-      <bf:Note>
-	<rdf:type rdf:resource="http://id.loc.gov/vocabulary/mnotetype/physical"/>
-	<rdfs:label>sd.</rdfs:label>
-      </bf:Note>
-    </bf:note>
     <bf:dimensions>35 mm. dbl edge pos trk.</bf:dimensions>
+    <bf:carrier>
+      <bf:Carrier rdf:about="http://id.loc.gov/vocabulary/carriers/mr">
+	<rdfs:label>film reel</rdfs:label>
+	<bf:source>
+	  <bf:Source rdf:about="http://id.loc.gov/vocabulary/genreFormSchemes/rdacarrier"/>
+	</bf:source>
+      </bf:Carrier>
+    </bf:carrier>
+    <bf:media>
+      <bf:Media rdf:about="http://id.loc.gov/vocabulary/mediaTypes/g">
+	<rdfs:label>projected</rdfs:label>
+	<bf:source>
+	  <bf:Source rdf:about="http://id.loc.gov/vocabulary/genreFormSchemes/rdamedia"/>
+	</bf:source>
+      </bf:Media>
+    </bf:media>
     <bf:instanceOf rdf:resource="http://id.loc.gov/resources/REPLACE/11511184#Work"/>
   </bf:Instance>
   <bf:Instance rdf:about="http://id.loc.gov/resources/REPLACE/11511184-08#Instance">
     <rdf:type rdf:resource="http://id.loc.gov/ontologies/bflc/SecondaryInstance"/>
     <bf:issuance rdf:resource="http://id.loc.gov/vocabulary/issuance/mono"/>
-    <bf:media>
-      <bf:Media rdf:about="http://id.loc.gov/vocabulary/mediaTypes/g">
-	<rdfs:label>projected</rdfs:label>
-      </bf:Media>
-    </bf:media>
-    <bf:carrier>
-      <bf:Carrier rdf:about="http://id.loc.gov/vocabulary/carriers/mr">
-	<rdfs:label>film reel</rdfs:label>
-      </bf:Carrier>
-    </bf:carrier>
     <bf:colorContent>
       <bf:ColorContent rdf:about="http://id.loc.gov/vocabulary/mcolor/mix">
 	<rdfs:label>mixed color</rdfs:label>
@@ -1291,21 +1317,37 @@
     </bf:baseMaterial>
     <bf:title>
       <bf:Title>
-	<bf:mainTitle>[10 reels of 10 on 5 (ca. 9140 ft.) :]</bf:mainTitle>
+	<bf:mainTitle>[10 reels of 10 on 5 (ca. 9140 ft.)]</bf:mainTitle>
       </bf:Title>
     </bf:title>
     <bf:extent>
       <bf:Extent>
 	<rdfs:label>10 reels of 10 on 5 (ca. 9140 ft.)</rdfs:label>
+	<bf:note>
+	  <bf:Note>
+	    <rdf:type rdf:resource="http://id.loc.gov/vocabulary/mnotetype/physical"/>
+	    <rdfs:label>sd., col. &amp; b&amp;w</rdfs:label>
+	  </bf:Note>
+	</bf:note>
       </bf:Extent>
     </bf:extent>
-    <bf:note>
-      <bf:Note>
-	<rdf:type rdf:resource="http://id.loc.gov/vocabulary/mnotetype/physical"/>
-	<rdfs:label>sd., col. &amp; b&amp;w</rdfs:label>
-      </bf:Note>
-    </bf:note>
     <bf:dimensions>35 mm. theatrical projection print.</bf:dimensions>
+    <bf:carrier>
+      <bf:Carrier rdf:about="http://id.loc.gov/vocabulary/carriers/mr">
+	<rdfs:label>film reel</rdfs:label>
+	<bf:source>
+	  <bf:Source rdf:about="http://id.loc.gov/vocabulary/genreFormSchemes/rdacarrier"/>
+	</bf:source>
+      </bf:Carrier>
+    </bf:carrier>
+    <bf:media>
+      <bf:Media rdf:about="http://id.loc.gov/vocabulary/mediaTypes/g">
+	<rdfs:label>projected</rdfs:label>
+	<bf:source>
+	  <bf:Source rdf:about="http://id.loc.gov/vocabulary/genreFormSchemes/rdamedia"/>
+	</bf:source>
+      </bf:Media>
+    </bf:media>
     <bf:instanceOf rdf:resource="http://id.loc.gov/resources/REPLACE/11511184#Work"/>
   </bf:Instance>
 </rdf:RDF>

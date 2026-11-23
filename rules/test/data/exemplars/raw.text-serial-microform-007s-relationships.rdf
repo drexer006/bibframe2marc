@@ -7,7 +7,7 @@
 	    <rdfs:label>new</rdfs:label>
 	  </bf:Status>
 	</bf:status>
-	<bf:date rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2000-01-14</bf:date>
+	<bf:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2000-01-14T00:00:00</bf:date>
 	<bf:agent>
 	  <bf:Agent rdf:about="http://id.loc.gov/vocabulary/organizations/dlc">
 	    <bf:code>DLC</bf:code>
@@ -22,10 +22,10 @@
 	    <rdfs:label>changed</rdfs:label>
 	  </bf:Status>
 	</bf:status>
-	<bf:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2018-06-09T13:30:10</bf:date>
+	<bf:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2026-08-07T06:53:07</bf:date>
 	<bf:descriptionModifier>
 	  <bf:Agent>
-	    <bf:code>OCLCA</bf:code>
+	    <bf:code>OCLCQ</bf:code>
 	  </bf:Agent>
 	</bf:descriptionModifier>
       </bf:AdminMetadata>
@@ -38,13 +38,13 @@
 	  </bf:Status>
 	</bf:status>
 	<bf:agent rdf:resource="http://id.loc.gov/vocabulary/organizations/dlcmrc"/>
-	<bf:generationProcess rdf:resource="https://github.com/lcnetdev/marc2bibframe2/releases/tag/v2.8.0"/>
-	<bf:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-11-20T16:32:33.562569-05:00</bf:date>
+	<bf:generationProcess rdf:resource="https://github.com/lcnetdev/marc2bibframe2/tree/v3.2-dev"/>
+	<bf:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2026-11-16T14:45:08.035698-05:00</bf:date>
       </bf:AdminMetadata>
     </bf:adminMetadata>
     <bf:adminMetadata>
       <bf:AdminMetadata>
-	<bf:descriptionLevel rdf:resource="http://id.loc.gov/ontologies/bibframe-2-4-0/"/>
+	<bf:descriptionLevel rdf:resource="http://id.loc.gov/ontologies/bibframe-3-0-1/"/>
 	<bflc:encodingLevel>
 	  <bflc:EncodingLevel rdf:about="http://id.loc.gov/vocabulary/menclvl/1">
 	    <rdfs:label>full not examined</rdfs:label>
@@ -77,7 +77,7 @@
 	<bf:note>
 	  <bf:Note>
 	    <rdf:type rdf:resource="http://id.loc.gov/vocabulary/mnotetype/internal"/>
-	    <rdfs:label>040  $aDLC$beng$cDLC$dOCLCQ$dOCLCF$dOCLCO$dOCLCQ$dOCLCA</rdfs:label>
+	    <rdfs:label>040  $aDLC$beng$cDLC$dOCLCQ$dOCLCF$dOCLCO$dOCLCQ$dOCLCA$dOCLCQ</rdfs:label>
 	  </bf:Note>
 	</bf:note>
 	<bf:descriptionAuthentication>
@@ -85,9 +85,11 @@
 	    <bf:code>pcc</bf:code>
 	  </bf:DescriptionAuthentication>
 	</bf:descriptionAuthentication>
-	<lclocal:d906>=906     $a 7 $b cbc $c serials $d 4 $e ncip $f 20 $g n-oclcserc</lclocal:d906>
-	<lclocal:d925>=925  0  $a Acquire $b 1 shelf copy $x Policy default</lclocal:d925>
-	<lclocal:d955>=955     $a db18 01-28-00</lclocal:d955>
+	<bflc:marcKey>0291 $aAU@$b000025505175</bflc:marcKey>
+	<bflc:marcKey>906  $a7$bcbc$cserials$d4$encip$f20$gn-oclcserc</bflc:marcKey>
+	<bflc:marcKey>9250 $aAcquire$b1 shelf copy$xPolicy default</bflc:marcKey>
+	<bflc:marcKey>955  $adb18 01-28-00</bflc:marcKey>
+	<bflc:marcKey>999ff$s2c6eb173-14a8-49c4-ae9b-d9b9b8867f6d$i04afa760-6e9e-5dc8-aa78-81f201ed28b7</bflc:marcKey>
       </bf:AdminMetadata>
     </bf:adminMetadata>
     <rdf:type rdf:resource="http://id.loc.gov/ontologies/bibframe/Text"/>
@@ -116,7 +118,7 @@
       </bf:ClassificationLcc>
     </bf:classification>
     <bf:expressionOf>
-      <bf:Hub rdf:about="http://id.loc.gov/resources/REPLACE/11891684#Hub130-13">
+      <bf:Hub rdf:about="http://id.loc.gov/resources/REPLACE/11891684#Hub130-15">
 	<bf:title>
 	  <bf:Title>
 	    <bf:mainTitle>Giornale dell'arte (Turin, Italy)</bf:mainTitle>
@@ -154,18 +156,30 @@
 	</bf:source>
       </bf:Content>
     </bf:content>
-    <bf:supplementaryContent>
-      <bf:SupplementaryContent>
-	<rdfs:label>Some issues accompanied by supplements, devoted to certain subjects, e.g., Tappeti.</rdfs:label>
-      </bf:SupplementaryContent>
-    </bf:supplementaryContent>
+    <bf:illustrativeContent>
+      <bf:Illustration rdf:about="http://rdaregistry.info/termList/IllusContent/1014">
+	<rdfs:label>illustration</rdfs:label>
+	<bf:source>
+	  <bf:Source>
+	    <bf:code>rdaill</bf:code>
+	  </bf:Source>
+	</bf:source>
+      </bf:Illustration>
+    </bf:illustrativeContent>
     <bf:note>
       <bf:Note>
+	<rdf:type rdf:resource="http://id.loc.gov/vocabulary/mnotetype/suppl"/>
+	<rdfs:label>Some issues accompanied by supplements, devoted to certain subjects, e.g., Tappeti.</rdfs:label>
+      </bf:Note>
+    </bf:note>
+    <bf:note>
+      <bf:Note>
+	<rdf:type rdf:resource="http://id.loc.gov/vocabulary/mnotetype/relnote"/>
 	<rdfs:label>Issued also in international editions: Giornale dell'arte (Turin, Italy). English. Journal of art, Dec. 1988-June-July 1989; Giornale dell'arte (Turin, Italy). English (1990). Art newspaper, Oct. 1990-</rdfs:label>
       </bf:Note>
     </bf:note>
     <bf:subject>
-      <bf:Topic rdf:about="http://id.loc.gov/resources/REPLACE/11891684#Topic650-28">
+      <bf:Topic rdf:about="http://id.loc.gov/resources/REPLACE/11891684#Topic650-31">
 	<rdf:type rdf:resource="http://www.loc.gov/mads/rdf/v1#ComplexSubject"/>
 	<rdfs:label>Art, Italian--Periodicals</rdfs:label>
 	<madsrdf:authoritativeLabel>Art, Italian--Periodicals</madsrdf:authoritativeLabel>
@@ -182,7 +196,7 @@
       </bf:Topic>
     </bf:subject>
     <bf:subject>
-      <bf:Topic rdf:about="http://id.loc.gov/resources/REPLACE/11891684#Topic650-29">
+      <bf:Topic rdf:about="http://id.loc.gov/resources/REPLACE/11891684#Topic650-32">
 	<rdf:type rdf:resource="http://www.loc.gov/mads/rdf/v1#ComplexSubject"/>
 	<rdfs:label>Art--Periodicals</rdfs:label>
 	<madsrdf:authoritativeLabel>Art--Periodicals</madsrdf:authoritativeLabel>
@@ -226,7 +240,7 @@
       <bf:Relation>
 	<bf:relationship rdf:resource="http://id.loc.gov/vocabulary/relationship/otheredition"/>
 	<bf:associatedResource>
-	  <bf:Work rdf:about="http://id.loc.gov/resources/REPLACE/11891684#Work775-33">
+	  <bf:Work rdf:about="http://id.loc.gov/resources/REPLACE/11891684#Work775-36">
 	    <bf:title>
 	      <bf:Title>
 		<bf:mainTitle>Giornale dell'arte (Turin, Italy). English. Journal of art</bf:mainTitle>
@@ -238,13 +252,13 @@
 	      </bf:Issn>
 	    </bf:identifiedBy>
 	    <bf:hasInstance>
-	      <bf:Instance rdf:about="http://id.loc.gov/resources/REPLACE/11891684#Instance775-33">
+	      <bf:Instance rdf:about="http://id.loc.gov/resources/REPLACE/11891684#Instance775-36">
 		<bf:title>
 		  <bf:Title>
 		    <bf:mainTitle>Giornale dell'arte (Turin, Italy). English. Journal of art</bf:mainTitle>
 		  </bf:Title>
 		</bf:title>
-		<bf:instanceOf rdf:resource="http://id.loc.gov/resources/REPLACE/11891684#Work775-33"/>
+		<bf:instanceOf rdf:resource="http://id.loc.gov/resources/REPLACE/11891684#Work775-36"/>
 	      </bf:Instance>
 	    </bf:hasInstance>
 	  </bf:Work>
@@ -255,7 +269,7 @@
       <bf:Relation>
 	<bf:relationship rdf:resource="http://id.loc.gov/vocabulary/relationship/otheredition"/>
 	<bf:associatedResource>
-	  <bf:Work rdf:about="http://id.loc.gov/resources/REPLACE/11891684#Work775-34">
+	  <bf:Work rdf:about="http://id.loc.gov/resources/REPLACE/11891684#Work775-37">
 	    <bf:title>
 	      <bf:Title>
 		<bf:mainTitle>Giornale dell'arte (Turin, Italy). English (1990). Art newspaper</bf:mainTitle>
@@ -267,7 +281,7 @@
 	      </bf:Issn>
 	    </bf:identifiedBy>
 	    <bf:hasInstance>
-	      <bf:Instance rdf:about="http://id.loc.gov/resources/REPLACE/11891684#Instance775-34">
+	      <bf:Instance rdf:about="http://id.loc.gov/resources/REPLACE/11891684#Instance775-37">
 		<bf:title>
 		  <bf:Title>
 		    <bf:mainTitle>Giornale dell'arte (Turin, Italy). English (1990). Art newspaper</bf:mainTitle>
@@ -293,7 +307,7 @@
 		    </bf:assigner>
 		  </bf:Identifier>
 		</bf:identifiedBy>
-		<bf:instanceOf rdf:resource="http://id.loc.gov/resources/REPLACE/11891684#Work775-34"/>
+		<bf:instanceOf rdf:resource="http://id.loc.gov/resources/REPLACE/11891684#Work775-37"/>
 	      </bf:Instance>
 	    </bf:hasInstance>
 	  </bf:Work>
@@ -304,7 +318,7 @@
       <bf:Relation>
 	<bf:relationship rdf:resource="http://id.loc.gov/vocabulary/relationship/otherphysicalformat"/>
 	<bf:associatedResource>
-	  <bf:Work rdf:about="http://id.loc.gov/resources/REPLACE/11891684#Work776-35">
+	  <bf:Work rdf:about="http://id.loc.gov/resources/REPLACE/11891684#Work776-38">
 	    <bf:title>
 	      <bf:Title>
 		<bf:mainTitle>Il giornale dell'arte</bf:mainTitle>
@@ -312,7 +326,7 @@
 	      </bf:Title>
 	    </bf:title>
 	    <bf:hasInstance>
-	      <bf:Instance rdf:about="http://id.loc.gov/resources/REPLACE/11891684#Instance776-35">
+	      <bf:Instance rdf:about="http://id.loc.gov/resources/REPLACE/11891684#Instance776-38">
 		<bf:title>
 		  <bf:Title>
 		    <bf:mainTitle>Il giornale dell'arte</bf:mainTitle>
@@ -338,7 +352,7 @@
 		    </bf:assigner>
 		  </bf:Identifier>
 		</bf:identifiedBy>
-		<bf:instanceOf rdf:resource="http://id.loc.gov/resources/REPLACE/11891684#Work776-35"/>
+		<bf:instanceOf rdf:resource="http://id.loc.gov/resources/REPLACE/11891684#Work776-38"/>
 	      </bf:Instance>
 	    </bf:hasInstance>
 	  </bf:Work>
@@ -379,7 +393,7 @@
 	<rdfs:label>safety base</rdfs:label>
       </bf:BaseMaterial>
     </bf:baseMaterial>
-    <bf:provisionActivity xmlns:exsl="http://exslt.org/common">
+    <bf:provisionActivity>
       <bf:ProvisionActivity>
 	<rdf:type rdf:resource="http://id.loc.gov/ontologies/bibframe/Publication"/>
 	<bf:date rdf:datatype="http://id.loc.gov/datatypes/edtf">1983/..</bf:date>
@@ -394,7 +408,7 @@
 	<bflc:simpleDate>1983-</bflc:simpleDate>
       </bf:ProvisionActivity>
     </bf:provisionActivity>
-    <bf:publicationStatement xmlns:exsl="http://exslt.org/common">Torino: Allemandi, 1983-</bf:publicationStatement>
+    <bf:publicationStatement>Torino: Allemandi, 1983-</bf:publicationStatement>
     <bf:frequency>
       <bf:Frequency rdf:about="http://id.loc.gov/vocabulary/frequencies/mon">
 	<rdfs:label>monthly</rdfs:label>
@@ -422,7 +436,7 @@
     </bf:identifiedBy>
     <bf:identifiedBy>
       <bf:OclcNumber>
-	<rdf:value>ocm43286094 </rdf:value>
+	<rdf:value>43286094</rdf:value>
       </bf:OclcNumber>
     </bf:identifiedBy>
     <bf:acquisitionSource>
@@ -439,19 +453,14 @@
     <bf:extent>
       <bf:Extent>
 	<rdfs:label>volumes</rdfs:label>
+	<bf:note>
+	  <bf:Note>
+	    <rdf:type rdf:resource="http://id.loc.gov/vocabulary/mnotetype/physical"/>
+	    <rdfs:label>illustrations</rdfs:label>
+	  </bf:Note>
+	</bf:note>
       </bf:Extent>
     </bf:extent>
-    <bf:note>
-      <bf:Note>
-	<rdf:type rdf:resource="http://id.loc.gov/vocabulary/mnotetype/physical"/>
-	<rdfs:label>illustrations</rdfs:label>
-	<bflc:appliesTo>
-	  <bflc:AppliesTo>
-	    <rdfs:label>all</rdfs:label>
-	  </bflc:AppliesTo>
-	</bflc:appliesTo>
-      </bf:Note>
-    </bf:note>
     <bf:dimensions>42 cm</bf:dimensions>
     <bf:media>
       <bf:Media rdf:about="http://id.loc.gov/vocabulary/mediaTypes/h">

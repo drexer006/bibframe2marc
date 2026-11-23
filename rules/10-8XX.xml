@@ -12,6 +12,9 @@
   <if test="$xslProcessor != 'libxslt'">
     <df tag="$vSeriesLookupTag" lang-xpath="rdfs:label" lang-prefer="transliterated">
       <context xpath="
+        bf:Work/bf:relation/bf:Relation[bf:relationship[contains(@rdf:resource, '/relationship/series') or contains(bf:Relationship/@rdf:about, '/relationship/series')]]/bf:associatedResource[contains(@rdf:resource, 'hubs')] |
+        bf:Work/bf:relation/bf:Relation[bf:relationship[contains(@rdf:resource, '/relationship/series') or contains(bf:Relationship/@rdf:about, '/relationship/series')]]/bf:associatedResource/bf:*[contains(@rdf:about, 'hubs') and not(bflc:marcKey)] |
+        
         bf:Work/bf:relation/bf:Relation[bf:relationship[contains(@rdf:resource, 'hasSeries') or contains(bf:Relationship/@rdf:about, 'hasSeries')]]/bf:associatedResource[contains(@rdf:resource, 'hubs')] |
         bf:Work/bf:relation/bf:Relation[bf:relationship[contains(@rdf:resource, 'hasSeries') or contains(bf:Relationship/@rdf:about, 'hasSeries')]]/bf:associatedResource/bf:*[contains(@rdf:about, 'hubs') and not(bflc:marcKey)] |
 
@@ -118,6 +121,8 @@
   <if test="$xslProcessor = 'libxslt'">
     <switch>
       <case test="
+        bf:Work/bf:relation/bf:Relation[bf:relationship[contains(@rdf:resource, '/relationship/series') or contains(bf:Relationship/@rdf:about, '/relationship/series')]]/bf:associatedResource[contains(@rdf:resource, 'hubs')] |
+        bf:Work/bf:relation/bf:Relation[bf:relationship[contains(@rdf:resource, '/relationship/series') or contains(bf:Relationship/@rdf:about, '/relationship/series')]]/bf:associatedResource/bf:*[contains(@rdf:about, 'hubs') and not(bflc:marcKey)] |
         bf:Work/bf:relation/bf:Relation[bf:relationship[contains(@rdf:resource, 'hasSeries') or contains(bf:Relationship/@rdf:about, 'hasSeries')]]/bf:associatedResource[contains(@rdf:resource, 'hubs')] |
         bf:Work/bf:relation/bf:Relation[bf:relationship[contains(@rdf:resource, 'hasSeries') or contains(bf:Relationship/@rdf:about, 'hasSeries')]]/bf:associatedResource/bf:*[contains(@rdf:about, 'hubs') and not(bflc:marcKey)] |
         bf:Work/bf:hasSeries[contains(@rdf:resource, 'hubs')] |
@@ -133,47 +138,97 @@
   </if>
   
   <!-- When a marcKey is present. -->
-  <df tag="$vSeriesMarcKeyTag" lang-xpath="rdfs:label" lang-prefer="transliterated">
-    <context xpath="
-      bf:Work/bf:relation/bf:Relation[bf:relationship[contains(@rdf:resource, 'hasSeries') or contains(bf:Relationship/@rdf:about, 'hasSeries')]]/bf:associatedResource/bf:*[bflc:marcKey] |
-      bf:Work/bf:hasSeries/bf:*[bflc:marcKey] |
-      bf:Work/bflc:relationship/bflc:Relationship[bflc:relation[contains(@rdf:resource, 'hasSeries') or contains(bflc:Relation/@rdf:about, 'hasSeries')]]/bf:relatedTo/bf:*[bflc:marcKey]
-      ">
-      
-      <var name="relURI">
-        <switch>
-          <case test="contains(@rdf:about,'id.loc.gov')"><transform><xsl:value-of select="@rdf:about"/></transform></case>
-        </switch>
-      </var>
-      <var name="vRelResourcePreNS">
-        <transform>
-          <xsl:call-template name="tGetRelResource">
-            <xsl:with-param name="pRelUri" select="$relURI"/>
-            <xsl:with-param name="pContext" select="."/>
+  <select xpath="
+    bf:Work/bf:relation/bf:Relation[bf:relationship[contains(@rdf:resource, '/relationship/series') or contains(bf:Relationship/@rdf:about, '/relationship/series')]]/bf:associatedResource/bf:*[bflc:marcKey] |
+    bf:Work/bf:relation/bf:Relation[bf:relationship[contains(@rdf:resource, 'hasSeries') or contains(bf:Relationship/@rdf:about, 'hasSeries')]]/bf:associatedResource/bf:*[bflc:marcKey] |
+    bf:Work/bf:hasSeries/bf:*[bflc:marcKey] |
+    bf:Work/bflc:relationship/bflc:Relationship[bflc:relation[contains(@rdf:resource, 'hasSeries') or contains(bflc:Relation/@rdf:about, 'hasSeries')]]/bf:relatedTo/bf:*[bflc:marcKey]
+    ">
+    
+    <var name="relURI">
+      <switch>
+        <case test="contains(@rdf:about,'id.loc.gov')"><transform><xsl:value-of select="@rdf:about"/></transform></case>
+      </switch>
+    </var>
+    <var name="vRelResourcePreNS">
+      <transform>
+        <xsl:call-template name="tGetRelResource">
+          <xsl:with-param name="pRelUri" select="$relURI"/>
+          <xsl:with-param name="pContext" select="."/>
+        </xsl:call-template>
+      </transform>
+    </var>
+    <var name="vRelResource" xpath="exsl:node-set($vRelResourcePreNS)" />
+    <var name="vSeriesMarcKeyTag">
+      <switch>
+        <case test="$vRelResource//marc:record">
+          <switch>
+            <case test="$vRelResource//marc:datafield[@tag='100']">800</case>
+            <case test="$vRelResource//marc:datafield[@tag='110']">810</case>
+            <case test="$vRelResource//marc:datafield[@tag='111']">811</case>
+            <case test="$vRelResource//marc:datafield[@tag='130']">830</case>
+          </switch>
+        </case>
+      </switch>
+    </var>
+    <var name="vValidSubfields">
+      <switch>
+        <case test="$vSeriesMarcKeyTag='800'">abcdfghjklmnopqrstv</case>
+        <case test="$vSeriesMarcKeyTag='810'">abcdfghklmnoprstv</case>
+        <case test="$vSeriesMarcKeyTag='811'">acdefghklnpqstv</case>
+        <case test="$vSeriesMarcKeyTag='830'">adfghklmnoprstv</case>
+      </switch>
+    </var>
+    
+    <var name="vLangTagLabel">
+      <transform>
+        <xsl:call-template name="tGetBCP47RegField">
+          <xsl:with-param name="x" select="self::node()/bflc:marcKey" />
+        </xsl:call-template>
+      </transform>
+    </var>
+    <var name="vLangTagScript">
+      <transform>
+        <xsl:call-template name="tGetBCP47for880">
+          <xsl:with-param name="x" select="self::node()/bflc:marcKey" />
+          <xsl:with-param name="bcp47forRegField" select="$vLangTagLabel" />
+        </xsl:call-template>
+      </transform>
+    </var>
+    <var name="v880Script">
+      <switch>
+        <case test="$vLangTagScript!=''">
+          <lookup map="df880script" targetField="code">
+            <lookupField name="lang" xpath="substring-after($vLangTagScript,'-')"/>
+          </lookup>
+        </case>
+      </switch>
+    </var>
+    
+    <var name="vRelVariantPreNS">
+      <transform>
+        <xsl:if test="$v880Script != '' and self::node()/bflc:marcKey[@xml:lang and not(contains(translate(@xml:lang,$upper,$lower),translate($pCatScript,$upper,$lower)))][1]">
+          <xsl:call-template name="tGetMiniMARCFromKey">
+            <xsl:with-param name="pFieldStr" select="self::node()/bflc:marcKey[@xml:lang and not(contains(translate(@xml:lang,$upper,$lower),translate($pCatScript,$upper,$lower)))][1]"/>
           </xsl:call-template>
-        </transform>
-      </var>
-      <var name="vRelResource" xpath="exsl:node-set($vRelResourcePreNS)" />
-      <var name="vSeriesMarcKeyTag">
-        <switch>
-          <case test="$vRelResource//marc:record">
-            <switch>
-              <case test="$vRelResource//marc:datafield[@tag='100']">800</case>
-              <case test="$vRelResource//marc:datafield[@tag='110']">810</case>
-              <case test="$vRelResource//marc:datafield[@tag='111']">811</case>
-              <case test="$vRelResource//marc:datafield[@tag='130']">830</case>
-            </switch>
-          </case>
-        </switch>
-      </var>
-      <var name="vValidSubfields">
-        <switch>
-          <case test="$vSeriesMarcKeyTag='800'">abcdfghjklmnopqrstv</case>
-          <case test="$vSeriesMarcKeyTag='810'">abcdfghklmnoprstv</case>
-          <case test="$vSeriesMarcKeyTag='811'">acdefghklnpqstv</case>
-          <case test="$vSeriesMarcKeyTag='830'">adfghklmnoprstv</case>
-        </switch>
-      </var>
+        </xsl:if>
+      </transform>
+    </var>
+    <var name="vRelVariant" xpath="exsl:node-set($vRelVariantPreNS)" />
+    <var name="vRelVariantTag">
+      <switch>
+        <case test="$vRelVariant//marc:record">
+          <switch>
+            <case test="$vRelVariant//marc:datafield[@tag='100']">100</case>
+            <case test="$vRelVariant//marc:datafield[@tag='110']">110</case>
+            <case test="$vRelVariant//marc:datafield[@tag='111']">111</case>
+            <case test="$vRelVariant//marc:datafield[@tag='151']">110</case>
+          </switch>
+        </case>
+      </switch>
+    </var>
+    
+    <df tag="$vSeriesMarcKeyTag" lang-xpath="rdfs:label" lang-prefer="transliterated">
       <ind1 default=" ">
         <switch>
           <case test="$vSeriesMarcKeyTag != '830'">
@@ -193,6 +248,12 @@
           </case>
         </switch>
       </ind2>
+      <switch>
+        <case test="$vRelVariant//marc:datafield[@tag!='']">
+          <!-- We have a variant, so we need to create an 880 link. -->
+          <sf code="6"><transform><xsl:value-of select="concat('880-', 86 + position())"/></transform></sf>   
+        </case>
+      </switch>
       <transform>
         <xsl:for-each select="$vRelResource//marc:datafield[starts-with(@tag, '1')]/marc:subfield[contains($vValidSubfields,@code)]">
           <marc:subfield>
@@ -233,10 +294,113 @@
           </sf>
         </case>
       </switch>
-    </context>
-  </df>
+      <switch>
+        <case test="$vLangTagLabel != ''">
+          <sf code="y">
+            <transform>
+              <xsl:variable name="bcp47code">
+                <xsl:call-template name="tOutputBCP47">
+                  <xsl:with-param name="bcp47orig" select="$vLangTagLabel" />
+                </xsl:call-template>
+              </xsl:variable>
+              <xsl:value-of select="concat('(bcp47)', $bcp47code)" />
+            </transform>
+          </sf>
+        </case>
+      </switch>
+    </df>
+    
+    <switch>
+      <case test="$vRelVariant//marc:datafield[@tag!='']">
+        <!-- We have a variant, so we need to create an 880. -->
+        <df tag="880">
+          <ind1 default=" ">
+            <switch>
+              <case test="$vSeriesMarcKeyTag != '830'">
+                <select xpath="$vRelResource//marc:datafield[starts-with(@tag, '1')]/@ind1" />
+              </case>
+            </switch>
+          </ind1>
+          <ind2 default=" ">
+            <switch>
+              <case test="$vSeriesMarcKeyTag = '830'">
+                <switch>
+                  <case test="$vRelResource//marc:datafield[starts-with(@tag, '1')]/@ind1 != '' and $vRelResource//marc:datafield[starts-with(@tag, '1')]/@ind1 != ' '">
+                    <select xpath="$vRelResource//marc:datafield[starts-with(@tag, '1')]/@ind1" />
+                  </case>
+                  <case test="default">0</case>
+                </switch>
+              </case>
+            </switch>
+          </ind2>
+          <sf code="6">
+            <switch>
+              <case test="$vRelResource//marc:datafield[@tag!='']">
+                <transform><xsl:value-of select="concat($vSeriesMarcKeyTag, '-', 86 + position(), '/', $v880Script)"/></transform>
+              </case>
+              <case test="default">
+                <transform><xsl:value-of select="concat($vSeriesMarcKeyTag, '-00', '/', $v880Script)"/></transform>
+              </case>
+            </switch>
+          </sf>
+          <transform>
+            <xsl:for-each select="$vRelVariant//marc:datafield[starts-with(@tag, '1')]/marc:subfield[contains($vValidSubfields,@code)]">
+              <marc:subfield>
+                <xsl:attribute name="code"><xsl:value-of select="@code"/></xsl:attribute>
+                <xsl:call-template name="tChopPunct">
+                  <xsl:with-param name="pString" select="."/>
+                </xsl:call-template>
+              </marc:subfield>
+            </xsl:for-each>
+          </transform>
+          <switch>
+            <case test="not($vRelVariant//marc:datafield[starts-with(@tag, '1')]/marc:subfield[@code='v'])">
+              <sf code="v" repeatable="false">
+                <select xpath="ancestor::bf:Relation/bf:seriesEnumeration[@xml:lang]|ancestor::bflc:Relationship/bf:seriesEnumeration[@xml:lang]"/>
+              </sf>            
+            </case>
+          </switch>
+          <switch>
+            <case test="not($vRelVariant//marc:datafield[starts-with(@tag, '1')]/marc:subfield[@code='x'])">
+              <sf code="x" repeatable="false">
+                <select xpath="bf:identifiedBy/*[local-name()='Issn' or rdf:type/@rdf:resource='http://id.loc.gov/ontologies/bibframe/Issn']/rdf:value"/>
+              </sf>
+            </case>
+          </switch>
+          <switch>
+            <case test="not($vRelVariant//marc:datafield[starts-with(@tag, '1')]/marc:subfield[@code='w'])">
+              <sf code="w">
+                <select xpath="bf:identifiedBy/*[local-name()='Lccn' or rdf:type/@rdf:resource='http://id.loc.gov/ontologies/bibframe/Lccn']">
+                  <transform><xsl:value-of select="concat('(DLC)',rdf:value)"/></transform>
+                </select>
+              </sf>
+            </case>
+          </switch>
+          <switch>
+            <case test="$relURI != ''">
+              <sf code="1">
+                <transform><xsl:value-of select="$relURI" /></transform>
+              </sf>
+            </case>
+          </switch>
+          <sf code="y">
+            <transform>
+              <xsl:variable name="bcp47code">
+                <xsl:call-template name="tOutputBCP47">
+                  <xsl:with-param name="bcp47orig" select="$vLangTagScript" />
+                </xsl:call-template>
+              </xsl:variable>
+              <xsl:value-of select="concat('(bcp47)', $bcp47code)" />
+            </transform>
+          </sf>
+        </df>
+      </case>
+    </switch>
+  </select>
 
   <select xpath="
+    bf:Work/bf:relation/bf:Relation[bf:relationship[contains(@rdf:resource, '/relationship/series') or contains(bf:Relationship/@rdf:about, '/relationship/series')]]/bf:associatedResource/bf:*[not(contains(@rdf:about, 'hubs')) and not(bflc:marcKey) and bf:title and not(contains(bf:status/@rdf:resource, 'mstatus/t')) and not(contains(bf:status/bf:Status/@rdf:about, '/mstatus/t'))] |
+    //bf:Item/bf:relation/bf:Relation[bf:relationship[contains(@rdf:resource, '/relationship/series') or contains(bf:Relationship/@rdf:about, '/relationship/series')]]/bf:associatedResource/bf:*[not(contains(@rdf:about, 'hubs')) and not(bflc:marcKey) and bf:title and not(contains(bf:status/@rdf:resource, 'mstatus/t')) and not(contains(bf:status/bf:Status/@rdf:about, '/mstatus/t'))] |
     bf:Work/bf:relation/bf:Relation[bf:relationship[contains(@rdf:resource, 'hasSeries') or contains(bf:Relationship/@rdf:about, 'hasSeries')]]/bf:associatedResource/bf:*[not(contains(@rdf:about, 'hubs')) and not(bflc:marcKey) and bf:title and not(contains(bf:status/@rdf:resource, 'mstatus/t')) and not(contains(bf:status/bf:Status/@rdf:about, '/mstatus/t'))] |
     //bf:Item/bf:relation/bf:Relation[bf:relationship[contains(@rdf:resource, 'hasSeries') or contains(bf:Relationship/@rdf:about, 'hasSeries')]]/bf:associatedResource/bf:*[not(contains(@rdf:about, 'hubs')) and not(bflc:marcKey) and bf:title and not(contains(bf:status/@rdf:resource, 'mstatus/t')) and not(contains(bf:status/bf:Status/@rdf:about, '/mstatus/t'))] |
     bf:Work/bflc:relationship/bflc:Relationship[bflc:relation[contains(@rdf:resource, 'hasSeries') or contains(bflc:Relation/@rdf:about, 'hasSeries')]]/bf:relatedTo/bf:*[not(contains(@rdf:about, 'hubs')) and not(bflc:marcKey) and bf:title and not(contains(bf:status/@rdf:resource, 'mstatus/t')) and not(contains(bf:status/bf:Status/@rdf:about, '/mstatus/t'))] |
@@ -434,8 +598,26 @@
                   </sf>
                 </case>
               </switch>
-              <sf code="5">
-                <select xpath="bflc:applicableInstitution/*/bf:code"/>
+              <sf code="5" repeatable="false">
+                <switch>
+                  <case test="ancestor::bf:Item/bf:heldBy//@rdf:*">
+                    <transform>
+                      <xsl:call-template name="tOrgCode">
+                        <xsl:with-param name="pOrgProp" select="ancestor::bf:Item/bf:heldBy" />
+                      </xsl:call-template>
+                    </transform>
+                  </case>
+                  <case test="bflc:applicableInstitution">
+                    <transform>
+                      <xsl:call-template name="tOrgCode">
+                        <xsl:with-param name="pOrgProp" select="bflc:applicableInstitution" />
+                      </xsl:call-template>
+                    </transform>
+                  </case>
+                  <case test="ancestor::bf:Item">
+                    <transform><xsl:value-of select="$pConversionAgency" /></transform>
+                  </case>
+                </switch>
               </sf>
             </df>
           </case>
@@ -591,8 +773,26 @@
                   </sf>
                 </case>
               </switch>
-              <sf code="5">
-                <select xpath="bflc:applicableInstitution/*/bf:code"/>
+              <sf code="5" repeatable="false">
+                <switch>
+                  <case test="ancestor::bf:Item/bf:heldBy//@rdf:*">
+                    <transform>
+                      <xsl:call-template name="tOrgCode">
+                        <xsl:with-param name="pOrgProp" select="ancestor::bf:Item/bf:heldBy" />
+                      </xsl:call-template>
+                    </transform>
+                  </case>
+                  <case test="bflc:applicableInstitution">
+                    <transform>
+                      <xsl:call-template name="tOrgCode">
+                        <xsl:with-param name="pOrgProp" select="bflc:applicableInstitution" />
+                      </xsl:call-template>
+                    </transform>
+                  </case>
+                  <case test="ancestor::bf:Item">
+                    <transform><xsl:value-of select="$pConversionAgency" /></transform>
+                  </case>
+                </switch>
               </sf>
             </df>
           </case>
@@ -745,8 +945,26 @@
                   </sf>
                 </case>
               </switch>
-              <sf code="5">
-                <select xpath="bflc:applicableInstitution/*/bf:code"/>
+              <sf code="5" repeatable="false">
+                <switch>
+                  <case test="ancestor::bf:Item/bf:heldBy//@rdf:*">
+                    <transform>
+                      <xsl:call-template name="tOrgCode">
+                        <xsl:with-param name="pOrgProp" select="ancestor::bf:Item/bf:heldBy" />
+                      </xsl:call-template>
+                    </transform>
+                  </case>
+                  <case test="bflc:applicableInstitution">
+                    <transform>
+                      <xsl:call-template name="tOrgCode">
+                        <xsl:with-param name="pOrgProp" select="bflc:applicableInstitution" />
+                      </xsl:call-template>
+                    </transform>
+                  </case>
+                  <case test="ancestor::bf:Item">
+                    <transform><xsl:value-of select="$pConversionAgency" /></transform>
+                  </case>
+                </switch>
               </sf>
               <!-- nac $7 -->
             </df>
@@ -811,8 +1029,26 @@
                 </select>
               </sf>
               <sf code="2"><select xpath="bf:source/bf:Source/bf:code"/></sf>
-              <sf code="5">
-                <select xpath="bflc:applicableInstitution/*/bf:code"/>
+              <sf code="5" repeatable="false">
+                <switch>
+                  <case test="ancestor::bf:Item/bf:heldBy//@rdf:*">
+                    <transform>
+                      <xsl:call-template name="tOrgCode">
+                        <xsl:with-param name="pOrgProp" select="ancestor::bf:Item/bf:heldBy" />
+                      </xsl:call-template>
+                    </transform>
+                  </case>
+                  <case test="bflc:applicableInstitution">
+                    <transform>
+                      <xsl:call-template name="tOrgCode">
+                        <xsl:with-param name="pOrgProp" select="bflc:applicableInstitution" />
+                      </xsl:call-template>
+                    </transform>
+                  </case>
+                  <case test="ancestor::bf:Item">
+                    <transform><xsl:value-of select="$pConversionAgency" /></transform>
+                  </case>
+                </switch>
               </sf>
             </df>
           </case>
@@ -835,20 +1071,26 @@
           <case test="starts-with($v856Uri,'http')">4</case>
         </switch>
       </ind1>
-      <ind2 default=" ">
+      <ind2 default="1">
         <switch>
+          <case test="not(rdf:type[@rdf:resource='http://id.loc.gov/ontologies/bflc/SecondaryInstance'])">0</case>
           <case test="local-name()='SupplementaryContent'">2</case>
         </switch>
       </ind2>
       <switch>
-        <case test="not(contains(bf:title/bf:Title/bf:mainTitle, 'resource]'))">
+        <case test="rdf:type[@rdf:resource='http://id.loc.gov/ontologies/bflc/SecondaryInstance'] and 
+                    not(contains(bf:title/bf:Title/bf:mainTitle, 'resource]'))">
           <sf code="3"><select xpath="bf:title/bf:Title/bf:mainTitle" /></sf>
         </case>
       </switch>
       <sf code="u"><transform><xsl:value-of select="$v856Uri"/></transform></sf>
-      <sf code="z" chopPunct="true">
-        <select xpath="bf:note/bf:Note/rdfs:label"/>
-      </sf>
+      <switch>
+        <case test="rdf:type[@rdf:resource='http://id.loc.gov/ontologies/bflc/SecondaryInstance']">
+          <sf code="z" chopPunct="true">
+            <select xpath="bf:note/bf:Note/rdfs:label"/>
+          </sf>
+        </case>
+      </switch>
     </context>
   </df>
   
@@ -866,7 +1108,7 @@
           <case test="starts-with($v856Uri,'http')">4</case>
         </switch>
       </ind1>
-      <ind2 default=" ">
+      <ind2 default="1">
         <switch>
           <case test="local-name()='SupplementaryContent'">2</case>
         </switch>
@@ -915,7 +1157,7 @@
     <sf code="a"><transform><xsl:value-of select="$vCurrentVersion"/> (<xsl:value-of select="$xslProcessor" />)</transform></sf>
     <switch>
       <case test="$pGenerationDatestamp">
-        <sf code="g"><transform><xsl:value-of select="$pGenerationDatestamp"/></transform></sf>
+        <sf code="g"><transform><xsl:value-of select="substring($pGenerationDatestamp, 1, 8)"/></transform></sf>
       </case>
     </switch>
     <switch>
@@ -930,7 +1172,18 @@
     </switch>
     <switch>
       <case test="$pGenerationUri">
-        <sf code="u"><transform><xsl:value-of select="concat($pGenerationUri, '/releases/tag/', substring-after($vCurrentVersion, 'DLC bibframe2marc '))" /></transform></sf>
+        <sf code="u">
+          <transform>
+            <xsl:choose>
+              <xsl:when test="contains($vCurrentVersion, '-dev')">
+                <xsl:value-of select="concat($pGenerationUri, '/tree/', substring-after($vCurrentVersion, 'DLC bibframe2marc '))" />
+              </xsl:when>
+              <xsl:otherwise>
+                <xsl:value-of select="concat($pGenerationUri, '/releases/tag/', substring-after($vCurrentVersion, 'DLC bibframe2marc '))" />
+              </xsl:otherwise>
+            </xsl:choose>
+          </transform>
+        </sf>
       </case>
     </switch>
   </df>

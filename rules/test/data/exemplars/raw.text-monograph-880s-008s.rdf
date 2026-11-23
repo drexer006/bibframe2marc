@@ -7,7 +7,7 @@
 	    <rdfs:label>new</rdfs:label>
 	  </bf:Status>
 	</bf:status>
-	<bf:date rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2021-04-14</bf:date>
+	<bf:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2021-04-14T00:00:00</bf:date>
 	<bf:agent>
 	  <bf:Agent rdf:about="http://id.loc.gov/vocabulary/organizations/dlc">
 	    <bf:code>DLC</bf:code>
@@ -22,7 +22,7 @@
 	    <rdfs:label>changed</rdfs:label>
 	  </bf:Status>
 	</bf:status>
-	<bf:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-03-25T08:54:11</bf:date>
+	<bf:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2025-06-07T06:54:08</bf:date>
 	<bf:descriptionModifier>
 	  <bf:Agent rdf:about="http://id.loc.gov/vocabulary/organizations/dlc">
 	    <bf:code>DLC</bf:code>
@@ -38,13 +38,13 @@
 	  </bf:Status>
 	</bf:status>
 	<bf:agent rdf:resource="http://id.loc.gov/vocabulary/organizations/dlcmrc"/>
-	<bf:generationProcess rdf:resource="https://github.com/lcnetdev/marc2bibframe2/releases/tag/v2.8.0"/>
-	<bf:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-11-20T16:32:51.204572-05:00</bf:date>
+	<bf:generationProcess rdf:resource="https://github.com/lcnetdev/marc2bibframe2/tree/v3.2-dev"/>
+	<bf:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2026-11-16T14:46:57.37993-05:00</bf:date>
       </bf:AdminMetadata>
     </bf:adminMetadata>
     <bf:adminMetadata>
       <bf:AdminMetadata>
-	<bf:descriptionLevel rdf:resource="http://id.loc.gov/ontologies/bibframe-2-4-0/"/>
+	<bf:descriptionLevel rdf:resource="http://id.loc.gov/ontologies/bibframe-3-0-1/"/>
 	<bflc:encodingLevel>
 	  <bflc:EncodingLevel rdf:about="http://id.loc.gov/vocabulary/menclvl/f">
 	    <rdfs:label>full</rdfs:label>
@@ -65,9 +65,6 @@
 	    </bf:assigner>
 	  </bf:Local>
 	</bf:identifiedBy>
-	<lclocal:d906>=906     $a 7 $b cbc $c orignew $d 3 $e ncip $f 20 $g y-nonroman</lclocal:d906>
-	<lclocal:d925>=925  0  $a acquire $b 1 shelf copy $x policy default</lclocal:d925>
-	<lclocal:d955>=955     $a ve11 to LC 2021-04-28 $c cc18 2022-03-16 TW $d cc14 2022-03-25 (TW situational) $e cc14 2022-03-25 (TW situational) to ASIAN</lclocal:d955>
 	<bf:descriptionLanguage>
 	  <bf:Language rdf:about="http://id.loc.gov/vocabulary/languages/eng"/>
 	</bf:descriptionLanguage>
@@ -87,9 +84,15 @@
 	    <bf:code>pcc</bf:code>
 	  </bf:DescriptionAuthentication>
 	</bf:descriptionAuthentication>
-	<lclocal:d985>=985     $a CNP load-new $d 2021-04-28</lclocal:d985>
 	<lclocal:batch>BibframePilot2</lclocal:batch>
-	<lclocal:d985>=985     $e BibframePilot2 $d 2022-03-25 $f cc14 2022-03-25</lclocal:d985>
+	<bflc:marcKey>906  $a7$bcbc$corignew$d3$encip$f20$gy-nonroman</bflc:marcKey>
+	<bflc:marcKey>9250 $aacquire$b1 shelf copy$xpolicy default</bflc:marcKey>
+	<bflc:marcKey>955  $ave11 to LC 2021-04-28$ccc18 2022-03-16 TW$dcc14 2022-03-25 (TW situational)$ecc14 2022-03-25 (TW situational) to ASIAN</bflc:marcKey>
+	<bflc:marcKey>4900 $6880-06$aZhonghua chuang shi shen hua yan jiu gong cheng xi lie. Zhonghua chuang shi shen hua kao gu zhuan ti. Yu cheng Zhongguo</bflc:marcKey>
+	<bflc:marcKey>923  $d20210414$nUS01221118$sCNP</bflc:marcKey>
+	<bflc:marcKey>985  $aCNP load-new$d2021-04-28</bflc:marcKey>
+	<bflc:marcKey>985  $eBibframePilot2$d2022-03-25$fcc14 2022-03-25</bflc:marcKey>
+	<bflc:marcKey>999ff$i45d893f0-fc1a-5d03-abf0-7f37a899fb45$s0edea461-add2-46fc-8bbb-792c90e2a319</bflc:marcKey>
       </bf:AdminMetadata>
     </bf:adminMetadata>
     <rdf:type rdf:resource="http://id.loc.gov/ontologies/bibframe/Text"/>
@@ -139,10 +142,16 @@
       </bf:Contribution>
     </bf:contribution>
     <bf:title>
-      <bf:Title>
-	<bf:mainTitle>Xuan yu shi dai</bf:mainTitle>
-	<bf:mainTitle xml:lang="zh-hani">玄玉时代</bf:mainTitle>
-      </bf:Title>
+      <bf:ParallelTitle>
+	<bf:mainTitle>Xuan yu shi dai : wu qian nian Zhongguo de xin qiu zheng</bf:mainTitle>
+	<bf:mainTitle xml:lang="zh-hani">玄玉时代 : 五千年中国的新求证</bf:mainTitle>
+      </bf:ParallelTitle>
+    </bf:title>
+    <bf:title>
+      <bf:ParallelTitle>
+	<bf:mainTitle>Black Jade Age : New Evidence of 5000 Years History of China</bf:mainTitle>
+	<bf:mainTitle xml:lang="zh-hani">Black Jade Age : New Evidence of 5000 Years History of China</bf:mainTitle>
+      </bf:ParallelTitle>
     </bf:title>
     <bf:title>
       <bf:ParallelTitle>
@@ -152,7 +161,7 @@
     </bf:title>
     <bf:title>
       <bf:VariantTitle>
-	<bf:variantType>portion</bf:variantType>
+	<rdf:type rdf:resource="http://id.loc.gov/vocabulary/vartitletype/por"/>
 	<bf:mainTitle>Wu qian nian Zhongguo de xin qiu zheng</bf:mainTitle>
 	<bf:mainTitle xml:lang="zh-hani">五千年中国的新求证</bf:mainTitle>
       </bf:VariantTitle>
@@ -168,13 +177,12 @@
     <bf:relation xmlns:exsl="http://exslt.org/common">
       <bf:Relation>
 	<bf:relationship>
-	  <bf:Relationship rdf:about="http://id.loc.gov/ontologies/bibframe/hasSeries">
-	    <rdfs:label>Has Series</rdfs:label>
+	  <bf:Relationship rdf:about="http://id.loc.gov/vocabulary/relationship/series">
+	    <rdfs:label>series</rdfs:label>
 	  </bf:Relationship>
 	</bf:relationship>
 	<bf:associatedResource>
 	  <bf:Series>
-	    <rdf:type rdf:resource="http://id.loc.gov/ontologies/bflc/Uncontrolled"/>
 	    <bf:status>
 	      <bf:Status rdf:about="http://id.loc.gov/vocabulary/mstatus/t">
 		<rdfs:label>transcribed</rdfs:label>
@@ -234,7 +242,7 @@
   </bf:Work>
   <bf:Instance rdf:about="http://id.loc.gov/resources/REPLACE/22014581#Instance">
     <bf:issuance rdf:resource="http://id.loc.gov/vocabulary/issuance/mono"/>
-    <bf:provisionActivity xmlns:exsl="http://exslt.org/common">
+    <bf:provisionActivity>
       <bf:ProvisionActivity>
 	<rdf:type rdf:resource="http://id.loc.gov/ontologies/bibframe/Publication"/>
 	<bf:date rdf:datatype="http://id.loc.gov/datatypes/edtf">2020</bf:date>
@@ -247,12 +255,12 @@
 	<bflc:simpleDate xml:lang="zh-hani">2020</bflc:simpleDate>
       </bf:ProvisionActivity>
     </bf:provisionActivity>
-    <bf:publicationStatement xmlns:exsl="http://exslt.org/common">Shanghai: Shanghai ren min chu ban she, 2020</bf:publicationStatement>
-    <bf:publicationStatement xml:lang="zh-hani" xmlns:exsl="http://exslt.org/common">上海: 上海人民出版社, 2020</bf:publicationStatement>
+    <bf:publicationStatement>Shanghai: Shanghai ren min chu ban she, 2020</bf:publicationStatement>
+    <bf:publicationStatement xml:lang="zh-hani">上海: 上海人民出版社, 2020</bf:publicationStatement>
     <bf:identifiedBy>
-      <bf:OclcNumber>
-	<rdf:value>on1246209164</rdf:value>
-      </bf:OclcNumber>
+      <bf:Local>
+	<rdf:value>22014581</rdf:value>
+      </bf:Local>
     </bf:identifiedBy>
     <bf:identifiedBy>
       <bf:Lccn>
@@ -289,14 +297,14 @@
     <bf:extent>
       <bf:Extent>
 	<rdfs:label>3, 2, 264 pages</rdfs:label>
+	<bf:note>
+	  <bf:Note>
+	    <rdf:type rdf:resource="http://id.loc.gov/vocabulary/mnotetype/physical"/>
+	    <rdfs:label>illustrations (some color), maps</rdfs:label>
+	  </bf:Note>
+	</bf:note>
       </bf:Extent>
     </bf:extent>
-    <bf:note>
-      <bf:Note>
-	<rdf:type rdf:resource="http://id.loc.gov/vocabulary/mnotetype/physical"/>
-	<rdfs:label>illustrations (some color), maps</rdfs:label>
-      </bf:Note>
-    </bf:note>
     <bf:dimensions>25 cm</bf:dimensions>
     <bf:media>
       <bf:Media rdf:about="http://id.loc.gov/vocabulary/mediaTypes/n">
@@ -316,6 +324,7 @@
     </bf:carrier>
     <bf:note>
       <bf:Note>
+	<rdfs:label>"Guo jia chu ban ji jin xiang mu"--title page verso.</rdfs:label>
 	<rdfs:label xml:lang="zh-hani">"国家出版基金项目"--title page verso.</rdfs:label>
       </bf:Note>
     </bf:note>

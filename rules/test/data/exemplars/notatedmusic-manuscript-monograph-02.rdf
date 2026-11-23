@@ -17,6 +17,7 @@
       </bf:Title>
     </bf:title>
     <dcterms:isPartOf rdf:resource="http://id.loc.gov/resources/works"/>
+    <dcterms:isPartOf rdf:resource="http://id.loc.gov/resources/works/collection_music"/>
     <bf:hasInstance>
       <bf:Instance rdf:about="http://id.loc.gov/resources/instances/20525980">
 	<bf:title>
@@ -35,7 +36,7 @@
 	    <bf:code>n</bf:code>
 	  </bf:Status>
 	</bf:status>
-	<bf:date rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2018-06-01</bf:date>
+	<bf:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2018-06-01T00:00:00</bf:date>
 	<bf:agent>
 	  <bf:Agent rdf:about="http://id.loc.gov/vocabulary/organizations/dlc">
 	    <rdf:type rdf:resource="http://id.loc.gov/ontologies/bibframe/Organization"/>
@@ -55,7 +56,7 @@
 	    <bf:code>c</bf:code>
 	  </bf:Status>
 	</bf:status>
-	<bf:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2018-06-01T19:33:35</bf:date>
+	<bf:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2025-06-08T02:10:56</bf:date>
 	<bf:agent>
 	  <bf:Agent rdf:about="http://id.loc.gov/vocabulary/organizations/dlc">
 	    <rdf:type rdf:resource="http://id.loc.gov/ontologies/bibframe/Organization"/>
@@ -84,13 +85,13 @@
 	    <bf:code rdf:datatype="http://id.loc.gov/datatypes/orgs/iso15511">US-dlcmrc</bf:code>
 	  </bf:Agent>
 	</bf:agent>
-	<bf:generationProcess rdf:resource="https://github.com/lcnetdev/marc2bibframe2/releases/tag/v2.8.0"/>
-	<bf:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-11-20T16:32:21.307103-05:00</bf:date>
+	<bf:generationProcess rdf:resource="https://github.com/lcnetdev/marc2bibframe2/tree/v3.2-dev"/>
+	<bf:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2026-11-16T14:43:18.121389-05:00</bf:date>
       </bf:AdminMetadata>
     </bf:adminMetadata>
     <bf:adminMetadata>
       <bf:AdminMetadata>
-	<bf:descriptionLevel rdf:resource="http://id.loc.gov/ontologies/bibframe-2-4-0/"/>
+	<bf:descriptionLevel rdf:resource="http://id.loc.gov/ontologies/bibframe-3-0-1/"/>
 	<bflc:encodingLevel>
 	  <bflc:EncodingLevel rdf:about="http://id.loc.gov/vocabulary/menclvl/5">
 	    <rdfs:label>preliminary</rdfs:label>
@@ -116,9 +117,6 @@
 	    </bf:assigner>
 	  </bf:Local>
 	</bf:identifiedBy>
-	<lclocal:d906>=906     $a 0 $b ibc $c orignew $d 2 $e ncip $f 20 $g y-music</lclocal:d906>
-	<lclocal:d925>=925  0  $a acquire $b 1 shelf copy $x policy default</lclocal:d925>
-	<lclocal:d955>=955     $a hh05 2018-06-01 On Order for Music Division</lclocal:d955>
 	<bf:descriptionLanguage>
 	  <bf:Language rdf:about="http://id.loc.gov/vocabulary/languages/eng">
 	    <rdfs:label xml:lang="en">English</rdfs:label>
@@ -149,6 +147,12 @@
 	    <bf:code>s</bf:code>
 	  </bf:Status>
 	</bf:status>
+	<bflc:marcKey>906  $a0$bibc$corignew$d2$encip$f20$gy-music</bflc:marcKey>
+	<bflc:marcKey>9250 $aacquire$b1 shelf copy$xpolicy default</bflc:marcKey>
+	<bflc:marcKey>955  $ahh05 2018-06-01 On Order for Music Division</bflc:marcKey>
+	<bflc:marcKey>923  $a201800144$n340354$sGary Zimet (Moments in Time, Inc.)</bflc:marcKey>
+	<bflc:marcKey>999ff$ie61201d2-ffa6-5bfd-9be2-0fecd88f02de$s8e34f356-c373-4e13-8d55-6ba34853e640</bflc:marcKey>
+	<bflc:marcKey>993  $aopacsuppress$d2026-02-17</bflc:marcKey>
       </bf:AdminMetadata>
     </bf:adminMetadata>
   </bf:Work>
@@ -172,6 +176,11 @@
       </bf:ProvisionActivity>
     </bf:provisionActivity>
     <bf:publicationStatement>s.l.</bf:publicationStatement>
+    <bf:identifiedBy>
+      <bf:Local>
+	<rdf:value>20525980</rdf:value>
+      </bf:Local>
+    </bf:identifiedBy>
     <bf:title>
       <bf:Title>
 	<bf:mainTitle>George Gershwin Themes from "An American in Paris," holograph music manuscript. 1. p.</bf:mainTitle>
@@ -192,6 +201,21 @@
 	    <bf:mainTitle>George Gershwin Themes from "An American in Paris," holograph music manuscript. 1. p.</bf:mainTitle>
 	  </bf:Title>
 	</bf:title>
+	<bf:hasInstance>
+	  <bf:Instance rdf:about="http://id.loc.gov/resources/instances/20525980">
+	    <bf:title>
+	      <bf:Title>
+		<bf:mainTitle>George Gershwin Themes from "An American in Paris," holograph music manuscript. 1. p.</bf:mainTitle>
+	      </bf:Title>
+	    </bf:title>
+	    <bf:publicationStatement>s.l.</bf:publicationStatement>
+	    <bf:extent>
+	      <bf:Extent>
+		<rdfs:label>pages</rdfs:label>
+	      </bf:Extent>
+	    </bf:extent>
+	  </bf:Instance>
+	</bf:hasInstance>
       </bf:Work>
     </bf:instanceOf>
     <bf:adminMetadata>
@@ -202,7 +226,7 @@
 	    <bf:code>n</bf:code>
 	  </bf:Status>
 	</bf:status>
-	<bf:date rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2018-06-01</bf:date>
+	<bf:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2018-06-01T00:00:00</bf:date>
 	<bf:agent>
 	  <bf:Agent rdf:about="http://id.loc.gov/vocabulary/organizations/dlc">
 	    <rdf:type rdf:resource="http://id.loc.gov/ontologies/bibframe/Organization"/>
@@ -222,7 +246,7 @@
 	    <bf:code>c</bf:code>
 	  </bf:Status>
 	</bf:status>
-	<bf:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2018-06-01T19:33:35</bf:date>
+	<bf:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2025-06-08T02:10:56</bf:date>
 	<bf:agent>
 	  <bf:Agent rdf:about="http://id.loc.gov/vocabulary/organizations/dlc">
 	    <rdf:type rdf:resource="http://id.loc.gov/ontologies/bibframe/Organization"/>
@@ -251,13 +275,13 @@
 	    <bf:code rdf:datatype="http://id.loc.gov/datatypes/orgs/iso15511">US-dlcmrc</bf:code>
 	  </bf:Agent>
 	</bf:agent>
-	<bf:generationProcess rdf:resource="https://github.com/lcnetdev/marc2bibframe2/releases/tag/v2.8.0"/>
-	<bf:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-11-20T16:32:21.307103-05:00</bf:date>
+	<bf:generationProcess rdf:resource="https://github.com/lcnetdev/marc2bibframe2/tree/v3.2-dev"/>
+	<bf:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2026-11-16T14:43:18.121389-05:00</bf:date>
       </bf:AdminMetadata>
     </bf:adminMetadata>
     <bf:adminMetadata>
       <bf:AdminMetadata>
-	<bf:descriptionLevel rdf:resource="http://id.loc.gov/ontologies/bibframe-2-4-0/"/>
+	<bf:descriptionLevel rdf:resource="http://id.loc.gov/ontologies/bibframe-3-0-1/"/>
 	<bflc:encodingLevel>
 	  <bflc:EncodingLevel rdf:about="http://id.loc.gov/vocabulary/menclvl/5">
 	    <rdfs:label>preliminary</rdfs:label>
@@ -283,9 +307,6 @@
 	    </bf:assigner>
 	  </bf:Local>
 	</bf:identifiedBy>
-	<lclocal:d906>=906     $a 0 $b ibc $c orignew $d 2 $e ncip $f 20 $g y-music</lclocal:d906>
-	<lclocal:d925>=925  0  $a acquire $b 1 shelf copy $x policy default</lclocal:d925>
-	<lclocal:d955>=955     $a hh05 2018-06-01 On Order for Music Division</lclocal:d955>
 	<bf:descriptionLanguage>
 	  <bf:Language rdf:about="http://id.loc.gov/vocabulary/languages/eng">
 	    <rdfs:label xml:lang="en">English</rdfs:label>
@@ -316,6 +337,12 @@
 	    <bf:code>s</bf:code>
 	  </bf:Status>
 	</bf:status>
+	<bflc:marcKey>906  $a0$bibc$corignew$d2$encip$f20$gy-music</bflc:marcKey>
+	<bflc:marcKey>9250 $aacquire$b1 shelf copy$xpolicy default</bflc:marcKey>
+	<bflc:marcKey>955  $ahh05 2018-06-01 On Order for Music Division</bflc:marcKey>
+	<bflc:marcKey>923  $a201800144$n340354$sGary Zimet (Moments in Time, Inc.)</bflc:marcKey>
+	<bflc:marcKey>999ff$ie61201d2-ffa6-5bfd-9be2-0fecd88f02de$s8e34f356-c373-4e13-8d55-6ba34853e640</bflc:marcKey>
+	<bflc:marcKey>993  $aopacsuppress$d2026-02-17</bflc:marcKey>
       </bf:AdminMetadata>
     </bf:adminMetadata>
   </bf:Instance>

@@ -1,7 +1,7 @@
 <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:madsrdf="http://www.loc.gov/mads/rdf/v1#" xmlns:lcc="http://id.loc.gov/ontologies/lcc#" xmlns:bf="http://id.loc.gov/ontologies/bibframe/" xmlns:bflc="http://id.loc.gov/ontologies/bflc/" xmlns:ri="http://id.loc.gov/ontologies/RecordInfo#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:pmo="http://performedmusicontology.org/ontology/" xmlns:lclocal="http://id.loc.gov/ontologies/lclocal/">
   <bf:Work rdf:about="http://id.loc.gov/resources/works/21665525">
-    <bflc:aap>Andersen, Lars Nørvang Lévy Matters V</bflc:aap>
-    <bflc:aap-normalized>andersenlarsnørvanglévymattersv</bflc:aap-normalized>
+    <bflc:aap>Andersen, Lars Nørvang. Lévy Matters V : Functionals of Lévy Processes</bflc:aap>
+    <bflc:aap-normalized>andersenlarsnørvanglévymattersv:functionalsoflévyprocesses</bflc:aap-normalized>
     <rdf:type rdf:resource="http://id.loc.gov/ontologies/bibframe/Text"/>
     <rdf:type rdf:resource="http://id.loc.gov/ontologies/bibframe/Monograph"/>
     <bf:language>
@@ -10,63 +10,6 @@
 	<bf:code rdf:datatype="http://www.w3.org/2001/XMLSchema#string">eng</bf:code>
       </bf:Language>
     </bf:language>
-    <bf:classification>
-      <bf:ClassificationLcc>
-	<bf:classificationPortion>QA273.A1-274.9</bf:classificationPortion>
-      </bf:ClassificationLcc>
-    </bf:classification>
-    <bf:classification>
-      <bf:ClassificationLcc>
-	<bf:classificationPortion>QA274-274.9</bf:classificationPortion>
-      </bf:ClassificationLcc>
-    </bf:classification>
-    <bf:subject>
-      <bf:Topic>
-	<bf:code>PBT</bf:code>
-	<bf:source>
-	  <bf:Source>
-	    <bf:code>bicssc</bf:code>
-	  </bf:Source>
-	</bf:source>
-      </bf:Topic>
-    </bf:subject>
-    <bf:subject>
-      <bf:Topic>
-	<bf:code>MAT029000</bf:code>
-	<madsrdf:isMemberOfMADSScheme>
-	  <madsrdf:Authority rdf:about="http://id.loc.gov/vocabulary/classSchemes/bisacsh">
-	    <rdfs:label>BISAC subject headings</rdfs:label>
-	    <bf:code>bisacsh</bf:code>
-	  </madsrdf:Authority>
-	</madsrdf:isMemberOfMADSScheme>
-	<bf:source>
-	  <bf:Source rdf:about="http://id.loc.gov/vocabulary/classSchemes/bisacsh">
-	    <rdfs:label>BISAC subject headings</rdfs:label>
-	    <bf:code>bisacsh</bf:code>
-	  </bf:Source>
-	</bf:source>
-      </bf:Topic>
-    </bf:subject>
-    <bf:subject>
-      <bf:Topic>
-	<bf:code>PBT</bf:code>
-	<bf:source>
-	  <bf:Source>
-	    <bf:code>thema</bf:code>
-	  </bf:Source>
-	</bf:source>
-      </bf:Topic>
-    </bf:subject>
-    <bf:subject>
-      <bf:Topic>
-	<bf:code>PBWL</bf:code>
-	<bf:source>
-	  <bf:Source>
-	    <bf:code>thema</bf:code>
-	  </bf:Source>
-	</bf:source>
-      </bf:Topic>
-    </bf:subject>
     <bf:classification>
       <bf:ClassificationDdc>
 	<bf:classificationPortion>519.2</bf:classificationPortion>
@@ -77,6 +20,40 @@
 	</bf:source>
 	<bf:edition>full</bf:edition>
       </bf:ClassificationDdc>
+    </bf:classification>
+    <bf:classification>
+      <bf:ClassificationLcc>
+	<bf:classificationPortion>QA273.A1-274.9</bf:classificationPortion>
+	<bf:status>
+	  <bf:Status rdf:about="http://id.loc.gov/vocabulary/mstatus/nuba">
+	    <rdfs:label>not used by assigner</rdfs:label>
+	    <bf:code>nuba</bf:code>
+	  </bf:Status>
+	</bf:status>
+	<bf:status>
+	  <bf:Status rdf:about="http://id.loc.gov/vocabulary/mstatus/p">
+	    <rdfs:label>upgraded prepub</rdfs:label>
+	    <bf:code>p</bf:code>
+	  </bf:Status>
+	</bf:status>
+      </bf:ClassificationLcc>
+    </bf:classification>
+    <bf:classification>
+      <bf:ClassificationLcc>
+	<bf:classificationPortion>QA274-274.9</bf:classificationPortion>
+	<bf:status>
+	  <bf:Status rdf:about="http://id.loc.gov/vocabulary/mstatus/nuba">
+	    <rdfs:label>not used by assigner</rdfs:label>
+	    <bf:code>nuba</bf:code>
+	  </bf:Status>
+	</bf:status>
+	<bf:status>
+	  <bf:Status rdf:about="http://id.loc.gov/vocabulary/mstatus/p">
+	    <rdfs:label>upgraded prepub</rdfs:label>
+	    <bf:code>p</bf:code>
+	  </bf:Status>
+	</bf:status>
+      </bf:ClassificationLcc>
     </bf:classification>
     <bf:contribution>
       <bf:Contribution>
@@ -98,7 +75,7 @@
     </bf:contribution>
     <bf:title>
       <bf:Title>
-	<bf:mainTitle>Lévy Matters V</bf:mainTitle>
+	<bf:mainTitle>Lévy Matters V : Functionals of Lévy Processes</bf:mainTitle>
       </bf:Title>
     </bf:title>
     <bf:content>
@@ -107,6 +84,43 @@
 	<bf:code>txt</bf:code>
       </bf:Content>
     </bf:content>
+    <bf:relation>
+      <bf:Relation>
+	<bf:relationship>
+	  <bf:Relationship rdf:about="http://id.loc.gov/vocabulary/relationship/series">
+	    <rdfs:label>series</rdfs:label>
+	    <bf:code>series</bf:code>
+	  </bf:Relationship>
+	</bf:relationship>
+	<bf:seriesEnumeration>2149</bf:seriesEnumeration>
+	<bf:associatedResource>
+	  <bf:Series>
+	    <bf:status>
+	      <bf:Status rdf:about="http://id.loc.gov/vocabulary/mstatus/t">
+		<rdfs:label>transcribed</rdfs:label>
+		<bf:code>t</bf:code>
+	      </bf:Status>
+	    </bf:status>
+	    <bf:status>
+	      <bf:Status rdf:about="http://id.loc.gov/vocabulary/mstatus/tr">
+		<rdfs:label>traced</rdfs:label>
+		<bf:code>tr</bf:code>
+	      </bf:Status>
+	    </bf:status>
+	    <bf:title>
+	      <bf:Title>
+		<bf:mainTitle>Lévy Matters, A Subseries on Lévy Processes</bf:mainTitle>
+	      </bf:Title>
+	    </bf:title>
+	    <bf:identifiedBy>
+	      <bf:Issn>
+		<rdf:value>2190-6637</rdf:value>
+	      </bf:Issn>
+	    </bf:identifiedBy>
+	  </bf:Series>
+	</bf:associatedResource>
+      </bf:Relation>
+    </bf:relation>
     <bf:tableOfContents>
       <bf:TableOfContents>
 	<rdfs:label>Makoto Maejima: Classes of infinitely divisible distributions and examples -- Lars Nørvang Andersen, Søren Asmussen, Peter W. Glynn and Mats Pihlsgard: Lévy processes with two-sided reflection -- Persistence probabilities and exponents -- Frank Aurzada and Thomas Simon: Persistence probabilities and exponents.</rdfs:label>
@@ -117,13 +131,6 @@
 	<rdfs:label>This three-chapter volume concerns the distributions of certain functionals of Lévy processes. The first chapter, by Makoto Maejima, surveys representations of the main sub-classes of infinitesimal distributions in terms of mappings of certain Lévy processes via stochastic integration. The second chapter, by Lars Nørvang Andersen, Søren Asmussen, Peter W. Glynn and Mats Pihlsgård, concerns Lévy processes reflected at two barriers, where reflection is formulated à la Skorokhod. These processes can be used to model systems with a finite capacity, which is crucial in many real life situations, a most important quantity being the overflow or the loss occurring at the upper barrier. If a process is killed when crossing the boundary, a natural question concerns its lifetime. Deep formulas from fluctuation theory are the key to many classical results, which are reviewed in the third chapter by Frank Aurzada and Thomas Simon. The main part, however, discusses recent advances and developments in the setting where the process is given either by the partial sum of a random walk or the integral of a Lévy process..</rdfs:label>
       </bf:Summary>
     </bf:summary>
-    <bf:subject>
-      <bf:Topic rdf:about="http://id.loc.gov/authorities/subjects/sh85107090">
-	<rdfs:label xml:lang="en">Probabilities</rdfs:label>
-	<bflc:marcKey>150  $aProbabilities</bflc:marcKey>
-      </bf:Topic>
-    </bf:subject>
-    <bf:subject rdf:resource="https://scigraph.springernature.com/ontologies/product-market-codes/M27004"/>
     <bf:contribution>
       <bf:Contribution>
 	<bf:agent>
@@ -226,40 +233,6 @@
 	</bf:role>
       </bf:Contribution>
     </bf:contribution>
-    <dcterms:isPartOf rdf:resource="http://id.loc.gov/resources/works"/>
-    <bf:relation>
-      <bf:Relation>
-	<bf:relationship rdf:resource="http://id.loc.gov/ontologies/bibframe/hasSeries"/>
-	<bf:seriesEnumeration>2149</bf:seriesEnumeration>
-	<bf:associatedResource>
-	  <bf:Series>
-	    <rdf:type rdf:resource="http://id.loc.gov/ontologies/bflc/Uncontrolled"/>
-	    <bf:status>
-	      <bf:Status rdf:about="http://id.loc.gov/vocabulary/mstatus/t">
-		<rdfs:label>transcribed</rdfs:label>
-		<bf:code>t</bf:code>
-	      </bf:Status>
-	    </bf:status>
-	    <bf:status>
-	      <bf:Status rdf:about="http://id.loc.gov/vocabulary/mstatus/tr">
-		<rdfs:label>traced</rdfs:label>
-		<bf:code>tr</bf:code>
-	      </bf:Status>
-	    </bf:status>
-	    <bf:title>
-	      <bf:Title>
-		<bf:mainTitle>Lévy Matters, A Subseries on Lévy Processes</bf:mainTitle>
-	      </bf:Title>
-	    </bf:title>
-	    <bf:identifiedBy>
-	      <bf:Issn>
-		<rdf:value>2190-6637</rdf:value>
-	      </bf:Issn>
-	    </bf:identifiedBy>
-	  </bf:Series>
-	</bf:associatedResource>
-      </bf:Relation>
-    </bf:relation>
     <bf:relation>
       <bf:Relation>
 	<bf:relationship>
@@ -342,11 +315,17 @@
     </bf:relation>
     <bf:relation>
       <bf:Relation>
-	<bf:relationship rdf:resource="http://id.loc.gov/ontologies/bibframe/hasSeries"/>
+	<bf:relationship>
+	  <bf:Relationship rdf:about="http://id.loc.gov/vocabulary/relationship/series">
+	    <rdfs:label>series</rdfs:label>
+	    <bf:code>series</bf:code>
+	  </bf:Relationship>
+	</bf:relationship>
 	<bf:seriesEnumeration>2149</bf:seriesEnumeration>
 	<bf:associatedResource>
 	  <bf:Hub rdf:about="http://id.loc.gov/resources/hubs/c7f32889-6324-ff7a-47a6-f06bb67fd111">
 	    <rdfs:label>Lévy Matters, A Subseries on Lévy Processes</rdfs:label>
+	    <bflc:marcKey>1300 $aLévy Matters, A Subseries on Lévy Processes,</bflc:marcKey>
 	    <bf:title>
 	      <bf:Title>
 		<bf:mainTitle>Lévy Matters, A Subseries on Lévy Processes</bf:mainTitle>
@@ -356,6 +335,7 @@
 	</bf:associatedResource>
       </bf:Relation>
     </bf:relation>
+    <dcterms:isPartOf rdf:resource="http://id.loc.gov/resources/works"/>
     <bf:hasInstance>
       <bf:Instance rdf:about="http://id.loc.gov/resources/instances/21665525">
 	<bf:title>
@@ -367,6 +347,65 @@
 	<bf:publicationStatement>Cham: Springer International Publishing, Imprint: Springer, 2015</bf:publicationStatement>
       </bf:Instance>
     </bf:hasInstance>
+    <bf:subject>
+      <bf:Topic>
+	<bf:code>PBT</bf:code>
+	<bf:source>
+	  <bf:Source>
+	    <bf:code>bicssc</bf:code>
+	  </bf:Source>
+	</bf:source>
+      </bf:Topic>
+    </bf:subject>
+    <bf:subject>
+      <bf:Topic>
+	<bf:code>MAT029000</bf:code>
+	<madsrdf:isMemberOfMADSScheme>
+	  <madsrdf:Authority rdf:about="http://id.loc.gov/vocabulary/classSchemes/bisacsh">
+	    <rdfs:label>BISAC subject headings</rdfs:label>
+	    <bf:code>bisacsh</bf:code>
+	  </madsrdf:Authority>
+	</madsrdf:isMemberOfMADSScheme>
+	<bf:source>
+	  <bf:Source rdf:about="http://id.loc.gov/vocabulary/classSchemes/bisacsh">
+	    <rdfs:label>BISAC subject headings</rdfs:label>
+	    <bf:code>bisacsh</bf:code>
+	  </bf:Source>
+	</bf:source>
+      </bf:Topic>
+    </bf:subject>
+    <bf:subject>
+      <bf:Topic>
+	<bf:code>PBT</bf:code>
+	<bf:source>
+	  <bf:Source>
+	    <bf:code>thema</bf:code>
+	  </bf:Source>
+	</bf:source>
+      </bf:Topic>
+    </bf:subject>
+    <bf:subject>
+      <bf:Topic>
+	<bf:code>PBWL</bf:code>
+	<bf:source>
+	  <bf:Source>
+	    <bf:code>thema</bf:code>
+	  </bf:Source>
+	</bf:source>
+      </bf:Topic>
+    </bf:subject>
+    <bf:subject>
+      <bf:Topic rdf:about="http://id.loc.gov/authorities/subjects/sh85107090">
+	<rdfs:label xml:lang="en">Probabilities</rdfs:label>
+	<bflc:marcKey>150  $aProbabilities</bflc:marcKey>
+	<bf:source>
+	  <bf:Source rdf:about="http://id.loc.gov/authorities/subjects">
+	    <rdfs:label>LC Subject Headings</rdfs:label>
+	  </bf:Source>
+	</bf:source>
+      </bf:Topic>
+    </bf:subject>
+    <bf:subject rdf:resource="https://scigraph.springernature.com/ontologies/product-market-codes/M27004"/>
     <bf:adminMetadata>
       <bf:AdminMetadata>
 	<bf:status>
@@ -375,7 +414,7 @@
 	    <bf:code>n</bf:code>
 	  </bf:Status>
 	</bf:status>
-	<bf:date rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2015-10-24</bf:date>
+	<bf:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2015-10-24T00:00:00</bf:date>
 	<bf:agent>
 	  <bf:Agent rdf:about="http://id.loc.gov/vocabulary/organizations/dlc">
 	    <rdf:type rdf:resource="http://id.loc.gov/ontologies/bibframe/Organization"/>
@@ -395,7 +434,7 @@
 	    <bf:code>c</bf:code>
 	  </bf:Status>
 	</bf:status>
-	<bf:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2020-09-25T10:32:17</bf:date>
+	<bf:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2025-06-07T06:27:39</bf:date>
 	<bf:agent>
 	  <bf:Agent rdf:about="http://id.loc.gov/vocabulary/organizations/dlc">
 	    <rdf:type rdf:resource="http://id.loc.gov/ontologies/bibframe/Organization"/>
@@ -424,13 +463,13 @@
 	    <bf:code rdf:datatype="http://id.loc.gov/datatypes/orgs/iso15511">US-dlcmrc</bf:code>
 	  </bf:Agent>
 	</bf:agent>
-	<bf:generationProcess rdf:resource="https://github.com/lcnetdev/marc2bibframe2/releases/tag/v2.8.0"/>
-	<bf:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-11-20T16:32:57.4846-05:00</bf:date>
+	<bf:generationProcess rdf:resource="https://github.com/lcnetdev/marc2bibframe2/tree/v3.2-dev"/>
+	<bf:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2026-11-16T14:47:49.570343-05:00</bf:date>
       </bf:AdminMetadata>
     </bf:adminMetadata>
     <bf:adminMetadata>
       <bf:AdminMetadata>
-	<bf:descriptionLevel rdf:resource="http://id.loc.gov/ontologies/bibframe-2-4-0/"/>
+	<bf:descriptionLevel rdf:resource="http://id.loc.gov/ontologies/bibframe-3-0-1/"/>
 	<bflc:encodingLevel>
 	  <bflc:EncodingLevel rdf:about="http://id.loc.gov/vocabulary/menclvl/5">
 	    <rdfs:label>preliminary</rdfs:label>
@@ -456,8 +495,6 @@
 	    </bf:assigner>
 	  </bf:Local>
 	</bf:identifiedBy>
-	<lclocal:d906>=906     $a 0 $b ibc $c origres $d u $e ncip $f 20 $g y-gencatlg</lclocal:d906>
-	<lclocal:d925>=925  0  $a acquire $e pcnspringer $x policy default</lclocal:d925>
 	<bf:descriptionLanguage>
 	  <bf:Language rdf:about="http://id.loc.gov/vocabulary/languages/eng">
 	    <rdfs:label xml:lang="en">English</rdfs:label>
@@ -482,7 +519,16 @@
 	    <rdfs:label>040  $aDLC$beng$epn$erda$cDLC</rdfs:label>
 	  </bf:Note>
 	</bf:note>
-	<lclocal:d985>=985     $a springerpcn</lclocal:d985>
+	<bflc:marcKey>906  $a0$bibc$corigres$du$encip$f20$gy-gencatlg</bflc:marcKey>
+	<bflc:marcKey>9250 $aacquire$epcnspringer$xpolicy default</bflc:marcKey>
+	<bflc:marcKey>09700$aQA273.A1-274.9</bflc:marcKey>
+	<bflc:marcKey>09700$aQA274-274.9</bflc:marcKey>
+	<bflc:marcKey>4901 $aLévy Matters, A Subseries on Lévy Processes,$x2190-6637 ;$v2149</bflc:marcKey>
+	<bflc:marcKey>952  $aMathematics and Statistics (SpringerNature-11649)</bflc:marcKey>
+	<bflc:marcKey>952  $aMathematics and Statistics (R0) (SpringerNature-43713)</bflc:marcKey>
+	<bflc:marcKey>985  $aspringerpcn</bflc:marcKey>
+	<bflc:marcKey>991  $as-Online$hElectronic Resource</bflc:marcKey>
+	<bflc:marcKey>999ff$i233b3019-b815-5486-adc3-d995e0dcf415$sb5d64272-60a7-44f7-9aa3-0ab02cb5a00e</bflc:marcKey>
       </bf:AdminMetadata>
     </bf:adminMetadata>
   </bf:Work>
@@ -512,8 +558,7 @@
     <bf:publicationStatement>Cham: Springer International Publishing, Imprint: Springer, 2015</bf:publicationStatement>
     <bf:identifiedBy>
       <bf:Local>
-	<rdf:value>978-3-319-23138-9</rdf:value>
-	<bf:assigner rdf:resource="https://ld.zdb-services.de/resource/organisations/DE-He213"/>
+	<rdf:value>21665525</rdf:value>
       </bf:Local>
     </bf:identifiedBy>
     <bf:identifiedBy>
@@ -530,6 +575,12 @@
       <bf:Doi>
 	<rdf:value>10.1007/978-3-319-23138-9</rdf:value>
       </bf:Doi>
+    </bf:identifiedBy>
+    <bf:identifiedBy>
+      <bf:Local>
+	<rdf:value>978-3-319-23138-9</rdf:value>
+	<bf:assigner rdf:resource="https://ld.zdb-services.de/resource/organisations/DE-He213"/>
+      </bf:Local>
     </bf:identifiedBy>
     <bf:responsibilityStatement>by Lars Nørvang Andersen, Søren Asmussen, Frank Aurzada, Peter W. Glynn, Makoto Maejima, Mats Pihlsgård, Thomas Simon</bf:responsibilityStatement>
     <bf:title>
@@ -577,7 +628,7 @@
     <dcterms:isPartOf rdf:resource="http://id.loc.gov/resources/instances"/>
     <bf:instanceOf>
       <bf:Work rdf:about="http://id.loc.gov/resources/works/21665525">
-	<rdfs:label>Andersen, Lars Nørvang Lévy Matters V</rdfs:label>
+	<rdfs:label>Andersen, Lars Nørvang. Lévy Matters V : Functionals of Lévy Processes</rdfs:label>
 	<bf:contribution>
 	  <bf:Contribution>
 	    <rdf:type rdf:resource="http://id.loc.gov/ontologies/bibframe/PrimaryContribution"/>
@@ -698,11 +749,89 @@
 	    </bf:role>
 	  </bf:Contribution>
 	</bf:contribution>
+	<bf:classification>
+	  <bf:ClassificationDdc>
+	    <bf:classificationPortion>519.2</bf:classificationPortion>
+	    <bf:source>
+	      <bf:Source>
+		<bf:code>23</bf:code>
+	      </bf:Source>
+	    </bf:source>
+	    <bf:edition>full</bf:edition>
+	  </bf:ClassificationDdc>
+	</bf:classification>
+	<bf:classification>
+	  <bf:ClassificationLcc>
+	    <bf:classificationPortion>QA273.A1-274.9</bf:classificationPortion>
+	    <bf:status>
+	      <bf:Status rdf:about="http://id.loc.gov/vocabulary/mstatus/nuba">
+		<rdfs:label>not used by assigner</rdfs:label>
+		<bf:code>nuba</bf:code>
+	      </bf:Status>
+	    </bf:status>
+	    <bf:status>
+	      <bf:Status rdf:about="http://id.loc.gov/vocabulary/mstatus/p">
+		<rdfs:label>upgraded prepub</rdfs:label>
+		<bf:code>p</bf:code>
+	      </bf:Status>
+	    </bf:status>
+	  </bf:ClassificationLcc>
+	</bf:classification>
+	<bf:classification>
+	  <bf:ClassificationLcc>
+	    <bf:classificationPortion>QA274-274.9</bf:classificationPortion>
+	    <bf:status>
+	      <bf:Status rdf:about="http://id.loc.gov/vocabulary/mstatus/nuba">
+		<rdfs:label>not used by assigner</rdfs:label>
+		<bf:code>nuba</bf:code>
+	      </bf:Status>
+	    </bf:status>
+	    <bf:status>
+	      <bf:Status rdf:about="http://id.loc.gov/vocabulary/mstatus/p">
+		<rdfs:label>upgraded prepub</rdfs:label>
+		<bf:code>p</bf:code>
+	      </bf:Status>
+	    </bf:status>
+	  </bf:ClassificationLcc>
+	</bf:classification>
 	<bf:title>
 	  <bf:Title>
-	    <bf:mainTitle>Lévy Matters V</bf:mainTitle>
+	    <bf:mainTitle>Lévy Matters V : Functionals of Lévy Processes</bf:mainTitle>
 	  </bf:Title>
 	</bf:title>
+	<bf:language rdf:resource="http://id.loc.gov/vocabulary/languages/eng"/>
+	<bf:hasInstance>
+	  <bf:Instance rdf:about="http://id.loc.gov/resources/instances/21665525">
+	    <bf:title>
+	      <bf:Title>
+		<bf:mainTitle>Lévy Matters V</bf:mainTitle>
+		<bf:subtitle>Functionals of Lévy Processes</bf:subtitle>
+	      </bf:Title>
+	    </bf:title>
+	    <bf:identifiedBy>
+	      <bf:Lccn>
+		<rdf:value>  2019742049</rdf:value>
+	      </bf:Lccn>
+	    </bf:identifiedBy>
+	    <bf:identifiedBy>
+	      <bf:Isbn>
+		<rdf:value>9783319231389</rdf:value>
+	      </bf:Isbn>
+	    </bf:identifiedBy>
+	    <bf:identifiedBy>
+	      <bf:Doi>
+		<rdf:value>10.1007/978-3-319-23138-9</rdf:value>
+	      </bf:Doi>
+	    </bf:identifiedBy>
+	    <bf:publicationStatement>Cham: Springer International Publishing, Imprint: Springer, 2015</bf:publicationStatement>
+	    <bf:editionStatement>1st ed. 2015.</bf:editionStatement>
+	    <bf:extent>
+	      <bf:Extent>
+		<rdfs:label>1 online resource (XVI, 224 pages 8 illustrations, 7 illustrations in color.)</rdfs:label>
+	      </bf:Extent>
+	    </bf:extent>
+	  </bf:Instance>
+	</bf:hasInstance>
       </bf:Work>
     </bf:instanceOf>
     <bf:adminMetadata>
@@ -713,7 +842,7 @@
 	    <bf:code>n</bf:code>
 	  </bf:Status>
 	</bf:status>
-	<bf:date rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2015-10-24</bf:date>
+	<bf:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2015-10-24T00:00:00</bf:date>
 	<bf:agent>
 	  <bf:Agent rdf:about="http://id.loc.gov/vocabulary/organizations/dlc">
 	    <rdf:type rdf:resource="http://id.loc.gov/ontologies/bibframe/Organization"/>
@@ -733,7 +862,7 @@
 	    <bf:code>c</bf:code>
 	  </bf:Status>
 	</bf:status>
-	<bf:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2020-09-25T10:32:17</bf:date>
+	<bf:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2025-06-07T06:27:39</bf:date>
 	<bf:agent>
 	  <bf:Agent rdf:about="http://id.loc.gov/vocabulary/organizations/dlc">
 	    <rdf:type rdf:resource="http://id.loc.gov/ontologies/bibframe/Organization"/>
@@ -762,13 +891,13 @@
 	    <bf:code rdf:datatype="http://id.loc.gov/datatypes/orgs/iso15511">US-dlcmrc</bf:code>
 	  </bf:Agent>
 	</bf:agent>
-	<bf:generationProcess rdf:resource="https://github.com/lcnetdev/marc2bibframe2/releases/tag/v2.8.0"/>
-	<bf:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-11-20T16:32:57.4846-05:00</bf:date>
+	<bf:generationProcess rdf:resource="https://github.com/lcnetdev/marc2bibframe2/tree/v3.2-dev"/>
+	<bf:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2026-11-16T14:47:49.570343-05:00</bf:date>
       </bf:AdminMetadata>
     </bf:adminMetadata>
     <bf:adminMetadata>
       <bf:AdminMetadata>
-	<bf:descriptionLevel rdf:resource="http://id.loc.gov/ontologies/bibframe-2-4-0/"/>
+	<bf:descriptionLevel rdf:resource="http://id.loc.gov/ontologies/bibframe-3-0-1/"/>
 	<bflc:encodingLevel>
 	  <bflc:EncodingLevel rdf:about="http://id.loc.gov/vocabulary/menclvl/5">
 	    <rdfs:label>preliminary</rdfs:label>
@@ -794,8 +923,6 @@
 	    </bf:assigner>
 	  </bf:Local>
 	</bf:identifiedBy>
-	<lclocal:d906>=906     $a 0 $b ibc $c origres $d u $e ncip $f 20 $g y-gencatlg</lclocal:d906>
-	<lclocal:d925>=925  0  $a acquire $e pcnspringer $x policy default</lclocal:d925>
 	<bf:descriptionLanguage>
 	  <bf:Language rdf:about="http://id.loc.gov/vocabulary/languages/eng">
 	    <rdfs:label xml:lang="en">English</rdfs:label>
@@ -820,7 +947,16 @@
 	    <rdfs:label>040  $aDLC$beng$epn$erda$cDLC</rdfs:label>
 	  </bf:Note>
 	</bf:note>
-	<lclocal:d985>=985     $a springerpcn</lclocal:d985>
+	<bflc:marcKey>906  $a0$bibc$corigres$du$encip$f20$gy-gencatlg</bflc:marcKey>
+	<bflc:marcKey>9250 $aacquire$epcnspringer$xpolicy default</bflc:marcKey>
+	<bflc:marcKey>09700$aQA273.A1-274.9</bflc:marcKey>
+	<bflc:marcKey>09700$aQA274-274.9</bflc:marcKey>
+	<bflc:marcKey>4901 $aLévy Matters, A Subseries on Lévy Processes,$x2190-6637 ;$v2149</bflc:marcKey>
+	<bflc:marcKey>952  $aMathematics and Statistics (SpringerNature-11649)</bflc:marcKey>
+	<bflc:marcKey>952  $aMathematics and Statistics (R0) (SpringerNature-43713)</bflc:marcKey>
+	<bflc:marcKey>985  $aspringerpcn</bflc:marcKey>
+	<bflc:marcKey>991  $as-Online$hElectronic Resource</bflc:marcKey>
+	<bflc:marcKey>999ff$i233b3019-b815-5486-adc3-d995e0dcf415$sb5d64272-60a7-44f7-9aa3-0ab02cb5a00e</bflc:marcKey>
       </bf:AdminMetadata>
     </bf:adminMetadata>
   </bf:Instance>

@@ -11,6 +11,7 @@
                  xmlns:local="http://example.org/local"
                  xmlns:exsl="http://exslt.org/common"
                  xmlns:xdmp="http://marklogic.com/xdmp"
+                 xmlns:http="http://expath.org/ns/http-client"
                  exclude-result-prefixes="bf2marc">
 
   <xslt:namespace-alias stylesheet-prefix="xsl" result-prefix="xslt"/>
@@ -24,15 +25,17 @@
                     xmlns:date="http://exslt.org/dates-and-times"
                     xmlns:xdmp="http://marklogic.com/xdmp"
                     xmlns:fn="http://www.w3.org/2005/xpath-functions"
+                    xmlns:http="http://expath.org/ns/http-client"
                     extension-element-prefixes="exsl date xdmp"
-                    exclude-result-prefixes="fn rdf rdfs bf bflc madsrdf local">
+                    exclude-result-prefixes="fn rdf rdfs bf bflc madsrdf local http">
 
       <xsl:output encoding="UTF-8" method="xml" indent="yes"/>
       <xsl:strip-space elements="*"/>
 
       <xsl:param name="pRecordId" select="'default'"/>
       <xsl:param name="pCatScript" select="'Latn'"/>
-      
+      <xsl:param name="bcp47inferrence" select="true()"/>
+          
       <!-- parameters for 884 generation -->
       <xsl:param name="pGenerationDatestamp">
         <xsl:choose>
@@ -52,6 +55,8 @@
       <!-- for upper- and lower-case translation (ASCII only) -->
       <xsl:variable name="lower">abcdefghijklmnopqrstuvwxyz</xsl:variable>
       <xsl:variable name="upper">ABCDEFGHIJKLMNOPQRSTUVWXYZ</xsl:variable>
+      
+      <xsl:param name="pCatScriptNormalized" select="translate($pCatScript, $upper, $lower)"/>
       
       <xsl:variable name="xslProcessor">
         <!-- xsl:vendor, when compiled with xsltproc, works, meaning the output is xsl for elements and xsl:vendor and the tests pass. -->
@@ -499,6 +504,41 @@
       </xsl:template>
 
       <!-- get the code (last element) from a URI -->
+      <xsl:template name="tOrgCode">
+        <xsl:param name="pOrgProp"/> <!-- bf:heldBy or bflc:applicableInstitution, etc. -->
+        <xsl:choose>
+          <xsl:when test="$pOrgProp/*/bf:code[@rdf:datatype='http://id.loc.gov/datatypes/orgs/code']">
+            <xsl:value-of select="$pOrgProp/*/bf:code[@rdf:datatype='http://id.loc.gov/datatypes/orgs/code']" />
+          </xsl:when>
+          <xsl:when test="$pOrgProp/*/madsrdf:code[@rdf:datatype='http://id.loc.gov/datatypes/orgs/code']">
+            <xsl:value-of select="$pOrgProp/*/madsrdf:code[@rdf:datatype='http://id.loc.gov/datatypes/orgs/code']" />
+          </xsl:when>
+          <xsl:when test="$pOrgProp/*[contains(@rdf:about, 'id.loc.gov/vocabulary/organizations/')]/bf:code">
+            <xsl:value-of select="$pOrgProp/*/bf:code[1]" />
+          </xsl:when>
+          <xsl:when test="$pOrgProp/*[contains(@rdf:about, 'id.loc.gov/vocabulary/organizations/')]/madsrdf:code">
+            <xsl:value-of select="$pOrgProp/*/madsrdf:code[1]" />
+          </xsl:when>
+          <xsl:when test="$pOrgProp/*/@rdf:about and contains(substring-after($pOrgProp/*/@rdf:about,'://'),'/')">
+            <xsl:call-template name="tUriCode">
+              <xsl:with-param name="pUri" select="substring-after($pOrgProp/*/@rdf:about,'://')"/>
+            </xsl:call-template>
+          </xsl:when>
+          <xsl:when test="$pOrgProp/@rdf:resource and contains(substring-after($pOrgProp/@rdf:resource,'://'),'/')">
+            <xsl:call-template name="tUriCode">
+              <xsl:with-param name="pUri" select="substring-after($pOrgProp/@rdf:resource,'://')"/>
+            </xsl:call-template>
+          </xsl:when>
+          <xsl:when test="$pOrgProp/*/bf:code">
+            <xsl:value-of select="$pOrgProp/*/bf:code[1]" />
+          </xsl:when>
+          <xsl:when test="$pOrgProp/*/madsrdf:code">
+            <xsl:value-of select="$pOrgProp/*/madsrdf:code[1]" />
+          </xsl:when>
+        </xsl:choose>
+      </xsl:template>
+    
+      <!-- get the code (last element) from a URI -->
       <xsl:template name="tUriCode">
         <xsl:param name="pUri"/>
         <xsl:choose>
@@ -550,9 +590,357 @@
           </xsl:otherwise>
         </xsl:choose>
       </xsl:template>
+      
+      
+      <!--
+        A note about bcp47 handling logic.
+        1)  This code will likely be inherently biased toward Latin script. 
+            This is because of how we do MARC, i.e. LC implements Model A for 
+            multiscript records.  This means that Latin script is used in the 
+            'regular' fields and non-latin in the 880s.
+        2)  The bcp47 code of the first (presumably main label) will be used for 
+            matching of other same-script or same-language labels, and for *not* 
+            matching the (presumed) non-latin labels.
+        3)  The safest practice is to include the script code in the bcp47 codes that 
+            match the cataloging script variable, which can be set when the XSL is invoked.
+            It will be used to match the first/main label found in the XML.  This way, 
+            the label in the latin script will be identified cleanly.
+        4)  It will be presumed the non-latin labels will be different.
+        
+        Choosing main label
+          No @xml:lang attribute
+          @xml:lang attribute contains script code that matches the cataloging script variable
+          first label otherwise
+        
+        Choosing 880 label
+          Must have @xml:lang attribute
+          @xml:lang attribute does not equal the one found on the 'main' label.
+      -->
+      
+      <xsl:template name="tGetBCP47RegField">
+        <xsl:param name="x" />
+        <xsl:value-of select="translate(
+                                $x[
+                                  contains(translate(@xml:lang,$upper,$lower),$pCatScriptNormalized) or 
+                                  ( 
+                                    string-length(@xml:lang)='2'
+                                  ) or ( 
+                                    string-length(@xml:lang)='3'
+                                  )
+                                 ]/@xml:lang,
+                                 $upper,
+                                 $lower
+                              )" />
+      </xsl:template>
+      
+      <xsl:template name="tGetBCP47for880">
+        <xsl:param name="x" />
+        <xsl:param name="bcp47forRegField" />
+        <xsl:value-of select="translate(
+                                $x[
+                                    @xml:lang and 
+                                    translate(@xml:lang,$upper,$lower)!=$bcp47forRegField and
+                                    (
+                                      contains(@xml:lang, '-') or
+                                      string-length(@xml:lang)='2' or 
+                                      string-length(@xml:lang)='3'
+                                    )
+                                  ]/@xml:lang,
+                                  $upper,
+                                  $lower
+                               )" />
+      </xsl:template>
+      
+      
+      <xsl:template name="tOutputBCP47">
+        <xsl:param name="bcp47orig" />
+        
+        <xsl:choose>
+          <xsl:when test="$bcp47inferrence">
+            <xsl:call-template name="to-bcp47-spec">
+              <xsl:with-param name="bcp47orig" select="$bcp47orig" />
+            </xsl:call-template>
+          </xsl:when>
+          <xsl:otherwise>
+            <xsl:call-template name="to-bcp47-lc">
+              <xsl:with-param name="bcp47orig" select="$bcp47orig" />
+            </xsl:call-template>
+          </xsl:otherwise>
+        </xsl:choose>
+      </xsl:template>
+      
+      <!--
+        <xslt:variable name="langcode-to-script">
+          <langcode-script xmlns:bf2marc="http://www.loc.gov/bf2marc">
+            <langcode>ab</langcode>
+            <script>cyrl</script>
+          </langcode-script>
+        </xslt:variable>
+        
+        <xslt:variable name="iso6392-to-iso6391">
+          <iso6392to1 xmlns:bf2marc="http://www.loc.gov/bf2marc">
+            <iso6392>eng</iso6392>
+            <iso6391>en</iso6391>
+          </iso6392to1>
+        </xslt:variable>
+      -->
+      
+      <xsl:template name="to-bcp47-spec">
+        <xsl:param name="bcp47orig" />
+        <xsl:variable name="bcp47lower" select="translate($bcp47orig, $upper, $lower)" />
+        <xsl:choose>
+          <xsl:when test="contains($bcp47lower, '-t-')">
+            <xsl:value-of select="$bcp47lower" />
+          </xsl:when>
+          <xsl:otherwise>
+            <xsl:variable name="first4" select="substring($bcp47lower, 1, 4)" />
+            <xsl:variable name="last5" select="substring($bcp47lower, 4, 5)" />
+            
+            <xsl:variable name="first3" select="substring($bcp47lower, 1, 3)" />
+            <xsl:variable name="last4" select="substring($bcp47lower, 3, 5)" />
+            
+            <xsl:variable name="first2" select="substring($bcp47lower, 1, 2)" />
+            
+            <xsl:choose>
+              <xsl:when test="string-length($first4)=4 and 
+                              substring($first4, string-length($first4))='-' and 
+                              string-length($last5)=5 and 
+                              substring($last5, 1, 1)='-'">
+                <!-- 
+                  xyz-abcd
+                  first4 = xyz-
+                  last5 = -abcd
+                -->
+                <xsl:variable name="lpart" select="substring($first3, 1, 3)" />
+                <xsl:variable name="spart" select="substring($last5, 2, 4)" />
+                <xsl:variable name="l">
+                  <xsl:choose>
+                    <xsl:when test="$iso6392-to-iso6391NS/iso6392to1[iso6391=$lpart]/iso6391">
+                      <xsl:value-of select="$iso6392-to-iso6391NS/iso6392to1[iso6391=$lpart]/iso6391" />
+                    </xsl:when>
+                    <xsl:otherwise>
+                      <xsl:value-of select="$lpart" />
+                    </xsl:otherwise>
+                  </xsl:choose>
+                </xsl:variable>
+                <xsl:variable name="s">
+                  <xsl:choose>
+                    <xsl:when test="not($langcode-to-scriptNS/langcode-script[langcode=$l])">
+                      <xsl:value-of select="$spart" />
+                    </xsl:when>
+                    <xsl:when test="$langcode-to-scriptNS/langcode-script[langcode=$l]/script = $spart" />
+                    <xsl:when test="$langcode-to-scriptNS/langcode-script[langcode=$l]/script != $spart">
+                      <xsl:value-of select="$spart" />
+                    </xsl:when>
+                  </xsl:choose>
+                </xsl:variable>
+                <xsl:choose>
+                  <xsl:when test="$l != '' and $s != ''">
+                    <xsl:value-of select="concat($l, '-', $s)" />
+                  </xsl:when>
+                  <xsl:when test="$l != ''">
+                    <xsl:value-of select="$l" />
+                  </xsl:when>
+                </xsl:choose>
+              </xsl:when>
+              <xsl:when test="string-length($first3)=3 and 
+                              substring($first3, string-length($first3))='-' and 
+                              string-length($last4)=5 and 
+                              substring($last4, 1, 1)='-'">
+                <!-- 
+                  xy-abcd
+                  first3 = xy-
+                  last4 = -abcd
+                -->
+                <xsl:variable name="lpart" select="substring($first3, 1, 2)" />
+                <xsl:variable name="spart" select="substring($last4, 2, 4)" />
+                <xsl:variable name="s">
+                  <xsl:choose>
+                    <xsl:when test="not($langcode-to-scriptNS/langcode-script[langcode=$lpart])">
+                      <xsl:value-of select="$spart" />
+                    </xsl:when>
+                    <xsl:when test="$langcode-to-scriptNS/langcode-script[langcode=$lpart]/script = $spart">
+                      <xsl:value-of select="''" />
+                    </xsl:when>
+                    <xsl:when test="$langcode-to-scriptNS/langcode-script[langcode=$lpart]/script != $spart">
+                      <xsl:value-of select="$spart" />
+                    </xsl:when>
+                  </xsl:choose>
+                </xsl:variable>
+                <xsl:choose>
+                  <xsl:when test="$lpart != '' and $s != ''">
+                    <xsl:value-of select="concat($lpart, '-', $s)" />
+                  </xsl:when>
+                  <xsl:when test="$lpart != ''">
+                    <xsl:value-of select="$lpart" />
+                  </xsl:when>
+                </xsl:choose>
+              </xsl:when>
+              <xsl:when test="string-length($first3)=3 and 
+                              substring($first3, string-length($first3))!='-' and 
+                              string-length($last4)=0">
+                <!-- 
+                  xyz
+                  first3 = xyz
+                -->
+                <xsl:variable name="lpart" select="substring($first3, 1, 3)" />
+                <xsl:choose>
+                  <xsl:when test="$iso6392-to-iso6391NS/iso6392to1[iso6391=$lpart]/iso6391">
+                    <xsl:value-of select="$iso6392-to-iso6391NS/iso6392to1[iso6391=$lpart]/iso6391" />
+                  </xsl:when>
+                  <xsl:otherwise>
+                    <xsl:value-of select="$lpart" />
+                  </xsl:otherwise>
+                </xsl:choose>
+              </xsl:when>
+              <xsl:when test="$first2!=''">
+                <!-- 
+                  xy
+                  first2 = xy
+                -->
+                <xsl:value-of select="$first2" />
+              </xsl:when>
+            </xsl:choose>
+          </xsl:otherwise>
+        </xsl:choose>
+      </xsl:template>
+      
+      <xsl:template name="to-bcp47-lc">
+        <xsl:param name="bcp47orig" />
+        <xsl:variable name="bcp47lower" select="translate($bcp47orig, $upper, $lower)" />
+        <xsl:choose>
+          <xsl:when test="contains($bcp47lower, '-t-')">
+            <xsl:value-of select="$bcp47lower" />
+          </xsl:when>
+          <xsl:otherwise>
+            <xsl:variable name="first4" select="substring($bcp47lower, 1, 4)" />
+            <xsl:variable name="last5" select="substring($bcp47lower, 4, 5)" />
+            
+            <xsl:variable name="first3" select="substring($bcp47lower, 1, 3)" />
+            <xsl:variable name="last4" select="substring($bcp47lower, 3, 5)" />
+            
+            <xsl:variable name="first2" select="substring($bcp47lower, 1, 2)" />
+            
+            <xsl:choose>
+              <xsl:when test="string-length($first4)=4 and 
+                              substring($first4, string-length($first4))='-' and 
+                              string-length($last5)=5 and 
+                              substring($last5, 1, 1)='-'">
+                <!-- 
+                  xyz-abcd
+                  first4 = xyz-
+                  last5 = -abcd
+                -->
+                <xsl:variable name="lpart" select="substring($first3, 1, 3)" />
+                <xsl:variable name="spart" select="substring($last5, 2, 4)" />
+                <xsl:variable name="l">
+                  <xsl:choose>
+                    <xsl:when test="$iso6392-to-iso6391NS/iso6392to1[iso6391=$lpart]/iso6391">
+                      <xsl:value-of select="$iso6392-to-iso6391NS/iso6392to1[iso6391=$lpart]/iso6391" />
+                    </xsl:when>
+                    <xsl:otherwise>
+                      <xsl:value-of select="$lpart" />
+                    </xsl:otherwise>
+                  </xsl:choose>
+                </xsl:variable>
+                <xsl:choose>
+                  <xsl:when test="$l != '' and $spart != ''">
+                    <xsl:value-of select="concat($l, '-', $spart)" />
+                  </xsl:when>
+                  <xsl:when test="$l != ''">
+                    <xsl:value-of select="$l" />
+                  </xsl:when>
+                </xsl:choose>
+              </xsl:when>
+              <xsl:when test="string-length($first3)=3 and 
+                              substring($first3, string-length($first3))='-' and 
+                              string-length($last4)=5 and 
+                              substring($last4, 1, 1)='-'">
+                <!-- 
+                  xy-abcd
+                  first3 = xy-
+                  last4 = -abcd
+                -->
+                <xsl:variable name="lpart" select="substring($first3, 1, 2)" />
+                <xsl:variable name="spart" select="substring($last4, 2, 4)" />
+                <xsl:variable name="s">
+                  <xsl:choose>
+                    <xsl:when test="$langcode-to-scriptNS/langcode-script[langcode=$lpart]/script">
+                      <xsl:value-of select="$spart" />
+                    </xsl:when>
+                  </xsl:choose>
+                </xsl:variable>
+                <xsl:choose>
+                  <xsl:when test="$lpart != '' and $spart != ''">
+                    <xsl:value-of select="concat($lpart, '-', $spart)" />
+                  </xsl:when>
+                  <xsl:when test="$lpart != ''">
+                    <xsl:value-of select="$lpart" />
+                  </xsl:when>
+                </xsl:choose>
+              </xsl:when>
+              <xsl:when test="string-length($first3)=3 and 
+                              substring($first3, string-length($first3))!='-' and 
+                              string-length($last4)=0">
+                <!-- 
+                  xyz
+                  first3 = xyz
+                -->
+                <xsl:variable name="lpart" select="$first3" />
+                <xsl:variable name="l">
+                  <xsl:choose>
+                    <xsl:when test="$iso6392-to-iso6391NS/iso6392to1[iso6391=$lpart]/iso6391">
+                      <xsl:value-of select="$iso6392-to-iso6391NS/iso6392to1[iso6391=$lpart]/iso6391" />
+                    </xsl:when>
+                    <xsl:otherwise>
+                      <xsl:value-of select="$lpart" />
+                    </xsl:otherwise>
+                  </xsl:choose>
+                </xsl:variable>
+                <xsl:variable name="s">
+                  <xsl:choose>
+                    <xsl:when test="$langcode-to-scriptNS/langcode-script[langcode=$l][1]/script">
+                      <xsl:value-of select="$langcode-to-scriptNS/langcode-script[langcode=$l][1]/script" />
+                    </xsl:when>
+                  </xsl:choose>
+                </xsl:variable>
+                <xsl:choose>
+                  <xsl:when test="$l != '' and $s != ''">
+                    <xsl:value-of select="concat($l, '-', $s)" />
+                  </xsl:when>
+                  <xsl:when test="$l != ''">
+                    <xsl:value-of select="$l" />
+                  </xsl:when>
+                </xsl:choose>
+              </xsl:when>
+              <xsl:when test="$first2!=''">
+                <!-- 
+                  xy
+                  first2 = xy
+                -->
+                <xsl:variable name="lpart" select="$first2" />
+                <xsl:variable name="s">
+                  <xsl:choose>
+                    <xsl:when test="$langcode-to-scriptNS/langcode-script[langcode=$lpart][1]/script">
+                      <xsl:value-of select="$langcode-to-scriptNS/langcode-script[langcode=$lpart][1]/script" />
+                    </xsl:when>
+                  </xsl:choose>
+                </xsl:variable>
+                <xsl:choose>
+                  <xsl:when test="$lpart != '' and $s != ''">
+                    <xsl:value-of select="concat($lpart, '-', $s)" />
+                  </xsl:when>
+                  <xsl:when test="$lpart != ''">
+                    <xsl:value-of select="$lpart" />
+                  </xsl:when>
+                </xsl:choose>
+              </xsl:when>
+            </xsl:choose>
+          </xsl:otherwise>
+        </xsl:choose>
+      </xsl:template>
 
       <!-- get a MARC authority from a URI -->
-      
       <xsl:template name="tGetRelResource">
         <xsl:param name="pRelUri"/>
         <xsl:param name="pContext"/>
@@ -708,7 +1096,7 @@
                     </xsl:when>
                     <xsl:otherwise>
                       <xsl:message>Desire to look up <xsl:value-of select="$pUri"/> but using xsltproc. No lookup occurred.</xsl:message>
-                      <xsl:value-of select="$pUri"/></xsl:otherwise>
+                    </xsl:otherwise>
                   </xsl:choose>
                 </xsl:when>
                 <xsl:when test="contains($pUri, 'id.worldcat.org/fast/')">
@@ -741,7 +1129,7 @@
                 </xsl:otherwise>
               </xsl:choose>
             </xsl:when>
-            <xsl:otherwise><xsl:value-of select="$pUri"/></xsl:otherwise>
+            <!-- <xsl:otherwise><xsl:value-of select="$pUri"/></xsl:otherwise> -->
           </xsl:choose>
         </xsl:variable>
         <xsl:choose>
@@ -750,6 +1138,27 @@
               <xsl:choose>
                 <xsl:when test="function-available('xdmp:document-get')">
                   <xsl:copy-of select="xdmp:document-get($vUrl)" />
+                </xsl:when>
+                <xsl:when test="function-available('http:send-request')">
+                  <xsl:variable name="httprequest">
+                    <http:request xmlns:http="http://expath.org/ns/http-client" method="get">
+                      <xsl:attribute name="href"><xsl:value-of select="$vUrl" /></xsl:attribute>
+                      <http:header name="Accept" value="application/marcxml+xml"/>
+                      <http:header name="User-Agent">
+                        <xsl:attribute name="value"><xsl:value-of select="$vCurrentVersion" /></xsl:attribute>
+                      </http:header>
+                    </http:request>  
+                  </xsl:variable>
+                  <xsl:variable name="httprequestRes" select="exsl:node-set($httprequest)" />
+                  <xsl:variable name="httpresponse" select="http:send-request($httprequestRes/http:request)" />
+                  <xsl:choose>
+                    <xsl:when test="$httpresponse/http:response/@status = '200'">
+                      <xsl:copy-of select="$httpresponse/marc:record" />
+                    </xsl:when>
+                    <xsl:otherwise>
+                      <xsl:message>HTTP response for <xsl:value-of select="$vUrl" /> was: <xsl:value-of select="$httpresponse/http:response/@status" /></xsl:message>
+                    </xsl:otherwise>
+                  </xsl:choose>
                 </xsl:when>
                 <xsl:otherwise>
                   <xsl:copy-of select="document($vUrl)" />
@@ -952,6 +1361,9 @@
               <xsl:when test="$vAdminMetadata/bf:identifiedBy/bf:Local[not(bf:source) or bf:source/@rdf:resource='http://id.loc.gov/vocabulary/organizations/dlc' or bf:source/bf:Source/@rdf:about='http://id.loc.gov/vocabulary/organizations/dlc' or bf:source/bf:Source/rdfs:label='DLC']/rdf:value">
                 <xsl:value-of select="$vAdminMetadata/bf:identifiedBy/bf:Local[not(bf:source) or bf:source/@rdf:resource='http://id.loc.gov/vocabulary/organizations/dlc' or bf:source/bf:Source/@rdf:about='http://id.loc.gov/vocabulary/organizations/dlc' or bf:source/bf:Source/rdfs:label='DLC']/rdf:value"/>
               </xsl:when>
+              <xsl:when test="$vAdminMetadata/bf:identifiedBy/bf:Local[not(bf:source) or bf:source/@rdf:resource='http://id.loc.gov/vocabulary/organizations/dlcmrc' or bf:source/bf:Source/@rdf:about='http://id.loc.gov/vocabulary/organizations/dlcmrc' or bf:source/bf:Source/rdfs:label='DLC']/rdf:value">
+                <xsl:value-of select="$vAdminMetadata/bf:identifiedBy/bf:Local[not(bf:source) or bf:source/@rdf:resource='http://id.loc.gov/vocabulary/organizations/dlcmrc' or bf:source/bf:Source/@rdf:about='http://id.loc.gov/vocabulary/organizations/dlcmrc' or bf:source/bf:Source/rdfs:label='DLC']/rdf:value"/>
+              </xsl:when>
               <xsl:otherwise><xsl:value-of select="generate-id()"/></xsl:otherwise>
             </xsl:choose>
           </xsl:when>
@@ -990,6 +1402,9 @@
        this.
     <xsl:variable name="{@name}NS" select="exsl:node-set(${@name})" />
     -->
+    <xslt:if test="@name = 'langcode-to-script' or @name = 'iso6392-to-iso6391'">
+        <xsl:variable name="{@name}NS" select="exsl:node-set(${@name})" />    
+    </xslt:if>
   </xslt:template>
 
   <!-- templates for constructing keys: simple pass-through -->

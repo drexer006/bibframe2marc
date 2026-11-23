@@ -57,6 +57,11 @@ The converion stylesheet can take the following parameters:
 
 * `pCatScript` -- string for the default cataloging script found in `xml:lang` attributes. Defaults to `Latn`.
 
+* `bcp47inferrence` - Default is true.  If true, BCP47 codes will not include 
+the script component when it can be inferred from the language component.
+If false, the script component (the "-cyrl" of ru-cyrl) will be included in
+the code. At all times codes will be lowercased. 
+
 * `pGenerationTimestamp` -- a timestamp for the conversion. If it is not provided, and if the `date:date-time()` function is available, it will be created from the value of `date:date-time()`.
 
 * `pSourceRecordId` -- parameter to set the source record ID, for use in conversion rules. Used in generating the [884](rules/10-8XX.xml).
@@ -77,6 +82,39 @@ To build a conversion stylesheet from a rules file, you can just run the compile
 xsltproc src/compile.xsl rules.xml > bibframe2marc.xsl
 ```
 
+### Running the compiled stylesheet
+
+Once compiled, `bibframe2marc.xml` is the stylesheet run against Bibframe RDF/XML:
+
+```bash
+xsltproc bibframe2marc.xsl bibframe_cbd.xml
+```
+
+An example using Saxon (assuming Saxon JAR in the same directory):
+
+```bash
+java -classpath "saxon-he-12.5.jar" net.sf.saxon.Transform -s:rules/test/data/1XX/100-auth.xml -xsl:bibframe2marc.xsl
+```
+
+### A note about URIs and lookups
+
+The conversion will attempt to lookup MARC/XML from ID.LOC.GOV and one or two other
+sites when a known URI is provided and no marcKey information.  Lookups will generally not be possbile
+when using `xsltproc` but are possible when using MarkLogic, Saxon, or BaseX for example (BaseX is not tested).
+
+Using the default document fetching methods provided by MarkLogic and Saxon, for two examples, leaves little 
+control over the HTTP request. At this time, an additional method is provided for Saxon.
+
+It is possible to use the [expath-http-client-java](https://github.com/expath/expath-http-client-java/tree/main) with Saxon.  
+Assuming the Saxon JAR is in the same directory, download the additional utilities and then 
+invoke Saxon: 
+
+```bash
+curl -OL https://ipv6.repo1.maven.org/maven2/org/expath/http/client/http-client-saxon/2.0.0/http-client-saxon-2.0.0-uber.jar
+curl -OL https://raw.githubusercontent.com/expath/expath-http-client-java/refs/heads/main/http-client-saxon/examples/example1/config.xml
+java -classpath "saxon-he-12.5.jar;http-client-saxon-2.0.0-uber.jar" net.sf.saxon.Transform -config:saxonconfig.xml -s:rules/test/data/1XX/100-auth.xml -xsl:bibframe2marc.xsl
+```
+See [http-client-saxon](https://github.com/expath/expath-http-client-java/tree/main/http-client-saxon) for more information about using expath-http-client-java.
 ### Tests
 
 The compiler stylesheet has XSpec tests written for it that can be run with `make test_compile` (assuming that XSpec is installed and configured). The tests are in the `tests` subdirectory.

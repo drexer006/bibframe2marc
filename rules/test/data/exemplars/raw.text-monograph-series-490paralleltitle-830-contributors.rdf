@@ -7,7 +7,7 @@
 	    <rdfs:label>new</rdfs:label>
 	  </bf:Status>
 	</bf:status>
-	<bf:date rdf:datatype="http://www.w3.org/2001/XMLSchema#date">1991-04-04</bf:date>
+	<bf:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">1991-04-04T00:00:00</bf:date>
 	<bf:agent>
 	  <bf:Agent rdf:about="http://id.loc.gov/vocabulary/organizations/dlc">
 	    <bf:code>DLC</bf:code>
@@ -22,7 +22,7 @@
 	    <rdfs:label>changed</rdfs:label>
 	  </bf:Status>
 	</bf:status>
-	<bf:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">1995-03-22T11:07:35</bf:date>
+	<bf:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2025-06-07T12:49:37</bf:date>
 	<bf:descriptionModifier>
 	  <bf:Agent rdf:about="http://id.loc.gov/vocabulary/organizations/dlc">
 	    <bf:code>DLC</bf:code>
@@ -38,13 +38,13 @@
 	  </bf:Status>
 	</bf:status>
 	<bf:agent rdf:resource="http://id.loc.gov/vocabulary/organizations/dlcmrc"/>
-	<bf:generationProcess rdf:resource="https://github.com/lcnetdev/marc2bibframe2/releases/tag/v2.8.0"/>
-	<bf:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-11-20T16:32:32.351897-05:00</bf:date>
+	<bf:generationProcess rdf:resource="https://github.com/lcnetdev/marc2bibframe2/tree/v3.2-dev"/>
+	<bf:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2026-11-16T14:44:58.423339-05:00</bf:date>
       </bf:AdminMetadata>
     </bf:adminMetadata>
     <bf:adminMetadata>
       <bf:AdminMetadata>
-	<bf:descriptionLevel rdf:resource="http://id.loc.gov/ontologies/bibframe-2-4-0/"/>
+	<bf:descriptionLevel rdf:resource="http://id.loc.gov/ontologies/bibframe-3-0-1/"/>
 	<bflc:encodingLevel>
 	  <bflc:EncodingLevel rdf:about="http://id.loc.gov/vocabulary/menclvl/f">
 	    <rdfs:label>full</rdfs:label>
@@ -65,22 +65,22 @@
 	    </bf:assigner>
 	  </bf:Local>
 	</bf:identifiedBy>
-	<lclocal:d906>=906     $a 7 $b cbc $c orignew $d 2 $e ncip $f 19 $g y-gencatlg</lclocal:d906>
-	<lclocal:d955>=955     $a rb09 4-04-91; rc16; ep67 11-21-91; ea17/14 to scd 12-23-91; fg08 12-30-91; fl42 01-31-92</lclocal:d955>
 	<bf:note>
 	  <bf:Note>
 	    <rdf:type rdf:resource="http://id.loc.gov/vocabulary/mnotetype/internal"/>
 	    <rdfs:label>040  $aDLC$cDLC$dDLC</rdfs:label>
 	  </bf:Note>
 	</bf:note>
+	<bflc:marcKey>906  $a7$bcbc$corignew$d2$encip$f19$gy-gencatlg</bflc:marcKey>
+	<bflc:marcKey>955  $arb09 4-04-91; rc16; ep67 11-21-91; ea17/14 to scd 12-23-91; fg08 12-30-91; fl42 01-31-92</bflc:marcKey>
+	<bflc:marcKey>955  $aLCAP batch update 2025-06-02-04:00: LCAPM-644, LCAPM-150</bflc:marcKey>
+	<bflc:marcKey>4901 $aConference proceedings =$aAtti di conferenze ;$vv. 27</bflc:marcKey>
+	<bflc:marcKey>922  $aap</bflc:marcKey>
+	<bflc:marcKey>991  $bc-GenColl$hQC869.4.A6$iA153 1989$p00037840713$tCopy 1$v27$wBOOKS</bflc:marcKey>
+	<bflc:marcKey>999ff$i91bd1ad1-351d-5143-8d90-7c962bbf30bd$s55e0878a-3052-4f36-9d52-2ab2f24c84d4</bflc:marcKey>
       </bf:AdminMetadata>
     </bf:adminMetadata>
     <rdf:type rdf:resource="http://id.loc.gov/ontologies/bibframe/Text"/>
-    <bf:content>
-      <bf:Content rdf:about="http://id.loc.gov/vocabulary/contentTypes/txt">
-	<rdfs:label>text</rdfs:label>
-      </bf:Content>
-    </bf:content>
     <rdf:type rdf:resource="http://id.loc.gov/ontologies/bibframe/Monograph"/>
     <bf:language rdf:resource="http://id.loc.gov/vocabulary/languages/eng"/>
     <bf:illustrativeContent>
@@ -117,20 +117,32 @@
       </bf:ClassificationDdc>
     </bf:classification>
     <bf:title>
-      <bf:Title>
+      <bf:ParallelTitle>
 	<bf:mainTitle>2nd workshop, Italian research on Antarctic atmosphere, Porano, 19-20 October, 1989</bf:mainTitle>
-      </bf:Title>
+      </bf:ParallelTitle>
     </bf:title>
+    <bf:title>
+      <bf:ParallelTitle>
+	<bf:mainTitle>2nd workshop, Italian research on Antarctic atmosphere, Porano, 19-20 October, 1989 / edited by M. Colacino, G. Giovanelli, and L. Stefanutti : 2⁰ workshop ricerche italiane sullʹatmosfera antartica, Porano, 19-20 Ottobre, 1989</bf:mainTitle>
+      </bf:ParallelTitle>
+    </bf:title>
+    <bf:content>
+      <bf:Content rdf:about="http://id.loc.gov/vocabulary/contentTypes/txt">
+	<rdfs:label>text</rdfs:label>
+	<bf:source>
+	  <bf:Source rdf:about="http://id.loc.gov/vocabulary/genreFormSchemes/rdacontent"/>
+	</bf:source>
+      </bf:Content>
+    </bf:content>
     <bf:relation xmlns:exsl="http://exslt.org/common">
       <bf:Relation>
 	<bf:relationship>
-	  <bf:Relationship rdf:about="http://id.loc.gov/ontologies/bibframe/hasSeries">
-	    <rdfs:label>Has Series</rdfs:label>
+	  <bf:Relationship rdf:about="http://id.loc.gov/vocabulary/relationship/series">
+	    <rdfs:label>series</rdfs:label>
 	  </bf:Relationship>
 	</bf:relationship>
 	<bf:associatedResource>
 	  <bf:Series>
-	    <rdf:type rdf:resource="http://id.loc.gov/ontologies/bflc/Uncontrolled"/>
 	    <bf:status>
 	      <bf:Status rdf:about="http://id.loc.gov/vocabulary/mstatus/t">
 		<rdfs:label>transcribed</rdfs:label>
@@ -153,13 +165,12 @@
     <bf:relation xmlns:exsl="http://exslt.org/common">
       <bf:Relation>
 	<bf:relationship>
-	  <bf:Relationship rdf:about="http://id.loc.gov/ontologies/bibframe/hasSeries">
-	    <rdfs:label>Has Series</rdfs:label>
+	  <bf:Relationship rdf:about="http://id.loc.gov/vocabulary/relationship/series">
+	    <rdfs:label>series</rdfs:label>
 	  </bf:Relationship>
 	</bf:relationship>
 	<bf:associatedResource>
 	  <bf:Series>
-	    <rdf:type rdf:resource="http://id.loc.gov/ontologies/bflc/Uncontrolled"/>
 	    <bf:status>
 	      <bf:Status rdf:about="http://id.loc.gov/vocabulary/mstatus/t">
 		<rdfs:label>transcribed</rdfs:label>
@@ -181,7 +192,7 @@
       </bf:Relation>
     </bf:relation>
     <bf:subject>
-      <bf:Topic rdf:about="http://id.loc.gov/resources/REPLACE/4384447#Topic650-18">
+      <bf:Topic rdf:about="http://id.loc.gov/resources/REPLACE/4384447#Topic650-24">
 	<rdf:type rdf:resource="http://www.loc.gov/mads/rdf/v1#ComplexSubject"/>
 	<rdfs:label>Atmospheric physics--Research--Antarctica--Congresses</rdfs:label>
 	<madsrdf:authoritativeLabel>Atmospheric physics--Research--Antarctica--Congresses</madsrdf:authoritativeLabel>
@@ -204,7 +215,7 @@
       </bf:Topic>
     </bf:subject>
     <bf:subject>
-      <bf:Topic rdf:about="http://id.loc.gov/resources/REPLACE/4384447#Topic650-19">
+      <bf:Topic rdf:about="http://id.loc.gov/resources/REPLACE/4384447#Topic650-25">
 	<rdf:type rdf:resource="http://www.loc.gov/mads/rdf/v1#ComplexSubject"/>
 	<rdfs:label>Troposphere--Congresses</rdfs:label>
 	<madsrdf:authoritativeLabel>Troposphere--Congresses</madsrdf:authoritativeLabel>
@@ -221,7 +232,7 @@
       </bf:Topic>
     </bf:subject>
     <bf:subject>
-      <bf:Topic rdf:about="http://id.loc.gov/resources/REPLACE/4384447#Topic650-20">
+      <bf:Topic rdf:about="http://id.loc.gov/resources/REPLACE/4384447#Topic650-26">
 	<rdf:type rdf:resource="http://www.loc.gov/mads/rdf/v1#ComplexSubject"/>
 	<rdfs:label>Stratosphere--Congresses</rdfs:label>
 	<madsrdf:authoritativeLabel>Stratosphere--Congresses</madsrdf:authoritativeLabel>
@@ -238,7 +249,7 @@
       </bf:Topic>
     </bf:subject>
     <bf:subject>
-      <bf:Topic rdf:about="http://id.loc.gov/resources/REPLACE/4384447#Topic650-21">
+      <bf:Topic rdf:about="http://id.loc.gov/resources/REPLACE/4384447#Topic650-27">
 	<rdf:type rdf:resource="http://www.loc.gov/mads/rdf/v1#ComplexSubject"/>
 	<rdfs:label>Optical radar--Congresses</rdfs:label>
 	<madsrdf:authoritativeLabel>Optical radar--Congresses</madsrdf:authoritativeLabel>
@@ -257,7 +268,7 @@
     <bf:contribution>
       <bf:Contribution>
 	<bf:agent>
-	  <bf:Agent rdf:about="http://id.loc.gov/resources/REPLACE/4384447#Agent700-22">
+	  <bf:Agent rdf:about="http://id.loc.gov/resources/REPLACE/4384447#Agent700-28">
 	    <rdf:type rdf:resource="http://id.loc.gov/ontologies/bibframe/Person"/>
 	    <rdfs:label>Colacino, M.</rdfs:label>
 	    <bflc:marcKey>7001 $aColacino, M.</bflc:marcKey>
@@ -271,7 +282,7 @@
     <bf:contribution>
       <bf:Contribution>
 	<bf:agent>
-	  <bf:Agent rdf:about="http://id.loc.gov/resources/REPLACE/4384447#Agent700-23">
+	  <bf:Agent rdf:about="http://id.loc.gov/resources/REPLACE/4384447#Agent700-29">
 	    <rdf:type rdf:resource="http://id.loc.gov/ontologies/bibframe/Person"/>
 	    <rdfs:label>Giovanelli, G. (Giorgio)</rdfs:label>
 	    <bflc:marcKey>7001 $aGiovanelli, G.$q(Giorgio)</bflc:marcKey>
@@ -285,7 +296,7 @@
     <bf:contribution>
       <bf:Contribution>
 	<bf:agent>
-	  <bf:Agent rdf:about="http://id.loc.gov/resources/REPLACE/4384447#Agent700-24">
+	  <bf:Agent rdf:about="http://id.loc.gov/resources/REPLACE/4384447#Agent700-30">
 	    <rdf:type rdf:resource="http://id.loc.gov/ontologies/bibframe/Person"/>
 	    <rdfs:label>Stefanutti, L. (Leopoldo)</rdfs:label>
 	    <bflc:marcKey>7001 $aStefanutti, L.$q(Leopoldo)</bflc:marcKey>
@@ -300,7 +311,7 @@
       <bf:Relation>
 	<bf:relationship rdf:resource="http://id.loc.gov/vocabulary/relationship/relatedwork"/>
 	<bf:associatedResource>
-	  <bf:Work rdf:about="http://id.loc.gov/resources/REPLACE/4384447#Work740-25">
+	  <bf:Work rdf:about="http://id.loc.gov/resources/REPLACE/4384447#Work740-31">
 	    <rdf:type rdf:resource="http://id.loc.gov/ontologies/bflc/Uncontrolled"/>
 	    <bf:title>
 	      <bf:Title>
@@ -316,7 +327,7 @@
       <bf:Relation>
 	<bf:relationship rdf:resource="http://id.loc.gov/vocabulary/relationship/relatedwork"/>
 	<bf:associatedResource>
-	  <bf:Work rdf:about="http://id.loc.gov/resources/REPLACE/4384447#Work740-26">
+	  <bf:Work rdf:about="http://id.loc.gov/resources/REPLACE/4384447#Work740-32">
 	    <rdf:type rdf:resource="http://id.loc.gov/ontologies/bflc/Uncontrolled"/>
 	    <bf:title>
 	      <bf:Title>
@@ -331,12 +342,12 @@
     <bf:relation xmlns:exsl="http://exslt.org/common">
       <bf:Relation>
 	<bf:relationship>
-	  <bf:Relationship rdf:about="http://id.loc.gov/ontologies/bibframe/hasSeries">
-	    <rdfs:label>Has Series</rdfs:label>
+	  <bf:Relationship rdf:about="http://id.loc.gov/vocabulary/relationship/series">
+	    <rdfs:label>series</rdfs:label>
 	  </bf:Relationship>
 	</bf:relationship>
 	<bf:associatedResource>
-	  <bf:Hub rdf:about="http://id.loc.gov/resources/REPLACE/4384447#Hub830-27">
+	  <bf:Hub rdf:about="http://id.loc.gov/resources/REPLACE/4384447#Hub830-33">
 	    <rdf:type rdf:resource="http://id.loc.gov/ontologies/bibframe/Series"/>
 	    <bf:title>
 	      <bf:Title>
@@ -353,7 +364,7 @@
   </bf:Work>
   <bf:Instance rdf:about="http://id.loc.gov/resources/REPLACE/4384447#Instance">
     <bf:issuance rdf:resource="http://id.loc.gov/vocabulary/issuance/mono"/>
-    <bf:provisionActivity xmlns:exsl="http://exslt.org/common">
+    <bf:provisionActivity>
       <bf:ProvisionActivity>
 	<rdf:type rdf:resource="http://id.loc.gov/ontologies/bibframe/Publication"/>
 	<bf:date rdf:datatype="http://id.loc.gov/datatypes/edtf">1990</bf:date>
@@ -363,12 +374,12 @@
 	<bflc:simpleDate>1990</bflc:simpleDate>
       </bf:ProvisionActivity>
     </bf:provisionActivity>
-    <bf:publicationStatement xmlns:exsl="http://exslt.org/common">Bologna, Italy: Italian Physical Society, 1990</bf:publicationStatement>
-    <bf:media>
-      <bf:Media rdf:about="http://id.loc.gov/vocabulary/mediaTypes/n">
-	<rdfs:label>unmediated</rdfs:label>
-      </bf:Media>
-    </bf:media>
+    <bf:publicationStatement>Bologna, Italy: Italian Physical Society, 1990</bf:publicationStatement>
+    <bf:identifiedBy>
+      <bf:Local>
+	<rdf:value>4384447</rdf:value>
+      </bf:Local>
+    </bf:identifiedBy>
     <bf:identifiedBy>
       <bf:Lccn>
 	<rdf:value>   91137213 </rdf:value>
@@ -377,6 +388,11 @@
     <bf:identifiedBy>
       <bf:Isbn>
 	<rdf:value>8877940344</rdf:value>
+      </bf:Isbn>
+    </bf:identifiedBy>
+    <bf:identifiedBy>
+      <bf:Isbn>
+	<rdf:value>9788877940346</rdf:value>
       </bf:Isbn>
     </bf:identifiedBy>
     <bf:responsibilityStatement>edited by M. Colacino, G. Giovanelli, and L. Stefanutti = 2⁰ workshop ricerche italiane sullʹatmosfera antartica, Porano, 19-20 Ottobre, 1989</bf:responsibilityStatement>
@@ -388,15 +404,31 @@
     <bf:extent>
       <bf:Extent>
 	<rdfs:label>xii, 345 p.</rdfs:label>
+	<bf:note>
+	  <bf:Note>
+	    <rdf:type rdf:resource="http://id.loc.gov/vocabulary/mnotetype/physical"/>
+	    <rdfs:label>ill.</rdfs:label>
+	  </bf:Note>
+	</bf:note>
       </bf:Extent>
     </bf:extent>
-    <bf:note>
-      <bf:Note>
-	<rdf:type rdf:resource="http://id.loc.gov/vocabulary/mnotetype/physical"/>
-	<rdfs:label>ill.</rdfs:label>
-      </bf:Note>
-    </bf:note>
     <bf:dimensions>25 cm</bf:dimensions>
+    <bf:media>
+      <bf:Media rdf:about="http://id.loc.gov/vocabulary/mediaTypes/n">
+	<rdfs:label>unmediated</rdfs:label>
+	<bf:source>
+	  <bf:Source rdf:about="http://id.loc.gov/vocabulary/genreFormSchemes/rdamedia"/>
+	</bf:source>
+      </bf:Media>
+    </bf:media>
+    <bf:carrier>
+      <bf:Carrier rdf:about="http://id.loc.gov/vocabulary/carriers/nc">
+	<rdfs:label>volume</rdfs:label>
+	<bf:source>
+	  <bf:Source rdf:about="http://id.loc.gov/vocabulary/genreFormSchemes/rdacarrier"/>
+	</bf:source>
+      </bf:Carrier>
+    </bf:carrier>
     <bf:instanceOf rdf:resource="http://id.loc.gov/resources/REPLACE/4384447#Work"/>
   </bf:Instance>
 </rdf:RDF>

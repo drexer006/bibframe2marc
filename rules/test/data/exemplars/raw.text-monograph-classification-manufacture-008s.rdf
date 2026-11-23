@@ -7,7 +7,7 @@
 	    <rdfs:label>new</rdfs:label>
 	  </bf:Status>
 	</bf:status>
-	<bf:date rdf:datatype="http://www.w3.org/2001/XMLSchema#date">1988-08-04</bf:date>
+	<bf:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">1988-08-04T00:00:00</bf:date>
 	<bf:agent>
 	  <bf:Agent rdf:about="http://id.loc.gov/vocabulary/organizations/dlc">
 	    <bf:code>DLC</bf:code>
@@ -22,7 +22,7 @@
 	    <rdfs:label>changed</rdfs:label>
 	  </bf:Status>
 	</bf:status>
-	<bf:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">1992-06-10T14:09:54</bf:date>
+	<bf:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2025-06-07T03:58:30</bf:date>
 	<bf:descriptionModifier>
 	  <bf:Agent rdf:about="http://id.loc.gov/vocabulary/organizations/dlc">
 	    <bf:code>DLC</bf:code>
@@ -38,13 +38,13 @@
 	  </bf:Status>
 	</bf:status>
 	<bf:agent rdf:resource="http://id.loc.gov/vocabulary/organizations/dlcmrc"/>
-	<bf:generationProcess rdf:resource="https://github.com/lcnetdev/marc2bibframe2/releases/tag/v2.8.0"/>
-	<bf:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-11-20T16:32:25.863147-05:00</bf:date>
+	<bf:generationProcess rdf:resource="https://github.com/lcnetdev/marc2bibframe2/tree/v3.2-dev"/>
+	<bf:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2026-11-16T14:44:10.59337-05:00</bf:date>
       </bf:AdminMetadata>
     </bf:adminMetadata>
     <bf:adminMetadata>
       <bf:AdminMetadata>
-	<bf:descriptionLevel rdf:resource="http://id.loc.gov/ontologies/bibframe-2-4-0/"/>
+	<bf:descriptionLevel rdf:resource="http://id.loc.gov/ontologies/bibframe-3-0-1/"/>
 	<bflc:encodingLevel>
 	  <bflc:EncodingLevel rdf:about="http://id.loc.gov/vocabulary/menclvl/f">
 	    <rdfs:label>full</rdfs:label>
@@ -65,22 +65,21 @@
 	    </bf:assigner>
 	  </bf:Local>
 	</bf:identifiedBy>
-	<lclocal:d906>=906     $a 7 $b cbc $c orignew $d 3 $e ncip $f 19 $g y-gencatlg</lclocal:d906>
-	<lclocal:d955>=955     $a bw54 (ds) to ba00 08-04-88; fd18 02-06-89</lclocal:d955>
 	<bf:note>
 	  <bf:Note>
 	    <rdf:type rdf:resource="http://id.loc.gov/vocabulary/mnotetype/internal"/>
 	    <rdfs:label>040  $aDLC$cDLC$dDLC</rdfs:label>
 	  </bf:Note>
 	</bf:note>
+	<bflc:marcKey>906  $a7$bcbc$corignew$d3$encip$f19$gy-gencatlg</bflc:marcKey>
+	<bflc:marcKey>955  $abw54 (ds) to ba00 08-04-88; fd18 02-06-89</bflc:marcKey>
+	<bflc:marcKey>955  $aLCAP batch update 2025-06-02-04:00: LCAPM-644</bflc:marcKey>
+	<bflc:marcKey>922  $aad</bflc:marcKey>
+	<bflc:marcKey>991  $bc-GenColl$hF644.M55$iA16 1983$tCopy 1$wBOOKS</bflc:marcKey>
+	<bflc:marcKey>999ff$ic960a67b-e809-547a-81d2-6a11e7d0a304$s419d461c-e441-431a-add5-226ab597dff2</bflc:marcKey>
       </bf:AdminMetadata>
     </bf:adminMetadata>
     <rdf:type rdf:resource="http://id.loc.gov/ontologies/bibframe/Text"/>
-    <bf:content>
-      <bf:Content rdf:about="http://id.loc.gov/vocabulary/contentTypes/txt">
-	<rdfs:label>text</rdfs:label>
-      </bf:Content>
-    </bf:content>
     <rdf:type rdf:resource="http://id.loc.gov/ontologies/bibframe/Monograph"/>
     <bf:language rdf:resource="http://id.loc.gov/vocabulary/languages/eng"/>
     <bf:illustrativeContent>
@@ -116,8 +115,16 @@
 	<bf:mainTitle>100 years of Milnor memories, 1883-1983</bf:mainTitle>
       </bf:Title>
     </bf:title>
+    <bf:content>
+      <bf:Content rdf:about="http://id.loc.gov/vocabulary/contentTypes/txt">
+	<rdfs:label>text</rdfs:label>
+	<bf:source>
+	  <bf:Source rdf:about="http://id.loc.gov/vocabulary/genreFormSchemes/rdacontent"/>
+	</bf:source>
+      </bf:Content>
+    </bf:content>
     <bf:subject>
-      <bf:Topic rdf:about="http://id.loc.gov/resources/REPLACE/1972268#Place651-17">
+      <bf:Topic rdf:about="http://id.loc.gov/resources/REPLACE/1972268#Place651-22">
 	<rdf:type rdf:resource="http://www.loc.gov/mads/rdf/v1#ComplexSubject"/>
 	<rdfs:label>Milnor (N.D.)--History</rdfs:label>
 	<madsrdf:authoritativeLabel>Milnor (N.D.)--History</madsrdf:authoritativeLabel>
@@ -134,7 +141,7 @@
       </bf:Topic>
     </bf:subject>
     <bf:subject>
-      <bf:Topic rdf:about="http://id.loc.gov/resources/REPLACE/1972268#Place651-18">
+      <bf:Topic rdf:about="http://id.loc.gov/resources/REPLACE/1972268#Place651-23">
 	<rdf:type rdf:resource="http://www.loc.gov/mads/rdf/v1#ComplexSubject"/>
 	<rdfs:label>Milnor (N.D.)--Pictorial works</rdfs:label>
 	<madsrdf:authoritativeLabel>Milnor (N.D.)--Pictorial works</madsrdf:authoritativeLabel>
@@ -153,7 +160,7 @@
     <bf:contribution>
       <bf:Contribution>
 	<bf:agent>
-	  <bf:Agent rdf:about="http://id.loc.gov/resources/REPLACE/1972268#Agent710-19">
+	  <bf:Agent rdf:about="http://id.loc.gov/resources/REPLACE/1972268#Agent710-24">
 	    <rdf:type rdf:resource="http://id.loc.gov/ontologies/bibframe/Organization"/>
 	    <rdfs:label>Milnor Centennial Corporation</rdfs:label>
 	    <bflc:marcKey>7102 $aMilnor Centennial Corporation.</bflc:marcKey>
@@ -168,7 +175,7 @@
       <bf:Relation>
 	<bf:relationship rdf:resource="http://id.loc.gov/vocabulary/relationship/relatedwork"/>
 	<bf:associatedResource>
-	  <bf:Work rdf:about="http://id.loc.gov/resources/REPLACE/1972268#Work740-20">
+	  <bf:Work rdf:about="http://id.loc.gov/resources/REPLACE/1972268#Work740-25">
 	    <rdf:type rdf:resource="http://id.loc.gov/ontologies/bflc/Uncontrolled"/>
 	    <bf:title>
 	      <bf:Title>
@@ -184,7 +191,7 @@
   </bf:Work>
   <bf:Instance rdf:about="http://id.loc.gov/resources/REPLACE/1972268#Instance">
     <bf:issuance rdf:resource="http://id.loc.gov/vocabulary/issuance/mono"/>
-    <bf:provisionActivity xmlns:exsl="http://exslt.org/common">
+    <bf:provisionActivity>
       <bf:ProvisionActivity>
 	<rdf:type rdf:resource="http://id.loc.gov/ontologies/bibframe/Publication"/>
 	<bf:date rdf:datatype="http://id.loc.gov/datatypes/edtf">1983</bf:date>
@@ -194,20 +201,20 @@
 	<bflc:simpleDate>[1983?]</bflc:simpleDate>
       </bf:ProvisionActivity>
     </bf:provisionActivity>
-    <bf:publicationStatement xmlns:exsl="http://exslt.org/common">[Milnor, N.D.]: [Milnor Centennial Corp], [1983?]</bf:publicationStatement>
-    <bf:provisionActivity xmlns:exsl="http://exslt.org/common">
+    <bf:publicationStatement>[Milnor, N.D.]: [Milnor Centennial Corp], [1983?]</bf:publicationStatement>
+    <bf:provisionActivity>
       <bf:ProvisionActivity>
 	<rdf:type rdf:resource="http://id.loc.gov/ontologies/bibframe/Manufacture"/>
 	<bflc:simplePlace>Gwiner, N.D.</bflc:simplePlace>
 	<bflc:simpleAgent>J &amp; M Print</bflc:simpleAgent>
       </bf:ProvisionActivity>
     </bf:provisionActivity>
-    <bf:manufactureStatement xmlns:exsl="http://exslt.org/common">Gwiner, N.D.: J &amp; M Print</bf:manufactureStatement>
-    <bf:media>
-      <bf:Media rdf:about="http://id.loc.gov/vocabulary/mediaTypes/n">
-	<rdfs:label>unmediated</rdfs:label>
-      </bf:Media>
-    </bf:media>
+    <bf:manufactureStatement>Gwiner, N.D.: J &amp; M Print</bf:manufactureStatement>
+    <bf:identifiedBy>
+      <bf:Local>
+	<rdf:value>1972268</rdf:value>
+      </bf:Local>
+    </bf:identifiedBy>
     <bf:identifiedBy>
       <bf:Lccn>
 	<rdf:value>   88170119 </rdf:value>
@@ -221,15 +228,31 @@
     <bf:extent>
       <bf:Extent>
 	<rdfs:label>vi, 90 p.</rdfs:label>
+	<bf:note>
+	  <bf:Note>
+	    <rdf:type rdf:resource="http://id.loc.gov/vocabulary/mnotetype/physical"/>
+	    <rdfs:label>ill.</rdfs:label>
+	  </bf:Note>
+	</bf:note>
       </bf:Extent>
     </bf:extent>
-    <bf:note>
-      <bf:Note>
-	<rdf:type rdf:resource="http://id.loc.gov/vocabulary/mnotetype/physical"/>
-	<rdfs:label>ill.</rdfs:label>
-      </bf:Note>
-    </bf:note>
     <bf:dimensions>29 cm</bf:dimensions>
+    <bf:media>
+      <bf:Media rdf:about="http://id.loc.gov/vocabulary/mediaTypes/n">
+	<rdfs:label>unmediated</rdfs:label>
+	<bf:source>
+	  <bf:Source rdf:about="http://id.loc.gov/vocabulary/genreFormSchemes/rdamedia"/>
+	</bf:source>
+      </bf:Media>
+    </bf:media>
+    <bf:carrier>
+      <bf:Carrier rdf:about="http://id.loc.gov/vocabulary/carriers/nc">
+	<rdfs:label>volume</rdfs:label>
+	<bf:source>
+	  <bf:Source rdf:about="http://id.loc.gov/vocabulary/genreFormSchemes/rdacarrier"/>
+	</bf:source>
+      </bf:Carrier>
+    </bf:carrier>
     <bf:note>
       <bf:Note>
 	<rdfs:label>Cover title.</rdfs:label>

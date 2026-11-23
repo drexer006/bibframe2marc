@@ -7,7 +7,7 @@
 	    <rdfs:label>new</rdfs:label>
 	  </bf:Status>
 	</bf:status>
-	<bf:date rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2021-07-14</bf:date>
+	<bf:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2021-07-14T00:00:00</bf:date>
 	<bf:agent>
 	  <bf:Agent rdf:about="http://id.loc.gov/vocabulary/organizations/dlc">
 	    <bf:code>DLC</bf:code>
@@ -22,7 +22,7 @@
 	    <rdfs:label>changed</rdfs:label>
 	  </bf:Status>
 	</bf:status>
-	<bf:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-01-30T14:11:17</bf:date>
+	<bf:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2025-06-07T08:18:47</bf:date>
 	<bf:agent>
 	  <bf:Agent rdf:about="http://id.loc.gov/vocabulary/organizations/dlc">
 	    <bf:code>DLC</bf:code>
@@ -38,13 +38,13 @@
 	  </bf:Status>
 	</bf:status>
 	<bf:agent rdf:resource="http://id.loc.gov/vocabulary/organizations/dlcmrc"/>
-	<bf:generationProcess rdf:resource="https://github.com/lcnetdev/marc2bibframe2/releases/tag/v2.8.0"/>
-	<bf:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-11-20T16:32:50.080594-05:00</bf:date>
+	<bf:generationProcess rdf:resource="https://github.com/lcnetdev/marc2bibframe2/tree/v3.2-dev"/>
+	<bf:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2026-11-16T14:46:48.01525-05:00</bf:date>
       </bf:AdminMetadata>
     </bf:adminMetadata>
     <bf:adminMetadata>
       <bf:AdminMetadata>
-	<bf:descriptionLevel rdf:resource="http://id.loc.gov/ontologies/bibframe-2-4-0/"/>
+	<bf:descriptionLevel rdf:resource="http://id.loc.gov/ontologies/bibframe-3-0-1/"/>
 	<bflc:encodingLevel>
 	  <bflc:EncodingLevel rdf:about="http://id.loc.gov/vocabulary/menclvl/f">
 	    <rdfs:label>full</rdfs:label>
@@ -65,9 +65,6 @@
 	    </bf:assigner>
 	  </bf:Local>
 	</bf:identifiedBy>
-	<lclocal:d906>=906     $a 7 $b cbc $c origres $d 3 $e ncip $f 20 $g y-nonroman</lclocal:d906>
-	<lclocal:d925>=925  0  $a acquire $b 1 shelf copy $x policy default</lclocal:d925>
-	<lclocal:d955>=955     $a ve16 2023-05-12 $b fc69 2023-06-01 telework to ECE $i fc04 2023-11-07 to PresSrvs</lclocal:d955>
 	<bf:descriptionLanguage>
 	  <bf:Language rdf:about="http://id.loc.gov/vocabulary/languages/eng"/>
 	</bf:descriptionLanguage>
@@ -87,6 +84,14 @@
 	    <bf:code>pcc</bf:code>
 	  </bf:DescriptionAuthentication>
 	</bf:descriptionAuthentication>
+	<bflc:marcKey>906  $a7$bcbc$corigres$d3$encip$f20$gy-nonroman</bflc:marcKey>
+	<bflc:marcKey>9250 $aacquire$b1 shelf copy$xpolicy default</bflc:marcKey>
+	<bflc:marcKey>955  $ave16 2023-05-12$bfc69 2023-06-01 telework to ECE$ifc04 2023-11-07 to PresSrvs</bflc:marcKey>
+	<bflc:marcKey>955  $aLCAP batch update 2025-06-02-04:00: LCAPM-893</bflc:marcKey>
+	<bflc:marcKey>4900 $6880-03$aIstorii︠a︡ ta polityka</bflc:marcKey>
+	<bflc:marcKey>4900 $6880-04$aBiblioteka "Istorychnoï pravdy"</bflc:marcKey>
+	<bflc:marcKey>923  $d20230502$n30105705$sRuMoEVIS</bflc:marcKey>
+	<bflc:marcKey>999ff$i0f7ed068-e14c-5480-b55f-3bd62dbc1f57$s770df94b-741d-48f0-9f04-c3c211c70fb8</bflc:marcKey>
       </bf:AdminMetadata>
     </bf:adminMetadata>
     <rdf:type rdf:resource="http://id.loc.gov/ontologies/bibframe/Text"/>
@@ -102,11 +107,6 @@
 	<rdfs:label>portraits</rdfs:label>
       </bf:Illustration>
     </bf:illustrativeContent>
-    <bf:genreForm>
-      <bf:GenreForm rdf:about="http://id.loc.gov/authorities/genreForms/gf2014026049">
-	<rdfs:label>Biographies</rdfs:label>
-      </bf:GenreForm>
-    </bf:genreForm>
     <bf:geographicCoverage rdf:resource="http://id.loc.gov/vocabulary/geographicAreas/e-un"/>
     <bf:geographicCoverage rdf:resource="http://id.loc.gov/vocabulary/geographicAreas/n-us"/>
     <bf:classification>
@@ -134,13 +134,12 @@
     <bf:relation xmlns:exsl="http://exslt.org/common">
       <bf:Relation>
 	<bf:relationship>
-	  <bf:Relationship rdf:about="http://id.loc.gov/ontologies/bibframe/hasSeries">
-	    <rdfs:label>Has Series</rdfs:label>
+	  <bf:Relationship rdf:about="http://id.loc.gov/vocabulary/relationship/series">
+	    <rdfs:label>series</rdfs:label>
 	  </bf:Relationship>
 	</bf:relationship>
 	<bf:associatedResource>
 	  <bf:Series>
-	    <rdf:type rdf:resource="http://id.loc.gov/ontologies/bflc/Uncontrolled"/>
 	    <bf:status>
 	      <bf:Status rdf:about="http://id.loc.gov/vocabulary/mstatus/t">
 		<rdfs:label>transcribed</rdfs:label>
@@ -159,13 +158,12 @@
     <bf:relation xmlns:exsl="http://exslt.org/common">
       <bf:Relation>
 	<bf:relationship>
-	  <bf:Relationship rdf:about="http://id.loc.gov/ontologies/bibframe/hasSeries">
-	    <rdfs:label>Has Series</rdfs:label>
+	  <bf:Relationship rdf:about="http://id.loc.gov/vocabulary/relationship/series">
+	    <rdfs:label>series</rdfs:label>
 	  </bf:Relationship>
 	</bf:relationship>
 	<bf:associatedResource>
 	  <bf:Series>
-	    <rdf:type rdf:resource="http://id.loc.gov/ontologies/bflc/Uncontrolled"/>
 	    <bf:status>
 	      <bf:Status rdf:about="http://id.loc.gov/vocabulary/mstatus/t">
 		<rdfs:label>transcribed</rdfs:label>
@@ -182,7 +180,7 @@
       </bf:Relation>
     </bf:relation>
     <bf:subject>
-      <bf:Topic rdf:about="http://id.loc.gov/resources/REPLACE/23126927#Topic650-29">
+      <bf:Topic rdf:about="http://id.loc.gov/resources/REPLACE/23126927#Topic650-31">
 	<rdf:type rdf:resource="http://www.loc.gov/mads/rdf/v1#ComplexSubject"/>
 	<rdfs:label>Women--Ukraine--Biography</rdfs:label>
 	<madsrdf:authoritativeLabel>Women--Ukraine--Biography</madsrdf:authoritativeLabel>
@@ -202,7 +200,7 @@
       </bf:Topic>
     </bf:subject>
     <bf:subject>
-      <bf:Topic rdf:about="http://id.loc.gov/resources/REPLACE/23126927#Topic650-30">
+      <bf:Topic rdf:about="http://id.loc.gov/resources/REPLACE/23126927#Topic650-32">
 	<rdf:type rdf:resource="http://www.loc.gov/mads/rdf/v1#ComplexSubject"/>
 	<rdfs:label>Women, Ukrainian--Biography</rdfs:label>
 	<madsrdf:authoritativeLabel>Women, Ukrainian--Biography</madsrdf:authoritativeLabel>
@@ -219,7 +217,7 @@
       </bf:Topic>
     </bf:subject>
     <bf:subject>
-      <bf:Topic rdf:about="http://id.loc.gov/resources/REPLACE/23126927#Topic650-31">
+      <bf:Topic rdf:about="http://id.loc.gov/resources/REPLACE/23126927#Topic650-33">
 	<rdf:type rdf:resource="http://www.loc.gov/mads/rdf/v1#ComplexSubject"/>
 	<rdfs:label>Ukrainian American women--Biography</rdfs:label>
 	<madsrdf:authoritativeLabel>Ukrainian American women--Biography</madsrdf:authoritativeLabel>
@@ -235,10 +233,22 @@
 	<bf:source rdf:resource="http://id.loc.gov/authorities/subjects"/>
       </bf:Topic>
     </bf:subject>
+    <bf:genreForm>
+      <bf:GenreForm rdf:about="http://id.loc.gov/authorities/genreForms/gf2014026049">
+	<rdf:type rdf:resource="http://www.loc.gov/mads/rdf/v1#GenreForm"/>
+	<rdfs:label>Biographies</rdfs:label>
+	<madsrdf:authoritativeLabel>Biographies</madsrdf:authoritativeLabel>
+	<bf:source>
+	  <bf:Source rdf:about="http://id.loc.gov/vocabulary/genreFormSchemes/lcgft">
+	    <bf:code>lcgft</bf:code>
+	  </bf:Source>
+	</bf:source>
+      </bf:GenreForm>
+    </bf:genreForm>
     <bf:contribution>
       <bf:Contribution>
 	<bf:agent>
-	  <bf:Agent rdf:about="http://id.loc.gov/resources/REPLACE/23126927#Agent700-32">
+	  <bf:Agent rdf:about="http://id.loc.gov/resources/REPLACE/23126927#Agent700-35">
 	    <rdf:type rdf:resource="http://id.loc.gov/ontologies/bibframe/Person"/>
 	    <rdfs:label>Kipiani, Vakhtanh</rdfs:label>
 	    <rdfs:label xml:lang="uk-cyrl">Кіпіані, Вахтанг</rdfs:label>
@@ -257,7 +267,7 @@
   </bf:Work>
   <bf:Instance rdf:about="http://id.loc.gov/resources/REPLACE/23126927#Instance">
     <bf:issuance rdf:resource="http://id.loc.gov/vocabulary/issuance/mono"/>
-    <bf:provisionActivity xmlns:exsl="http://exslt.org/common">
+    <bf:provisionActivity>
       <bf:ProvisionActivity>
 	<rdf:type rdf:resource="http://id.loc.gov/ontologies/bibframe/Publication"/>
 	<bf:date rdf:datatype="http://id.loc.gov/datatypes/edtf">2021</bf:date>
@@ -270,8 +280,13 @@
 	<bflc:simpleDate xml:lang="uk-cyrl">2021</bflc:simpleDate>
       </bf:ProvisionActivity>
     </bf:provisionActivity>
-    <bf:publicationStatement xmlns:exsl="http://exslt.org/common">Kharkiv: Vydavnyt︠s︡tvo Vivat, 2021</bf:publicationStatement>
-    <bf:publicationStatement xml:lang="uk-cyrl" xmlns:exsl="http://exslt.org/common">Харків: Видавництво Vivat, 2021</bf:publicationStatement>
+    <bf:publicationStatement>Kharkiv: Vydavnyt︠s︡tvo Vivat, 2021</bf:publicationStatement>
+    <bf:publicationStatement xml:lang="uk-cyrl">Харків: Видавництво Vivat, 2021</bf:publicationStatement>
+    <bf:identifiedBy>
+      <bf:Local>
+	<rdf:value>23126927</rdf:value>
+      </bf:Local>
+    </bf:identifiedBy>
     <bf:identifiedBy>
       <bf:Lccn>
 	<rdf:value>  2023449325</rdf:value>
@@ -280,7 +295,7 @@
     <bf:identifiedBy>
       <bf:Isbn>
 	<rdf:value>9789669428431</rdf:value>
-	<bf:qualifier>serii︠a</bf:qualifier>
+	<bf:qualifier>serii︠a︡</bf:qualifier>
       </bf:Isbn>
     </bf:identifiedBy>
     <bf:identifiedBy>
@@ -307,14 +322,14 @@
     <bf:extent>
       <bf:Extent>
 	<rdfs:label>302 pages</rdfs:label>
+	<bf:note>
+	  <bf:Note>
+	    <rdf:type rdf:resource="http://id.loc.gov/vocabulary/mnotetype/physical"/>
+	    <rdfs:label>illustrations, portraits</rdfs:label>
+	  </bf:Note>
+	</bf:note>
       </bf:Extent>
     </bf:extent>
-    <bf:note>
-      <bf:Note>
-	<rdf:type rdf:resource="http://id.loc.gov/vocabulary/mnotetype/physical"/>
-	<rdfs:label>illustrations, portraits</rdfs:label>
-      </bf:Note>
-    </bf:note>
     <bf:dimensions>21 cm</bf:dimensions>
     <bf:media>
       <bf:Media rdf:about="http://id.loc.gov/vocabulary/mediaTypes/n">

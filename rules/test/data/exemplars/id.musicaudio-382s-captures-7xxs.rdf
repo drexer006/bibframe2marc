@@ -1,6 +1,5 @@
 <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:bf="http://id.loc.gov/ontologies/bibframe/" xmlns:bflc="http://id.loc.gov/ontologies/bflc/" xmlns:madsrdf="http://www.loc.gov/mads/rdf/v1#" xmlns:owl="http://www.w3.org/2002/07/owl#" xmlns:skos="http://www.w3.org/2004/02/skos/core#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:cc="http://creativecommons.org/ns#" xmlns:foaf="http://xmlns.com/foaf/0.1/" xmlns:pmo="http://performedmusicontology.org/ontology/" xmlns:lclocal="http://id.loc.gov/ontologies/lclocal/" xmlns:ri="http://id.loc.gov/ontologies/RecordInfo#">
-  <!--[{"level": "WARNING", "message": "Possible provision activity anomaly: only ProvisionActivity, Publication, Distribution, Manufacture, Modification used."},
-{"level": "WARNING", "message": "LCC missing item portion."}]-->
+  <!--[{"level": "WARNING", "message": "LCC missing item portion. Check **Classification numbers** for 'Additional call number information'"}]-->
   <bf:Instance rdf:about="http://id.loc.gov/resources/instances/12060035">
     <bf:issuance>
       <bf:Issuance rdf:about="http://id.loc.gov/vocabulary/issuance/mono">
@@ -47,7 +46,7 @@
       </bf:ProvisionActivity>
     </bf:provisionActivity>
     <bf:publicationStatement>New York, NY: Sony Classical, [1992]</bf:publicationStatement>
-    <bf:copyrightDate>℗1992</bf:copyrightDate>
+    <bf:copyrightDate>1992</bf:copyrightDate>
     <bf:provisionActivity>
       <bf:ProvisionActivity>
 	<rdf:type rdf:resource="http://id.loc.gov/ontologies/bibframe/Distribution"/>
@@ -66,6 +65,11 @@
 	<bf:date rdf:datatype="http://id.loc.gov/datatypes/edtf">1990</bf:date>
       </bf:ProvisionActivity>
     </bf:provisionActivity>
+    <bf:identifiedBy>
+      <bf:Local>
+	<rdf:value>12060035</rdf:value>
+      </bf:Local>
+    </bf:identifiedBy>
     <bf:identifiedBy>
       <bf:Lccn>
 	<rdf:value>   99582445 </rdf:value>
@@ -90,15 +94,15 @@
       <bf:AudioIssueNumber>
 	<rdf:value>SK 47183</rdf:value>
 	<bf:assigner>
-	  <bf:Agent>
+	  <bf:Organization>
 	    <rdfs:label>Sony Classical</rdfs:label>
-	  </bf:Agent>
+	  </bf:Organization>
 	</bf:assigner>
       </bf:AudioIssueNumber>
     </bf:identifiedBy>
     <bf:identifiedBy>
       <bf:OclcNumber>
-	<rdf:value>ocm25994797</rdf:value>
+	<rdf:value>25994797</rdf:value>
       </bf:OclcNumber>
     </bf:identifiedBy>
     <bf:responsibilityStatement>Sergei Rachmaninoff</bf:responsibilityStatement>
@@ -111,16 +115,16 @@
     <bf:extent>
       <bf:Extent>
 	<rdfs:label>1 audio disc (77 min., 12 sec.)</rdfs:label>
+	<bf:note>
+	  <bf:Note>
+	    <rdf:type rdf:resource="http://id.loc.gov/vocabulary/mnotetype/physical"/>
+	    <rdfs:label>digital</rdfs:label>
+	  </bf:Note>
+	</bf:note>
       </bf:Extent>
     </bf:extent>
-    <bf:note>
-      <bf:Note>
-	<rdf:type rdf:resource="http://id.loc.gov/vocabulary/mnotetype/physical"/>
-	<rdfs:label>digital</rdfs:label>
-      </bf:Note>
-    </bf:note>
     <bf:dimensions>4 3/4 in</bf:dimensions>
-    <bf:duration rdf:datatype="http://www.w3.org/2001/XMLSchema#duration">011712</bf:duration>
+    <bf:duration rdf:datatype="http://www.w3.org/2001/XMLSchema#duration">PT01H17M12S</bf:duration>
     <bf:media>
       <bf:Media rdf:about="http://id.loc.gov/vocabulary/mediaTypes/s">
 	<rdfs:label>audio</rdfs:label>
@@ -164,12 +168,6 @@
 	<bf:code>ste</bf:code>
       </bf:PlaybackChannels>
     </bf:soundCharacteristic>
-    <bf:digitalCharacteristic>
-      <bf:FileType rdf:about="http://id.loc.gov/vocabulary/mfiletype/audio">
-	<rdfs:label>audio file</rdfs:label>
-	<bf:code>audio</bf:code>
-      </bf:FileType>
-    </bf:digitalCharacteristic>
     <bf:soundCharacteristic>
       <bf:PlayingSpeed>
 	<rdfs:label>1.4 m/s</rdfs:label>
@@ -181,6 +179,12 @@
       </bf:PlayingSpeed>
     </bf:soundCharacteristic>
     <bf:digitalCharacteristic>
+      <bf:FileType rdf:about="http://id.loc.gov/vocabulary/mfiletype/audio">
+	<rdfs:label>audio file</rdfs:label>
+	<bf:code>audio</bf:code>
+      </bf:FileType>
+    </bf:digitalCharacteristic>
+    <bf:digitalCharacteristic>
       <bf:EncodingFormat rdf:about="http://id.loc.gov/vocabulary/mencformat/cda">
 	<rdfs:label>CD audio</rdfs:label>
 	<bf:code>cda</bf:code>
@@ -188,13 +192,12 @@
     </bf:digitalCharacteristic>
     <bf:note>
       <bf:Note>
-	<rdfs:label>Title from disc label</rdfs:label>
+	<rdfs:label>Title from disc label.</rdfs:label>
       </bf:Note>
     </bf:note>
-    <bf:credits>Yefim Bronfman, piano ; The Philharmonia ; Esa-Pekka Salonen, conductor.</bf:credits>
     <bf:note>
       <bf:Note>
-	<rdfs:label>Program notes by Detlef Gojowy, and biographical notes in German, with English, French and Italian translations (20 pages : portraits) inserted in container</rdfs:label>
+	<rdfs:label>Program notes by Detlef Gojowy, and biographical notes in German, with English, French and Italian translations (20 pages : portraits) inserted in container.</rdfs:label>
       </bf:Note>
     </bf:note>
     <dcterms:isPartOf rdf:resource="http://id.loc.gov/resources/instances"/>
@@ -207,14 +210,10 @@
 	    <bf:code>n</bf:code>
 	  </bf:Status>
 	</bf:status>
-	<bf:date rdf:datatype="http://www.w3.org/2001/XMLSchema#date">1992-06-11</bf:date>
+	<bf:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">1992-06-11T00:00:00</bf:date>
 	<bf:agent>
-	  <bf:Agent rdf:about="http://id.loc.gov/vocabulary/organizations/sdl">
-	    <rdf:type rdf:resource="http://id.loc.gov/ontologies/bibframe/Organization"/>
-	    <rdfs:label>Hearst Free Library</rdfs:label>
-	    <bf:code rdf:datatype="http://id.loc.gov/datatypes/orgs/code">SdL</bf:code>
-	    <bf:code rdf:datatype="http://id.loc.gov/datatypes/orgs/normalized">sdl</bf:code>
-	    <bf:code rdf:datatype="http://id.loc.gov/datatypes/orgs/iso15511">US-sdl</bf:code>
+	  <bf:Agent>
+	    <bf:code>SDL</bf:code>
 	  </bf:Agent>
 	</bf:agent>
       </bf:AdminMetadata>
@@ -227,7 +226,7 @@
 	    <bf:code>c</bf:code>
 	  </bf:Status>
 	</bf:status>
-	<bf:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2021-12-03T09:01:11</bf:date>
+	<bf:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2025-06-06T14:24:50</bf:date>
 	<bf:descriptionModifier>
 	  <bf:Organization rdf:about="http://id.loc.gov/vocabulary/organizations/dlc">
 	    <rdfs:label>United States, Library of Congress</rdfs:label>
@@ -255,13 +254,13 @@
 	    <bf:code rdf:datatype="http://id.loc.gov/datatypes/orgs/iso15511">US-dlcmrc</bf:code>
 	  </bf:Agent>
 	</bf:agent>
-	<bf:generationProcess rdf:resource="https://github.com/lcnetdev/marc2bibframe2/releases/tag/v2.7.0"/>
-	<bf:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-08-06T16:15:32.837167-04:00</bf:date>
+	<bf:generationProcess rdf:resource="https://github.com/lcnetdev/marc2bibframe2/tree/v3.2-dev"/>
+	<bf:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2026-05-12T19:57:05.216334-04:00</bf:date>
       </bf:AdminMetadata>
     </bf:adminMetadata>
     <bf:adminMetadata>
       <bf:AdminMetadata>
-	<bf:descriptionLevel rdf:resource="http://id.loc.gov/ontologies/bibframe-2-3-0/"/>
+	<bf:descriptionLevel rdf:resource="http://id.loc.gov/ontologies/bibframe-3-0-1/"/>
 	<bflc:encodingLevel>
 	  <bflc:EncodingLevel rdf:about="http://id.loc.gov/vocabulary/menclvl/f">
 	    <rdfs:label>full</rdfs:label>
@@ -287,8 +286,11 @@
 	    </bf:assigner>
 	  </bf:Local>
 	</bf:identifiedBy>
+	<bflc:marcKey>906  $a7$bcbc$ccopycat$d2$encip$f20$gy-soundrec</bflc:marcKey>
 	<lclocal:d906>=906     $a 7 $b cbc $c copycat $d 2 $e ncip $f 20 $g y-soundrec</lclocal:d906>
+	<bflc:marcKey>9250 $aacquire$b2 shelf copies$xpolicy default</bflc:marcKey>
 	<lclocal:d925>=925  0  $a acquire $b 2 shelf copies $x policy default</lclocal:d925>
+	<bflc:marcKey>955  $aqr06 2021-12-03 z-client$iqr06 2021-12-03</bflc:marcKey>
 	<lclocal:d955>=955     $a qr06 2021-12-03 z-client $i qr06 2021-12-03</lclocal:d955>
 	<bf:descriptionLanguage>
 	  <bf:Language rdf:about="http://id.loc.gov/vocabulary/languages/eng">
@@ -302,6 +304,12 @@
 	    <bf:code>rda</bf:code>
 	  </bf:DescriptionConventions>
 	</bf:descriptionConventions>
+	<bf:note>
+	  <bf:Note>
+	    <rdf:type rdf:resource="http://id.loc.gov/vocabulary/mnotetype/internal"/>
+	    <rdfs:label>040  $aSDL$beng$erda$cSDL$dIEP$dTKN$dOCLCQ$dOCLCG$dJBO$dUMC$dUOK$dOCLCQ$dUAU$dOCLCO$dOCLCF$dP4I$dOCLCQ$dOCLCA$dCEF$dPEX$dJDP$dOCLCQ$dOCLCO$dOCL$dOCLCA$dXFF$dOCLCO$dORU$dOCLCA$dSTF$dFDA$dCSAIL$dDLC</rdfs:label>
+	  </bf:Note>
+	</bf:note>
 	<bf:descriptionAuthentication>
 	  <bf:DescriptionAuthentication rdf:about="http://id.loc.gov/vocabulary/marcauthen/lccopycat">
 	    <rdfs:label>LC Copy Cataloging</rdfs:label>
@@ -309,12 +317,14 @@
 	  </bf:DescriptionAuthentication>
 	</bf:descriptionAuthentication>
 	<lclocal:d985>=985     $c OCLC $e Claimed Recordings</lclocal:d985>
+	<bflc:marcKey>999ff$i147beb62-27b2-5fea-86f1-0e349d8f26b8$s87410922-ab25-4c5e-a1d8-1d3f5e514714</bflc:marcKey>
+	<lclocal:d999>=999  ff $i 147beb62-27b2-5fea-86f1-0e349d8f26b8 $s 87410922-ab25-4c5e-a1d8-1d3f5e514714</lclocal:d999>
       </bf:AdminMetadata>
     </bf:adminMetadata>
   </bf:Instance>
   <bf:Work rdf:about="http://id.loc.gov/resources/works/12060035">
-    <bflc:aap>Rachmaninoff, Sergei, 1873-1943 Concerto for piano &amp; orchestra no. 2 in C minor, op. 18</bflc:aap>
-    <bflc:aap-normalized>rachmaninoffsergei18731943concertoforpiano&amp;orchestrano2incminorop18</bflc:aap-normalized>
+    <bflc:aap>Rachmaninoff, Sergei, 1873-1943. Concerto for piano &amp; orchestra no. 2 in C minor, op. 18 ; Concerto for piano &amp; orchestra no. 3 in D minor, op. 30</bflc:aap>
+    <bflc:aap-normalized>rachmaninoffsergei18731943concertoforpiano&amp;orchestrano2incminorop18;concertoforpiano&amp;orchestrano3indminorop30</bflc:aap-normalized>
     <rdf:type rdf:resource="http://id.loc.gov/ontologies/bibframe/MusicAudio"/>
     <rdf:type rdf:resource="http://id.loc.gov/ontologies/bibframe/Monograph"/>
     <bf:language>
@@ -481,31 +491,6 @@
 	</bf:language>
       </bf:Note>
     </bf:note>
-    <bf:instrument>
-      <bf:MusicInstrument>
-	<bf:instrumentalType>keyboard</bf:instrumentalType>
-	<rdfs:label>piano</rdfs:label>
-	<bf:count>1</bf:count>
-	<bf:source>
-	  <bf:Source rdf:about="http://id.loc.gov/vocabulary/musiccodeschemes/marcmusperf">
-	    <rdfs:label>MARC instruments and voices codes list</rdfs:label>
-	    <bf:code>marcmusperf</bf:code>
-	  </bf:Source>
-	</bf:source>
-      </bf:MusicInstrument>
-    </bf:instrument>
-    <bf:ensemble>
-      <bf:MusicEnsemble>
-	<bf:ensembleType>instrumental</bf:ensembleType>
-	<rdfs:label>orchestra</rdfs:label>
-	<bf:source>
-	  <bf:Source rdf:about="http://id.loc.gov/vocabulary/musiccodeschemes/marcmusperf">
-	    <rdfs:label>MARC instruments and voices codes list</rdfs:label>
-	    <bf:code>marcmusperf</bf:code>
-	  </bf:Source>
-	</bf:source>
-      </bf:MusicEnsemble>
-    </bf:ensemble>
     <bf:classification>
       <bf:ClassificationLcc>
 	<bf:classificationPortion>SDD 49503</bf:classificationPortion>
@@ -554,7 +539,8 @@
       <bf:Hub rdf:about="http://id.loc.gov/resources/hubs/2d05606b-7e0c-103e-aac1-bfa9c7866f8b">
 	<rdf:type rdf:resource="http://id.loc.gov/ontologies/bibframe/Audio"/>
 	<rdf:type rdf:resource="http://id.loc.gov/ontologies/bibframe/NotatedMusic"/>
-	<rdfs:label>Rachmaninoff, Sergei, 1873-1943 Concertos, piano, orchestra. Selections</rdfs:label>
+	<rdfs:label>Rachmaninoff, Sergei, 1873-1943. Concertos, piano, orchestra. Selections</rdfs:label>
+	<bflc:marcKey>1001 $aRachmaninoff, Sergei,$d1873-1943.$tConcertos,$mpiano, orchestra.$kSelections</bflc:marcKey>
 	<bf:contribution>
 	  <bf:Contribution>
 	    <rdf:type rdf:resource="http://id.loc.gov/ontologies/bibframe/PrimaryContribution"/>
@@ -582,7 +568,7 @@
     </bf:expressionOf>
     <bf:title>
       <bf:Title>
-	<bf:mainTitle>Concerto for piano &amp; orchestra no. 2 in C minor, op. 18</bf:mainTitle>
+	<bf:mainTitle>Concerto for piano &amp; orchestra no. 2 in C minor, op. 18 ; Concerto for piano &amp; orchestra no. 3 in D minor, op. 30</bf:mainTitle>
       </bf:Title>
     </bf:title>
     <bf:title>
@@ -612,11 +598,65 @@
 	<bf:code>txt</bf:code>
       </bf:Content>
     </bf:content>
-    <bf:musicMedium>
-      <bf:MusicMedium>
-	<bflc:readMarc382>38201$bpiano$n1$aorchestra$e1$r1$t1$2lcmpt</bflc:readMarc382>
-      </bf:MusicMedium>
-    </bf:musicMedium>
+    <bf:ensemble>
+      <bf:Ensemble>
+	<bf:mediumComponent>
+	  <bf:MediumComponent>
+	    <bf:mediumOfPerformance>
+	      <madsrdf:Medium rdf:about="http://id.loc.gov/authorities/performanceMediums/mp2013015550">
+		<rdfs:label xml:lang="en">piano</rdfs:label>
+		<bflc:marcKey>162  $apiano</bflc:marcKey>
+		<bf:source>
+		  <bf:Source rdf:about="http://id.loc.gov/authorities/performanceMediums">
+		    <rdfs:label>LC Performance Mediums</rdfs:label>
+		  </bf:Source>
+		</bf:source>
+	      </madsrdf:Medium>
+	    </bf:mediumOfPerformance>
+	    <bf:mediumComponentQualifier>
+	      <bf:MediumComponentQualifier rdf:about="http://id.loc.gov/vocabulary/medcompqual/solo">
+		<rdfs:label>solo</rdfs:label>
+		<bf:code>solo</bf:code>
+	      </bf:MediumComponentQualifier>
+	    </bf:mediumComponentQualifier>
+	    <bf:count>1</bf:count>
+	  </bf:MediumComponent>
+	</bf:mediumComponent>
+	<bf:mediumComponent>
+	  <bf:MediumComponent>
+	    <bf:mediumOfPerformance>
+	      <madsrdf:Medium rdf:about="http://id.loc.gov/authorities/performanceMediums/mp2013015516">
+		<rdfs:label xml:lang="en">orchestra</rdfs:label>
+		<bflc:marcKey>162  $aorchestra</bflc:marcKey>
+		<bf:source>
+		  <bf:Source rdf:about="http://id.loc.gov/authorities/performanceMediums">
+		    <rdfs:label>LC Performance Mediums</rdfs:label>
+		  </bf:Source>
+		</bf:source>
+	      </madsrdf:Medium>
+	    </bf:mediumOfPerformance>
+	    <bf:count>1</bf:count>
+	  </bf:MediumComponent>
+	</bf:mediumComponent>
+	<bf:ensembleSize>
+	  <bf:EnsembleSize rdf:about="http://id.loc.gov/vocabulary/ensemblesize/ensemble">
+	    <rdfs:label>large ensemble</rdfs:label>
+	    <bf:code>ensemble</bf:code>
+	  </bf:EnsembleSize>
+	</bf:ensembleSize>
+      </bf:Ensemble>
+    </bf:ensemble>
+    <bf:tableOfContents>
+      <bf:TableOfContents>
+	<rdfs:label>Concerto for piano &amp; orchestra no. 2 in C minor, op. 18 (33:55) -- Concerto for piano &amp; orchestra no. 3 in D minor, op. 30 (43:01).</rdfs:label>
+      </bf:TableOfContents>
+    </bf:tableOfContents>
+    <bf:note>
+      <bf:Note>
+	<rdf:type rdf:resource="http://id.loc.gov/vocabulary/mnotetype/participants"/>
+	<rdfs:label>Yefim Bronfman, piano ; The Philharmonia ; Esa-Pekka Salonen, conductor.</rdfs:label>
+      </bf:Note>
+    </bf:note>
     <bf:capture>
       <bf:Capture>
 	<rdfs:label>Recorded at</rdfs:label>
@@ -628,35 +668,6 @@
 	</bf:place>
       </bf:Capture>
     </bf:capture>
-    <bf:tableOfContents>
-      <bf:TableOfContents>
-	<rdfs:label>Concerto for piano &amp; orchestra no. 2 in C minor, op. 18 (33:55) -- Concerto for piano &amp; orchestra no. 3 in D minor, op. 30 (43:01).</rdfs:label>
-      </bf:TableOfContents>
-    </bf:tableOfContents>
-    <bf:subject>
-      <bf:Topic rdf:about="http://id.loc.gov/authorities/subjects/sh85030211">
-	<rdfs:label xml:lang="en">Concertos (Piano)</rdfs:label>
-	<bflc:marcKey>150 0$aConcertos (Piano)</bflc:marcKey>
-      </bf:Topic>
-    </bf:subject>
-    <bf:subject>
-      <bf:Topic rdf:about="http://id.worldcat.org/fast/873657">
-	<bflc:marcKey>150  $aConcertos (Piano)</bflc:marcKey>
-	<madsrdf:authoritativeLabel>Concertos (Piano)</madsrdf:authoritativeLabel>
-      </bf:Topic>
-    </bf:subject>
-    <bf:genreForm>
-      <bf:GenreForm rdf:about="http://id.loc.gov/authorities/genreForms/gf2014026725">
-	<rdfs:label xml:lang="en">Concertos</rdfs:label>
-	<bflc:marcKey>155  $aConcertos</bflc:marcKey>
-      </bf:GenreForm>
-    </bf:genreForm>
-    <bf:genreForm>
-      <bf:Topic rdf:about="http://id.worldcat.org/fast/1726450">
-	<bflc:marcKey>155  $aConcertos</bflc:marcKey>
-	<madsrdf:authoritativeLabel>Concertos</madsrdf:authoritativeLabel>
-      </bf:Topic>
-    </bf:genreForm>
     <bf:contribution>
       <bf:Contribution>
 	<bf:agent>
@@ -709,24 +720,66 @@
       </bf:Contribution>
     </bf:contribution>
     <dcterms:isPartOf rdf:resource="http://id.loc.gov/resources/works"/>
+    <bf:genreForm>
+      <bf:GenreForm rdf:about="http://id.loc.gov/authorities/genreForms/gf2014026725">
+	<rdfs:label xml:lang="en">Concertos</rdfs:label>
+	<bflc:marcKey>155  $aConcertos</bflc:marcKey>
+	<bf:source>
+	  <bf:Source rdf:about="http://id.loc.gov/authorities/genreForms">
+	    <rdfs:label>LC Genre/Forms</rdfs:label>
+	  </bf:Source>
+	</bf:source>
+      </bf:GenreForm>
+    </bf:genreForm>
+    <bf:genreForm>
+      <bf:GenreForm rdf:about="http://id.worldcat.org/fast/1726450">
+	<bflc:marcKey>155  $aConcertos</bflc:marcKey>
+	<madsrdf:authoritativeLabel>Concertos</madsrdf:authoritativeLabel>
+	<bf:source>
+	  <bf:Source rdf:about="http://id.loc.gov/vocabulary/subjectSchemes/fast">
+	    <rdfs:label>Faceted application of subject terminology</rdfs:label>
+	    <bf:code>fast</bf:code>
+	  </bf:Source>
+	</bf:source>
+      </bf:GenreForm>
+    </bf:genreForm>
+    <bf:subject>
+      <bf:Topic rdf:about="http://id.loc.gov/authorities/subjects/sh85030211">
+	<rdfs:label xml:lang="en">Concertos (Piano)</rdfs:label>
+	<bflc:marcKey>150 0$aConcertos (Piano)</bflc:marcKey>
+	<bf:source>
+	  <bf:Source rdf:about="http://id.loc.gov/authorities/subjects">
+	    <rdfs:label>LC Subject Headings</rdfs:label>
+	  </bf:Source>
+	</bf:source>
+      </bf:Topic>
+    </bf:subject>
+    <bf:subject>
+      <bf:Topic rdf:about="http://id.worldcat.org/fast/873657">
+	<bflc:marcKey>150  $aConcertos (Piano)</bflc:marcKey>
+	<madsrdf:authoritativeLabel>Concertos (Piano)</madsrdf:authoritativeLabel>
+	<bf:source>
+	  <bf:Source rdf:about="http://id.loc.gov/vocabulary/subjectSchemes/fast">
+	    <rdfs:label>Faceted application of subject terminology</rdfs:label>
+	    <bf:code>fast</bf:code>
+	  </bf:Source>
+	</bf:source>
+      </bf:Topic>
+    </bf:subject>
     <bf:relation>
       <bf:Relation>
 	<bf:relationship>
-	  <bf:Relationship rdf:about="http://id.loc.gov/vocabulary/relationship/relatedwork">
-	    <rdfs:label>related work</rdfs:label>
-	    <bf:code>relatedwork</bf:code>
-	  </bf:Relationship>
-	</bf:relationship>
-	<bf:relationship>
-	  <bf:Relationship rdf:about="http://id.loc.gov/entities/relationships/containerof">
-	    <rdfs:label>Container of</rdfs:label>
+	  <bf:Relationship rdf:about="http://id.loc.gov/vocabulary/relationship/part">
+	    <rdfs:label>contains</rdfs:label>
+	    <bf:code>part</bf:code>
 	  </bf:Relationship>
 	</bf:relationship>
 	<bf:associatedResource>
 	  <bf:Hub rdf:about="http://id.loc.gov/resources/hubs/73581852-f763-7743-2208-0cc33c92063f">
 	    <rdf:type rdf:resource="http://id.loc.gov/ontologies/bibframe/Audio"/>
 	    <rdf:type rdf:resource="http://id.loc.gov/ontologies/bibframe/NotatedMusic"/>
-	    <rdfs:label>Rachmaninoff, Sergei, 1873-1943 Concertos, piano, orchestra, no. 2, op. 18, C minor. no. 2, op. 18</rdfs:label>
+	    <rdfs:label>Rachmaninoff, Sergei, 1873-1943. Concertos, piano, orchestra, no. 2, op. 18, C minor</rdfs:label>
+	    <bflc:marcKey>1001 $aRachmaninoff, Sergei,$d1873-1943.$tConcertos,$mpiano, orchestra,$nno. 2, op. 18,$rC minor</bflc:marcKey>
 	    <bf:contribution>
 	      <bf:Contribution>
 		<rdf:type rdf:resource="http://id.loc.gov/ontologies/bibframe/PrimaryContribution"/>
@@ -753,12 +806,12 @@
 	    </bf:title>
 	    <bf:title>
 	      <bf:VariantTitle>
-		<bf:mainTitle>Concerto, piano, no. 2, op. 18, C minor</bf:mainTitle>
+		<bf:mainTitle xml:lang="zxx-latn">Concerto, piano, no. 2, op. 18, C minor</bf:mainTitle>
 	      </bf:VariantTitle>
 	    </bf:title>
 	    <bf:title>
 	      <bf:VariantTitle>
-		<bf:mainTitle>Moiseiwitsch plays Rachmaninov</bf:mainTitle>
+		<bf:mainTitle xml:lang="zxx-latn">Moiseiwitsch plays Rachmaninov</bf:mainTitle>
 	      </bf:VariantTitle>
 	    </bf:title>
 	  </bf:Hub>
@@ -768,21 +821,17 @@
     <bf:relation>
       <bf:Relation>
 	<bf:relationship>
-	  <bf:Relationship rdf:about="http://id.loc.gov/vocabulary/relationship/relatedwork">
-	    <rdfs:label>related work</rdfs:label>
-	    <bf:code>relatedwork</bf:code>
-	  </bf:Relationship>
-	</bf:relationship>
-	<bf:relationship>
-	  <bf:Relationship rdf:about="http://id.loc.gov/entities/relationships/containerof">
-	    <rdfs:label>Container of</rdfs:label>
+	  <bf:Relationship rdf:about="http://id.loc.gov/vocabulary/relationship/part">
+	    <rdfs:label>contains</rdfs:label>
+	    <bf:code>part</bf:code>
 	  </bf:Relationship>
 	</bf:relationship>
 	<bf:associatedResource>
 	  <bf:Hub rdf:about="http://id.loc.gov/resources/hubs/4c979fed-8103-ac75-b4cc-a7f03a5f9d65">
 	    <rdf:type rdf:resource="http://id.loc.gov/ontologies/bibframe/Audio"/>
 	    <rdf:type rdf:resource="http://id.loc.gov/ontologies/bibframe/NotatedMusic"/>
-	    <rdfs:label>Rachmaninoff, Sergei, 1873-1943 Concertos, piano, orchestra, no. 3, op. 30, D minor. no. 3, op. 30</rdfs:label>
+	    <rdfs:label>Rachmaninoff, Sergei, 1873-1943. Concertos, piano, orchestra, no. 3, op. 30, D minor</rdfs:label>
+	    <bflc:marcKey>1001 $aRachmaninoff, Sergei,$d1873-1943.$tConcertos,$mpiano, orchestra,$nno. 3, op. 30,$rD minor</bflc:marcKey>
 	    <bf:contribution>
 	      <bf:Contribution>
 		<rdf:type rdf:resource="http://id.loc.gov/ontologies/bibframe/PrimaryContribution"/>
@@ -820,14 +869,10 @@
 	    <bf:code>n</bf:code>
 	  </bf:Status>
 	</bf:status>
-	<bf:date rdf:datatype="http://www.w3.org/2001/XMLSchema#date">1992-06-11</bf:date>
+	<bf:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">1992-06-11T00:00:00</bf:date>
 	<bf:agent>
-	  <bf:Agent rdf:about="http://id.loc.gov/vocabulary/organizations/sdl">
-	    <rdf:type rdf:resource="http://id.loc.gov/ontologies/bibframe/Organization"/>
-	    <rdfs:label>Hearst Free Library</rdfs:label>
-	    <bf:code rdf:datatype="http://id.loc.gov/datatypes/orgs/code">SdL</bf:code>
-	    <bf:code rdf:datatype="http://id.loc.gov/datatypes/orgs/normalized">sdl</bf:code>
-	    <bf:code rdf:datatype="http://id.loc.gov/datatypes/orgs/iso15511">US-sdl</bf:code>
+	  <bf:Agent>
+	    <bf:code>SDL</bf:code>
 	  </bf:Agent>
 	</bf:agent>
       </bf:AdminMetadata>
@@ -840,7 +885,7 @@
 	    <bf:code>c</bf:code>
 	  </bf:Status>
 	</bf:status>
-	<bf:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2021-12-03T09:01:11</bf:date>
+	<bf:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2025-06-06T14:24:50</bf:date>
 	<bf:descriptionModifier>
 	  <bf:Organization rdf:about="http://id.loc.gov/vocabulary/organizations/dlc">
 	    <rdfs:label>United States, Library of Congress</rdfs:label>
@@ -868,13 +913,13 @@
 	    <bf:code rdf:datatype="http://id.loc.gov/datatypes/orgs/iso15511">US-dlcmrc</bf:code>
 	  </bf:Agent>
 	</bf:agent>
-	<bf:generationProcess rdf:resource="https://github.com/lcnetdev/marc2bibframe2/releases/tag/v2.7.0"/>
-	<bf:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-08-06T16:15:32.837167-04:00</bf:date>
+	<bf:generationProcess rdf:resource="https://github.com/lcnetdev/marc2bibframe2/tree/v3.2-dev"/>
+	<bf:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2026-05-12T19:57:05.216334-04:00</bf:date>
       </bf:AdminMetadata>
     </bf:adminMetadata>
     <bf:adminMetadata>
       <bf:AdminMetadata>
-	<bf:descriptionLevel rdf:resource="http://id.loc.gov/ontologies/bibframe-2-3-0/"/>
+	<bf:descriptionLevel rdf:resource="http://id.loc.gov/ontologies/bibframe-3-0-1/"/>
 	<bflc:encodingLevel>
 	  <bflc:EncodingLevel rdf:about="http://id.loc.gov/vocabulary/menclvl/f">
 	    <rdfs:label>full</rdfs:label>
@@ -900,8 +945,11 @@
 	    </bf:assigner>
 	  </bf:Local>
 	</bf:identifiedBy>
+	<bflc:marcKey>906  $a7$bcbc$ccopycat$d2$encip$f20$gy-soundrec</bflc:marcKey>
 	<lclocal:d906>=906     $a 7 $b cbc $c copycat $d 2 $e ncip $f 20 $g y-soundrec</lclocal:d906>
+	<bflc:marcKey>9250 $aacquire$b2 shelf copies$xpolicy default</bflc:marcKey>
 	<lclocal:d925>=925  0  $a acquire $b 2 shelf copies $x policy default</lclocal:d925>
+	<bflc:marcKey>955  $aqr06 2021-12-03 z-client$iqr06 2021-12-03</bflc:marcKey>
 	<lclocal:d955>=955     $a qr06 2021-12-03 z-client $i qr06 2021-12-03</lclocal:d955>
 	<bf:descriptionLanguage>
 	  <bf:Language rdf:about="http://id.loc.gov/vocabulary/languages/eng">
@@ -915,6 +963,12 @@
 	    <bf:code>rda</bf:code>
 	  </bf:DescriptionConventions>
 	</bf:descriptionConventions>
+	<bf:note>
+	  <bf:Note>
+	    <rdf:type rdf:resource="http://id.loc.gov/vocabulary/mnotetype/internal"/>
+	    <rdfs:label>040  $aSDL$beng$erda$cSDL$dIEP$dTKN$dOCLCQ$dOCLCG$dJBO$dUMC$dUOK$dOCLCQ$dUAU$dOCLCO$dOCLCF$dP4I$dOCLCQ$dOCLCA$dCEF$dPEX$dJDP$dOCLCQ$dOCLCO$dOCL$dOCLCA$dXFF$dOCLCO$dORU$dOCLCA$dSTF$dFDA$dCSAIL$dDLC</rdfs:label>
+	  </bf:Note>
+	</bf:note>
 	<bf:descriptionAuthentication>
 	  <bf:DescriptionAuthentication rdf:about="http://id.loc.gov/vocabulary/marcauthen/lccopycat">
 	    <rdfs:label>LC Copy Cataloging</rdfs:label>
@@ -922,6 +976,8 @@
 	  </bf:DescriptionAuthentication>
 	</bf:descriptionAuthentication>
 	<lclocal:d985>=985     $c OCLC $e Claimed Recordings</lclocal:d985>
+	<bflc:marcKey>999ff$i147beb62-27b2-5fea-86f1-0e349d8f26b8$s87410922-ab25-4c5e-a1d8-1d3f5e514714</bflc:marcKey>
+	<lclocal:d999>=999  ff $i 147beb62-27b2-5fea-86f1-0e349d8f26b8 $s 87410922-ab25-4c5e-a1d8-1d3f5e514714</lclocal:d999>
       </bf:AdminMetadata>
     </bf:adminMetadata>
   </bf:Work>

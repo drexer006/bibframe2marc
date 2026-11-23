@@ -7,7 +7,7 @@
 	    <rdfs:label>new</rdfs:label>
 	  </bf:Status>
 	</bf:status>
-	<bf:date rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2019-12-18</bf:date>
+	<bf:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2019-12-18T00:00:00</bf:date>
 	<bf:agent>
 	  <bf:Agent>
 	    <bf:code>OHX</bf:code>
@@ -22,7 +22,7 @@
 	    <rdfs:label>changed</rdfs:label>
 	  </bf:Status>
 	</bf:status>
-	<bf:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2019-12-18T16:31:17</bf:date>
+	<bf:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2025-06-07T06:03:14</bf:date>
 	<bf:descriptionModifier>
 	  <bf:Agent rdf:about="http://id.loc.gov/vocabulary/organizations/dlc">
 	    <bf:code>DLC</bf:code>
@@ -38,13 +38,13 @@
 	  </bf:Status>
 	</bf:status>
 	<bf:agent rdf:resource="http://id.loc.gov/vocabulary/organizations/dlcmrc"/>
-	<bf:generationProcess rdf:resource="https://github.com/lcnetdev/marc2bibframe2/releases/tag/v2.8.0"/>
-	<bf:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-11-20T16:32:16.639689-05:00</bf:date>
+	<bf:generationProcess rdf:resource="https://github.com/lcnetdev/marc2bibframe2/tree/v3.2-dev"/>
+	<bf:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2026-11-16T14:42:43.949382-05:00</bf:date>
       </bf:AdminMetadata>
     </bf:adminMetadata>
     <bf:adminMetadata>
       <bf:AdminMetadata>
-	<bf:descriptionLevel rdf:resource="http://id.loc.gov/ontologies/bibframe-2-4-0/"/>
+	<bf:descriptionLevel rdf:resource="http://id.loc.gov/ontologies/bibframe-3-0-1/"/>
 	<bflc:encodingLevel>
 	  <bflc:EncodingLevel rdf:about="http://id.loc.gov/vocabulary/menclvl/f">
 	    <rdfs:label>full</rdfs:label>
@@ -65,9 +65,6 @@
 	    </bf:assigner>
 	  </bf:Local>
 	</bf:identifiedBy>
-	<lclocal:d906>=906     $a 7 $b cbc $c copycat $d 2 $e ncip $f 20 $g y-genmusic</lclocal:d906>
-	<lclocal:d925>=925  0  $a acquire $b 1 shelf copy $x policy default</lclocal:d925>
-	<lclocal:d955>=955     $a vk39 2019-12-18 z-client $i vk39 2019-12-18 $e vk39 2019-12-18 c.1 to BCCD</lclocal:d955>
 	<bf:descriptionLanguage>
 	  <bf:Language rdf:about="http://id.loc.gov/vocabulary/languages/eng"/>
 	</bf:descriptionLanguage>
@@ -87,6 +84,10 @@
 	    <bf:code>lccopycat</bf:code>
 	  </bf:DescriptionAuthentication>
 	</bf:descriptionAuthentication>
+	<bflc:marcKey>906  $a7$bcbc$ccopycat$d2$encip$f20$gy-genmusic</bflc:marcKey>
+	<bflc:marcKey>9250 $aacquire$b1 shelf copy$xpolicy default</bflc:marcKey>
+	<bflc:marcKey>955  $avk39 2019-12-18 z-client$ivk39 2019-12-18$evk39 2019-12-18 c.1 to BCCD</bflc:marcKey>
+	<bflc:marcKey>999ff$i3b1f3cb0-f4c5-535f-8c38-ee0a1ea00af5$s814505f5-f85c-46e2-b033-f5ad0265b941</bflc:marcKey>
       </bf:AdminMetadata>
     </bf:adminMetadata>
     <rdf:type rdf:resource="http://id.loc.gov/ontologies/bibframe/NotatedMusic"/>
@@ -138,10 +139,14 @@
       </bf:Topic>
     </bf:subject>
     <bf:title>
-      <bf:Title>
-	<bflc:nonSortNum>4</bflc:nonSortNum>
+      <bf:ParallelTitle>
 	<bf:mainTitle>Die Lautentabulatur im Stift St. Paul im Lavanttal</bf:mainTitle>
-      </bf:Title>
+      </bf:ParallelTitle>
+    </bf:title>
+    <bf:title>
+      <bf:ParallelTitle>
+	<bf:mainTitle>The lute manuscript in the monastery of St. Paul im Lavanttal</bf:mainTitle>
+      </bf:ParallelTitle>
     </bf:title>
     <bf:title>
       <bf:ParallelTitle>
@@ -166,11 +171,30 @@
 	</bf:source>
       </bf:MusicFormat>
     </bf:musicFormat>
-    <bf:musicMedium>
-      <bf:MusicMedium>
-	<bflc:readMarc382>38201$alute$n1$s1$2lcmpt</bflc:readMarc382>
-      </bf:MusicMedium>
-    </bf:musicMedium>
+    <bf:ensemble>
+      <bf:Ensemble>
+	<bf:mediumComponent>
+	  <bf:MediumComponent>
+	    <bf:mediumOfPerformance>
+	      <bf:MediumOfPerformance>
+		<rdfs:label>lute</rdfs:label>
+		<bf:source>
+		  <bf:Source rdf:about="http://id.loc.gov/authorities/performanceMediums">
+		    <bf:code>lcmpt</bf:code>
+		  </bf:Source>
+		</bf:source>
+	      </bf:MediumOfPerformance>
+	    </bf:mediumOfPerformance>
+	    <bf:count>1</bf:count>
+	  </bf:MediumComponent>
+	</bf:mediumComponent>
+	<bf:ensembleSize>
+	  <bf:EnsembleSize rdf:about="http://id.loc.gov/vocabulary/ensemblesize/soloind">
+	    <rdfs:label>solo or individual</rdfs:label>
+	  </bf:EnsembleSize>
+	</bf:ensembleSize>
+      </bf:Ensemble>
+    </bf:ensemble>
     <bf:notation>
       <bf:Notation>
 	<rdfs:label>Tablature</rdfs:label>
@@ -321,25 +345,46 @@
 	</bf:role>
       </bf:Contribution>
     </bf:contribution>
-    <bf:contribution>
-      <bf:Contribution>
-	<bf:agent>
-	  <bf:Agent rdf:about="http://id.loc.gov/resources/REPLACE/21340497#Agent710-46">
-	    <rdf:type rdf:resource="http://id.loc.gov/ontologies/bibframe/Organization"/>
-	    <rdfs:label>Benediktinerstift St. Paul (Sankt Paul im Lavanttal, Austria). Bibliothek. Manuscript. A-SPL KK 35.</rdfs:label>
-	    <bflc:marcKey>7102 $iFacsimile of (manifestation):$aBenediktinerstift St. Paul (Sankt Paul im Lavanttal, Austria).$bBibliothek.$kManuscript.$nA-SPL KK 35.</bflc:marcKey>
-	  </bf:Agent>
-	</bf:agent>
-	<bf:role>
-	  <bf:Role rdf:about="http://id.loc.gov/vocabulary/relators/ctb"/>
-	</bf:role>
-      </bf:Contribution>
-    </bf:contribution>
+    <bf:relation>
+      <bf:Relation>
+	<bf:relationship rdf:resource="http://id.loc.gov/vocabulary/relationship/relatedwork"/>
+	<bf:relationship>
+	  <bf:Relationship>
+	    <rdfs:label>Facsimile of (manifestation)</rdfs:label>
+	  </bf:Relationship>
+	</bf:relationship>
+	<bf:associatedResource>
+	  <bf:Hub rdf:about="http://id.loc.gov/resources/REPLACE/21340497#Hub710-46">
+	    <bf:contribution>
+	      <bf:Contribution>
+		<bf:agent>
+		  <bf:Agent rdf:about="http://id.loc.gov/resources/REPLACE/21340497#Agent710-46">
+		    <rdf:type rdf:resource="http://id.loc.gov/ontologies/bibframe/Organization"/>
+		    <rdfs:label>Benediktinerstift St. Paul (Sankt Paul im Lavanttal, Austria). Bibliothek. A-SPL KK 35.</rdfs:label>
+		    <bflc:marcKey>7102 $iFacsimile of (manifestation):$aBenediktinerstift St. Paul (Sankt Paul im Lavanttal, Austria).$bBibliothek.</bflc:marcKey>
+		  </bf:Agent>
+		</bf:agent>
+		<bf:role>
+		  <bf:Role rdf:about="http://id.loc.gov/vocabulary/relators/ctb"/>
+		</bf:role>
+	      </bf:Contribution>
+	    </bf:contribution>
+	    <bf:title>
+	      <bf:Title>
+		<bf:mainTitle>Manuscript. A-SPL KK 35</bf:mainTitle>
+		<bf:partNumber>A-SPL KK 35</bf:partNumber>
+	      </bf:Title>
+	    </bf:title>
+	    <bflc:marcKey>7102 $iFacsimile of (manifestation):$aBenediktinerstift St. Paul (Sankt Paul im Lavanttal, Austria).$bBibliothek.$tManuscript.$nA-SPL KK 35.</bflc:marcKey>
+	  </bf:Hub>
+	</bf:associatedResource>
+      </bf:Relation>
+    </bf:relation>
     <bf:hasInstance rdf:resource="http://id.loc.gov/resources/REPLACE/21340497#Instance"/>
   </bf:Work>
   <bf:Instance rdf:about="http://id.loc.gov/resources/REPLACE/21340497#Instance">
     <bf:issuance rdf:resource="http://id.loc.gov/vocabulary/issuance/mono"/>
-    <bf:provisionActivity xmlns:exsl="http://exslt.org/common">
+    <bf:provisionActivity>
       <bf:ProvisionActivity>
 	<rdf:type rdf:resource="http://id.loc.gov/ontologies/bibframe/Publication"/>
 	<bf:date rdf:datatype="http://id.loc.gov/datatypes/edtf">2018</bf:date>
@@ -349,7 +394,12 @@
 	<bflc:simpleDate>2018</bflc:simpleDate>
       </bf:ProvisionActivity>
     </bf:provisionActivity>
-    <bf:publicationStatement xmlns:exsl="http://exslt.org/common">Klagenfurt am Wörthersee: Verlag des Geschichtsvereines für Kärnten, 2018</bf:publicationStatement>
+    <bf:publicationStatement>Klagenfurt am Wörthersee: Verlag des Geschichtsvereines für Kärnten, 2018</bf:publicationStatement>
+    <bf:identifiedBy>
+      <bf:Local>
+	<rdf:value>21340497</rdf:value>
+      </bf:Local>
+    </bf:identifiedBy>
     <bf:identifiedBy>
       <bf:Lccn>
 	<rdf:value>  2019565076</rdf:value>
@@ -379,11 +429,6 @@
     </bf:identifiedBy>
     <bf:identifiedBy>
       <bf:OclcNumber>
-	<rdf:value>on1056975250</rdf:value>
-      </bf:OclcNumber>
-    </bf:identifiedBy>
-    <bf:identifiedBy>
-      <bf:OclcNumber>
 	<rdf:value>1056975250</rdf:value>
       </bf:OclcNumber>
     </bf:identifiedBy>
@@ -391,21 +436,21 @@
     <bf:title>
       <bf:Title>
 	<bflc:nonSortNum>4</bflc:nonSortNum>
-	<bf:mainTitle>Die Lautentabulatur im Stift St. Paul im Lavanttal</bf:mainTitle>
+	<bf:mainTitle>Die Lautentabulatur im Stift St. Paul im Lavanttal =</bf:mainTitle>
 	<bf:subtitle>The lute manuscript in the monastery of St. Paul im Lavanttal</bf:subtitle>
       </bf:Title>
     </bf:title>
     <bf:extent>
       <bf:Extent>
 	<rdfs:label>1 score (xlvi, 82 pages)</rdfs:label>
+	<bf:note>
+	  <bf:Note>
+	    <rdf:type rdf:resource="http://id.loc.gov/vocabulary/mnotetype/physical"/>
+	    <rdfs:label>illustrations, facsimiles</rdfs:label>
+	  </bf:Note>
+	</bf:note>
       </bf:Extent>
     </bf:extent>
-    <bf:note>
-      <bf:Note>
-	<rdf:type rdf:resource="http://id.loc.gov/vocabulary/mnotetype/physical"/>
-	<rdfs:label>illustrations, facsimiles</rdfs:label>
-      </bf:Note>
-    </bf:note>
     <bf:dimensions>30 cm</bf:dimensions>
     <bf:media>
       <bf:Media rdf:about="http://id.loc.gov/vocabulary/mediaTypes/n">
@@ -435,13 +480,13 @@
     </bf:note>
     <bf:note>
       <bf:Note>
-	<rdf:type rdf:resource="http://id.loc.gov/vocabulary/mnotetype/biblio"/>
-	<rdfs:label>Bibliography of lute manuscripts, prints, and modern editions: pages xxxvi-xliv.</rdfs:label>
+	<rdfs:label>Contains facsimile prints and modern tablature notation.</rdfs:label>
       </bf:Note>
     </bf:note>
     <bf:note>
       <bf:Note>
-	<rdfs:label>Contains facsimile prints and modern tablature notation.</rdfs:label>
+	<rdf:type rdf:resource="http://id.loc.gov/vocabulary/mnotetype/biblio"/>
+	<rdfs:label>Bibliography of lute manuscripts, prints, and modern editions: pages xxxvi-xliv.</rdfs:label>
       </bf:Note>
     </bf:note>
     <bf:instanceOf rdf:resource="http://id.loc.gov/resources/REPLACE/21340497#Work"/>

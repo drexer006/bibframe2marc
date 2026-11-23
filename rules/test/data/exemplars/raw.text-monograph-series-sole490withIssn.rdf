@@ -7,7 +7,7 @@
 	    <rdfs:label>new</rdfs:label>
 	  </bf:Status>
 	</bf:status>
-	<bf:date rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2021-06-07</bf:date>
+	<bf:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2021-06-07T00:00:00</bf:date>
 	<bf:agent>
 	  <bf:Agent>
 	    <bf:code>LBSOR/DLC</bf:code>
@@ -22,7 +22,7 @@
 	    <rdfs:label>changed</rdfs:label>
 	  </bf:Status>
 	</bf:status>
-	<bf:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-08-10T11:49:10</bf:date>
+	<bf:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2025-06-07T06:58:53</bf:date>
 	<bf:descriptionModifier>
 	  <bf:Agent rdf:about="http://id.loc.gov/vocabulary/organizations/dlc">
 	    <bf:code>DLC</bf:code>
@@ -38,13 +38,13 @@
 	  </bf:Status>
 	</bf:status>
 	<bf:agent rdf:resource="http://id.loc.gov/vocabulary/organizations/dlcmrc"/>
-	<bf:generationProcess rdf:resource="https://github.com/lcnetdev/marc2bibframe2/releases/tag/v2.8.0"/>
-	<bf:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-11-20T16:32:58.318041-05:00</bf:date>
+	<bf:generationProcess rdf:resource="https://github.com/lcnetdev/marc2bibframe2/tree/v3.2-dev"/>
+	<bf:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2026-11-16T14:47:54.42099-05:00</bf:date>
       </bf:AdminMetadata>
     </bf:adminMetadata>
     <bf:adminMetadata>
       <bf:AdminMetadata>
-	<bf:descriptionLevel rdf:resource="http://id.loc.gov/ontologies/bibframe-2-4-0/"/>
+	<bf:descriptionLevel rdf:resource="http://id.loc.gov/ontologies/bibframe-3-0-1/"/>
 	<bflc:encodingLevel>
 	  <bflc:EncodingLevel rdf:about="http://id.loc.gov/vocabulary/menclvl/f">
 	    <rdfs:label>full</rdfs:label>
@@ -65,9 +65,6 @@
 	    </bf:assigner>
 	  </bf:Local>
 	</bf:identifiedBy>
-	<lclocal:d906>=906     $a 7 $b cbc $c orignew $d 1 $e ecip $f 20 $g y-gencatlg</lclocal:d906>
-	<lclocal:d925>=925  0  $a acquire $b 1 shelf copy $x policy default</lclocal:d925>
-	<lclocal:d955>=955     $b LBSOR 2021-06-07 $e rl06 2021-06-14 (TW Situational) to Dewey $w xm10 2021-06-14 also edited msc codes. $a xn11 2022-07-18 1 copy rec'd., to CIP ver. $f rl02 2022-07-28 (Telework) to PresSrvs</lclocal:d955>
 	<bf:descriptionLanguage>
 	  <bf:Language rdf:about="http://id.loc.gov/vocabulary/languages/eng"/>
 	</bf:descriptionLanguage>
@@ -87,7 +84,12 @@
 	    <bf:code>pcc</bf:code>
 	  </bf:DescriptionAuthentication>
 	</bf:descriptionAuthentication>
-	<lclocal:d985>=985     $a LBSORCIP $d 2021-06-07</lclocal:d985>
+	<bflc:marcKey>906  $a7$bcbc$corignew$d1$eecip$f20$gy-gencatlg</bflc:marcKey>
+	<bflc:marcKey>9250 $aacquire$b1 shelf copy$xpolicy default</bflc:marcKey>
+	<bflc:marcKey>955  $bLBSOR 2021-06-07$erl06 2021-06-14 (TW Situational) to Dewey$wxm10 2021-06-14 also edited msc codes.$axn11 2022-07-18 1 copy rec'd., to CIP ver.$frl02 2022-07-28 (Telework) to PresSrvs</bflc:marcKey>
+	<bflc:marcKey>4900 $aMemoirs of the American Mathematical Society,$x0065-9266 ;$vnumber 1307</bflc:marcKey>
+	<bflc:marcKey>985  $aLBSORCIP$d2021-06-07</bflc:marcKey>
+	<bflc:marcKey>999ff$iedb1fe61-b368-5fd5-b950-dd01f25d463f$s59df4e0e-1f54-4f2d-b90a-1b9ba424a3fb</bflc:marcKey>
       </bf:AdminMetadata>
     </bf:adminMetadata>
     <rdf:type rdf:resource="http://id.loc.gov/ontologies/bibframe/Text"/>
@@ -154,7 +156,7 @@
       <bf:Contribution>
 	<rdf:type rdf:resource="http://id.loc.gov/ontologies/bibframe/PrimaryContribution"/>
 	<bf:agent>
-	  <bf:Agent rdf:about="http://id.loc.gov/resources/REPLACE/22076502#Agent100-16">
+	  <bf:Agent rdf:about="http://id.loc.gov/resources/REPLACE/22076502#Agent100-17">
 	    <rdf:type rdf:resource="http://id.loc.gov/ontologies/bibframe/Person"/>
 	    <rdfs:label>Thomas, Adam R., 1988-</rdfs:label>
 	    <bflc:marcKey>1001 $aThomas, Adam R.,$d1988-$eauthor.</bflc:marcKey>
@@ -184,13 +186,12 @@
     <bf:relation xmlns:exsl="http://exslt.org/common">
       <bf:Relation>
 	<bf:relationship>
-	  <bf:Relationship rdf:about="http://id.loc.gov/ontologies/bibframe/hasSeries">
-	    <rdfs:label>Has Series</rdfs:label>
+	  <bf:Relationship rdf:about="http://id.loc.gov/vocabulary/relationship/series">
+	    <rdfs:label>series</rdfs:label>
 	  </bf:Relationship>
 	</bf:relationship>
 	<bf:associatedResource>
 	  <bf:Series>
-	    <rdf:type rdf:resource="http://id.loc.gov/ontologies/bflc/Uncontrolled"/>
 	    <bf:status>
 	      <bf:Status rdf:about="http://id.loc.gov/vocabulary/mstatus/t">
 		<rdfs:label>transcribed</rdfs:label>
@@ -222,7 +223,7 @@
       </bf:Summary>
     </bf:summary>
     <bf:subject>
-      <bf:Topic rdf:about="http://id.loc.gov/resources/REPLACE/22076502#Topic650-28">
+      <bf:Topic rdf:about="http://id.loc.gov/resources/REPLACE/22076502#Topic650-29">
 	<rdf:type rdf:resource="http://www.loc.gov/mads/rdf/v1#Topic"/>
 	<rdfs:label>Linear algebraic groups</rdfs:label>
 	<madsrdf:authoritativeLabel>Linear algebraic groups</madsrdf:authoritativeLabel>
@@ -231,7 +232,7 @@
       </bf:Topic>
     </bf:subject>
     <bf:subject>
-      <bf:Topic rdf:about="http://id.loc.gov/resources/REPLACE/22076502#Topic650-29">
+      <bf:Topic rdf:about="http://id.loc.gov/resources/REPLACE/22076502#Topic650-30">
 	<rdf:type rdf:resource="http://www.loc.gov/mads/rdf/v1#Topic"/>
 	<rdfs:label>Representations of groups</rdfs:label>
 	<madsrdf:authoritativeLabel>Representations of groups</madsrdf:authoritativeLabel>
@@ -240,7 +241,7 @@
       </bf:Topic>
     </bf:subject>
     <bf:subject>
-      <bf:Topic rdf:about="http://id.loc.gov/resources/REPLACE/22076502#Topic650-30">
+      <bf:Topic rdf:about="http://id.loc.gov/resources/REPLACE/22076502#Topic650-31">
 	<rdf:type rdf:resource="http://www.loc.gov/mads/rdf/v1#Topic"/>
 	<rdfs:label>Embeddings (Mathematics)</rdfs:label>
 	<madsrdf:authoritativeLabel>Embeddings (Mathematics)</madsrdf:authoritativeLabel>
@@ -249,7 +250,7 @@
       </bf:Topic>
     </bf:subject>
     <bf:subject>
-      <bf:Topic rdf:about="http://id.loc.gov/resources/REPLACE/22076502#Topic650-31">
+      <bf:Topic rdf:about="http://id.loc.gov/resources/REPLACE/22076502#Topic650-32">
 	<rdf:type rdf:resource="http://www.loc.gov/mads/rdf/v1#Topic"/>
 	<rdfs:label>Maximal subgroups</rdfs:label>
 	<madsrdf:authoritativeLabel>Maximal subgroups</madsrdf:authoritativeLabel>
@@ -258,7 +259,7 @@
       </bf:Topic>
     </bf:subject>
     <bf:subject>
-      <bf:Topic rdf:about="http://id.loc.gov/resources/REPLACE/22076502#Topic650-32">
+      <bf:Topic rdf:about="http://id.loc.gov/resources/REPLACE/22076502#Topic650-33">
 	<rdf:type rdf:resource="http://www.loc.gov/mads/rdf/v1#Topic"/>
 	<rdfs:label>Group theory and generalizations -- Linear algebraic groups and related topics -- Representation theory for linear algebraic groups</rdfs:label>
 	<madsrdf:authoritativeLabel>Group theory and generalizations -- Linear algebraic groups and related topics -- Representation theory for linear algebraic groups</madsrdf:authoritativeLabel>
@@ -270,7 +271,7 @@
       </bf:Topic>
     </bf:subject>
     <bf:subject>
-      <bf:Topic rdf:about="http://id.loc.gov/resources/REPLACE/22076502#Topic650-33">
+      <bf:Topic rdf:about="http://id.loc.gov/resources/REPLACE/22076502#Topic650-34">
 	<rdf:type rdf:resource="http://www.loc.gov/mads/rdf/v1#Topic"/>
 	<rdfs:label>Group theory and generalizations -- Linear algebraic groups and related topics -- Linear algebraic groups over arbitrary fields</rdfs:label>
 	<madsrdf:authoritativeLabel>Group theory and generalizations -- Linear algebraic groups and related topics -- Linear algebraic groups over arbitrary fields</madsrdf:authoritativeLabel>
@@ -282,7 +283,7 @@
       </bf:Topic>
     </bf:subject>
     <bf:subject>
-      <bf:Topic rdf:about="http://id.loc.gov/resources/REPLACE/22076502#Topic650-34">
+      <bf:Topic rdf:about="http://id.loc.gov/resources/REPLACE/22076502#Topic650-35">
 	<rdf:type rdf:resource="http://www.loc.gov/mads/rdf/v1#Topic"/>
 	<rdfs:label>Group theory and generalizations -- Linear algebraic groups and related topics -- Exceptional groups</rdfs:label>
 	<madsrdf:authoritativeLabel>Group theory and generalizations -- Linear algebraic groups and related topics -- Exceptional groups</madsrdf:authoritativeLabel>
@@ -297,7 +298,7 @@
   </bf:Work>
   <bf:Instance rdf:about="http://id.loc.gov/resources/REPLACE/22076502#Instance">
     <bf:issuance rdf:resource="http://id.loc.gov/vocabulary/issuance/mono"/>
-    <bf:provisionActivity xmlns:exsl="http://exslt.org/common">
+    <bf:provisionActivity>
       <bf:ProvisionActivity>
 	<rdf:type rdf:resource="http://id.loc.gov/ontologies/bibframe/Publication"/>
 	<bf:date rdf:datatype="http://id.loc.gov/datatypes/edtf">2020</bf:date>
@@ -307,7 +308,12 @@
 	<bflc:simpleDate>[2020]</bflc:simpleDate>
       </bf:ProvisionActivity>
     </bf:provisionActivity>
-    <bf:publicationStatement xmlns:exsl="http://exslt.org/common">Providence, RI: American Mathematical Society, [2020]</bf:publicationStatement>
+    <bf:publicationStatement>Providence, RI: American Mathematical Society, [2020]</bf:publicationStatement>
+    <bf:identifiedBy>
+      <bf:Local>
+	<rdf:value>22076502</rdf:value>
+      </bf:Local>
+    </bf:identifiedBy>
     <bf:identifiedBy>
       <bf:Lccn>
 	<rdf:value>  2021016995</rdf:value>

@@ -7,11 +7,13 @@ declare -A exemplars=(
 ["18344194"]="musicaudio-monograph-contributors-titles-identifiers"
 ["19537131"]="musicaudio-monograph-hamilton-contributos-subjects-genreforms"
 ["12060035"]="musicaudio-382s-captures-7xxs"
+["11909089"]="musicaudio-sd-cr"
 ["21851594"]="notatedmusic-relationships"
 ["20779915"]="notatedmusic-monograph-genreforms"
 ["21340497"]="notatedmusic-monograph-subjects-paralleltitle-contributors-genreforms"
 ["10496140"]="notatedmusic-manuscript-monograph-01"
 ["20525980"]="notatedmusic-manuscript-monograph-02"
+["23742669"]="notatedmusic-manuscript-monograph-03-rich-382-383-384s"
 
 ["21009588"]="musicaudio-monograph-varianttitles-subjects-008p"
 ["11457859"]="text-serial-SUBJECTS-relationships-008c"
@@ -46,6 +48,7 @@ declare -A exemplars=(
 
 ["22915593"]="text-monograph-880s-and-100-245-246-247-264-700-cyrllic"
 ["16777386"]="text-serial-880s-and-245-246-247-264-710-780-chinese"
+["21550295"]="text-880s-russian-item"
 )
 
 for key in "${!exemplars[@]}"; do

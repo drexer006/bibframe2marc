@@ -7,7 +7,7 @@
 	    <rdfs:label>new</rdfs:label>
 	  </bf:Status>
 	</bf:status>
-	<bf:date rdf:datatype="http://www.w3.org/2001/XMLSchema#date">1984-11-13</bf:date>
+	<bf:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">1984-11-13T00:00:00</bf:date>
 	<bf:agent>
 	  <bf:Agent rdf:about="http://id.loc.gov/vocabulary/organizations/dlc">
 	    <bf:code>DLC</bf:code>
@@ -22,7 +22,7 @@
 	    <rdfs:label>changed</rdfs:label>
 	  </bf:Status>
 	</bf:status>
-	<bf:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2012-09-14T13:58:14</bf:date>
+	<bf:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2025-06-06T12:24:44</bf:date>
 	<bf:descriptionModifier>
 	  <bf:Agent rdf:about="http://id.loc.gov/vocabulary/organizations/dlc">
 	    <bf:code>DLC</bf:code>
@@ -38,13 +38,13 @@
 	  </bf:Status>
 	</bf:status>
 	<bf:agent rdf:resource="http://id.loc.gov/vocabulary/organizations/dlcmrc"/>
-	<bf:generationProcess rdf:resource="https://github.com/lcnetdev/marc2bibframe2/releases/tag/v2.8.0"/>
-	<bf:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-11-20T16:32:52.28638-05:00</bf:date>
+	<bf:generationProcess rdf:resource="https://github.com/lcnetdev/marc2bibframe2/tree/v3.2-dev"/>
+	<bf:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2026-11-16T14:47:06.876207-05:00</bf:date>
       </bf:AdminMetadata>
     </bf:adminMetadata>
     <bf:adminMetadata>
       <bf:AdminMetadata>
-	<bf:descriptionLevel rdf:resource="http://id.loc.gov/ontologies/bibframe-2-4-0/"/>
+	<bf:descriptionLevel rdf:resource="http://id.loc.gov/ontologies/bibframe-3-0-1/"/>
 	<bf:identifiedBy>
 	  <bf:Local>
 	    <rdf:value>10496140</rdf:value>
@@ -55,15 +55,17 @@
 	    </bf:assigner>
 	  </bf:Local>
 	</bf:identifiedBy>
-	<lclocal:d906>=906     $a 0 $b cbc $c premunv $d u $e ncip $f 19 $g y-gencatlg</lclocal:d906>
-	<lclocal:d955>=955     $a vl41 2012-07-30 type code change $i vl26 2012-09-14 telework</lclocal:d955>
 	<bf:note>
 	  <bf:Note>
 	    <rdf:type rdf:resource="http://id.loc.gov/vocabulary/mnotetype/internal"/>
 	    <rdfs:label>040  $aDLC$cCarP$dDLC</rdfs:label>
 	  </bf:Note>
 	</bf:note>
-	<lclocal:d985>=985     $e ML96</lclocal:d985>
+	<bflc:marcKey>906  $a0$bcbc$cpremunv$du$encip$f19$gy-gencatlg</bflc:marcKey>
+	<bflc:marcKey>955  $avl41 2012-07-30 type code change$ivl26 2012-09-14 telework</bflc:marcKey>
+	<bflc:marcKey>985  $eML96</bflc:marcKey>
+	<bflc:marcKey>991  $bc-Music$hML96$i.F94$tCopy 1$wPREM</bflc:marcKey>
+	<bflc:marcKey>999ff$i27889336-7a7e-58f4-a8c2-0e449d918ce8$s622b6292-e203-45cc-b4e7-77aadee79fd8</bflc:marcKey>
       </bf:AdminMetadata>
     </bf:adminMetadata>
     <rdf:type rdf:resource="http://id.loc.gov/ontologies/bibframe/NotatedMusic"/>
@@ -97,7 +99,7 @@
       <bf:Contribution>
 	<rdf:type rdf:resource="http://id.loc.gov/ontologies/bibframe/PrimaryContribution"/>
 	<bf:agent>
-	  <bf:Agent rdf:about="http://id.loc.gov/resources/REPLACE/10496140#Agent100-11">
+	  <bf:Agent rdf:about="http://id.loc.gov/resources/REPLACE/10496140#Agent100-12">
 	    <rdf:type rdf:resource="http://id.loc.gov/ontologies/bibframe/Person"/>
 	    <rdfs:label>Freer, Eleanor Everest</rdfs:label>
 	    <bflc:marcKey>1001 $aFreer, Eleanor Everest.</bflc:marcKey>
@@ -109,12 +111,12 @@
       </bf:Contribution>
     </bf:contribution>
     <bf:expressionOf>
-      <bf:Hub rdf:about="http://id.loc.gov/resources/REPLACE/10496140#Hub240-12">
+      <bf:Hub rdf:about="http://id.loc.gov/resources/REPLACE/10496140#Hub240-13">
 	<bf:contribution>
 	  <bf:Contribution>
 	    <rdf:type rdf:resource="http://id.loc.gov/ontologies/bibframe/PrimaryContribution"/>
 	    <bf:agent>
-	      <bf:Agent rdf:about="http://id.loc.gov/resources/REPLACE/10496140#Hub240-12-Agent">
+	      <bf:Agent rdf:about="http://id.loc.gov/resources/REPLACE/10496140#Hub240-13-Agent">
 		<rdf:type rdf:resource="http://id.loc.gov/ontologies/bibframe/Person"/>
 		<rdfs:label>Freer, Eleanor Everest</rdfs:label>
 		<bflc:marcKey>1001 $aFreer, Eleanor Everest.</bflc:marcKey>
@@ -141,7 +143,7 @@
       </bf:Title>
     </bf:title>
     <bf:subject>
-      <bf:Topic rdf:about="http://id.loc.gov/resources/REPLACE/10496140#Topic650-16">
+      <bf:Topic rdf:about="http://id.loc.gov/resources/REPLACE/10496140#Topic650-17">
 	<rdf:type rdf:resource="http://www.loc.gov/mads/rdf/v1#Topic"/>
 	<rdfs:label>Songs with piano</rdfs:label>
 	<madsrdf:authoritativeLabel>Songs with piano</madsrdf:authoritativeLabel>
@@ -153,11 +155,11 @@
       <bf:Relation>
 	<bf:relationship rdf:resource="http://id.loc.gov/vocabulary/relationship/part"/>
 	<bf:associatedResource>
-	  <bf:Hub rdf:about="http://id.loc.gov/resources/REPLACE/10496140#Hub700-17">
+	  <bf:Hub rdf:about="http://id.loc.gov/resources/REPLACE/10496140#Hub700-18">
 	    <bf:contribution>
 	      <bf:Contribution>
 		<bf:agent>
-		  <bf:Agent rdf:about="http://id.loc.gov/resources/REPLACE/10496140#Agent700-17">
+		  <bf:Agent rdf:about="http://id.loc.gov/resources/REPLACE/10496140#Agent700-18">
 		    <rdf:type rdf:resource="http://id.loc.gov/ontologies/bibframe/Person"/>
 		    <rdfs:label>Freer, Eleanor Everest</rdfs:label>
 		    <bflc:marcKey>70012$aFreer, Eleanor Everest.$tSongs,$nop. 16.$pDaughter of Egypt, veil thine eyes.</bflc:marcKey>
@@ -184,15 +186,21 @@
   </bf:Work>
   <bf:Instance rdf:about="http://id.loc.gov/resources/REPLACE/10496140#Instance">
     <bf:issuance rdf:resource="http://id.loc.gov/vocabulary/issuance/mono"/>
-    <bf:provisionActivity xmlns:exsl="http://exslt.org/common">
+    <bf:provisionActivity>
       <bf:ProvisionActivity>
 	<rdf:type rdf:resource="http://id.loc.gov/ontologies/bibframe/Publication"/>
+	<bf:date rdf:datatype="http://id.loc.gov/datatypes/edtf">XXXX</bf:date>
 	<bf:place rdf:resource="http://id.loc.gov/vocabulary/countries/xx"/>
 	<bflc:simplePlace>[n.p.]</bflc:simplePlace>
 	<bflc:simpleDate>[n.d.]</bflc:simpleDate>
       </bf:ProvisionActivity>
     </bf:provisionActivity>
-    <bf:publicationStatement xmlns:exsl="http://exslt.org/common">[n.p.]: [n.d.]</bf:publicationStatement>
+    <bf:publicationStatement>[n.p.]: [n.d.]</bf:publicationStatement>
+    <bf:identifiedBy>
+      <bf:Local>
+	<rdf:value>10496140</rdf:value>
+      </bf:Local>
+    </bf:identifiedBy>
     <bf:identifiedBy>
       <bf:Lccn>
 	<rdf:value>  2012570811</rdf:value>

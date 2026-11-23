@@ -1,5 +1,57 @@
 # bibframe2marc release notes
 
+## v3.2.0
+
+Conversion updates based on specifications v3.1.0. See the Library of Congress’s [BIBFRAME site](https://www.loc.gov/bibframe/) for more details. Specifications are included in the distribution in the [spec](spec/) directory. Changes of note:
+
+* The creation of $5 data is based on bf:heldBy information in the Item instead of bflc:applicableInstitution resources.
+* New codes and subfields from the latest MARC21 update have been added.
+* Official RDA values for Mode of Issuance will appear in MARC 334 field, while the L/07 values will reflect exist MARC Mode of Issuance codes.
+
+See the [NEWS](NEWS) file for full details of changes.   Changes from v3.1.0 in the specifications are marked in red.
+
+## v3.1.0
+
+Conversion updates based on specifications v3.1.0. See the Library of Congress’s [BIBFRAME site](https://www.loc.gov/bibframe/) for more details. Specifications are included in the distribution in the [spec](spec/) directory. Changes of note:
+
+* Processing updates for the creation of language and script coding which follows the BCP47 standard and will appear in $7 (mostly), $e, $l, $y.
+* MARC 066 fields will no longer be created as the BCP47 data provides greater detail.
+
+See the [NEWS](NEWS) file for full details of changes.   Changes from v3.0.0 in the specifications are marked in red.
+
+## v3.0.0
+
+Conversion updates based on specifications v3.0.0. See the Library of Congress’s [BIBFRAME site](https://www.loc.gov/bibframe/) for more details. Specifications are included in the distribution in the [spec](spec/) directory. Changes of note:
+
+* Updated creation of MARC 382, 383 and 384 fields using new properties and classes from the Performed Music Ontology that have been added to the BIBFRAME ontology.
+* Updated creation of 024 $2 to includes URIs from the Standard Identifiers Source Codes list.
+* Updated creation of MARC Leader byte 17=2
+
+See the [NEWS](NEWS) file for full details of changes.   Changes from v2.10.0 in the specifications are marked in red.
+
+## v2.10.0
+
+Conversion updates based on specifications v2.10. See the Library of Congress’s [BIBFRAME site](https://www.loc.gov/bibframe/) for more details. Specifications are included in the distribution in the [spec](spec/) directory. Changes of note:
+
+* Added creation of MARC 008/06=r for reprint resources
+* Changed creation of MARC 300 $b
+* Generated more MARC 5XX-880 paired fields
+* Changed creation of MARC 510 (first indicator=3 or 4)
+
+See the [NEWS](NEWS) file for full details of changes.   Changes from v2.9.0 in the specifications are marked in red.
+
+## v2.9.0
+
+Conversion updates based on specifications v2.9. See the Library of Congress’s [BIBFRAME site](https://www.loc.gov/bibframe/) for more details. Specifications are included in the distribution in the [spec](spec/) directory. Changes of note:
+
+* Improved creation of indicator values for MARC 246 and 247 fields based on new vartitletype URIs
+* Changed creation of MARC 041 Ind1 byte
+* Added creation of MARC 505 Ind1 byte
+* Added creation of MARC 5XX fields based on new notetype URIs
+* Updated creation of MARC X10 fields to include bf:Jurisdiction and bf:Place data
+
+See the [NEWS](NEWS) file for full details of changes.
+
 ## v2.8.1
 
 Patch release. This still conforms with 2.8.0 specs, which can be found in the [spec](spec/) directory. Changes of note:

@@ -7,7 +7,7 @@
 	    <rdfs:label>new</rdfs:label>
 	  </bf:Status>
 	</bf:status>
-	<bf:date rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2015-10-24</bf:date>
+	<bf:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2015-10-24T00:00:00</bf:date>
 	<bf:agent>
 	  <bf:Agent rdf:about="http://id.loc.gov/vocabulary/organizations/dlc">
 	    <bf:code>DLC</bf:code>
@@ -22,7 +22,7 @@
 	    <rdfs:label>changed</rdfs:label>
 	  </bf:Status>
 	</bf:status>
-	<bf:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2020-09-25T10:32:17</bf:date>
+	<bf:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2025-06-07T06:27:39</bf:date>
 	<bf:agent>
 	  <bf:Agent rdf:about="http://id.loc.gov/vocabulary/organizations/dlc">
 	    <bf:code>DLC</bf:code>
@@ -38,13 +38,13 @@
 	  </bf:Status>
 	</bf:status>
 	<bf:agent rdf:resource="http://id.loc.gov/vocabulary/organizations/dlcmrc"/>
-	<bf:generationProcess rdf:resource="https://github.com/lcnetdev/marc2bibframe2/releases/tag/v2.8.0"/>
-	<bf:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-11-20T16:32:57.151924-05:00</bf:date>
+	<bf:generationProcess rdf:resource="https://github.com/lcnetdev/marc2bibframe2/tree/v3.2-dev"/>
+	<bf:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2026-11-16T14:47:44.926916-05:00</bf:date>
       </bf:AdminMetadata>
     </bf:adminMetadata>
     <bf:adminMetadata>
       <bf:AdminMetadata>
-	<bf:descriptionLevel rdf:resource="http://id.loc.gov/ontologies/bibframe-2-4-0/"/>
+	<bf:descriptionLevel rdf:resource="http://id.loc.gov/ontologies/bibframe-3-0-1/"/>
 	<bflc:encodingLevel>
 	  <bflc:EncodingLevel rdf:about="http://id.loc.gov/vocabulary/menclvl/5">
 	    <rdfs:label>preliminary</rdfs:label>
@@ -65,8 +65,6 @@
 	    </bf:assigner>
 	  </bf:Local>
 	</bf:identifiedBy>
-	<lclocal:d906>=906     $a 0 $b ibc $c origres $d u $e ncip $f 20 $g y-gencatlg</lclocal:d906>
-	<lclocal:d925>=925  0  $a acquire $e pcnspringer $x policy default</lclocal:d925>
 	<bf:descriptionLanguage>
 	  <bf:Language rdf:about="http://id.loc.gov/vocabulary/languages/eng"/>
 	</bf:descriptionLanguage>
@@ -86,22 +84,21 @@
 	    <rdfs:label>040  $aDLC$beng$epn$erda$cDLC</rdfs:label>
 	  </bf:Note>
 	</bf:note>
-	<lclocal:d985>=985     $a springerpcn</lclocal:d985>
+	<bflc:marcKey>906  $a0$bibc$corigres$du$encip$f20$gy-gencatlg</bflc:marcKey>
+	<bflc:marcKey>9250 $aacquire$epcnspringer$xpolicy default</bflc:marcKey>
+	<bflc:marcKey>09700$aQA273.A1-274.9</bflc:marcKey>
+	<bflc:marcKey>09700$aQA274-274.9</bflc:marcKey>
+	<bflc:marcKey>4901 $aLévy Matters, A Subseries on Lévy Processes,$x2190-6637 ;$v2149</bflc:marcKey>
+	<bflc:marcKey>952  $aMathematics and Statistics (SpringerNature-11649)</bflc:marcKey>
+	<bflc:marcKey>952  $aMathematics and Statistics (R0) (SpringerNature-43713)</bflc:marcKey>
+	<bflc:marcKey>985  $aspringerpcn</bflc:marcKey>
+	<bflc:marcKey>991  $as-Online$hElectronic Resource</bflc:marcKey>
+	<bflc:marcKey>999ff$i233b3019-b815-5486-adc3-d995e0dcf415$sb5d64272-60a7-44f7-9aa3-0ab02cb5a00e</bflc:marcKey>
       </bf:AdminMetadata>
     </bf:adminMetadata>
     <rdf:type rdf:resource="http://id.loc.gov/ontologies/bibframe/Text"/>
     <rdf:type rdf:resource="http://id.loc.gov/ontologies/bibframe/Monograph"/>
     <bf:language rdf:resource="http://id.loc.gov/vocabulary/languages/eng"/>
-    <bf:classification>
-      <bf:ClassificationLcc>
-	<bf:classificationPortion>QA273.A1-274.9</bf:classificationPortion>
-      </bf:ClassificationLcc>
-    </bf:classification>
-    <bf:classification>
-      <bf:ClassificationLcc>
-	<bf:classificationPortion>QA274-274.9</bf:classificationPortion>
-      </bf:ClassificationLcc>
-    </bf:classification>
     <bf:subject>
       <bf:Topic>
 	<bf:code>PBT</bf:code>
@@ -151,11 +148,25 @@
 	<bf:edition>full</bf:edition>
       </bf:ClassificationDdc>
     </bf:classification>
+    <bf:classification>
+      <bf:ClassificationLcc>
+	<bf:classificationPortion>QA273.A1-274.9</bf:classificationPortion>
+	<bf:status rdf:resource="http://id.loc.gov/vocabulary/mstatus/nuba"/>
+	<bf:status rdf:resource="http://id.loc.gov/vocabulary/mstatus/p"/>
+      </bf:ClassificationLcc>
+    </bf:classification>
+    <bf:classification>
+      <bf:ClassificationLcc>
+	<bf:classificationPortion>QA274-274.9</bf:classificationPortion>
+	<bf:status rdf:resource="http://id.loc.gov/vocabulary/mstatus/nuba"/>
+	<bf:status rdf:resource="http://id.loc.gov/vocabulary/mstatus/p"/>
+      </bf:ClassificationLcc>
+    </bf:classification>
     <bf:contribution>
       <bf:Contribution>
 	<rdf:type rdf:resource="http://id.loc.gov/ontologies/bibframe/PrimaryContribution"/>
 	<bf:agent>
-	  <bf:Agent rdf:about="http://id.loc.gov/resources/REPLACE/21665525#Agent100-21">
+	  <bf:Agent rdf:about="http://id.loc.gov/resources/REPLACE/21665525#Agent100-22">
 	    <rdf:type rdf:resource="http://id.loc.gov/ontologies/bibframe/Person"/>
 	    <rdfs:label>Andersen, Lars Nørvang</rdfs:label>
 	    <bflc:marcKey>1001 $aAndersen, Lars Nørvang.$eauthor.</bflc:marcKey>
@@ -170,7 +181,7 @@
     </bf:contribution>
     <bf:title>
       <bf:Title>
-	<bf:mainTitle>Lévy Matters V</bf:mainTitle>
+	<bf:mainTitle>Lévy Matters V : Functionals of Lévy Processes</bf:mainTitle>
       </bf:Title>
     </bf:title>
     <bf:content>
@@ -184,13 +195,12 @@
     <bf:relation xmlns:exsl="http://exslt.org/common">
       <bf:Relation>
 	<bf:relationship>
-	  <bf:Relationship rdf:about="http://id.loc.gov/ontologies/bibframe/hasSeries">
-	    <rdfs:label>Has Series</rdfs:label>
+	  <bf:Relationship rdf:about="http://id.loc.gov/vocabulary/relationship/series">
+	    <rdfs:label>series</rdfs:label>
 	  </bf:Relationship>
 	</bf:relationship>
 	<bf:associatedResource>
 	  <bf:Series>
-	    <rdf:type rdf:resource="http://id.loc.gov/ontologies/bflc/Uncontrolled"/>
 	    <bf:status>
 	      <bf:Status rdf:about="http://id.loc.gov/vocabulary/mstatus/t">
 		<rdfs:label>transcribed</rdfs:label>
@@ -227,7 +237,7 @@
       </bf:Summary>
     </bf:summary>
     <bf:subject>
-      <bf:Topic rdf:about="http://id.loc.gov/resources/REPLACE/21665525#Topic650-34">
+      <bf:Topic rdf:about="http://id.loc.gov/resources/REPLACE/21665525#Topic650-35">
 	<rdf:type rdf:resource="http://www.loc.gov/mads/rdf/v1#Topic"/>
 	<rdfs:label>Probabilities</rdfs:label>
 	<madsrdf:authoritativeLabel>Probabilities</madsrdf:authoritativeLabel>
@@ -245,7 +255,7 @@
     <bf:contribution>
       <bf:Contribution>
 	<bf:agent>
-	  <bf:Agent rdf:about="http://id.loc.gov/resources/REPLACE/21665525#Agent700-36">
+	  <bf:Agent rdf:about="http://id.loc.gov/resources/REPLACE/21665525#Agent700-37">
 	    <rdf:type rdf:resource="http://id.loc.gov/ontologies/bibframe/Person"/>
 	    <rdfs:label>Asmussen, Søren</rdfs:label>
 	    <bflc:marcKey>7001 $aAsmussen, Søren.$eauthor.</bflc:marcKey>
@@ -261,7 +271,7 @@
     <bf:contribution>
       <bf:Contribution>
 	<bf:agent>
-	  <bf:Agent rdf:about="http://id.loc.gov/resources/REPLACE/21665525#Agent700-37">
+	  <bf:Agent rdf:about="http://id.loc.gov/resources/REPLACE/21665525#Agent700-38">
 	    <rdf:type rdf:resource="http://id.loc.gov/ontologies/bibframe/Person"/>
 	    <rdfs:label>Aurzada, Frank</rdfs:label>
 	    <bflc:marcKey>7001 $aAurzada, Frank.$eauthor.</bflc:marcKey>
@@ -277,7 +287,7 @@
     <bf:contribution>
       <bf:Contribution>
 	<bf:agent>
-	  <bf:Agent rdf:about="http://id.loc.gov/resources/REPLACE/21665525#Agent700-38">
+	  <bf:Agent rdf:about="http://id.loc.gov/resources/REPLACE/21665525#Agent700-39">
 	    <rdf:type rdf:resource="http://id.loc.gov/ontologies/bibframe/Person"/>
 	    <rdfs:label>Glynn, Peter W.</rdfs:label>
 	    <bflc:marcKey>7001 $aGlynn, Peter W.$eauthor.</bflc:marcKey>
@@ -293,7 +303,7 @@
     <bf:contribution>
       <bf:Contribution>
 	<bf:agent>
-	  <bf:Agent rdf:about="http://id.loc.gov/resources/REPLACE/21665525#Agent700-39">
+	  <bf:Agent rdf:about="http://id.loc.gov/resources/REPLACE/21665525#Agent700-40">
 	    <rdf:type rdf:resource="http://id.loc.gov/ontologies/bibframe/Person"/>
 	    <rdfs:label>Maejima, Makoto</rdfs:label>
 	    <bflc:marcKey>7001 $aMaejima, Makoto.$eauthor.</bflc:marcKey>
@@ -309,7 +319,7 @@
     <bf:contribution>
       <bf:Contribution>
 	<bf:agent>
-	  <bf:Agent rdf:about="http://id.loc.gov/resources/REPLACE/21665525#Agent700-40">
+	  <bf:Agent rdf:about="http://id.loc.gov/resources/REPLACE/21665525#Agent700-41">
 	    <rdf:type rdf:resource="http://id.loc.gov/ontologies/bibframe/Person"/>
 	    <rdfs:label>Pihlsgård, Mats</rdfs:label>
 	    <bflc:marcKey>7001 $aPihlsgård, Mats.$eauthor.</bflc:marcKey>
@@ -325,7 +335,7 @@
     <bf:contribution>
       <bf:Contribution>
 	<bf:agent>
-	  <bf:Agent rdf:about="http://id.loc.gov/resources/REPLACE/21665525#Agent700-41">
+	  <bf:Agent rdf:about="http://id.loc.gov/resources/REPLACE/21665525#Agent700-42">
 	    <rdf:type rdf:resource="http://id.loc.gov/ontologies/bibframe/Person"/>
 	    <rdfs:label>Simon, Thomas</rdfs:label>
 	    <bflc:marcKey>7001 $aSimon, Thomas.$eauthor.</bflc:marcKey>
@@ -338,40 +348,6 @@
 	</bf:role>
       </bf:Contribution>
     </bf:contribution>
-    <bf:relation>
-      <bf:Relation>
-	<bf:relationship rdf:resource="http://id.loc.gov/vocabulary/relationship/otherphysicalformat"/>
-	<bf:relationship>
-	  <bf:Relationship>
-	    <rdfs:label>Printed edition</rdfs:label>
-	  </bf:Relationship>
-	</bf:relationship>
-	<bf:associatedResource>
-	  <bf:Work rdf:about="http://id.loc.gov/resources/REPLACE/21665525#Work776-42">
-	    <bf:title>
-	      <bf:Title>
-		<bf:mainTitle>Lévy Matters V : Functionals of Lévy Processes</bf:mainTitle>
-	      </bf:Title>
-	    </bf:title>
-	    <bf:hasInstance>
-	      <bf:Instance rdf:about="http://id.loc.gov/resources/REPLACE/21665525#Instance776-42">
-		<bf:title>
-		  <bf:Title>
-		    <bf:mainTitle>Lévy Matters V : Functionals of Lévy Processes</bf:mainTitle>
-		  </bf:Title>
-		</bf:title>
-		<bf:identifiedBy>
-		  <bf:Isbn>
-		    <rdf:value>9783319231372</rdf:value>
-		  </bf:Isbn>
-		</bf:identifiedBy>
-		<bf:instanceOf rdf:resource="http://id.loc.gov/resources/REPLACE/21665525#Work776-42"/>
-	      </bf:Instance>
-	    </bf:hasInstance>
-	  </bf:Work>
-	</bf:associatedResource>
-      </bf:Relation>
-    </bf:relation>
     <bf:relation>
       <bf:Relation>
 	<bf:relationship rdf:resource="http://id.loc.gov/vocabulary/relationship/otherphysicalformat"/>
@@ -396,7 +372,7 @@
 		</bf:title>
 		<bf:identifiedBy>
 		  <bf:Isbn>
-		    <rdf:value>9783319231396</rdf:value>
+		    <rdf:value>9783319231372</rdf:value>
 		  </bf:Isbn>
 		</bf:identifiedBy>
 		<bf:instanceOf rdf:resource="http://id.loc.gov/resources/REPLACE/21665525#Work776-43"/>
@@ -406,15 +382,49 @@
 	</bf:associatedResource>
       </bf:Relation>
     </bf:relation>
-    <bf:relation xmlns:exsl="http://exslt.org/common">
+    <bf:relation>
       <bf:Relation>
+	<bf:relationship rdf:resource="http://id.loc.gov/vocabulary/relationship/otherphysicalformat"/>
 	<bf:relationship>
-	  <bf:Relationship rdf:about="http://id.loc.gov/ontologies/bibframe/hasSeries">
-	    <rdfs:label>Has Series</rdfs:label>
+	  <bf:Relationship>
+	    <rdfs:label>Printed edition</rdfs:label>
 	  </bf:Relationship>
 	</bf:relationship>
 	<bf:associatedResource>
-	  <bf:Hub rdf:about="http://id.loc.gov/resources/REPLACE/21665525#Hub830-44">
+	  <bf:Work rdf:about="http://id.loc.gov/resources/REPLACE/21665525#Work776-44">
+	    <bf:title>
+	      <bf:Title>
+		<bf:mainTitle>Lévy Matters V : Functionals of Lévy Processes</bf:mainTitle>
+	      </bf:Title>
+	    </bf:title>
+	    <bf:hasInstance>
+	      <bf:Instance rdf:about="http://id.loc.gov/resources/REPLACE/21665525#Instance776-44">
+		<bf:title>
+		  <bf:Title>
+		    <bf:mainTitle>Lévy Matters V : Functionals of Lévy Processes</bf:mainTitle>
+		  </bf:Title>
+		</bf:title>
+		<bf:identifiedBy>
+		  <bf:Isbn>
+		    <rdf:value>9783319231396</rdf:value>
+		  </bf:Isbn>
+		</bf:identifiedBy>
+		<bf:instanceOf rdf:resource="http://id.loc.gov/resources/REPLACE/21665525#Work776-44"/>
+	      </bf:Instance>
+	    </bf:hasInstance>
+	  </bf:Work>
+	</bf:associatedResource>
+      </bf:Relation>
+    </bf:relation>
+    <bf:relation xmlns:exsl="http://exslt.org/common">
+      <bf:Relation>
+	<bf:relationship>
+	  <bf:Relationship rdf:about="http://id.loc.gov/vocabulary/relationship/series">
+	    <rdfs:label>series</rdfs:label>
+	  </bf:Relationship>
+	</bf:relationship>
+	<bf:associatedResource>
+	  <bf:Hub rdf:about="http://id.loc.gov/resources/REPLACE/21665525#Hub830-45">
 	    <rdf:type rdf:resource="http://id.loc.gov/ontologies/bibframe/Series"/>
 	    <bf:title>
 	      <bf:Title>
@@ -436,7 +446,7 @@
   </bf:Work>
   <bf:Instance rdf:about="http://id.loc.gov/resources/REPLACE/21665525#Instance">
     <bf:issuance rdf:resource="http://id.loc.gov/vocabulary/issuance/mono"/>
-    <bf:provisionActivity xmlns:exsl="http://exslt.org/common">
+    <bf:provisionActivity>
       <bf:ProvisionActivity>
 	<rdf:type rdf:resource="http://id.loc.gov/ontologies/bibframe/Publication"/>
 	<bf:date rdf:datatype="http://id.loc.gov/datatypes/edtf">2015</bf:date>
@@ -447,13 +457,10 @@
 	<bflc:simpleDate>2015</bflc:simpleDate>
       </bf:ProvisionActivity>
     </bf:provisionActivity>
-    <bf:publicationStatement xmlns:exsl="http://exslt.org/common">Cham: Springer International Publishing, Imprint: Springer, 2015</bf:publicationStatement>
+    <bf:publicationStatement>Cham: Springer International Publishing, Imprint: Springer, 2015</bf:publicationStatement>
     <bf:identifiedBy>
       <bf:Local>
-	<rdf:value>978-3-319-23138-9</rdf:value>
-	<bf:assigner>
-	  <bf:Agent rdf:about="https://ld.zdb-services.de/resource/organisations/DE-He213"/>
-	</bf:assigner>
+	<rdf:value>21665525</rdf:value>
       </bf:Local>
     </bf:identifiedBy>
     <bf:identifiedBy>
@@ -470,6 +477,14 @@
       <bf:Doi>
 	<rdf:value>10.1007/978-3-319-23138-9</rdf:value>
       </bf:Doi>
+    </bf:identifiedBy>
+    <bf:identifiedBy>
+      <bf:Local>
+	<rdf:value>978-3-319-23138-9</rdf:value>
+	<bf:assigner>
+	  <bf:Agent rdf:about="https://ld.zdb-services.de/resource/organisations/DE-He213"/>
+	</bf:assigner>
+      </bf:Local>
     </bf:identifiedBy>
     <bf:responsibilityStatement>by Lars Nørvang Andersen, Søren Asmussen, Frank Aurzada, Peter W. Glynn, Makoto Maejima, Mats Pihlsgård, Thomas Simon</bf:responsibilityStatement>
     <bf:title>

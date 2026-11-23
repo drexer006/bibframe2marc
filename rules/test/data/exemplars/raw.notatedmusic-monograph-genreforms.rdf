@@ -7,7 +7,7 @@
 	    <rdfs:label>new</rdfs:label>
 	  </bf:Status>
 	</bf:status>
-	<bf:date rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2018-12-13</bf:date>
+	<bf:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2018-12-13T00:00:00</bf:date>
 	<bf:agent>
 	  <bf:Agent rdf:about="http://id.loc.gov/vocabulary/organizations/dlc">
 	    <bf:code>DLC</bf:code>
@@ -22,7 +22,7 @@
 	    <rdfs:label>changed</rdfs:label>
 	  </bf:Status>
 	</bf:status>
-	<bf:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-09-27T10:44:59</bf:date>
+	<bf:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2026-05-07T16:22:11</bf:date>
 	<bf:descriptionModifier>
 	  <bf:Agent rdf:about="http://id.loc.gov/vocabulary/organizations/dlc">
 	    <bf:code>DLC</bf:code>
@@ -38,13 +38,13 @@
 	  </bf:Status>
 	</bf:status>
 	<bf:agent rdf:resource="http://id.loc.gov/vocabulary/organizations/dlcmrc"/>
-	<bf:generationProcess rdf:resource="https://github.com/lcnetdev/marc2bibframe2/releases/tag/v2.8.0"/>
-	<bf:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-11-20T16:32:48.752428-05:00</bf:date>
+	<bf:generationProcess rdf:resource="https://github.com/lcnetdev/marc2bibframe2/tree/v3.2-dev"/>
+	<bf:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2026-11-16T14:46:38.450042-05:00</bf:date>
       </bf:AdminMetadata>
     </bf:adminMetadata>
     <bf:adminMetadata>
       <bf:AdminMetadata>
-	<bf:descriptionLevel rdf:resource="http://id.loc.gov/ontologies/bibframe-2-4-0/"/>
+	<bf:descriptionLevel rdf:resource="http://id.loc.gov/ontologies/bibframe-3-0-1/"/>
 	<bflc:encodingLevel>
 	  <bflc:EncodingLevel rdf:about="http://id.loc.gov/vocabulary/menclvl/f">
 	    <rdfs:label>full</rdfs:label>
@@ -84,10 +84,12 @@
 	    <bf:code>pcc</bf:code>
 	  </bf:DescriptionAuthentication>
 	</bf:descriptionAuthentication>
-	<lclocal:d906>=906     $a 7 $b cbc $c premver $d 2 $e ncip $f 20 $g y-genmusic</lclocal:d906>
-	<lclocal:d955>=955     $i vk39 2018-12-13 $e vk39 2019-01-09 sent to Music Division</lclocal:d955>
-	<lclocal:d985>=985     $a consortiumLC</lclocal:d985>
-	<lclocal:d985>=985     $a musliszt</lclocal:d985>
+	<bflc:marcKey>906  $a7$bcbc$cpremver$d2$encip$f20$gy-genmusic</bflc:marcKey>
+	<bflc:marcKey>955  $ivk39 2018-12-13$evk39 2019-01-09 sent to Music Division</bflc:marcKey>
+	<bflc:marcKey>985  $aconsortiumLC</bflc:marcKey>
+	<bflc:marcKey>985  $amusliszt</bflc:marcKey>
+	<bflc:marcKey>991  $bc-Music$hML31$i.H43e no. 43 (Case)$tCopy 1$wPREM</bflc:marcKey>
+	<bflc:marcKey>999ff$if6a1523f-eb28-5d7c-a86e-c68ae103c208$s97525eef-0399-49f1-9038-0b3baa90bcd1</bflc:marcKey>
       </bf:AdminMetadata>
     </bf:adminMetadata>
     <rdf:type rdf:resource="http://id.loc.gov/ontologies/bibframe/NotatedMusic"/>
@@ -157,7 +159,7 @@
     </bf:expressionOf>
     <bf:title>
       <bf:Title>
-	<bf:mainTitle>Grande fantaisie de bravoure sur La clochette de Paganini</bf:mainTitle>
+	<bf:mainTitle>Grande fantaisie de bravoure sur La clochette de Paganini : pour le piano-forte : oeuvre 2</bf:mainTitle>
       </bf:Title>
     </bf:title>
     <bf:content>
@@ -168,27 +170,40 @@
 	</bf:source>
       </bf:Content>
     </bf:content>
-    <bf:musicMedium>
-      <bf:MusicMedium>
-	<bflc:readMarc382>38201$apiano$n1$s1$2lcmpt</bflc:readMarc382>
-      </bf:MusicMedium>
-    </bf:musicMedium>
-    <bf:musicThematicNumber>S. 420 Searle</bf:musicThematicNumber>
-    <bf:references>
-      <bf:Work>
-	<bf:title>
-	  <bf:Title>
-	    <bf:mainTitle>The music, manuscripts, first editions, and correspondence of Franz Liszt (1811-1886) in the collections of the Music Division, Library of Congress</bf:mainTitle>
-	  </bf:Title>
-	</bf:title>
-	<bf:note>
-	  <bf:Note>
-	    <rdf:type rdf:resource="http://id.loc.gov/vocabulary/mnotetype/loc"/>
-	    <rdfs:label>page 57, no. 121</rdfs:label>
-	  </bf:Note>
-	</bf:note>
-      </bf:Work>
-    </bf:references>
+    <bf:ensemble>
+      <bf:Ensemble>
+	<bf:mediumComponent>
+	  <bf:MediumComponent>
+	    <bf:mediumOfPerformance>
+	      <bf:MediumOfPerformance>
+		<rdfs:label>piano</rdfs:label>
+		<bf:source>
+		  <bf:Source rdf:about="http://id.loc.gov/authorities/performanceMediums">
+		    <bf:code>lcmpt</bf:code>
+		  </bf:Source>
+		</bf:source>
+	      </bf:MediumOfPerformance>
+	    </bf:mediumOfPerformance>
+	    <bf:count>1</bf:count>
+	  </bf:MediumComponent>
+	</bf:mediumComponent>
+	<bf:ensembleSize>
+	  <bf:EnsembleSize rdf:about="http://id.loc.gov/vocabulary/ensemblesize/soloind">
+	    <rdfs:label>solo or individual</rdfs:label>
+	  </bf:EnsembleSize>
+	</bf:ensembleSize>
+      </bf:Ensemble>
+    </bf:ensemble>
+    <bf:identifiedBy>
+      <bf:ThematicCatalogNumber>
+	<rdf:value>S. 420</rdf:value>
+	<bf:source>
+	  <bf:Source>
+	    <bf:code>Searle</bf:code>
+	  </bf:Source>
+	</bf:source>
+      </bf:ThematicCatalogNumber>
+    </bf:identifiedBy>
     <bf:notation>
       <bf:Notation>
 	<rdfs:label>Staff notation</rdfs:label>
@@ -275,7 +290,11 @@
 		<rdfs:label>violin, orchestra</rdfs:label>
 	      </bf:MusicMedium>
 	    </bf:musicMedium>
-	    <bf:musicKey>B minor</bf:musicKey>
+	    <bf:keyMode>
+	      <bf:KeyMode>
+		<rdfs:label>B minor</rdfs:label>
+	      </bf:KeyMode>
+	    </bf:keyMode>
 	    <bflc:marcKey>7001 $iBased on (work):$aPaganini, Nicolò,$d1782-1840.$tConcertos,$mviolin, orchestra,$nno. 2, op. 7,$rB minor.$pRondò.</bflc:marcKey>
 	  </bf:Hub>
 	</bf:associatedResource>
@@ -285,7 +304,7 @@
   </bf:Work>
   <bf:Instance rdf:about="http://id.loc.gov/resources/REPLACE/20779915#Instance">
     <bf:issuance rdf:resource="http://id.loc.gov/vocabulary/issuance/mono"/>
-    <bf:provisionActivity xmlns:exsl="http://exslt.org/common">
+    <bf:provisionActivity>
       <bf:ProvisionActivity>
 	<rdf:type rdf:resource="http://id.loc.gov/ontologies/bibframe/Publication"/>
 	<bf:date rdf:datatype="http://id.loc.gov/datatypes/edtf">1839</bf:date>
@@ -295,7 +314,7 @@
 	<bflc:simpleDate>[1839]</bflc:simpleDate>
       </bf:ProvisionActivity>
     </bf:provisionActivity>
-    <bf:publicationStatement xmlns:exsl="http://exslt.org/common">Vienne: Pietro Mechetti qm Carlo, [1839]</bf:publicationStatement>
+    <bf:publicationStatement>Vienne: Pietro Mechetti qm Carlo, [1839]</bf:publicationStatement>
     <bf:identifiedBy>
       <bf:Lccn>
 	<rdf:value>  2018570877</rdf:value>
@@ -315,9 +334,9 @@
       <bf:MusicPlate>
 	<rdf:value>P.M. No. 3242</rdf:value>
 	<bf:assigner>
-	  <bf:Agent>
+	  <bf:Organization>
 	    <rdfs:label>Pietro Mechetti qm Carlo</rdfs:label>
-	  </bf:Agent>
+	  </bf:Organization>
 	</bf:assigner>
       </bf:MusicPlate>
     </bf:identifiedBy>
@@ -325,9 +344,9 @@
       <bf:MusicPublisherNumber>
 	<rdf:value>3242</rdf:value>
 	<bf:assigner>
-	  <bf:Agent>
+	  <bf:Organization>
 	    <rdfs:label>Pietro Mechetti qm Carlo</rdfs:label>
-	  </bf:Agent>
+	  </bf:Organization>
 	</bf:assigner>
       </bf:MusicPublisherNumber>
     </bf:identifiedBy>
@@ -385,6 +404,13 @@
 	<rdfs:label>The material described in this catalog record is located in the Heineman Foundation Collection, Music Division, Library of Congress.</rdfs:label>
       </bf:Note>
     </bf:note>
+    <bf:note>
+      <bf:Note>
+	<rdf:type rdf:resource="http://id.loc.gov/vocabulary/mnotetype/refcitation"/>
+	<rdfs:label>The music, manuscripts, first editions, and correspondence of Franz Liszt (1811-1886) in the collections of the Music Division, Library of Congress,</rdfs:label>
+	<bflc:citation>page 57, no. 121</bflc:citation>
+      </bf:Note>
+    </bf:note>
     <bf:instanceOf rdf:resource="http://id.loc.gov/resources/REPLACE/20779915#Work"/>
     <bf:hasItem>
       <bf:Item rdf:about="http://id.loc.gov/resources/REPLACE/20779915#Item">
@@ -411,11 +437,17 @@
     <bf:media>
       <bf:Media rdf:about="http://id.loc.gov/vocabulary/mediaTypes/c">
 	<rdfs:label>computer</rdfs:label>
+	<bf:source>
+	  <bf:Source rdf:about="http://id.loc.gov/vocabulary/genreFormSchemes/rdamedia"/>
+	</bf:source>
       </bf:Media>
     </bf:media>
     <bf:carrier>
       <bf:Carrier rdf:about="http://id.loc.gov/vocabulary/carriers/cr">
 	<rdfs:label>online resource</rdfs:label>
+	<bf:source>
+	  <bf:Source rdf:about="http://id.loc.gov/vocabulary/genreFormSchemes/rdacarrier"/>
+	</bf:source>
       </bf:Carrier>
     </bf:carrier>
     <bf:title>
@@ -424,6 +456,11 @@
       </bf:Title>
     </bf:title>
     <bf:electronicLocator rdf:resource="https://hdl.loc.gov/loc.music/musliszt.100352"/>
+    <bf:note>
+      <bf:Note>
+	<rdfs:label>View online content for this title</rdfs:label>
+      </bf:Note>
+    </bf:note>
     <bf:instanceOf rdf:resource="http://id.loc.gov/resources/REPLACE/20779915#Work"/>
   </bf:Instance>
 </rdf:RDF>

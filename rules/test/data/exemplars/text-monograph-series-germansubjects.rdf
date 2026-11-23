@@ -14,14 +14,29 @@
       <bf:IntendedAudience rdf:about="http://id.loc.gov/vocabulary/maudience/juv">
 	<rdfs:label>juvenile</rdfs:label>
 	<bf:code>juv</bf:code>
+	<bf:source>
+	  <bf:Source rdf:about="http://id.loc.gov/vocabulary/maudience">
+	    <rdfs:label>MARC Audience</rdfs:label>
+	  </bf:Source>
+	</bf:source>
       </bf:IntendedAudience>
     </bf:intendedAudience>
-    <bf:genreForm>
-      <bf:GenreForm rdf:about="http://id.loc.gov/authorities/genreForms/gf2015026020">
-	<rdfs:label xml:lang="en">Novels</rdfs:label>
-	<bflc:marcKey>155  $aNovels</bflc:marcKey>
-      </bf:GenreForm>
-    </bf:genreForm>
+    <bf:intendedAudience>
+      <bf:IntendedAudience rdf:about="http://id.loc.gov/authorities/demographicTerms/dg2015060010">
+	<rdfs:label xml:lang="en">Children</rdfs:label>
+	<bflc:marcKey>150  $aChildren</bflc:marcKey>
+	<bflc:demographicGroup>
+	  <bflc:DemographicGroup rdf:about="http://id.loc.gov/authorities/demographicTerms/age">
+	    <rdfs:label>Age group</rdfs:label>
+	  </bflc:DemographicGroup>
+	</bflc:demographicGroup>
+	<bf:source>
+	  <bf:Source rdf:about="http://id.loc.gov/authorities/demographicTerms">
+	    <rdfs:label>LC Demographic Terms</rdfs:label>
+	  </bf:Source>
+	</bf:source>
+      </bf:IntendedAudience>
+    </bf:intendedAudience>
     <bf:geographicCoverage>
       <bf:GeographicCoverage rdf:about="http://id.loc.gov/vocabulary/geographicAreas/e-uk-en">
 	<rdfs:label xml:lang="en">England</rdfs:label>
@@ -83,6 +98,18 @@
       <bf:ClassificationLcc>
 	<bf:classificationPortion>PR6068.O93</bf:classificationPortion>
 	<bf:itemPortion>H395 2004x</bf:itemPortion>
+	<bf:status>
+	  <bf:Status rdf:about="http://id.loc.gov/vocabulary/mstatus/nuba">
+	    <rdfs:label>not used by assigner</rdfs:label>
+	    <bf:code>nuba</bf:code>
+	  </bf:Status>
+	</bf:status>
+	<bf:status>
+	  <bf:Status rdf:about="http://id.loc.gov/vocabulary/mstatus/p">
+	    <rdfs:label>upgraded prepub</rdfs:label>
+	    <bf:code>p</bf:code>
+	  </bf:Status>
+	</bf:status>
       </bf:ClassificationLcc>
     </bf:classification>
     <bf:contribution>
@@ -96,9 +123,9 @@
 	  </bf:Agent>
 	</bf:agent>
 	<bf:role>
-	  <bf:Role rdf:about="http://id.loc.gov/vocabulary/relators/ctb">
-	    <rdfs:label>contributor</rdfs:label>
-	    <bf:code>ctb</bf:code>
+	  <bf:Role rdf:about="http://id.loc.gov/vocabulary/relators/aut">
+	    <rdfs:label>author</rdfs:label>
+	    <bf:code>aut</bf:code>
 	  </bf:Role>
 	</bf:role>
       </bf:Contribution>
@@ -114,579 +141,43 @@
 	<bf:code>txt</bf:code>
       </bf:Content>
     </bf:content>
+    <bf:relation>
+      <bf:Relation>
+	<bf:relationship>
+	  <bf:Relationship rdf:about="http://id.loc.gov/vocabulary/relationship/series">
+	    <rdfs:label>series</rdfs:label>
+	    <bf:code>series</bf:code>
+	  </bf:Relationship>
+	</bf:relationship>
+	<bf:seriesEnumeration>bk. 5</bf:seriesEnumeration>
+	<bf:associatedResource>
+	  <bf:Series>
+	    <bf:status>
+	      <bf:Status rdf:about="http://id.loc.gov/vocabulary/mstatus/t">
+		<rdfs:label>transcribed</rdfs:label>
+		<bf:code>t</bf:code>
+	      </bf:Status>
+	    </bf:status>
+	    <bf:status>
+	      <bf:Status rdf:about="http://id.loc.gov/vocabulary/mstatus/tr">
+		<rdfs:label>traced</rdfs:label>
+		<bf:code>tr</bf:code>
+	      </bf:Status>
+	    </bf:status>
+	    <bf:title>
+	      <bf:Title>
+		<bf:mainTitle>Harry Potter</bf:mainTitle>
+	      </bf:Title>
+	    </bf:title>
+	  </bf:Series>
+	</bf:associatedResource>
+      </bf:Relation>
+    </bf:relation>
     <bf:summary>
       <bf:Summary>
 	<rdfs:label>When the government of the magic world and authorities at Hogwarts School of Witchcraft and Wizardry refuse to believe in the growing threat of a freshly revived Lord Voldemort, fifteen-year-old Harry Potter finds support from his loyal friends in facing the evil wizard and other new terrors.</rdfs:label>
       </bf:Summary>
     </bf:summary>
-    <bf:subject>
-      <bf:Topic>
-	<rdf:type rdf:resource="http://www.loc.gov/mads/rdf/v1#ComplexSubject"/>
-	<madsrdf:authoritativeLabel>Potter, Harry (Fictitious character)--Juvenile fiction.</madsrdf:authoritativeLabel>
-	<madsrdf:isMemberOfMADSScheme>
-	  <madsrdf:MADSScheme rdf:about="http://id.loc.gov/authorities/subjects">
-	    <rdfs:label xml:lang="en">Library of Congress Subject Headings</rdfs:label>
-	  </madsrdf:MADSScheme>
-	</madsrdf:isMemberOfMADSScheme>
-	<madsrdf:componentList rdf:parseType="Collection">
-	  <madsrdf:PersonalName rdf:about="http://id.loc.gov/rwo/agents/n2014027906">
-	    <rdfs:label>Potter, Harry (Fictitious character)</rdfs:label>
-	    <bflc:marcKey>1001 $aPotter, Harry$c(Fictitious character)</bflc:marcKey>
-	  </madsrdf:PersonalName>
-	  <madsrdf:GenreForm>
-	    <madsrdf:authoritativeLabel>Juvenile fiction</madsrdf:authoritativeLabel>
-	  </madsrdf:GenreForm>
-	</madsrdf:componentList>
-	<bflc:aap-normalized>potterharry(fictitiouscharacter)juvenilefiction</bflc:aap-normalized>
-	<bf:source>
-	  <bf:Source rdf:about="http://id.loc.gov/authorities/subjects">
-	    <rdfs:label xml:lang="en">Library of Congress Subject Headings</rdfs:label>
-	  </bf:Source>
-	</bf:source>
-      </bf:Topic>
-    </bf:subject>
-    <bf:subject>
-      <bf:Topic>
-	<rdf:type rdf:resource="http://www.loc.gov/mads/rdf/v1#ComplexSubject"/>
-	<rdfs:label>Hogwarts School of Witchcraft and Wizardry (Imaginary organization)--Juvenile fiction</rdfs:label>
-	<madsrdf:authoritativeLabel>Hogwarts School of Witchcraft and Wizardry (Imaginary organization)--Juvenile fiction</madsrdf:authoritativeLabel>
-	<madsrdf:isMemberOfMADSScheme>
-	  <madsrdf:MADSScheme rdf:about="http://id.loc.gov/authorities/subjects">
-	    <rdfs:label xml:lang="en">Library of Congress Subject Headings</rdfs:label>
-	  </madsrdf:MADSScheme>
-	</madsrdf:isMemberOfMADSScheme>
-	<madsrdf:componentList rdf:parseType="Collection">
-	  <madsrdf:Topic rdf:about="http://id.loc.gov/authorities/subjects/sh00002633">
-	    <rdfs:label xml:lang="en">Hogwarts School of Witchcraft and Wizardry (Imaginary organization)</rdfs:label>
-	    <bflc:marcKey>150  $aHogwarts School of Witchcraft and Wizardry (Imaginary organization)</bflc:marcKey>
-	  </madsrdf:Topic>
-	  <madsrdf:GenreForm>
-	    <madsrdf:authoritativeLabel>Juvenile fiction</madsrdf:authoritativeLabel>
-	  </madsrdf:GenreForm>
-	</madsrdf:componentList>
-	<bflc:aap-normalized>hogwartsschoolofwitchcraftandwizardry(imaginaryorganization)juvenilefiction</bflc:aap-normalized>
-	<bf:source>
-	  <bf:Source rdf:about="http://id.loc.gov/authorities/subjects">
-	    <rdfs:label xml:lang="en">Library of Congress Subject Headings</rdfs:label>
-	  </bf:Source>
-	</bf:source>
-      </bf:Topic>
-    </bf:subject>
-    <bf:subject>
-      <bf:Topic rdf:about="http://id.loc.gov/authorities/subjects/sh2008103472">
-	<rdfs:label xml:lang="en">Friendship--Juvenile fiction</rdfs:label>
-	<bflc:marcKey>150  $aFriendship$vJuvenile fiction</bflc:marcKey>
-	<madsrdf:componentList rdf:parseType="Collection">
-	  <madsrdf:Topic>
-	    <rdf:type rdf:resource="http://www.loc.gov/mads/rdf/v1#Authority"/>
-	    <madsrdf:authoritativeLabel xml:lang="en">Friendship</madsrdf:authoritativeLabel>
-	    <madsrdf:elementList rdf:parseType="Collection">
-	      <madsrdf:TopicElement>
-		<madsrdf:elementValue xml:lang="en">Friendship</madsrdf:elementValue>
-	      </madsrdf:TopicElement>
-	    </madsrdf:elementList>
-	  </madsrdf:Topic>
-	  <madsrdf:GenreForm>
-	    <rdf:type rdf:resource="http://www.loc.gov/mads/rdf/v1#Authority"/>
-	    <madsrdf:authoritativeLabel xml:lang="en">Juvenile fiction</madsrdf:authoritativeLabel>
-	    <madsrdf:elementList rdf:parseType="Collection">
-	      <madsrdf:GenreFormElement>
-		<madsrdf:elementValue xml:lang="en">Juvenile fiction</madsrdf:elementValue>
-	      </madsrdf:GenreFormElement>
-	    </madsrdf:elementList>
-	  </madsrdf:GenreForm>
-	</madsrdf:componentList>
-      </bf:Topic>
-    </bf:subject>
-    <bf:subject>
-      <bf:Topic>
-	<rdf:type rdf:resource="http://www.loc.gov/mads/rdf/v1#ComplexSubject"/>
-	<rdfs:label>Wizards--England--Juvenile fiction</rdfs:label>
-	<madsrdf:authoritativeLabel>Wizards--England--Juvenile fiction</madsrdf:authoritativeLabel>
-	<madsrdf:isMemberOfMADSScheme>
-	  <madsrdf:MADSScheme rdf:about="http://id.loc.gov/authorities/subjects">
-	    <rdfs:label xml:lang="en">Library of Congress Subject Headings</rdfs:label>
-	  </madsrdf:MADSScheme>
-	</madsrdf:isMemberOfMADSScheme>
-	<madsrdf:componentList rdf:parseType="Collection">
-	  <madsrdf:Topic rdf:about="http://id.loc.gov/authorities/subjects/sh86004691">
-	    <rdfs:label xml:lang="en">Wizards</rdfs:label>
-	    <bflc:marcKey>150 0$aWizards</bflc:marcKey>
-	  </madsrdf:Topic>
-	  <madsrdf:Geographic rdf:about="http://id.loc.gov/rwo/agents/n82068148-781">
-	    <rdfs:label>England</rdfs:label>
-	    <bflc:marcKey>181  $zEngland</bflc:marcKey>
-	  </madsrdf:Geographic>
-	  <madsrdf:GenreForm>
-	    <madsrdf:authoritativeLabel>Juvenile fiction</madsrdf:authoritativeLabel>
-	  </madsrdf:GenreForm>
-	</madsrdf:componentList>
-	<bflc:aap-normalized>wizardsenglandjuvenilefiction</bflc:aap-normalized>
-	<bf:source>
-	  <bf:Source rdf:about="http://id.loc.gov/authorities/subjects">
-	    <rdfs:label xml:lang="en">Library of Congress Subject Headings</rdfs:label>
-	  </bf:Source>
-	</bf:source>
-      </bf:Topic>
-    </bf:subject>
-    <bf:subject>
-      <bf:Topic>
-	<rdf:type rdf:resource="http://www.loc.gov/mads/rdf/v1#ComplexSubject"/>
-	<rdfs:label>Boarding school students--England--Juvenile fiction</rdfs:label>
-	<madsrdf:authoritativeLabel>Boarding school students--England--Juvenile fiction</madsrdf:authoritativeLabel>
-	<madsrdf:isMemberOfMADSScheme>
-	  <madsrdf:MADSScheme rdf:about="http://id.loc.gov/authorities/subjects">
-	    <rdfs:label xml:lang="en">Library of Congress Subject Headings</rdfs:label>
-	  </madsrdf:MADSScheme>
-	</madsrdf:isMemberOfMADSScheme>
-	<madsrdf:componentList rdf:parseType="Collection">
-	  <madsrdf:Topic rdf:about="http://id.loc.gov/authorities/subjects/sh97001171">
-	    <rdfs:label xml:lang="en">Boarding school students</rdfs:label>
-	    <bflc:marcKey>150 0$aBoarding school students</bflc:marcKey>
-	  </madsrdf:Topic>
-	  <madsrdf:Geographic rdf:about="http://id.loc.gov/rwo/agents/n82068148-781">
-	    <rdfs:label>England</rdfs:label>
-	    <bflc:marcKey>181  $zEngland</bflc:marcKey>
-	  </madsrdf:Geographic>
-	  <madsrdf:GenreForm>
-	    <madsrdf:authoritativeLabel>Juvenile fiction</madsrdf:authoritativeLabel>
-	  </madsrdf:GenreForm>
-	</madsrdf:componentList>
-	<bflc:aap-normalized>boardingschoolstudentsenglandjuvenilefiction</bflc:aap-normalized>
-	<bf:source>
-	  <bf:Source rdf:about="http://id.loc.gov/authorities/subjects">
-	    <rdfs:label xml:lang="en">Library of Congress Subject Headings</rdfs:label>
-	  </bf:Source>
-	</bf:source>
-      </bf:Topic>
-    </bf:subject>
-    <bf:subject>
-      <bf:Topic>
-	<rdf:type rdf:resource="http://www.loc.gov/mads/rdf/v1#ComplexSubject"/>
-	<rdfs:label>Boarding schools--England--Juvenile fiction</rdfs:label>
-	<madsrdf:authoritativeLabel>Boarding schools--England--Juvenile fiction</madsrdf:authoritativeLabel>
-	<madsrdf:isMemberOfMADSScheme>
-	  <madsrdf:MADSScheme rdf:about="http://id.loc.gov/authorities/subjects">
-	    <rdfs:label xml:lang="en">Library of Congress Subject Headings</rdfs:label>
-	  </madsrdf:MADSScheme>
-	</madsrdf:isMemberOfMADSScheme>
-	<madsrdf:componentList rdf:parseType="Collection">
-	  <madsrdf:Topic rdf:about="http://id.loc.gov/authorities/subjects/sh85015136">
-	    <rdfs:label xml:lang="en">Boarding schools</rdfs:label>
-	    <bflc:marcKey>150  $aBoarding schools</bflc:marcKey>
-	  </madsrdf:Topic>
-	  <madsrdf:Geographic rdf:about="http://id.loc.gov/rwo/agents/n82068148-781">
-	    <rdfs:label>England</rdfs:label>
-	    <bflc:marcKey>181  $zEngland</bflc:marcKey>
-	  </madsrdf:Geographic>
-	  <madsrdf:GenreForm>
-	    <madsrdf:authoritativeLabel>Juvenile fiction</madsrdf:authoritativeLabel>
-	  </madsrdf:GenreForm>
-	</madsrdf:componentList>
-	<bflc:aap-normalized>boardingschoolsenglandjuvenilefiction</bflc:aap-normalized>
-	<bf:source>
-	  <bf:Source rdf:about="http://id.loc.gov/authorities/subjects">
-	    <rdfs:label xml:lang="en">Library of Congress Subject Headings</rdfs:label>
-	  </bf:Source>
-	</bf:source>
-      </bf:Topic>
-    </bf:subject>
-    <bf:subject>
-      <bf:Topic>
-	<rdf:type rdf:resource="http://www.loc.gov/mads/rdf/v1#ComplexSubject"/>
-	<rdfs:label>Magic--England--Juvenile fiction</rdfs:label>
-	<madsrdf:authoritativeLabel>Magic--England--Juvenile fiction</madsrdf:authoritativeLabel>
-	<madsrdf:isMemberOfMADSScheme>
-	  <madsrdf:MADSScheme rdf:about="http://id.loc.gov/authorities/subjects">
-	    <rdfs:label xml:lang="en">Library of Congress Subject Headings</rdfs:label>
-	  </madsrdf:MADSScheme>
-	</madsrdf:isMemberOfMADSScheme>
-	<madsrdf:componentList rdf:parseType="Collection">
-	  <madsrdf:Topic rdf:about="http://id.loc.gov/authorities/subjects/sh85079604">
-	    <rdfs:label xml:lang="en">Magic</rdfs:label>
-	    <bflc:marcKey>150  $aMagic</bflc:marcKey>
-	  </madsrdf:Topic>
-	  <madsrdf:Geographic rdf:about="http://id.loc.gov/rwo/agents/n82068148-781">
-	    <rdfs:label>England</rdfs:label>
-	    <bflc:marcKey>181  $zEngland</bflc:marcKey>
-	  </madsrdf:Geographic>
-	  <madsrdf:GenreForm>
-	    <madsrdf:authoritativeLabel>Juvenile fiction</madsrdf:authoritativeLabel>
-	  </madsrdf:GenreForm>
-	</madsrdf:componentList>
-	<bflc:aap-normalized>magicenglandjuvenilefiction</bflc:aap-normalized>
-	<bf:source>
-	  <bf:Source rdf:about="http://id.loc.gov/authorities/subjects">
-	    <rdfs:label xml:lang="en">Library of Congress Subject Headings</rdfs:label>
-	  </bf:Source>
-	</bf:source>
-      </bf:Topic>
-    </bf:subject>
-    <bf:subject>
-      <bf:Topic>
-	<rdf:type rdf:resource="http://www.loc.gov/mads/rdf/v1#ComplexSubject"/>
-	<rdfs:label>Youth--Conduct of life--Juvenile fiction</rdfs:label>
-	<madsrdf:authoritativeLabel>Youth--Conduct of life--Juvenile fiction</madsrdf:authoritativeLabel>
-	<madsrdf:isMemberOfMADSScheme>
-	  <madsrdf:MADSScheme rdf:about="http://id.loc.gov/authorities/subjects">
-	    <rdfs:label xml:lang="en">Library of Congress Subject Headings</rdfs:label>
-	  </madsrdf:MADSScheme>
-	</madsrdf:isMemberOfMADSScheme>
-	<madsrdf:componentList rdf:parseType="Collection">
-	  <madsrdf:Topic rdf:about="http://id.loc.gov/authorities/subjects/sh85149310">
-	    <rdfs:label xml:lang="en">Youth</rdfs:label>
-	    <bflc:marcKey>150  $aYouth</bflc:marcKey>
-	  </madsrdf:Topic>
-	  <madsrdf:Topic rdf:about="http://id.loc.gov/authorities/subjects/sh99005313">
-	    <rdfs:label xml:lang="en">Conduct of life</rdfs:label>
-	    <bflc:marcKey>180  $xConduct of life</bflc:marcKey>
-	  </madsrdf:Topic>
-	  <madsrdf:GenreForm>
-	    <madsrdf:authoritativeLabel>Juvenile fiction</madsrdf:authoritativeLabel>
-	  </madsrdf:GenreForm>
-	</madsrdf:componentList>
-	<bflc:aap-normalized>youthconductoflifejuvenilefiction</bflc:aap-normalized>
-	<bf:source>
-	  <bf:Source rdf:about="http://id.loc.gov/authorities/subjects">
-	    <rdfs:label xml:lang="en">Library of Congress Subject Headings</rdfs:label>
-	  </bf:Source>
-	</bf:source>
-      </bf:Topic>
-    </bf:subject>
-    <bf:subject>
-      <bf:Topic rdf:about="http://id.loc.gov/authorities/subjects/sh2008100297">
-	<rdfs:label xml:lang="en">Conduct of life--Juvenile fiction</rdfs:label>
-	<bflc:marcKey>150  $aConduct of life$vJuvenile fiction</bflc:marcKey>
-	<madsrdf:componentList rdf:parseType="Collection">
-	  <madsrdf:Topic>
-	    <rdf:type rdf:resource="http://www.loc.gov/mads/rdf/v1#Authority"/>
-	    <madsrdf:authoritativeLabel xml:lang="en">Conduct of life</madsrdf:authoritativeLabel>
-	    <madsrdf:elementList rdf:parseType="Collection">
-	      <madsrdf:TopicElement>
-		<madsrdf:elementValue xml:lang="en">Conduct of life</madsrdf:elementValue>
-	      </madsrdf:TopicElement>
-	    </madsrdf:elementList>
-	  </madsrdf:Topic>
-	  <madsrdf:GenreForm>
-	    <rdf:type rdf:resource="http://www.loc.gov/mads/rdf/v1#Authority"/>
-	    <madsrdf:authoritativeLabel xml:lang="en">Juvenile fiction</madsrdf:authoritativeLabel>
-	    <madsrdf:elementList rdf:parseType="Collection">
-	      <madsrdf:GenreFormElement>
-		<madsrdf:elementValue xml:lang="en">Juvenile fiction</madsrdf:elementValue>
-	      </madsrdf:GenreFormElement>
-	    </madsrdf:elementList>
-	  </madsrdf:GenreForm>
-	</madsrdf:componentList>
-      </bf:Topic>
-    </bf:subject>
-    <bf:subject>
-      <bf:Topic>
-	<rdf:type rdf:resource="http://www.loc.gov/mads/rdf/v1#ComplexSubject"/>
-	<rdfs:label>Teacher-student relationships--Juvenile fiction</rdfs:label>
-	<madsrdf:authoritativeLabel>Teacher-student relationships--Juvenile fiction</madsrdf:authoritativeLabel>
-	<madsrdf:isMemberOfMADSScheme>
-	  <madsrdf:MADSScheme rdf:about="http://id.loc.gov/authorities/subjects">
-	    <rdfs:label xml:lang="en">Library of Congress Subject Headings</rdfs:label>
-	  </madsrdf:MADSScheme>
-	</madsrdf:isMemberOfMADSScheme>
-	<madsrdf:componentList rdf:parseType="Collection">
-	  <madsrdf:Topic rdf:about="http://id.loc.gov/authorities/subjects/sh85132960">
-	    <rdfs:label xml:lang="en">Teacher-student relationships</rdfs:label>
-	    <bflc:marcKey>150  $aTeacher-student relationships</bflc:marcKey>
-	  </madsrdf:Topic>
-	  <madsrdf:GenreForm>
-	    <madsrdf:authoritativeLabel>Juvenile fiction</madsrdf:authoritativeLabel>
-	  </madsrdf:GenreForm>
-	</madsrdf:componentList>
-	<bflc:aap-normalized>teacherstudentrelationshipsjuvenilefiction</bflc:aap-normalized>
-	<bf:source>
-	  <bf:Source rdf:about="http://id.loc.gov/authorities/subjects">
-	    <rdfs:label xml:lang="en">Library of Congress Subject Headings</rdfs:label>
-	  </bf:Source>
-	</bf:source>
-      </bf:Topic>
-    </bf:subject>
-    <bf:subject>
-      <bf:Topic>
-	<rdf:type rdf:resource="http://www.loc.gov/mads/rdf/v1#ComplexSubject"/>
-	<rdfs:label>Hate--Juvenile fiction</rdfs:label>
-	<madsrdf:authoritativeLabel>Hate--Juvenile fiction</madsrdf:authoritativeLabel>
-	<madsrdf:isMemberOfMADSScheme>
-	  <madsrdf:MADSScheme rdf:about="http://id.loc.gov/authorities/subjects">
-	    <rdfs:label xml:lang="en">Library of Congress Subject Headings</rdfs:label>
-	  </madsrdf:MADSScheme>
-	</madsrdf:isMemberOfMADSScheme>
-	<madsrdf:componentList rdf:parseType="Collection">
-	  <madsrdf:Topic rdf:about="http://id.loc.gov/authorities/subjects/sh85059272">
-	    <rdfs:label xml:lang="en">Hate</rdfs:label>
-	    <bflc:marcKey>150 0$aHate</bflc:marcKey>
-	  </madsrdf:Topic>
-	  <madsrdf:GenreForm>
-	    <madsrdf:authoritativeLabel>Juvenile fiction</madsrdf:authoritativeLabel>
-	  </madsrdf:GenreForm>
-	</madsrdf:componentList>
-	<bflc:aap-normalized>hatejuvenilefiction</bflc:aap-normalized>
-	<bf:source>
-	  <bf:Source rdf:about="http://id.loc.gov/authorities/subjects">
-	    <rdfs:label xml:lang="en">Library of Congress Subject Headings</rdfs:label>
-	  </bf:Source>
-	</bf:source>
-      </bf:Topic>
-    </bf:subject>
-    <bf:subject>
-      <bf:Topic>
-	<rdf:type rdf:resource="http://www.loc.gov/mads/rdf/v1#ComplexSubject"/>
-	<rdfs:label>Parapsychology--Military aspects--Juvenile fiction</rdfs:label>
-	<madsrdf:authoritativeLabel>Parapsychology--Military aspects--Juvenile fiction</madsrdf:authoritativeLabel>
-	<madsrdf:isMemberOfMADSScheme>
-	  <madsrdf:MADSScheme rdf:about="http://id.loc.gov/authorities/subjects">
-	    <rdfs:label xml:lang="en">Library of Congress Subject Headings</rdfs:label>
-	  </madsrdf:MADSScheme>
-	</madsrdf:isMemberOfMADSScheme>
-	<madsrdf:componentList rdf:parseType="Collection">
-	  <madsrdf:Topic rdf:about="http://id.loc.gov/authorities/subjects/sh85108405">
-	    <rdfs:label xml:lang="en">Parapsychology</rdfs:label>
-	    <bflc:marcKey>150  $aParapsychology</bflc:marcKey>
-	  </madsrdf:Topic>
-	  <madsrdf:Topic rdf:about="http://id.loc.gov/authorities/subjects/sh00005938">
-	    <rdfs:label xml:lang="en">Military aspects</rdfs:label>
-	    <bflc:marcKey>180  $xMilitary aspects</bflc:marcKey>
-	  </madsrdf:Topic>
-	  <madsrdf:GenreForm>
-	    <madsrdf:authoritativeLabel>Juvenile fiction</madsrdf:authoritativeLabel>
-	  </madsrdf:GenreForm>
-	</madsrdf:componentList>
-	<bflc:aap-normalized>parapsychologymilitaryaspectsjuvenilefiction</bflc:aap-normalized>
-	<bf:source>
-	  <bf:Source rdf:about="http://id.loc.gov/authorities/subjects">
-	    <rdfs:label xml:lang="en">Library of Congress Subject Headings</rdfs:label>
-	  </bf:Source>
-	</bf:source>
-      </bf:Topic>
-    </bf:subject>
-    <bf:subject>
-      <bf:Topic>
-	<rdf:type rdf:resource="http://www.loc.gov/mads/rdf/v1#ComplexSubject"/>
-	<rdfs:label>Dueling--Juvenile fiction</rdfs:label>
-	<madsrdf:authoritativeLabel>Dueling--Juvenile fiction</madsrdf:authoritativeLabel>
-	<madsrdf:isMemberOfMADSScheme>
-	  <madsrdf:MADSScheme rdf:about="http://id.loc.gov/authorities/subjects">
-	    <rdfs:label xml:lang="en">Library of Congress Subject Headings</rdfs:label>
-	  </madsrdf:MADSScheme>
-	</madsrdf:isMemberOfMADSScheme>
-	<madsrdf:componentList rdf:parseType="Collection">
-	  <madsrdf:Topic rdf:about="http://id.loc.gov/authorities/subjects/sh85039897">
-	    <rdfs:label xml:lang="en">Dueling</rdfs:label>
-	    <bflc:marcKey>150 0$aDueling</bflc:marcKey>
-	  </madsrdf:Topic>
-	  <madsrdf:GenreForm>
-	    <madsrdf:authoritativeLabel>Juvenile fiction</madsrdf:authoritativeLabel>
-	  </madsrdf:GenreForm>
-	</madsrdf:componentList>
-	<bflc:aap-normalized>duelingjuvenilefiction</bflc:aap-normalized>
-	<bf:source>
-	  <bf:Source rdf:about="http://id.loc.gov/authorities/subjects">
-	    <rdfs:label xml:lang="en">Library of Congress Subject Headings</rdfs:label>
-	  </bf:Source>
-	</bf:source>
-      </bf:Topic>
-    </bf:subject>
-    <bf:subject>
-      <bf:Topic>
-	<rdf:type rdf:resource="http://www.loc.gov/mads/rdf/v1#ComplexSubject"/>
-	<rdfs:label>Literatura--Inglaterra</rdfs:label>
-	<madsrdf:authoritativeLabel>Literatura--Inglaterra</madsrdf:authoritativeLabel>
-	<madsrdf:componentList rdf:parseType="Collection">
-	  <madsrdf:Topic>
-	    <madsrdf:authoritativeLabel>Literatura</madsrdf:authoritativeLabel>
-	  </madsrdf:Topic>
-	  <madsrdf:Geographic>
-	    <madsrdf:authoritativeLabel>Inglaterra</madsrdf:authoritativeLabel>
-	  </madsrdf:Geographic>
-	</madsrdf:componentList>
-	<bflc:aap-normalized>literaturainglaterra</bflc:aap-normalized>
-      </bf:Topic>
-    </bf:subject>
-    <bf:subject>
-      <bf:Topic rdf:about="https://d-nb.info/gnd/4134557-5">
-	<rdfs:label>Außenseiter</rdfs:label>
-	<bflc:marcKey>150  $aAußenseiter</bflc:marcKey>
-      </bf:Topic>
-    </bf:subject>
-    <bf:subject>
-      <bf:Topic rdf:about="https://d-nb.info/gnd/4007524-2">
-	<rdfs:label>&#152;Das&#156; Böse</rdfs:label>
-	<bflc:marcKey>150  $a&#152;Das&#156; Böse</bflc:marcKey>
-      </bf:Topic>
-    </bf:subject>
-    <bf:subject>
-      <bf:Topic rdf:about="https://d-nb.info/gnd/4022600-1">
-	<rdfs:label>&#152;Das&#156; Gute</rdfs:label>
-	<bflc:marcKey>150  $a&#152;Das&#156; Gute</bflc:marcKey>
-      </bf:Topic>
-    </bf:subject>
-    <bf:subject>
-      <bf:Topic rdf:about="https://d-nb.info/gnd/4727032-9">
-	<rdfs:label>Existenzkampf</rdfs:label>
-	<bflc:marcKey>150  $aExistenzkampf</bflc:marcKey>
-      </bf:Topic>
-    </bf:subject>
-    <bf:subject>
-      <bf:Topic rdf:about="https://d-nb.info/gnd/4016114-6">
-	<rdfs:label>Fabeltiere</rdfs:label>
-	<bflc:marcKey>150  $aFabeltiere</bflc:marcKey>
-      </bf:Topic>
-    </bf:subject>
-    <bf:subject>
-      <bf:Topic rdf:about="https://d-nb.info/gnd/4018480-8">
-	<rdfs:label>Freundschaft</rdfs:label>
-	<bflc:marcKey>150  $aFreundschaft</bflc:marcKey>
-      </bf:Topic>
-    </bf:subject>
-    <bf:subject>
-      <bf:Topic rdf:about="https://d-nb.info/gnd/4161292-9">
-	<rdfs:label>Imaginärer Schauplatz</rdfs:label>
-	<bflc:marcKey>150  $aImaginärer Schauplatz</bflc:marcKey>
-      </bf:Topic>
-    </bf:subject>
-    <bf:subject>
-      <bf:Topic rdf:about="https://d-nb.info/gnd/4027316-7">
-	<rdfs:label>Internat</rdfs:label>
-	<bflc:marcKey>150  $aInternat</bflc:marcKey>
-      </bf:Topic>
-    </bf:subject>
-    <bf:subject>
-      <bf:Topic rdf:about="https://d-nb.info/gnd/4137756-4">
-	<rdfs:label>Jugendgruppe</rdfs:label>
-	<bflc:marcKey>150  $aJugendgruppe</bflc:marcKey>
-      </bf:Topic>
-    </bf:subject>
-    <bf:subject>
-      <bf:Topic rdf:about="https://d-nb.info/gnd/4029002-5">
-	<rdfs:label>Junge</rdfs:label>
-	<bflc:marcKey>150  $aJunge</bflc:marcKey>
-      </bf:Topic>
-    </bf:subject>
-    <bf:subject>
-      <bf:Topic rdf:about="https://d-nb.info/gnd/4167018-8">
-	<rdfs:label>Lebensgefahr</rdfs:label>
-	<bflc:marcKey>150  $aLebensgefahr</bflc:marcKey>
-      </bf:Topic>
-    </bf:subject>
-    <bf:subject>
-      <bf:Topic rdf:about="https://d-nb.info/gnd/4334871-3">
-	<rdfs:label>Lebensrettung</rdfs:label>
-	<bflc:marcKey>150  $aLebensrettung</bflc:marcKey>
-      </bf:Topic>
-    </bf:subject>
-    <bf:subject>
-      <bf:Topic rdf:about="https://d-nb.info/gnd/4036966-3">
-	<rdfs:label>Magie</rdfs:label>
-	<bflc:marcKey>150  $aMagie</bflc:marcKey>
-      </bf:Topic>
-    </bf:subject>
-    <bf:subject>
-      <bf:Topic rdf:about="https://d-nb.info/gnd/4067403-4">
-	<rdfs:label>Magier</rdfs:label>
-	<bflc:marcKey>150  $aMagier</bflc:marcKey>
-      </bf:Topic>
-    </bf:subject>
-    <bf:subject>
-      <bf:Topic rdf:about="https://d-nb.info/gnd/4333435-0">
-	<rdfs:label>Rollentausch</rdfs:label>
-	<bflc:marcKey>150  $aRollentausch</bflc:marcKey>
-      </bf:Topic>
-    </bf:subject>
-    <bf:subject>
-      <bf:Topic rdf:about="https://d-nb.info/gnd/4053369-4">
-	<rdfs:label>Schüler</rdfs:label>
-	<bflc:marcKey>150  $aSchüler</bflc:marcKey>
-      </bf:Topic>
-    </bf:subject>
-    <bf:subject>
-      <bf:Topic rdf:about="https://d-nb.info/gnd/4136651-7">
-	<rdfs:label>Telepathie</rdfs:label>
-	<bflc:marcKey>150  $aTelepathie</bflc:marcKey>
-      </bf:Topic>
-    </bf:subject>
-    <bf:subject>
-      <bf:Topic rdf:about="https://d-nb.info/gnd/4079128-2">
-	<rdfs:label>Weissagung</rdfs:label>
-	<bflc:marcKey>150  $aWeissagung</bflc:marcKey>
-      </bf:Topic>
-    </bf:subject>
-    <bf:subject>
-      <bf:Place>
-	<rdf:type rdf:resource="http://www.loc.gov/mads/rdf/v1#Geographic"/>
-	<rdfs:label>Grossbritannien</rdfs:label>
-	<madsrdf:authoritativeLabel>Grossbritannien</madsrdf:authoritativeLabel>
-	<madsrdf:isIdentifiedByAuthority>
-	  <bf:Place rdf:about="https://d-nb.info/gnd/4022153-2">
-	    <rdfs:label>Großbritannien</rdfs:label>
-	    <bflc:marcKey>151  $aGroßbritannien</bflc:marcKey>
-	  </bf:Place>
-	</madsrdf:isIdentifiedByAuthority>
-	<bflc:aap-normalized>grossbritannien</bflc:aap-normalized>
-	<madsrdf:isMemberOfMADSScheme>
-	  <madsrdf:Authority rdf:about="http://id.loc.gov/vocabulary/subjectSchemes/gnd">
-	    <rdfs:label>Gemeinsame Normdatei</rdfs:label>
-	    <bf:code>gnd</bf:code>
-	  </madsrdf:Authority>
-	</madsrdf:isMemberOfMADSScheme>
-	<bf:source>
-	  <madsrdf:Authority rdf:about="http://id.loc.gov/vocabulary/subjectSchemes/gnd">
-	    <rdfs:label>Gemeinsame Normdatei</rdfs:label>
-	    <bf:code>gnd</bf:code>
-	  </madsrdf:Authority>
-	</bf:source>
-      </bf:Place>
-    </bf:subject>
-    <bf:subject>
-      <bf:Topic>
-	<rdf:type rdf:resource="http://www.loc.gov/mads/rdf/v1#ComplexSubject"/>
-	<rdfs:label>Children's stories--2003</rdfs:label>
-	<madsrdf:authoritativeLabel>Children's stories--2003</madsrdf:authoritativeLabel>
-	<madsrdf:isMemberOfMADSScheme>
-	  <madsrdf:MADSScheme rdf:about="http://id.loc.gov/authorities/subjects">
-	    <rdfs:label xml:lang="en">Library of Congress Subject Headings</rdfs:label>
-	  </madsrdf:MADSScheme>
-	</madsrdf:isMemberOfMADSScheme>
-	<madsrdf:componentList rdf:parseType="Collection">
-	  <madsrdf:GenreForm>
-	    <madsrdf:authoritativeLabel>Children's stories</madsrdf:authoritativeLabel>
-	  </madsrdf:GenreForm>
-	  <madsrdf:Temporal>
-	    <madsrdf:authoritativeLabel>2003</madsrdf:authoritativeLabel>
-	  </madsrdf:Temporal>
-	</madsrdf:componentList>
-	<bflc:aap-normalized>children'sstories2003</bflc:aap-normalized>
-	<bf:source>
-	  <bf:Source rdf:about="http://id.loc.gov/authorities/subjects">
-	    <rdfs:label xml:lang="en">Library of Congress Subject Headings</rdfs:label>
-	  </bf:Source>
-	</bf:source>
-      </bf:Topic>
-    </bf:subject>
-    <bf:genreForm>
-      <bf:GenreForm>
-	<rdf:type rdf:resource="http://www.loc.gov/mads/rdf/v1#GenreForm"/>
-	<madsrdf:authoritativeLabel>Children's stories</madsrdf:authoritativeLabel>
-	<rdfs:label>Children's stories</rdfs:label>
-      </bf:GenreForm>
-    </bf:genreForm>
-    <bf:genreForm>
-      <bf:GenreForm>
-	<rdf:type rdf:resource="http://www.loc.gov/mads/rdf/v1#GenreForm"/>
-	<madsrdf:authoritativeLabel>Jugendbuch</madsrdf:authoritativeLabel>
-	<rdfs:label>Jugendbuch</rdfs:label>
-      </bf:GenreForm>
-    </bf:genreForm>
-    <bf:genreForm>
-      <bf:GenreForm rdf:about="http://id.loc.gov/authorities/genreForms/gf2014026333">
-	<rdfs:label xml:lang="en">Fantasy fiction</rdfs:label>
-	<bflc:marcKey>155  $aFantasy fiction</bflc:marcKey>
-      </bf:GenreForm>
-    </bf:genreForm>
     <bf:contribution>
       <bf:Contribution>
 	<bf:agent>
@@ -755,43 +246,20 @@
 	</bf:role>
       </bf:Contribution>
     </bf:contribution>
-    <dcterms:isPartOf rdf:resource="http://id.loc.gov/resources/works"/>
     <bf:relation>
       <bf:Relation>
-	<bf:relationship rdf:resource="http://id.loc.gov/ontologies/bibframe/hasSeries"/>
-	<bf:seriesEnumeration>bk. 5</bf:seriesEnumeration>
-	<bf:associatedResource>
-	  <bf:Series>
-	    <rdf:type rdf:resource="http://id.loc.gov/ontologies/bflc/Uncontrolled"/>
-	    <bf:status>
-	      <bf:Status rdf:about="http://id.loc.gov/vocabulary/mstatus/t">
-		<rdfs:label>transcribed</rdfs:label>
-		<bf:code>t</bf:code>
-	      </bf:Status>
-	    </bf:status>
-	    <bf:status>
-	      <bf:Status rdf:about="http://id.loc.gov/vocabulary/mstatus/tr">
-		<rdfs:label>traced</rdfs:label>
-		<bf:code>tr</bf:code>
-	      </bf:Status>
-	    </bf:status>
-	    <bf:title>
-	      <bf:Title>
-		<bf:mainTitle>Harry Potter</bf:mainTitle>
-	      </bf:Title>
-	    </bf:title>
-	  </bf:Series>
-	</bf:associatedResource>
-      </bf:Relation>
-    </bf:relation>
-    <bf:relation>
-      <bf:Relation>
-	<bf:relationship rdf:resource="http://id.loc.gov/ontologies/bibframe/hasSeries"/>
+	<bf:relationship>
+	  <bf:Relationship rdf:about="http://id.loc.gov/vocabulary/relationship/series">
+	    <rdfs:label>series</rdfs:label>
+	    <bf:code>series</bf:code>
+	  </bf:Relationship>
+	</bf:relationship>
 	<bf:seriesEnumeration>5.</bf:seriesEnumeration>
 	<bf:associatedResource>
 	  <bf:Hub rdf:about="http://id.loc.gov/resources/hubs/af664ef4-0459-e382-f2b1-7ef8a5d00016">
 	    <rdf:type rdf:resource="http://id.loc.gov/ontologies/bibframe/Series"/>
 	    <rdfs:label>Rowling, J. K. Harry Potter series</rdfs:label>
+	    <bflc:marcKey>1001 $aRowling, J. K.$tHarry Potter series</bflc:marcKey>
 	    <bf:contribution>
 	      <bf:Contribution>
 		<rdf:type rdf:resource="http://id.loc.gov/ontologies/bibframe/PrimaryContribution"/>
@@ -821,12 +289,18 @@
     </bf:relation>
     <bf:relation>
       <bf:Relation>
-	<bf:relationship rdf:resource="http://id.loc.gov/ontologies/bibframe/hasSeries"/>
+	<bf:relationship>
+	  <bf:Relationship rdf:about="http://id.loc.gov/vocabulary/relationship/series">
+	    <rdfs:label>series</rdfs:label>
+	    <bf:code>series</bf:code>
+	  </bf:Relationship>
+	</bf:relationship>
 	<bf:seriesEnumeration>bk. 5.</bf:seriesEnumeration>
 	<bf:associatedResource>
 	  <bf:Hub rdf:about="http://id.loc.gov/resources/hubs/62836544-8faa-de1b-57b8-bd68ae6cd8f9">
 	    <rdf:type rdf:resource="http://id.loc.gov/ontologies/bibframe/Series"/>
 	    <rdfs:label>Harry Potter</rdfs:label>
+	    <bflc:marcKey>1300 $aHarry Potter</bflc:marcKey>
 	    <bf:title>
 	      <bf:Title>
 		<bf:mainTitle>Harry Potter</bf:mainTitle>
@@ -836,6 +310,7 @@
 	</bf:associatedResource>
       </bf:Relation>
     </bf:relation>
+    <dcterms:isPartOf rdf:resource="http://id.loc.gov/resources/works"/>
     <bf:hasInstance>
       <bf:Instance rdf:about="http://id.loc.gov/resources/instances/18602501">
 	<bf:title>
@@ -846,6 +321,633 @@
 	<bf:publicationStatement>London: Bloomsbury, 2003</bf:publicationStatement>
       </bf:Instance>
     </bf:hasInstance>
+    <bf:genreForm>
+      <bf:GenreForm rdf:about="http://id.loc.gov/authorities/genreForms/gf2015026020">
+	<rdfs:label xml:lang="en">Novels</rdfs:label>
+	<bflc:marcKey>155  $aNovels</bflc:marcKey>
+	<bf:source>
+	  <bf:Source rdf:about="http://id.loc.gov/authorities/genreForms">
+	    <rdfs:label>LC Genre/Forms</rdfs:label>
+	  </bf:Source>
+	</bf:source>
+      </bf:GenreForm>
+    </bf:genreForm>
+    <bf:genreForm>
+      <bf:GenreForm>
+	<rdf:type rdf:resource="http://www.loc.gov/mads/rdf/v1#GenreForm"/>
+	<madsrdf:authoritativeLabel>Children's stories</madsrdf:authoritativeLabel>
+	<rdfs:label>Children's stories</rdfs:label>
+      </bf:GenreForm>
+    </bf:genreForm>
+    <bf:genreForm>
+      <bf:GenreForm>
+	<rdf:type rdf:resource="http://www.loc.gov/mads/rdf/v1#GenreForm"/>
+	<madsrdf:authoritativeLabel>Jugendbuch</madsrdf:authoritativeLabel>
+	<rdfs:label>Jugendbuch</rdfs:label>
+      </bf:GenreForm>
+    </bf:genreForm>
+    <bf:genreForm>
+      <bf:GenreForm>
+	<rdf:type rdf:resource="http://www.loc.gov/mads/rdf/v1#GenreForm"/>
+	<madsrdf:authoritativeLabel>Fantasy fiction</madsrdf:authoritativeLabel>
+	<bf:source>
+	  <madsrdf:Authority rdf:about="http://id.loc.gov/vocabulary/genreFormSchemes/gsafd">
+	    <rdfs:label>Guidelines on subject access to individual works of fiction, drama, etc</rdfs:label>
+	    <bf:code>gsafd</bf:code>
+	  </madsrdf:Authority>
+	</bf:source>
+	<rdfs:label>Fantasy fiction</rdfs:label>
+      </bf:GenreForm>
+    </bf:genreForm>
+    <bf:genreForm>
+      <bf:GenreForm rdf:about="http://id.loc.gov/authorities/genreForms/gf2014026339">
+	<rdfs:label xml:lang="en">Fiction</rdfs:label>
+	<bflc:marcKey>155  $aFiction</bflc:marcKey>
+	<bf:source>
+	  <bf:Source rdf:about="http://id.loc.gov/authorities/genreForms">
+	    <rdfs:label>LC Genre/Forms</rdfs:label>
+	  </bf:Source>
+	</bf:source>
+      </bf:GenreForm>
+    </bf:genreForm>
+    <bf:intendedAudience>
+      <bf:IntendedAudience rdf:about="http://id.loc.gov/authorities/demographicTerms/dg2015060010">
+	<rdfs:label xml:lang="en">Children</rdfs:label>
+	<bflc:marcKey>150  $aChildren</bflc:marcKey>
+	<bflc:demographicGroup>
+	  <bflc:DemographicGroup rdf:about="http://id.loc.gov/authorities/demographicTerms/age">
+	    <rdfs:label>Age group</rdfs:label>
+	  </bflc:DemographicGroup>
+	</bflc:demographicGroup>
+	<bf:source>
+	  <bf:Source rdf:about="http://id.loc.gov/authorities/demographicTerms">
+	    <rdfs:label>LC Demographic Terms</rdfs:label>
+	  </bf:Source>
+	</bf:source>
+      </bf:IntendedAudience>
+    </bf:intendedAudience>
+    <bf:genreForm>
+      <bf:GenreForm>
+	<rdfs:label>Juvenile fiction</rdfs:label>
+      </bf:GenreForm>
+    </bf:genreForm>
+    <bf:subject>
+      <bf:Person rdf:about="http://id.loc.gov/rwo/agents/n2014027906">
+	<rdfs:label>Potter, Harry (Fictitious character)</rdfs:label>
+	<bflc:marcKey>1001 $aPotter, Harry$c(Fictitious character)</bflc:marcKey>
+      </bf:Person>
+    </bf:subject>
+    <bf:subject>
+      <bf:Topic rdf:about="http://id.loc.gov/authorities/subjects/sh00002633">
+	<rdfs:label xml:lang="en">Hogwarts School of Witchcraft and Wizardry (Imaginary organization)</rdfs:label>
+	<bflc:marcKey>150  $aHogwarts School of Witchcraft and Wizardry (Imaginary organization)</bflc:marcKey>
+	<bf:source>
+	  <bf:Source rdf:about="http://id.loc.gov/authorities/subjects">
+	    <rdfs:label>LC Subject Headings</rdfs:label>
+	  </bf:Source>
+	</bf:source>
+      </bf:Topic>
+    </bf:subject>
+    <bf:subject>
+      <bf:Topic rdf:about="http://id.loc.gov/authorities/subjects/sh85051992">
+	<rdfs:label xml:lang="en">Friendship</rdfs:label>
+	<bflc:marcKey>150 0$aFriendship</bflc:marcKey>
+	<bf:source>
+	  <bf:Source rdf:about="http://id.loc.gov/authorities/subjects">
+	    <rdfs:label>LC Subject Headings</rdfs:label>
+	  </bf:Source>
+	</bf:source>
+      </bf:Topic>
+    </bf:subject>
+    <bf:subject>
+      <bf:Topic>
+	<rdf:type rdf:resource="http://www.loc.gov/mads/rdf/v1#ComplexSubject"/>
+	<rdfs:label>Wizards--England</rdfs:label>
+	<madsrdf:authoritativeLabel>Wizards--England</madsrdf:authoritativeLabel>
+	<madsrdf:componentList rdf:parseType="Collection">
+	  <madsrdf:Topic rdf:about="http://id.loc.gov/authorities/subjects/sh86004691">
+	    <rdfs:label xml:lang="en">Wizards</rdfs:label>
+	    <bflc:marcKey>150 0$aWizards</bflc:marcKey>
+	    <bf:source>
+	      <bf:Source rdf:about="http://id.loc.gov/authorities/subjects">
+		<rdfs:label>LC Subject Headings</rdfs:label>
+	      </bf:Source>
+	    </bf:source>
+	  </madsrdf:Topic>
+	  <madsrdf:Geographic rdf:about="http://id.loc.gov/rwo/agents/n82068148-781">
+	    <rdfs:label>England</rdfs:label>
+	    <bflc:marcKey>181  $zEngland</bflc:marcKey>
+	  </madsrdf:Geographic>
+	</madsrdf:componentList>
+	<madsrdf:isMemberOfMADSScheme>
+	  <madsrdf:MADSScheme rdf:about="http://id.loc.gov/authorities/subjects">
+	    <rdfs:label xml:lang="en">Library of Congress Subject Headings</rdfs:label>
+	  </madsrdf:MADSScheme>
+	</madsrdf:isMemberOfMADSScheme>
+	<bflc:aap-normalized>wizardsengland</bflc:aap-normalized>
+	<bf:source>
+	  <bf:Source rdf:about="http://id.loc.gov/authorities/subjects">
+	    <rdfs:label xml:lang="en">Library of Congress Subject Headings</rdfs:label>
+	  </bf:Source>
+	</bf:source>
+      </bf:Topic>
+    </bf:subject>
+    <bf:subject>
+      <bf:Topic>
+	<rdf:type rdf:resource="http://www.loc.gov/mads/rdf/v1#ComplexSubject"/>
+	<rdfs:label>Boarding school students--England</rdfs:label>
+	<madsrdf:authoritativeLabel>Boarding school students--England</madsrdf:authoritativeLabel>
+	<madsrdf:componentList rdf:parseType="Collection">
+	  <madsrdf:Topic rdf:about="http://id.loc.gov/authorities/subjects/sh97001171">
+	    <rdfs:label xml:lang="en">Boarding school students</rdfs:label>
+	    <bflc:marcKey>150 0$aBoarding school students</bflc:marcKey>
+	    <bf:source>
+	      <bf:Source rdf:about="http://id.loc.gov/authorities/subjects">
+		<rdfs:label>LC Subject Headings</rdfs:label>
+	      </bf:Source>
+	    </bf:source>
+	  </madsrdf:Topic>
+	  <madsrdf:Geographic rdf:about="http://id.loc.gov/rwo/agents/n82068148-781">
+	    <rdfs:label>England</rdfs:label>
+	    <bflc:marcKey>181  $zEngland</bflc:marcKey>
+	  </madsrdf:Geographic>
+	</madsrdf:componentList>
+	<madsrdf:isMemberOfMADSScheme>
+	  <madsrdf:MADSScheme rdf:about="http://id.loc.gov/authorities/subjects">
+	    <rdfs:label xml:lang="en">Library of Congress Subject Headings</rdfs:label>
+	  </madsrdf:MADSScheme>
+	</madsrdf:isMemberOfMADSScheme>
+	<bflc:aap-normalized>boardingschoolstudentsengland</bflc:aap-normalized>
+	<bf:source>
+	  <bf:Source rdf:about="http://id.loc.gov/authorities/subjects">
+	    <rdfs:label xml:lang="en">Library of Congress Subject Headings</rdfs:label>
+	  </bf:Source>
+	</bf:source>
+      </bf:Topic>
+    </bf:subject>
+    <bf:subject>
+      <bf:Topic>
+	<rdf:type rdf:resource="http://www.loc.gov/mads/rdf/v1#ComplexSubject"/>
+	<rdfs:label>Boarding schools--England</rdfs:label>
+	<madsrdf:authoritativeLabel>Boarding schools--England</madsrdf:authoritativeLabel>
+	<madsrdf:componentList rdf:parseType="Collection">
+	  <madsrdf:Topic rdf:about="http://id.loc.gov/authorities/subjects/sh85015136">
+	    <rdfs:label xml:lang="en">Boarding schools</rdfs:label>
+	    <bflc:marcKey>150  $aBoarding schools</bflc:marcKey>
+	    <bf:source>
+	      <bf:Source rdf:about="http://id.loc.gov/authorities/subjects">
+		<rdfs:label>LC Subject Headings</rdfs:label>
+	      </bf:Source>
+	    </bf:source>
+	  </madsrdf:Topic>
+	  <madsrdf:Geographic rdf:about="http://id.loc.gov/rwo/agents/n82068148-781">
+	    <rdfs:label>England</rdfs:label>
+	    <bflc:marcKey>181  $zEngland</bflc:marcKey>
+	  </madsrdf:Geographic>
+	</madsrdf:componentList>
+	<madsrdf:isMemberOfMADSScheme>
+	  <madsrdf:MADSScheme rdf:about="http://id.loc.gov/authorities/subjects">
+	    <rdfs:label xml:lang="en">Library of Congress Subject Headings</rdfs:label>
+	  </madsrdf:MADSScheme>
+	</madsrdf:isMemberOfMADSScheme>
+	<bflc:aap-normalized>boardingschoolsengland</bflc:aap-normalized>
+	<bf:source>
+	  <bf:Source rdf:about="http://id.loc.gov/authorities/subjects">
+	    <rdfs:label xml:lang="en">Library of Congress Subject Headings</rdfs:label>
+	  </bf:Source>
+	</bf:source>
+      </bf:Topic>
+    </bf:subject>
+    <bf:subject>
+      <bf:Topic>
+	<rdf:type rdf:resource="http://www.loc.gov/mads/rdf/v1#ComplexSubject"/>
+	<rdfs:label>Magic--England</rdfs:label>
+	<madsrdf:authoritativeLabel>Magic--England</madsrdf:authoritativeLabel>
+	<madsrdf:componentList rdf:parseType="Collection">
+	  <madsrdf:Topic rdf:about="http://id.loc.gov/authorities/subjects/sh85079604">
+	    <rdfs:label xml:lang="en">Magic</rdfs:label>
+	    <bflc:marcKey>150  $aMagic</bflc:marcKey>
+	    <bf:source>
+	      <bf:Source rdf:about="http://id.loc.gov/authorities/subjects">
+		<rdfs:label>LC Subject Headings</rdfs:label>
+	      </bf:Source>
+	    </bf:source>
+	  </madsrdf:Topic>
+	  <madsrdf:Geographic rdf:about="http://id.loc.gov/rwo/agents/n82068148-781">
+	    <rdfs:label>England</rdfs:label>
+	    <bflc:marcKey>181  $zEngland</bflc:marcKey>
+	  </madsrdf:Geographic>
+	</madsrdf:componentList>
+	<madsrdf:isMemberOfMADSScheme>
+	  <madsrdf:MADSScheme rdf:about="http://id.loc.gov/authorities/subjects">
+	    <rdfs:label xml:lang="en">Library of Congress Subject Headings</rdfs:label>
+	  </madsrdf:MADSScheme>
+	</madsrdf:isMemberOfMADSScheme>
+	<bflc:aap-normalized>magicengland</bflc:aap-normalized>
+	<bf:source>
+	  <bf:Source rdf:about="http://id.loc.gov/authorities/subjects">
+	    <rdfs:label xml:lang="en">Library of Congress Subject Headings</rdfs:label>
+	  </bf:Source>
+	</bf:source>
+      </bf:Topic>
+    </bf:subject>
+    <bf:subject>
+      <bf:Topic rdf:about="http://id.loc.gov/authorities/subjects/sh85149315">
+	<rdfs:label xml:lang="en">Youth--Conduct of life</rdfs:label>
+	<bflc:marcKey>150 0$aYouth$xConduct of life</bflc:marcKey>
+	<madsrdf:componentList rdf:parseType="Collection">
+	  <madsrdf:Topic>
+	    <rdf:type rdf:resource="http://www.loc.gov/mads/rdf/v1#Authority"/>
+	    <madsrdf:authoritativeLabel xml:lang="en">Youth</madsrdf:authoritativeLabel>
+	    <madsrdf:elementList rdf:parseType="Collection">
+	      <madsrdf:TopicElement>
+		<madsrdf:elementValue xml:lang="en">Youth</madsrdf:elementValue>
+	      </madsrdf:TopicElement>
+	    </madsrdf:elementList>
+	  </madsrdf:Topic>
+	  <madsrdf:Topic>
+	    <rdf:type rdf:resource="http://www.loc.gov/mads/rdf/v1#Authority"/>
+	    <madsrdf:authoritativeLabel xml:lang="en">Conduct of life</madsrdf:authoritativeLabel>
+	    <madsrdf:elementList rdf:parseType="Collection">
+	      <madsrdf:TopicElement>
+		<madsrdf:elementValue xml:lang="en">Conduct of life</madsrdf:elementValue>
+	      </madsrdf:TopicElement>
+	    </madsrdf:elementList>
+	  </madsrdf:Topic>
+	</madsrdf:componentList>
+	<bf:source>
+	  <bf:Source rdf:about="http://id.loc.gov/authorities/subjects">
+	    <rdfs:label>LC Subject Headings</rdfs:label>
+	  </bf:Source>
+	</bf:source>
+      </bf:Topic>
+    </bf:subject>
+    <bf:subject>
+      <bf:Topic rdf:about="http://id.loc.gov/authorities/subjects/sh85030802">
+	<rdfs:label xml:lang="en">Conduct of life</rdfs:label>
+	<bflc:marcKey>150  $aConduct of life</bflc:marcKey>
+	<bf:source>
+	  <bf:Source rdf:about="http://id.loc.gov/authorities/subjects">
+	    <rdfs:label>LC Subject Headings</rdfs:label>
+	  </bf:Source>
+	</bf:source>
+      </bf:Topic>
+    </bf:subject>
+    <bf:subject>
+      <bf:Topic rdf:about="http://id.loc.gov/authorities/subjects/sh85132960">
+	<rdfs:label xml:lang="en">Teacher-student relationships</rdfs:label>
+	<bflc:marcKey>150  $aTeacher-student relationships</bflc:marcKey>
+	<bf:source>
+	  <bf:Source rdf:about="http://id.loc.gov/authorities/subjects">
+	    <rdfs:label>LC Subject Headings</rdfs:label>
+	  </bf:Source>
+	</bf:source>
+      </bf:Topic>
+    </bf:subject>
+    <bf:subject>
+      <bf:Topic rdf:about="http://id.loc.gov/authorities/subjects/sh85059272">
+	<rdfs:label xml:lang="en">Hate</rdfs:label>
+	<bflc:marcKey>150 0$aHate</bflc:marcKey>
+	<bf:source>
+	  <bf:Source rdf:about="http://id.loc.gov/authorities/subjects">
+	    <rdfs:label>LC Subject Headings</rdfs:label>
+	  </bf:Source>
+	</bf:source>
+      </bf:Topic>
+    </bf:subject>
+    <bf:subject>
+      <bf:Topic rdf:about="http://id.loc.gov/authorities/subjects/sh85108407">
+	<rdfs:label xml:lang="en">Parapsychology--Military aspects</rdfs:label>
+	<bflc:marcKey>150 0$aParapsychology$xMilitary aspects</bflc:marcKey>
+	<madsrdf:componentList rdf:parseType="Collection">
+	  <madsrdf:Topic>
+	    <rdf:type rdf:resource="http://www.loc.gov/mads/rdf/v1#Authority"/>
+	    <madsrdf:authoritativeLabel xml:lang="en">Parapsychology</madsrdf:authoritativeLabel>
+	    <madsrdf:elementList rdf:parseType="Collection">
+	      <madsrdf:TopicElement>
+		<madsrdf:elementValue xml:lang="en">Parapsychology</madsrdf:elementValue>
+	      </madsrdf:TopicElement>
+	    </madsrdf:elementList>
+	  </madsrdf:Topic>
+	  <madsrdf:Topic>
+	    <rdf:type rdf:resource="http://www.loc.gov/mads/rdf/v1#Authority"/>
+	    <madsrdf:authoritativeLabel xml:lang="en">Military aspects</madsrdf:authoritativeLabel>
+	    <madsrdf:elementList rdf:parseType="Collection">
+	      <madsrdf:TopicElement>
+		<madsrdf:elementValue xml:lang="en">Military aspects</madsrdf:elementValue>
+	      </madsrdf:TopicElement>
+	    </madsrdf:elementList>
+	  </madsrdf:Topic>
+	</madsrdf:componentList>
+	<bf:source>
+	  <bf:Source rdf:about="http://id.loc.gov/authorities/subjects">
+	    <rdfs:label>LC Subject Headings</rdfs:label>
+	  </bf:Source>
+	</bf:source>
+      </bf:Topic>
+    </bf:subject>
+    <bf:subject>
+      <bf:Topic rdf:about="http://id.loc.gov/authorities/subjects/sh85039897">
+	<rdfs:label xml:lang="en">Dueling</rdfs:label>
+	<bflc:marcKey>150 0$aDueling</bflc:marcKey>
+	<bf:source>
+	  <bf:Source rdf:about="http://id.loc.gov/authorities/subjects">
+	    <rdfs:label>LC Subject Headings</rdfs:label>
+	  </bf:Source>
+	</bf:source>
+      </bf:Topic>
+    </bf:subject>
+    <bf:subject>
+      <bf:Topic>
+	<rdf:type rdf:resource="http://www.loc.gov/mads/rdf/v1#ComplexSubject"/>
+	<rdfs:label>Literatura--Inglaterra</rdfs:label>
+	<madsrdf:authoritativeLabel>Literatura--Inglaterra</madsrdf:authoritativeLabel>
+	<madsrdf:componentList rdf:parseType="Collection">
+	  <madsrdf:Topic>
+	    <madsrdf:authoritativeLabel>Literatura</madsrdf:authoritativeLabel>
+	  </madsrdf:Topic>
+	  <madsrdf:Geographic>
+	    <madsrdf:authoritativeLabel>Inglaterra</madsrdf:authoritativeLabel>
+	  </madsrdf:Geographic>
+	</madsrdf:componentList>
+	<bflc:aap-normalized>literaturainglaterra</bflc:aap-normalized>
+      </bf:Topic>
+    </bf:subject>
+    <bf:subject>
+      <bf:Topic rdf:about="https://d-nb.info/gnd/4134557-5">
+	<rdfs:label>Außenseiter</rdfs:label>
+	<bflc:marcKey>150  $aAußenseiter</bflc:marcKey>
+	<bf:source>
+	  <bf:Source rdf:about="https://id.loc.gov/vocabulary/subjectSchemes/dhb-jdg">
+	    <rdfs:label>Deutsche Historische Bibliografie</rdfs:label>
+	    <bf:code>dhb-jdg</bf:code>
+	  </bf:Source>
+	</bf:source>
+      </bf:Topic>
+    </bf:subject>
+    <bf:subject>
+      <bf:Topic rdf:about="https://d-nb.info/gnd/4007524-2">
+	<rdfs:label>&#152;Das&#156; Böse</rdfs:label>
+	<bflc:marcKey>150  $a&#152;Das&#156; Böse</bflc:marcKey>
+	<bf:source>
+	  <bf:Source rdf:about="https://id.loc.gov/vocabulary/subjectSchemes/dhb-jdg">
+	    <rdfs:label>Deutsche Historische Bibliografie</rdfs:label>
+	    <bf:code>dhb-jdg</bf:code>
+	  </bf:Source>
+	</bf:source>
+      </bf:Topic>
+    </bf:subject>
+    <bf:subject>
+      <bf:Topic rdf:about="https://d-nb.info/gnd/4022600-1">
+	<rdfs:label>&#152;Das&#156; Gute</rdfs:label>
+	<bflc:marcKey>150  $a&#152;Das&#156; Gute</bflc:marcKey>
+	<bf:source>
+	  <bf:Source rdf:about="https://id.loc.gov/vocabulary/subjectSchemes/dhb-jdg">
+	    <rdfs:label>Deutsche Historische Bibliografie</rdfs:label>
+	    <bf:code>dhb-jdg</bf:code>
+	  </bf:Source>
+	</bf:source>
+      </bf:Topic>
+    </bf:subject>
+    <bf:subject>
+      <bf:Topic rdf:about="https://d-nb.info/gnd/4727032-9">
+	<rdfs:label>Existenzkampf</rdfs:label>
+	<bflc:marcKey>150  $aExistenzkampf</bflc:marcKey>
+	<bf:source>
+	  <bf:Source rdf:about="https://id.loc.gov/vocabulary/subjectSchemes/dhb-jdg">
+	    <rdfs:label>Deutsche Historische Bibliografie</rdfs:label>
+	    <bf:code>dhb-jdg</bf:code>
+	  </bf:Source>
+	</bf:source>
+      </bf:Topic>
+    </bf:subject>
+    <bf:subject>
+      <bf:Topic rdf:about="https://d-nb.info/gnd/4016114-6">
+	<rdfs:label>Fabeltiere</rdfs:label>
+	<bflc:marcKey>150  $aFabeltiere</bflc:marcKey>
+	<bf:source>
+	  <bf:Source rdf:about="https://id.loc.gov/vocabulary/subjectSchemes/dhb-jdg">
+	    <rdfs:label>Deutsche Historische Bibliografie</rdfs:label>
+	    <bf:code>dhb-jdg</bf:code>
+	  </bf:Source>
+	</bf:source>
+      </bf:Topic>
+    </bf:subject>
+    <bf:subject>
+      <bf:Topic rdf:about="https://d-nb.info/gnd/4018480-8">
+	<rdfs:label>Freundschaft</rdfs:label>
+	<bflc:marcKey>150  $aFreundschaft</bflc:marcKey>
+	<bf:source>
+	  <bf:Source rdf:about="https://id.loc.gov/vocabulary/subjectSchemes/dhb-jdg">
+	    <rdfs:label>Deutsche Historische Bibliografie</rdfs:label>
+	    <bf:code>dhb-jdg</bf:code>
+	  </bf:Source>
+	</bf:source>
+      </bf:Topic>
+    </bf:subject>
+    <bf:subject>
+      <bf:Topic rdf:about="https://d-nb.info/gnd/4161292-9">
+	<rdfs:label>Imaginärer Schauplatz</rdfs:label>
+	<bflc:marcKey>150  $aImaginärer Schauplatz</bflc:marcKey>
+	<bf:source>
+	  <bf:Source rdf:about="https://id.loc.gov/vocabulary/subjectSchemes/dhb-jdg">
+	    <rdfs:label>Deutsche Historische Bibliografie</rdfs:label>
+	    <bf:code>dhb-jdg</bf:code>
+	  </bf:Source>
+	</bf:source>
+      </bf:Topic>
+    </bf:subject>
+    <bf:subject>
+      <bf:Topic rdf:about="https://d-nb.info/gnd/4027316-7">
+	<rdfs:label>Internat</rdfs:label>
+	<bflc:marcKey>150  $aInternat</bflc:marcKey>
+	<bf:source>
+	  <bf:Source rdf:about="https://id.loc.gov/vocabulary/subjectSchemes/dhb-jdg">
+	    <rdfs:label>Deutsche Historische Bibliografie</rdfs:label>
+	    <bf:code>dhb-jdg</bf:code>
+	  </bf:Source>
+	</bf:source>
+      </bf:Topic>
+    </bf:subject>
+    <bf:subject>
+      <bf:Topic rdf:about="https://d-nb.info/gnd/4137756-4">
+	<rdfs:label>Jugendgruppe</rdfs:label>
+	<bflc:marcKey>150  $aJugendgruppe</bflc:marcKey>
+	<bf:source>
+	  <bf:Source rdf:about="https://id.loc.gov/vocabulary/subjectSchemes/dhb-jdg">
+	    <rdfs:label>Deutsche Historische Bibliografie</rdfs:label>
+	    <bf:code>dhb-jdg</bf:code>
+	  </bf:Source>
+	</bf:source>
+      </bf:Topic>
+    </bf:subject>
+    <bf:subject>
+      <bf:Topic rdf:about="https://d-nb.info/gnd/4029002-5">
+	<rdfs:label>Junge</rdfs:label>
+	<bflc:marcKey>150  $aJunge</bflc:marcKey>
+	<bf:source>
+	  <bf:Source rdf:about="https://id.loc.gov/vocabulary/subjectSchemes/dhb-jdg">
+	    <rdfs:label>Deutsche Historische Bibliografie</rdfs:label>
+	    <bf:code>dhb-jdg</bf:code>
+	  </bf:Source>
+	</bf:source>
+      </bf:Topic>
+    </bf:subject>
+    <bf:subject>
+      <bf:Topic rdf:about="https://d-nb.info/gnd/4167018-8">
+	<rdfs:label>Lebensgefahr</rdfs:label>
+	<bflc:marcKey>150  $aLebensgefahr</bflc:marcKey>
+	<bf:source>
+	  <bf:Source rdf:about="https://id.loc.gov/vocabulary/subjectSchemes/dhb-jdg">
+	    <rdfs:label>Deutsche Historische Bibliografie</rdfs:label>
+	    <bf:code>dhb-jdg</bf:code>
+	  </bf:Source>
+	</bf:source>
+      </bf:Topic>
+    </bf:subject>
+    <bf:subject>
+      <bf:Topic rdf:about="https://d-nb.info/gnd/4334871-3">
+	<rdfs:label>Lebensrettung</rdfs:label>
+	<bflc:marcKey>150  $aLebensrettung</bflc:marcKey>
+	<bf:source>
+	  <bf:Source rdf:about="https://id.loc.gov/vocabulary/subjectSchemes/dhb-jdg">
+	    <rdfs:label>Deutsche Historische Bibliografie</rdfs:label>
+	    <bf:code>dhb-jdg</bf:code>
+	  </bf:Source>
+	</bf:source>
+      </bf:Topic>
+    </bf:subject>
+    <bf:subject>
+      <bf:Topic rdf:about="https://d-nb.info/gnd/4036966-3">
+	<rdfs:label>Magie</rdfs:label>
+	<bflc:marcKey>150  $aMagie</bflc:marcKey>
+	<bf:source>
+	  <bf:Source rdf:about="https://id.loc.gov/vocabulary/subjectSchemes/dhb-jdg">
+	    <rdfs:label>Deutsche Historische Bibliografie</rdfs:label>
+	    <bf:code>dhb-jdg</bf:code>
+	  </bf:Source>
+	</bf:source>
+      </bf:Topic>
+    </bf:subject>
+    <bf:subject>
+      <bf:Topic rdf:about="https://d-nb.info/gnd/4067403-4">
+	<rdfs:label>Magier</rdfs:label>
+	<bflc:marcKey>150  $aMagier</bflc:marcKey>
+	<bf:source>
+	  <bf:Source rdf:about="https://id.loc.gov/vocabulary/subjectSchemes/dhb-jdg">
+	    <rdfs:label>Deutsche Historische Bibliografie</rdfs:label>
+	    <bf:code>dhb-jdg</bf:code>
+	  </bf:Source>
+	</bf:source>
+      </bf:Topic>
+    </bf:subject>
+    <bf:subject>
+      <bf:Topic rdf:about="https://d-nb.info/gnd/4333435-0">
+	<rdfs:label>Rollentausch</rdfs:label>
+	<bflc:marcKey>150  $aRollentausch</bflc:marcKey>
+	<bf:source>
+	  <bf:Source rdf:about="https://id.loc.gov/vocabulary/subjectSchemes/dhb-jdg">
+	    <rdfs:label>Deutsche Historische Bibliografie</rdfs:label>
+	    <bf:code>dhb-jdg</bf:code>
+	  </bf:Source>
+	</bf:source>
+      </bf:Topic>
+    </bf:subject>
+    <bf:subject>
+      <bf:Topic rdf:about="https://d-nb.info/gnd/4053369-4">
+	<rdfs:label>Schüler</rdfs:label>
+	<bflc:marcKey>150  $aSchüler</bflc:marcKey>
+	<bf:source>
+	  <bf:Source rdf:about="https://id.loc.gov/vocabulary/subjectSchemes/dhb-jdg">
+	    <rdfs:label>Deutsche Historische Bibliografie</rdfs:label>
+	    <bf:code>dhb-jdg</bf:code>
+	  </bf:Source>
+	</bf:source>
+      </bf:Topic>
+    </bf:subject>
+    <bf:subject>
+      <bf:Topic rdf:about="https://d-nb.info/gnd/4136651-7">
+	<rdfs:label>Telepathie</rdfs:label>
+	<bflc:marcKey>150  $aTelepathie</bflc:marcKey>
+	<bf:source>
+	  <bf:Source rdf:about="https://id.loc.gov/vocabulary/subjectSchemes/dhb-jdg">
+	    <rdfs:label>Deutsche Historische Bibliografie</rdfs:label>
+	    <bf:code>dhb-jdg</bf:code>
+	  </bf:Source>
+	</bf:source>
+      </bf:Topic>
+    </bf:subject>
+    <bf:subject>
+      <bf:Topic rdf:about="https://d-nb.info/gnd/4079128-2">
+	<rdfs:label>Weissagung</rdfs:label>
+	<bflc:marcKey>150  $aWeissagung</bflc:marcKey>
+	<bf:source>
+	  <bf:Source rdf:about="https://id.loc.gov/vocabulary/subjectSchemes/dhb-jdg">
+	    <rdfs:label>Deutsche Historische Bibliografie</rdfs:label>
+	    <bf:code>dhb-jdg</bf:code>
+	  </bf:Source>
+	</bf:source>
+      </bf:Topic>
+    </bf:subject>
+    <bf:subject>
+      <bf:Place>
+	<rdf:type rdf:resource="http://www.loc.gov/mads/rdf/v1#Geographic"/>
+	<rdfs:label>Grossbritannien</rdfs:label>
+	<madsrdf:authoritativeLabel>Grossbritannien</madsrdf:authoritativeLabel>
+	<madsrdf:isIdentifiedByAuthority>
+	  <bf:Place rdf:about="https://d-nb.info/gnd/4022153-2">
+	    <rdfs:label>Großbritannien</rdfs:label>
+	    <bflc:marcKey>151  $aGroßbritannien</bflc:marcKey>
+	    <bf:source>
+	      <bf:Source rdf:about="https://id.loc.gov/vocabulary/subjectSchemes/dhb-jdg">
+		<rdfs:label>Deutsche Historische Bibliografie</rdfs:label>
+		<bf:code>dhb-jdg</bf:code>
+	      </bf:Source>
+	    </bf:source>
+	  </bf:Place>
+	</madsrdf:isIdentifiedByAuthority>
+	<bflc:aap-normalized>grossbritannien</bflc:aap-normalized>
+	<bflc:marcKey>151 7$aGrossbritannien</bflc:marcKey>
+	<madsrdf:isMemberOfMADSScheme>
+	  <madsrdf:Authority rdf:about="http://id.loc.gov/vocabulary/subjectSchemes/gnd">
+	    <rdfs:label>Gemeinsame Normdatei</rdfs:label>
+	    <bf:code>gnd</bf:code>
+	  </madsrdf:Authority>
+	</madsrdf:isMemberOfMADSScheme>
+	<bf:source>
+	  <madsrdf:Authority rdf:about="http://id.loc.gov/vocabulary/subjectSchemes/gnd">
+	    <rdfs:label>Gemeinsame Normdatei</rdfs:label>
+	    <bf:code>gnd</bf:code>
+	  </madsrdf:Authority>
+	</bf:source>
+      </bf:Place>
+    </bf:subject>
+    <bf:subject>
+      <bf:Topic>
+	<rdf:type rdf:resource="http://www.loc.gov/mads/rdf/v1#ComplexSubject"/>
+	<rdfs:label>Children's stories--2003</rdfs:label>
+	<madsrdf:authoritativeLabel>Children's stories--2003</madsrdf:authoritativeLabel>
+	<madsrdf:isMemberOfMADSScheme>
+	  <madsrdf:MADSScheme rdf:about="http://id.loc.gov/authorities/subjects">
+	    <rdfs:label xml:lang="en">Library of Congress Subject Headings</rdfs:label>
+	  </madsrdf:MADSScheme>
+	</madsrdf:isMemberOfMADSScheme>
+	<madsrdf:componentList rdf:parseType="Collection">
+	  <madsrdf:GenreForm>
+	    <madsrdf:authoritativeLabel>Children's stories</madsrdf:authoritativeLabel>
+	  </madsrdf:GenreForm>
+	  <madsrdf:Temporal>
+	    <madsrdf:authoritativeLabel>2003</madsrdf:authoritativeLabel>
+	  </madsrdf:Temporal>
+	</madsrdf:componentList>
+	<bflc:aap-normalized>children'sstories2003</bflc:aap-normalized>
+	<bf:source>
+	  <bf:Source rdf:about="http://id.loc.gov/authorities/subjects">
+	    <rdfs:label xml:lang="en">Library of Congress Subject Headings</rdfs:label>
+	  </bf:Source>
+	</bf:source>
+      </bf:Topic>
+    </bf:subject>
     <bf:adminMetadata>
       <bf:AdminMetadata>
 	<bf:status>
@@ -854,7 +956,7 @@
 	    <bf:code>n</bf:code>
 	  </bf:Status>
 	</bf:status>
-	<bf:date rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2015-05-04</bf:date>
+	<bf:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2015-05-04T00:00:00</bf:date>
 	<bf:agent>
 	  <bf:Agent>
 	    <bf:code>UKM</bf:code>
@@ -870,7 +972,7 @@
 	    <bf:code>c</bf:code>
 	  </bf:Status>
 	</bf:status>
-	<bf:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2015-05-06T09:39:41</bf:date>
+	<bf:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2025-06-07T02:40:00</bf:date>
 	<bf:descriptionModifier>
 	  <bf:Organization rdf:about="http://id.loc.gov/vocabulary/organizations/dlc">
 	    <rdfs:label>United States, Library of Congress</rdfs:label>
@@ -898,13 +1000,13 @@
 	    <bf:code rdf:datatype="http://id.loc.gov/datatypes/orgs/iso15511">US-dlcmrc</bf:code>
 	  </bf:Agent>
 	</bf:agent>
-	<bf:generationProcess rdf:resource="https://github.com/lcnetdev/marc2bibframe2/releases/tag/v2.8.0"/>
-	<bf:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-11-20T16:32:38.505052-05:00</bf:date>
+	<bf:generationProcess rdf:resource="https://github.com/lcnetdev/marc2bibframe2/tree/v3.2-dev"/>
+	<bf:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2026-11-16T14:46:00.904276-05:00</bf:date>
       </bf:AdminMetadata>
     </bf:adminMetadata>
     <bf:adminMetadata>
       <bf:AdminMetadata>
-	<bf:descriptionLevel rdf:resource="http://id.loc.gov/ontologies/bibframe-2-4-0/"/>
+	<bf:descriptionLevel rdf:resource="http://id.loc.gov/ontologies/bibframe-3-0-1/"/>
 	<bflc:encodingLevel>
 	  <bflc:EncodingLevel rdf:about="http://id.loc.gov/vocabulary/menclvl/5">
 	    <rdfs:label>preliminary</rdfs:label>
@@ -948,9 +1050,14 @@
 	    <bf:code>lccopycat</bf:code>
 	  </bf:DescriptionAuthentication>
 	</bf:descriptionAuthentication>
-	<lclocal:d906>=906     $a 0 $b ibc $c copycat $d 2 $e ncip $f 20 $g y-gencatlg</lclocal:d906>
-	<lclocal:d925>=925  0  $a acquire $b 1 shelf copy $x policy default</lclocal:d925>
-	<lclocal:d955>=955     $b hb09 2015-05-04 z-processor copy to LOAN</lclocal:d955>
+	<bflc:marcKey>09700$aPR6068.O93$bH395 2004x</bflc:marcKey>
+	<bflc:marcKey>4901 $aHarry Potter ;$vbk. 5</bflc:marcKey>
+	<bflc:marcKey>906  $a0$bibc$ccopycat$d2$encip$f20$gy-gencatlg</bflc:marcKey>
+	<bflc:marcKey>9250 $aacquire$b1 shelf copy$xpolicy default</bflc:marcKey>
+	<bflc:marcKey>955  $bhb09 2015-05-04 z-processor copy to LOAN</bflc:marcKey>
+	<bflc:marcKey>955  $aLCAP batch update 2025-06-02-04:00: LCAPM-893</bflc:marcKey>
+	<bflc:marcKey>923  $aPurchase$d20150504$n322286$sAmazon</bflc:marcKey>
+	<bflc:marcKey>999ff$ic1507dca-ad40-512a-b127-38e5b70986be$s86a2f2ac-475b-4217-9d66-f28342d58a4e</bflc:marcKey>
       </bf:AdminMetadata>
     </bf:adminMetadata>
   </bf:Work>
@@ -1046,8 +1153,13 @@
       </bf:Isbn>
     </bf:identifiedBy>
     <bf:identifiedBy>
+      <bf:Local>
+	<rdf:value>18602501</rdf:value>
+      </bf:Local>
+    </bf:identifiedBy>
+    <bf:identifiedBy>
       <bf:OclcNumber>
-	<rdf:value>ocm52055301</rdf:value>
+	<rdf:value>52055301</rdf:value>
       </bf:OclcNumber>
     </bf:identifiedBy>
     <bf:responsibilityStatement>J.K. Rowling</bf:responsibilityStatement>
@@ -1095,9 +1207,9 @@
 	      </bf:Agent>
 	    </bf:agent>
 	    <bf:role>
-	      <bf:Role rdf:about="http://id.loc.gov/vocabulary/relators/ctb">
-		<rdfs:label>contributor</rdfs:label>
-		<bf:code>ctb</bf:code>
+	      <bf:Role rdf:about="http://id.loc.gov/vocabulary/relators/aut">
+		<rdfs:label>author</rdfs:label>
+		<bf:code>aut</bf:code>
 	      </bf:Role>
 	    </bf:role>
 	  </bf:Contribution>
@@ -1142,6 +1254,7 @@
 	      <bf:Agent>
 		<rdf:type rdf:resource="http://id.loc.gov/ontologies/bibframe/Organization"/>
 		<rdfs:label>Clays Ltd</rdfs:label>
+		<bflc:marcKey>7102 $aClays Ltd.$4prt</bflc:marcKey>
 	      </bf:Agent>
 	    </bf:agent>
 	    <bf:role>
@@ -1158,6 +1271,7 @@
 	      <bf:Agent>
 		<rdf:type rdf:resource="http://id.loc.gov/ontologies/bibframe/Organization"/>
 		<rdfs:label>Palimpsest Book Production Ltd</rdfs:label>
+		<bflc:marcKey>7102 $aPalimpsest Book Production Ltd.$4tyg</bflc:marcKey>
 	      </bf:Agent>
 	    </bf:agent>
 	    <bf:role>
@@ -1168,11 +1282,155 @@
 	    </bf:role>
 	  </bf:Contribution>
 	</bf:contribution>
+	<bf:classification>
+	  <bf:ClassificationDdc>
+	    <bf:classificationPortion>823.914</bf:classificationPortion>
+	    <bf:source>
+	      <bf:Source>
+		<bf:code>21</bf:code>
+	      </bf:Source>
+	    </bf:source>
+	    <bf:edition>full</bf:edition>
+	  </bf:ClassificationDdc>
+	</bf:classification>
+	<bf:classification>
+	  <bf:Classification>
+	    <bf:classificationPortion>18.05</bf:classificationPortion>
+	    <bf:source>
+	      <bf:Source>
+		<bf:code>bcl</bf:code>
+	      </bf:Source>
+	    </bf:source>
+	  </bf:Classification>
+	</bf:classification>
+	<bf:classification>
+	  <bf:Classification>
+	    <bf:classificationPortion>HN 9990</bf:classificationPortion>
+	    <bf:source>
+	      <bf:Source>
+		<bf:code>rvk</bf:code>
+	      </bf:Source>
+	    </bf:source>
+	  </bf:Classification>
+	</bf:classification>
+	<bf:classification>
+	  <bf:Classification>
+	    <bf:classificationPortion>HN 7623</bf:classificationPortion>
+	    <bf:source>
+	      <bf:Source>
+		<bf:code>rvk</bf:code>
+	      </bf:Source>
+	    </bf:source>
+	  </bf:Classification>
+	</bf:classification>
+	<bf:classification>
+	  <bf:Classification>
+	    <bf:classificationPortion>HN 7621</bf:classificationPortion>
+	    <bf:source>
+	      <bf:Source>
+		<bf:code>rvk</bf:code>
+	      </bf:Source>
+	    </bf:source>
+	  </bf:Classification>
+	</bf:classification>
+	<bf:classification>
+	  <bf:ClassificationLcc>
+	    <bf:classificationPortion>PR6068.O93</bf:classificationPortion>
+	    <bf:itemPortion>H395 2004x</bf:itemPortion>
+	    <bf:status>
+	      <bf:Status rdf:about="http://id.loc.gov/vocabulary/mstatus/nuba">
+		<rdfs:label>not used by assigner</rdfs:label>
+		<bf:code>nuba</bf:code>
+	      </bf:Status>
+	    </bf:status>
+	    <bf:status>
+	      <bf:Status rdf:about="http://id.loc.gov/vocabulary/mstatus/p">
+		<rdfs:label>upgraded prepub</rdfs:label>
+		<bf:code>p</bf:code>
+	      </bf:Status>
+	    </bf:status>
+	  </bf:ClassificationLcc>
+	</bf:classification>
 	<bf:title>
 	  <bf:Title>
 	    <bf:mainTitle>Harry Potter and the Order of the Phoenix</bf:mainTitle>
 	  </bf:Title>
 	</bf:title>
+	<bf:language rdf:resource="http://id.loc.gov/vocabulary/languages/eng"/>
+	<bf:hasInstance>
+	  <bf:Instance rdf:about="http://id.loc.gov/resources/instances/18602501">
+	    <bf:title>
+	      <bf:Title>
+		<bf:mainTitle>Harry Potter and the Order of the Phoenix</bf:mainTitle>
+	      </bf:Title>
+	    </bf:title>
+	    <bf:identifiedBy>
+	      <bf:Lccn>
+		<rdf:value>  2014495444</rdf:value>
+	      </bf:Lccn>
+	    </bf:identifiedBy>
+	    <bf:identifiedBy>
+	      <bf:Nbn>
+		<rdf:value>GBA3X7384</rdf:value>
+		<bf:source rdf:resource="http://id.loc.gov/vocabulary/nationalbibschemes/bnb"/>
+	      </bf:Nbn>
+	    </bf:identifiedBy>
+	    <bf:identifiedBy>
+	      <bf:Nbn>
+		<rdf:value>GBA3X7389</rdf:value>
+		<bf:source rdf:resource="http://id.loc.gov/vocabulary/nationalbibschemes/bnb"/>
+	      </bf:Nbn>
+	    </bf:identifiedBy>
+	    <bf:identifiedBy>
+	      <bf:Nbn>
+		<rdf:value>GBA3V2642</rdf:value>
+		<bf:source rdf:resource="http://id.loc.gov/vocabulary/nationalbibschemes/bnb"/>
+	      </bf:Nbn>
+	    </bf:identifiedBy>
+	    <bf:identifiedBy>
+	      <bf:Isbn>
+		<rdf:value>0747569401</rdf:value>
+	      </bf:Isbn>
+	    </bf:identifiedBy>
+	    <bf:identifiedBy>
+	      <bf:Isbn>
+		<rdf:value>9780747569404</rdf:value>
+	      </bf:Isbn>
+	    </bf:identifiedBy>
+	    <bf:identifiedBy>
+	      <bf:Isbn>
+		<rdf:value>0747551006</rdf:value>
+	      </bf:Isbn>
+	    </bf:identifiedBy>
+	    <bf:identifiedBy>
+	      <bf:Isbn>
+		<rdf:value>9780747551003</rdf:value>
+	      </bf:Isbn>
+	    </bf:identifiedBy>
+	    <bf:identifiedBy>
+	      <bf:Isbn>
+		<rdf:value>0747569649</rdf:value>
+	      </bf:Isbn>
+	    </bf:identifiedBy>
+	    <bf:identifiedBy>
+	      <bf:Isbn>
+		<rdf:value>9780747569640</rdf:value>
+	      </bf:Isbn>
+	    </bf:identifiedBy>
+	    <bf:identifiedBy>
+	      <bf:OclcNumber>
+		<rdf:value>52055301</rdf:value>
+	      </bf:OclcNumber>
+	    </bf:identifiedBy>
+	    <bf:publicationStatement>London: Bloomsbury, 2003</bf:publicationStatement>
+	    <bf:editionStatement>1st ed.</bf:editionStatement>
+	    <bf:extent>
+	      <bf:Extent>
+		<rdfs:label>766 pages ; Clays Ltd, St Ives plc.</rdfs:label>
+	      </bf:Extent>
+	    </bf:extent>
+	  </bf:Instance>
+	</bf:hasInstance>
       </bf:Work>
     </bf:instanceOf>
     <bf:adminMetadata>
@@ -1183,7 +1441,7 @@
 	    <bf:code>n</bf:code>
 	  </bf:Status>
 	</bf:status>
-	<bf:date rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2015-05-04</bf:date>
+	<bf:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2015-05-04T00:00:00</bf:date>
 	<bf:agent>
 	  <bf:Agent>
 	    <bf:code>UKM</bf:code>
@@ -1199,7 +1457,7 @@
 	    <bf:code>c</bf:code>
 	  </bf:Status>
 	</bf:status>
-	<bf:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2015-05-06T09:39:41</bf:date>
+	<bf:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2025-06-07T02:40:00</bf:date>
 	<bf:descriptionModifier>
 	  <bf:Organization rdf:about="http://id.loc.gov/vocabulary/organizations/dlc">
 	    <rdfs:label>United States, Library of Congress</rdfs:label>
@@ -1227,13 +1485,13 @@
 	    <bf:code rdf:datatype="http://id.loc.gov/datatypes/orgs/iso15511">US-dlcmrc</bf:code>
 	  </bf:Agent>
 	</bf:agent>
-	<bf:generationProcess rdf:resource="https://github.com/lcnetdev/marc2bibframe2/releases/tag/v2.8.0"/>
-	<bf:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-11-20T16:32:38.505052-05:00</bf:date>
+	<bf:generationProcess rdf:resource="https://github.com/lcnetdev/marc2bibframe2/tree/v3.2-dev"/>
+	<bf:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2026-11-16T14:46:00.904276-05:00</bf:date>
       </bf:AdminMetadata>
     </bf:adminMetadata>
     <bf:adminMetadata>
       <bf:AdminMetadata>
-	<bf:descriptionLevel rdf:resource="http://id.loc.gov/ontologies/bibframe-2-4-0/"/>
+	<bf:descriptionLevel rdf:resource="http://id.loc.gov/ontologies/bibframe-3-0-1/"/>
 	<bflc:encodingLevel>
 	  <bflc:EncodingLevel rdf:about="http://id.loc.gov/vocabulary/menclvl/5">
 	    <rdfs:label>preliminary</rdfs:label>
@@ -1277,9 +1535,14 @@
 	    <bf:code>lccopycat</bf:code>
 	  </bf:DescriptionAuthentication>
 	</bf:descriptionAuthentication>
-	<lclocal:d906>=906     $a 0 $b ibc $c copycat $d 2 $e ncip $f 20 $g y-gencatlg</lclocal:d906>
-	<lclocal:d925>=925  0  $a acquire $b 1 shelf copy $x policy default</lclocal:d925>
-	<lclocal:d955>=955     $b hb09 2015-05-04 z-processor copy to LOAN</lclocal:d955>
+	<bflc:marcKey>09700$aPR6068.O93$bH395 2004x</bflc:marcKey>
+	<bflc:marcKey>4901 $aHarry Potter ;$vbk. 5</bflc:marcKey>
+	<bflc:marcKey>906  $a0$bibc$ccopycat$d2$encip$f20$gy-gencatlg</bflc:marcKey>
+	<bflc:marcKey>9250 $aacquire$b1 shelf copy$xpolicy default</bflc:marcKey>
+	<bflc:marcKey>955  $bhb09 2015-05-04 z-processor copy to LOAN</bflc:marcKey>
+	<bflc:marcKey>955  $aLCAP batch update 2025-06-02-04:00: LCAPM-893</bflc:marcKey>
+	<bflc:marcKey>923  $aPurchase$d20150504$n322286$sAmazon</bflc:marcKey>
+	<bflc:marcKey>999ff$ic1507dca-ad40-512a-b127-38e5b70986be$s86a2f2ac-475b-4217-9d66-f28342d58a4e</bflc:marcKey>
       </bf:AdminMetadata>
     </bf:adminMetadata>
   </bf:Instance>
@@ -1329,9 +1592,9 @@
 	      </bf:Agent>
 	    </bf:agent>
 	    <bf:role>
-	      <bf:Role rdf:about="http://id.loc.gov/vocabulary/relators/ctb">
-		<rdfs:label>contributor</rdfs:label>
-		<bf:code>ctb</bf:code>
+	      <bf:Role rdf:about="http://id.loc.gov/vocabulary/relators/aut">
+		<rdfs:label>author</rdfs:label>
+		<bf:code>aut</bf:code>
 	      </bf:Role>
 	    </bf:role>
 	  </bf:Contribution>
@@ -1376,6 +1639,7 @@
 	      <bf:Agent>
 		<rdf:type rdf:resource="http://id.loc.gov/ontologies/bibframe/Organization"/>
 		<rdfs:label>Clays Ltd</rdfs:label>
+		<bflc:marcKey>7102 $aClays Ltd.$4prt</bflc:marcKey>
 	      </bf:Agent>
 	    </bf:agent>
 	    <bf:role>
@@ -1392,6 +1656,7 @@
 	      <bf:Agent>
 		<rdf:type rdf:resource="http://id.loc.gov/ontologies/bibframe/Organization"/>
 		<rdfs:label>Palimpsest Book Production Ltd</rdfs:label>
+		<bflc:marcKey>7102 $aPalimpsest Book Production Ltd.$4tyg</bflc:marcKey>
 	      </bf:Agent>
 	    </bf:agent>
 	    <bf:role>
@@ -1402,11 +1667,155 @@
 	    </bf:role>
 	  </bf:Contribution>
 	</bf:contribution>
+	<bf:classification>
+	  <bf:ClassificationDdc>
+	    <bf:classificationPortion>823.914</bf:classificationPortion>
+	    <bf:source>
+	      <bf:Source>
+		<bf:code>21</bf:code>
+	      </bf:Source>
+	    </bf:source>
+	    <bf:edition>full</bf:edition>
+	  </bf:ClassificationDdc>
+	</bf:classification>
+	<bf:classification>
+	  <bf:Classification>
+	    <bf:classificationPortion>18.05</bf:classificationPortion>
+	    <bf:source>
+	      <bf:Source>
+		<bf:code>bcl</bf:code>
+	      </bf:Source>
+	    </bf:source>
+	  </bf:Classification>
+	</bf:classification>
+	<bf:classification>
+	  <bf:Classification>
+	    <bf:classificationPortion>HN 9990</bf:classificationPortion>
+	    <bf:source>
+	      <bf:Source>
+		<bf:code>rvk</bf:code>
+	      </bf:Source>
+	    </bf:source>
+	  </bf:Classification>
+	</bf:classification>
+	<bf:classification>
+	  <bf:Classification>
+	    <bf:classificationPortion>HN 7623</bf:classificationPortion>
+	    <bf:source>
+	      <bf:Source>
+		<bf:code>rvk</bf:code>
+	      </bf:Source>
+	    </bf:source>
+	  </bf:Classification>
+	</bf:classification>
+	<bf:classification>
+	  <bf:Classification>
+	    <bf:classificationPortion>HN 7621</bf:classificationPortion>
+	    <bf:source>
+	      <bf:Source>
+		<bf:code>rvk</bf:code>
+	      </bf:Source>
+	    </bf:source>
+	  </bf:Classification>
+	</bf:classification>
+	<bf:classification>
+	  <bf:ClassificationLcc>
+	    <bf:classificationPortion>PR6068.O93</bf:classificationPortion>
+	    <bf:itemPortion>H395 2004x</bf:itemPortion>
+	    <bf:status>
+	      <bf:Status rdf:about="http://id.loc.gov/vocabulary/mstatus/nuba">
+		<rdfs:label>not used by assigner</rdfs:label>
+		<bf:code>nuba</bf:code>
+	      </bf:Status>
+	    </bf:status>
+	    <bf:status>
+	      <bf:Status rdf:about="http://id.loc.gov/vocabulary/mstatus/p">
+		<rdfs:label>upgraded prepub</rdfs:label>
+		<bf:code>p</bf:code>
+	      </bf:Status>
+	    </bf:status>
+	  </bf:ClassificationLcc>
+	</bf:classification>
 	<bf:title>
 	  <bf:Title>
 	    <bf:mainTitle>Harry Potter and the Order of the Phoenix</bf:mainTitle>
 	  </bf:Title>
 	</bf:title>
+	<bf:language rdf:resource="http://id.loc.gov/vocabulary/languages/eng"/>
+	<bf:hasInstance>
+	  <bf:Instance rdf:about="http://id.loc.gov/resources/instances/18602501">
+	    <bf:title>
+	      <bf:Title>
+		<bf:mainTitle>Harry Potter and the Order of the Phoenix</bf:mainTitle>
+	      </bf:Title>
+	    </bf:title>
+	    <bf:identifiedBy>
+	      <bf:Lccn>
+		<rdf:value>  2014495444</rdf:value>
+	      </bf:Lccn>
+	    </bf:identifiedBy>
+	    <bf:identifiedBy>
+	      <bf:Nbn>
+		<rdf:value>GBA3X7384</rdf:value>
+		<bf:source rdf:resource="http://id.loc.gov/vocabulary/nationalbibschemes/bnb"/>
+	      </bf:Nbn>
+	    </bf:identifiedBy>
+	    <bf:identifiedBy>
+	      <bf:Nbn>
+		<rdf:value>GBA3X7389</rdf:value>
+		<bf:source rdf:resource="http://id.loc.gov/vocabulary/nationalbibschemes/bnb"/>
+	      </bf:Nbn>
+	    </bf:identifiedBy>
+	    <bf:identifiedBy>
+	      <bf:Nbn>
+		<rdf:value>GBA3V2642</rdf:value>
+		<bf:source rdf:resource="http://id.loc.gov/vocabulary/nationalbibschemes/bnb"/>
+	      </bf:Nbn>
+	    </bf:identifiedBy>
+	    <bf:identifiedBy>
+	      <bf:Isbn>
+		<rdf:value>0747569401</rdf:value>
+	      </bf:Isbn>
+	    </bf:identifiedBy>
+	    <bf:identifiedBy>
+	      <bf:Isbn>
+		<rdf:value>9780747569404</rdf:value>
+	      </bf:Isbn>
+	    </bf:identifiedBy>
+	    <bf:identifiedBy>
+	      <bf:Isbn>
+		<rdf:value>0747551006</rdf:value>
+	      </bf:Isbn>
+	    </bf:identifiedBy>
+	    <bf:identifiedBy>
+	      <bf:Isbn>
+		<rdf:value>9780747551003</rdf:value>
+	      </bf:Isbn>
+	    </bf:identifiedBy>
+	    <bf:identifiedBy>
+	      <bf:Isbn>
+		<rdf:value>0747569649</rdf:value>
+	      </bf:Isbn>
+	    </bf:identifiedBy>
+	    <bf:identifiedBy>
+	      <bf:Isbn>
+		<rdf:value>9780747569640</rdf:value>
+	      </bf:Isbn>
+	    </bf:identifiedBy>
+	    <bf:identifiedBy>
+	      <bf:OclcNumber>
+		<rdf:value>52055301</rdf:value>
+	      </bf:OclcNumber>
+	    </bf:identifiedBy>
+	    <bf:publicationStatement>London: Bloomsbury, 2003</bf:publicationStatement>
+	    <bf:editionStatement>1st ed.</bf:editionStatement>
+	    <bf:extent>
+	      <bf:Extent>
+		<rdfs:label>766 pages ; Clays Ltd, St Ives plc.</rdfs:label>
+	      </bf:Extent>
+	    </bf:extent>
+	  </bf:Instance>
+	</bf:hasInstance>
       </bf:Work>
     </bf:instanceOf>
     <bf:adminMetadata>
@@ -1417,7 +1826,7 @@
 	    <bf:code>n</bf:code>
 	  </bf:Status>
 	</bf:status>
-	<bf:date rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2015-05-04</bf:date>
+	<bf:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2015-05-04T00:00:00</bf:date>
 	<bf:agent>
 	  <bf:Agent>
 	    <bf:code>UKM</bf:code>
@@ -1433,7 +1842,7 @@
 	    <bf:code>c</bf:code>
 	  </bf:Status>
 	</bf:status>
-	<bf:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2015-05-06T09:39:41</bf:date>
+	<bf:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2025-06-07T02:40:00</bf:date>
 	<bf:descriptionModifier>
 	  <bf:Organization rdf:about="http://id.loc.gov/vocabulary/organizations/dlc">
 	    <rdfs:label>United States, Library of Congress</rdfs:label>
@@ -1461,8 +1870,8 @@
 	    <bf:code rdf:datatype="http://id.loc.gov/datatypes/orgs/iso15511">US-dlcmrc</bf:code>
 	  </bf:Agent>
 	</bf:agent>
-	<bf:generationProcess rdf:resource="https://github.com/lcnetdev/marc2bibframe2/releases/tag/v2.8.0"/>
-	<bf:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-11-20T16:32:38.505052-05:00</bf:date>
+	<bf:generationProcess rdf:resource="https://github.com/lcnetdev/marc2bibframe2/tree/v3.2-dev"/>
+	<bf:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2026-11-16T14:46:00.904276-05:00</bf:date>
       </bf:AdminMetadata>
     </bf:adminMetadata>
     <bf:adminMetadata>
@@ -1480,7 +1889,7 @@
 	    </bf:assigner>
 	  </bf:Local>
 	</bf:identifiedBy>
-	<bf:descriptionLevel rdf:resource="http://id.loc.gov/ontologies/bibframe-2-4-0/"/>
+	<bf:descriptionLevel rdf:resource="http://id.loc.gov/ontologies/bibframe-3-0-1/"/>
 	<bflc:encodingLevel>
 	  <bflc:EncodingLevel rdf:about="http://id.loc.gov/vocabulary/menclvl/5">
 	    <rdfs:label>preliminary</rdfs:label>
@@ -1511,9 +1920,14 @@
 	    <bf:code>lccopycat</bf:code>
 	  </bf:DescriptionAuthentication>
 	</bf:descriptionAuthentication>
-	<lclocal:d906>=906     $a 0 $b ibc $c copycat $d 2 $e ncip $f 20 $g y-gencatlg</lclocal:d906>
-	<lclocal:d925>=925  0  $a acquire $b 1 shelf copy $x policy default</lclocal:d925>
-	<lclocal:d955>=955     $b hb09 2015-05-04 z-processor copy to LOAN</lclocal:d955>
+	<bflc:marcKey>09700$aPR6068.O93$bH395 2004x</bflc:marcKey>
+	<bflc:marcKey>4901 $aHarry Potter ;$vbk. 5</bflc:marcKey>
+	<bflc:marcKey>906  $a0$bibc$ccopycat$d2$encip$f20$gy-gencatlg</bflc:marcKey>
+	<bflc:marcKey>9250 $aacquire$b1 shelf copy$xpolicy default</bflc:marcKey>
+	<bflc:marcKey>955  $bhb09 2015-05-04 z-processor copy to LOAN</bflc:marcKey>
+	<bflc:marcKey>955  $aLCAP batch update 2025-06-02-04:00: LCAPM-893</bflc:marcKey>
+	<bflc:marcKey>923  $aPurchase$d20150504$n322286$sAmazon</bflc:marcKey>
+	<bflc:marcKey>999ff$ic1507dca-ad40-512a-b127-38e5b70986be$s86a2f2ac-475b-4217-9d66-f28342d58a4e</bflc:marcKey>
       </bf:AdminMetadata>
     </bf:adminMetadata>
   </bf:Instance>
@@ -1563,9 +1977,9 @@
 	      </bf:Agent>
 	    </bf:agent>
 	    <bf:role>
-	      <bf:Role rdf:about="http://id.loc.gov/vocabulary/relators/ctb">
-		<rdfs:label>contributor</rdfs:label>
-		<bf:code>ctb</bf:code>
+	      <bf:Role rdf:about="http://id.loc.gov/vocabulary/relators/aut">
+		<rdfs:label>author</rdfs:label>
+		<bf:code>aut</bf:code>
 	      </bf:Role>
 	    </bf:role>
 	  </bf:Contribution>
@@ -1610,6 +2024,7 @@
 	      <bf:Agent>
 		<rdf:type rdf:resource="http://id.loc.gov/ontologies/bibframe/Organization"/>
 		<rdfs:label>Clays Ltd</rdfs:label>
+		<bflc:marcKey>7102 $aClays Ltd.$4prt</bflc:marcKey>
 	      </bf:Agent>
 	    </bf:agent>
 	    <bf:role>
@@ -1626,6 +2041,7 @@
 	      <bf:Agent>
 		<rdf:type rdf:resource="http://id.loc.gov/ontologies/bibframe/Organization"/>
 		<rdfs:label>Palimpsest Book Production Ltd</rdfs:label>
+		<bflc:marcKey>7102 $aPalimpsest Book Production Ltd.$4tyg</bflc:marcKey>
 	      </bf:Agent>
 	    </bf:agent>
 	    <bf:role>
@@ -1636,11 +2052,155 @@
 	    </bf:role>
 	  </bf:Contribution>
 	</bf:contribution>
+	<bf:classification>
+	  <bf:ClassificationDdc>
+	    <bf:classificationPortion>823.914</bf:classificationPortion>
+	    <bf:source>
+	      <bf:Source>
+		<bf:code>21</bf:code>
+	      </bf:Source>
+	    </bf:source>
+	    <bf:edition>full</bf:edition>
+	  </bf:ClassificationDdc>
+	</bf:classification>
+	<bf:classification>
+	  <bf:Classification>
+	    <bf:classificationPortion>18.05</bf:classificationPortion>
+	    <bf:source>
+	      <bf:Source>
+		<bf:code>bcl</bf:code>
+	      </bf:Source>
+	    </bf:source>
+	  </bf:Classification>
+	</bf:classification>
+	<bf:classification>
+	  <bf:Classification>
+	    <bf:classificationPortion>HN 9990</bf:classificationPortion>
+	    <bf:source>
+	      <bf:Source>
+		<bf:code>rvk</bf:code>
+	      </bf:Source>
+	    </bf:source>
+	  </bf:Classification>
+	</bf:classification>
+	<bf:classification>
+	  <bf:Classification>
+	    <bf:classificationPortion>HN 7623</bf:classificationPortion>
+	    <bf:source>
+	      <bf:Source>
+		<bf:code>rvk</bf:code>
+	      </bf:Source>
+	    </bf:source>
+	  </bf:Classification>
+	</bf:classification>
+	<bf:classification>
+	  <bf:Classification>
+	    <bf:classificationPortion>HN 7621</bf:classificationPortion>
+	    <bf:source>
+	      <bf:Source>
+		<bf:code>rvk</bf:code>
+	      </bf:Source>
+	    </bf:source>
+	  </bf:Classification>
+	</bf:classification>
+	<bf:classification>
+	  <bf:ClassificationLcc>
+	    <bf:classificationPortion>PR6068.O93</bf:classificationPortion>
+	    <bf:itemPortion>H395 2004x</bf:itemPortion>
+	    <bf:status>
+	      <bf:Status rdf:about="http://id.loc.gov/vocabulary/mstatus/nuba">
+		<rdfs:label>not used by assigner</rdfs:label>
+		<bf:code>nuba</bf:code>
+	      </bf:Status>
+	    </bf:status>
+	    <bf:status>
+	      <bf:Status rdf:about="http://id.loc.gov/vocabulary/mstatus/p">
+		<rdfs:label>upgraded prepub</rdfs:label>
+		<bf:code>p</bf:code>
+	      </bf:Status>
+	    </bf:status>
+	  </bf:ClassificationLcc>
+	</bf:classification>
 	<bf:title>
 	  <bf:Title>
 	    <bf:mainTitle>Harry Potter and the Order of the Phoenix</bf:mainTitle>
 	  </bf:Title>
 	</bf:title>
+	<bf:language rdf:resource="http://id.loc.gov/vocabulary/languages/eng"/>
+	<bf:hasInstance>
+	  <bf:Instance rdf:about="http://id.loc.gov/resources/instances/18602501">
+	    <bf:title>
+	      <bf:Title>
+		<bf:mainTitle>Harry Potter and the Order of the Phoenix</bf:mainTitle>
+	      </bf:Title>
+	    </bf:title>
+	    <bf:identifiedBy>
+	      <bf:Lccn>
+		<rdf:value>  2014495444</rdf:value>
+	      </bf:Lccn>
+	    </bf:identifiedBy>
+	    <bf:identifiedBy>
+	      <bf:Nbn>
+		<rdf:value>GBA3X7384</rdf:value>
+		<bf:source rdf:resource="http://id.loc.gov/vocabulary/nationalbibschemes/bnb"/>
+	      </bf:Nbn>
+	    </bf:identifiedBy>
+	    <bf:identifiedBy>
+	      <bf:Nbn>
+		<rdf:value>GBA3X7389</rdf:value>
+		<bf:source rdf:resource="http://id.loc.gov/vocabulary/nationalbibschemes/bnb"/>
+	      </bf:Nbn>
+	    </bf:identifiedBy>
+	    <bf:identifiedBy>
+	      <bf:Nbn>
+		<rdf:value>GBA3V2642</rdf:value>
+		<bf:source rdf:resource="http://id.loc.gov/vocabulary/nationalbibschemes/bnb"/>
+	      </bf:Nbn>
+	    </bf:identifiedBy>
+	    <bf:identifiedBy>
+	      <bf:Isbn>
+		<rdf:value>0747569401</rdf:value>
+	      </bf:Isbn>
+	    </bf:identifiedBy>
+	    <bf:identifiedBy>
+	      <bf:Isbn>
+		<rdf:value>9780747569404</rdf:value>
+	      </bf:Isbn>
+	    </bf:identifiedBy>
+	    <bf:identifiedBy>
+	      <bf:Isbn>
+		<rdf:value>0747551006</rdf:value>
+	      </bf:Isbn>
+	    </bf:identifiedBy>
+	    <bf:identifiedBy>
+	      <bf:Isbn>
+		<rdf:value>9780747551003</rdf:value>
+	      </bf:Isbn>
+	    </bf:identifiedBy>
+	    <bf:identifiedBy>
+	      <bf:Isbn>
+		<rdf:value>0747569649</rdf:value>
+	      </bf:Isbn>
+	    </bf:identifiedBy>
+	    <bf:identifiedBy>
+	      <bf:Isbn>
+		<rdf:value>9780747569640</rdf:value>
+	      </bf:Isbn>
+	    </bf:identifiedBy>
+	    <bf:identifiedBy>
+	      <bf:OclcNumber>
+		<rdf:value>52055301</rdf:value>
+	      </bf:OclcNumber>
+	    </bf:identifiedBy>
+	    <bf:publicationStatement>London: Bloomsbury, 2003</bf:publicationStatement>
+	    <bf:editionStatement>1st ed.</bf:editionStatement>
+	    <bf:extent>
+	      <bf:Extent>
+		<rdfs:label>766 pages ; Clays Ltd, St Ives plc.</rdfs:label>
+	      </bf:Extent>
+	    </bf:extent>
+	  </bf:Instance>
+	</bf:hasInstance>
       </bf:Work>
     </bf:instanceOf>
     <bf:adminMetadata>
@@ -1651,7 +2211,7 @@
 	    <bf:code>n</bf:code>
 	  </bf:Status>
 	</bf:status>
-	<bf:date rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2015-05-04</bf:date>
+	<bf:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2015-05-04T00:00:00</bf:date>
 	<bf:agent>
 	  <bf:Agent>
 	    <bf:code>UKM</bf:code>
@@ -1667,7 +2227,7 @@
 	    <bf:code>c</bf:code>
 	  </bf:Status>
 	</bf:status>
-	<bf:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2015-05-06T09:39:41</bf:date>
+	<bf:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2025-06-07T02:40:00</bf:date>
 	<bf:descriptionModifier>
 	  <bf:Organization rdf:about="http://id.loc.gov/vocabulary/organizations/dlc">
 	    <rdfs:label>United States, Library of Congress</rdfs:label>
@@ -1695,8 +2255,8 @@
 	    <bf:code rdf:datatype="http://id.loc.gov/datatypes/orgs/iso15511">US-dlcmrc</bf:code>
 	  </bf:Agent>
 	</bf:agent>
-	<bf:generationProcess rdf:resource="https://github.com/lcnetdev/marc2bibframe2/releases/tag/v2.8.0"/>
-	<bf:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-11-20T16:32:38.505052-05:00</bf:date>
+	<bf:generationProcess rdf:resource="https://github.com/lcnetdev/marc2bibframe2/tree/v3.2-dev"/>
+	<bf:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2026-11-16T14:46:00.904276-05:00</bf:date>
       </bf:AdminMetadata>
     </bf:adminMetadata>
     <bf:adminMetadata>
@@ -1714,7 +2274,7 @@
 	    </bf:assigner>
 	  </bf:Local>
 	</bf:identifiedBy>
-	<bf:descriptionLevel rdf:resource="http://id.loc.gov/ontologies/bibframe-2-4-0/"/>
+	<bf:descriptionLevel rdf:resource="http://id.loc.gov/ontologies/bibframe-3-0-1/"/>
 	<bflc:encodingLevel>
 	  <bflc:EncodingLevel rdf:about="http://id.loc.gov/vocabulary/menclvl/5">
 	    <rdfs:label>preliminary</rdfs:label>
@@ -1745,9 +2305,14 @@
 	    <bf:code>lccopycat</bf:code>
 	  </bf:DescriptionAuthentication>
 	</bf:descriptionAuthentication>
-	<lclocal:d906>=906     $a 0 $b ibc $c copycat $d 2 $e ncip $f 20 $g y-gencatlg</lclocal:d906>
-	<lclocal:d925>=925  0  $a acquire $b 1 shelf copy $x policy default</lclocal:d925>
-	<lclocal:d955>=955     $b hb09 2015-05-04 z-processor copy to LOAN</lclocal:d955>
+	<bflc:marcKey>09700$aPR6068.O93$bH395 2004x</bflc:marcKey>
+	<bflc:marcKey>4901 $aHarry Potter ;$vbk. 5</bflc:marcKey>
+	<bflc:marcKey>906  $a0$bibc$ccopycat$d2$encip$f20$gy-gencatlg</bflc:marcKey>
+	<bflc:marcKey>9250 $aacquire$b1 shelf copy$xpolicy default</bflc:marcKey>
+	<bflc:marcKey>955  $bhb09 2015-05-04 z-processor copy to LOAN</bflc:marcKey>
+	<bflc:marcKey>955  $aLCAP batch update 2025-06-02-04:00: LCAPM-893</bflc:marcKey>
+	<bflc:marcKey>923  $aPurchase$d20150504$n322286$sAmazon</bflc:marcKey>
+	<bflc:marcKey>999ff$ic1507dca-ad40-512a-b127-38e5b70986be$s86a2f2ac-475b-4217-9d66-f28342d58a4e</bflc:marcKey>
       </bf:AdminMetadata>
     </bf:adminMetadata>
   </bf:Instance>
@@ -1790,9 +2355,9 @@
 	      </bf:Agent>
 	    </bf:agent>
 	    <bf:role>
-	      <bf:Role rdf:about="http://id.loc.gov/vocabulary/relators/ctb">
-		<rdfs:label>contributor</rdfs:label>
-		<bf:code>ctb</bf:code>
+	      <bf:Role rdf:about="http://id.loc.gov/vocabulary/relators/aut">
+		<rdfs:label>author</rdfs:label>
+		<bf:code>aut</bf:code>
 	      </bf:Role>
 	    </bf:role>
 	  </bf:Contribution>
@@ -1837,6 +2402,7 @@
 	      <bf:Agent>
 		<rdf:type rdf:resource="http://id.loc.gov/ontologies/bibframe/Organization"/>
 		<rdfs:label>Clays Ltd</rdfs:label>
+		<bflc:marcKey>7102 $aClays Ltd.$4prt</bflc:marcKey>
 	      </bf:Agent>
 	    </bf:agent>
 	    <bf:role>
@@ -1853,6 +2419,7 @@
 	      <bf:Agent>
 		<rdf:type rdf:resource="http://id.loc.gov/ontologies/bibframe/Organization"/>
 		<rdfs:label>Palimpsest Book Production Ltd</rdfs:label>
+		<bflc:marcKey>7102 $aPalimpsest Book Production Ltd.$4tyg</bflc:marcKey>
 	      </bf:Agent>
 	    </bf:agent>
 	    <bf:role>
@@ -1863,11 +2430,155 @@
 	    </bf:role>
 	  </bf:Contribution>
 	</bf:contribution>
+	<bf:classification>
+	  <bf:ClassificationDdc>
+	    <bf:classificationPortion>823.914</bf:classificationPortion>
+	    <bf:source>
+	      <bf:Source>
+		<bf:code>21</bf:code>
+	      </bf:Source>
+	    </bf:source>
+	    <bf:edition>full</bf:edition>
+	  </bf:ClassificationDdc>
+	</bf:classification>
+	<bf:classification>
+	  <bf:Classification>
+	    <bf:classificationPortion>18.05</bf:classificationPortion>
+	    <bf:source>
+	      <bf:Source>
+		<bf:code>bcl</bf:code>
+	      </bf:Source>
+	    </bf:source>
+	  </bf:Classification>
+	</bf:classification>
+	<bf:classification>
+	  <bf:Classification>
+	    <bf:classificationPortion>HN 9990</bf:classificationPortion>
+	    <bf:source>
+	      <bf:Source>
+		<bf:code>rvk</bf:code>
+	      </bf:Source>
+	    </bf:source>
+	  </bf:Classification>
+	</bf:classification>
+	<bf:classification>
+	  <bf:Classification>
+	    <bf:classificationPortion>HN 7623</bf:classificationPortion>
+	    <bf:source>
+	      <bf:Source>
+		<bf:code>rvk</bf:code>
+	      </bf:Source>
+	    </bf:source>
+	  </bf:Classification>
+	</bf:classification>
+	<bf:classification>
+	  <bf:Classification>
+	    <bf:classificationPortion>HN 7621</bf:classificationPortion>
+	    <bf:source>
+	      <bf:Source>
+		<bf:code>rvk</bf:code>
+	      </bf:Source>
+	    </bf:source>
+	  </bf:Classification>
+	</bf:classification>
+	<bf:classification>
+	  <bf:ClassificationLcc>
+	    <bf:classificationPortion>PR6068.O93</bf:classificationPortion>
+	    <bf:itemPortion>H395 2004x</bf:itemPortion>
+	    <bf:status>
+	      <bf:Status rdf:about="http://id.loc.gov/vocabulary/mstatus/nuba">
+		<rdfs:label>not used by assigner</rdfs:label>
+		<bf:code>nuba</bf:code>
+	      </bf:Status>
+	    </bf:status>
+	    <bf:status>
+	      <bf:Status rdf:about="http://id.loc.gov/vocabulary/mstatus/p">
+		<rdfs:label>upgraded prepub</rdfs:label>
+		<bf:code>p</bf:code>
+	      </bf:Status>
+	    </bf:status>
+	  </bf:ClassificationLcc>
+	</bf:classification>
 	<bf:title>
 	  <bf:Title>
 	    <bf:mainTitle>Harry Potter and the Order of the Phoenix</bf:mainTitle>
 	  </bf:Title>
 	</bf:title>
+	<bf:language rdf:resource="http://id.loc.gov/vocabulary/languages/eng"/>
+	<bf:hasInstance>
+	  <bf:Instance rdf:about="http://id.loc.gov/resources/instances/18602501">
+	    <bf:title>
+	      <bf:Title>
+		<bf:mainTitle>Harry Potter and the Order of the Phoenix</bf:mainTitle>
+	      </bf:Title>
+	    </bf:title>
+	    <bf:identifiedBy>
+	      <bf:Lccn>
+		<rdf:value>  2014495444</rdf:value>
+	      </bf:Lccn>
+	    </bf:identifiedBy>
+	    <bf:identifiedBy>
+	      <bf:Nbn>
+		<rdf:value>GBA3X7384</rdf:value>
+		<bf:source rdf:resource="http://id.loc.gov/vocabulary/nationalbibschemes/bnb"/>
+	      </bf:Nbn>
+	    </bf:identifiedBy>
+	    <bf:identifiedBy>
+	      <bf:Nbn>
+		<rdf:value>GBA3X7389</rdf:value>
+		<bf:source rdf:resource="http://id.loc.gov/vocabulary/nationalbibschemes/bnb"/>
+	      </bf:Nbn>
+	    </bf:identifiedBy>
+	    <bf:identifiedBy>
+	      <bf:Nbn>
+		<rdf:value>GBA3V2642</rdf:value>
+		<bf:source rdf:resource="http://id.loc.gov/vocabulary/nationalbibschemes/bnb"/>
+	      </bf:Nbn>
+	    </bf:identifiedBy>
+	    <bf:identifiedBy>
+	      <bf:Isbn>
+		<rdf:value>0747569401</rdf:value>
+	      </bf:Isbn>
+	    </bf:identifiedBy>
+	    <bf:identifiedBy>
+	      <bf:Isbn>
+		<rdf:value>9780747569404</rdf:value>
+	      </bf:Isbn>
+	    </bf:identifiedBy>
+	    <bf:identifiedBy>
+	      <bf:Isbn>
+		<rdf:value>0747551006</rdf:value>
+	      </bf:Isbn>
+	    </bf:identifiedBy>
+	    <bf:identifiedBy>
+	      <bf:Isbn>
+		<rdf:value>9780747551003</rdf:value>
+	      </bf:Isbn>
+	    </bf:identifiedBy>
+	    <bf:identifiedBy>
+	      <bf:Isbn>
+		<rdf:value>0747569649</rdf:value>
+	      </bf:Isbn>
+	    </bf:identifiedBy>
+	    <bf:identifiedBy>
+	      <bf:Isbn>
+		<rdf:value>9780747569640</rdf:value>
+	      </bf:Isbn>
+	    </bf:identifiedBy>
+	    <bf:identifiedBy>
+	      <bf:OclcNumber>
+		<rdf:value>52055301</rdf:value>
+	      </bf:OclcNumber>
+	    </bf:identifiedBy>
+	    <bf:publicationStatement>London: Bloomsbury, 2003</bf:publicationStatement>
+	    <bf:editionStatement>1st ed.</bf:editionStatement>
+	    <bf:extent>
+	      <bf:Extent>
+		<rdfs:label>766 pages ; Clays Ltd, St Ives plc.</rdfs:label>
+	      </bf:Extent>
+	    </bf:extent>
+	  </bf:Instance>
+	</bf:hasInstance>
       </bf:Work>
     </bf:instanceOf>
     <bf:adminMetadata>
@@ -1878,7 +2589,7 @@
 	    <bf:code>n</bf:code>
 	  </bf:Status>
 	</bf:status>
-	<bf:date rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2015-05-04</bf:date>
+	<bf:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2015-05-04T00:00:00</bf:date>
 	<bf:agent>
 	  <bf:Agent>
 	    <bf:code>UKM</bf:code>
@@ -1894,7 +2605,7 @@
 	    <bf:code>c</bf:code>
 	  </bf:Status>
 	</bf:status>
-	<bf:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2015-05-06T09:39:41</bf:date>
+	<bf:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2025-06-07T02:40:00</bf:date>
 	<bf:descriptionModifier>
 	  <bf:Organization rdf:about="http://id.loc.gov/vocabulary/organizations/dlc">
 	    <rdfs:label>United States, Library of Congress</rdfs:label>
@@ -1922,8 +2633,8 @@
 	    <bf:code rdf:datatype="http://id.loc.gov/datatypes/orgs/iso15511">US-dlcmrc</bf:code>
 	  </bf:Agent>
 	</bf:agent>
-	<bf:generationProcess rdf:resource="https://github.com/lcnetdev/marc2bibframe2/releases/tag/v2.8.0"/>
-	<bf:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-11-20T16:32:38.505052-05:00</bf:date>
+	<bf:generationProcess rdf:resource="https://github.com/lcnetdev/marc2bibframe2/tree/v3.2-dev"/>
+	<bf:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2026-11-16T14:46:00.904276-05:00</bf:date>
       </bf:AdminMetadata>
     </bf:adminMetadata>
     <bf:adminMetadata>
@@ -1941,7 +2652,7 @@
 	    </bf:assigner>
 	  </bf:Local>
 	</bf:identifiedBy>
-	<bf:descriptionLevel rdf:resource="http://id.loc.gov/ontologies/bibframe-2-4-0/"/>
+	<bf:descriptionLevel rdf:resource="http://id.loc.gov/ontologies/bibframe-3-0-1/"/>
 	<bflc:encodingLevel>
 	  <bflc:EncodingLevel rdf:about="http://id.loc.gov/vocabulary/menclvl/5">
 	    <rdfs:label>preliminary</rdfs:label>
@@ -1972,9 +2683,14 @@
 	    <bf:code>lccopycat</bf:code>
 	  </bf:DescriptionAuthentication>
 	</bf:descriptionAuthentication>
-	<lclocal:d906>=906     $a 0 $b ibc $c copycat $d 2 $e ncip $f 20 $g y-gencatlg</lclocal:d906>
-	<lclocal:d925>=925  0  $a acquire $b 1 shelf copy $x policy default</lclocal:d925>
-	<lclocal:d955>=955     $b hb09 2015-05-04 z-processor copy to LOAN</lclocal:d955>
+	<bflc:marcKey>09700$aPR6068.O93$bH395 2004x</bflc:marcKey>
+	<bflc:marcKey>4901 $aHarry Potter ;$vbk. 5</bflc:marcKey>
+	<bflc:marcKey>906  $a0$bibc$ccopycat$d2$encip$f20$gy-gencatlg</bflc:marcKey>
+	<bflc:marcKey>9250 $aacquire$b1 shelf copy$xpolicy default</bflc:marcKey>
+	<bflc:marcKey>955  $bhb09 2015-05-04 z-processor copy to LOAN</bflc:marcKey>
+	<bflc:marcKey>955  $aLCAP batch update 2025-06-02-04:00: LCAPM-893</bflc:marcKey>
+	<bflc:marcKey>923  $aPurchase$d20150504$n322286$sAmazon</bflc:marcKey>
+	<bflc:marcKey>999ff$ic1507dca-ad40-512a-b127-38e5b70986be$s86a2f2ac-475b-4217-9d66-f28342d58a4e</bflc:marcKey>
       </bf:AdminMetadata>
     </bf:adminMetadata>
   </bf:Instance>
